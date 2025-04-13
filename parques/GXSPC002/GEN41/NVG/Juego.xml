@@ -1,0 +1,183 @@
+
+<ObjectSpec>
+<SpecVersion>18_0_10-184260</SpecVersion>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>5</ObjId>
+<ObjName>Juego</ObjName>
+<ObjDesc>Juego</ObjDesc>
+<ObjPgmName>Juego</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>41</GenId>
+<GenName>Default (.NET)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>5</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>JuegoId</AttriName>
+<Description>Juego Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>6</TableId>
+<TableName>Categoria</TableName>
+<Description>Categoria</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>26</AttriId>
+<AttriName>CategoriaId</AttriName>
+<Description>Categoria Id</Description></Attribute></KeyAttributes>
+<JoinType>Outer</JoinType>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>JuegoNombre</AttriName>
+<Description>Juego Nombre</Description></Attribute>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute>
+<Attribute>
+<AttriId>26</AttriId>
+<AttriName>CategoriaId</AttriName>
+<Description>Categoria Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>JuegoNombre</AttriName>
+<Description>Juego Nombre</Description></Attribute>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute>
+<Attribute>
+<AttriId>26</AttriId>
+<AttriName>CategoriaId</AttriName>
+<Description>Categoria Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Prompts>
+<Prompt>
+<Table>
+<TableId>6</TableId>
+<TableName>Categoria</TableName>
+<Description>Categoria</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>8</ObjId>
+<ObjName>Gx0060</ObjName>
+<ObjPgmName>Gx0060</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>26</AttriId>
+<AttriName>CategoriaId</AttriName>
+<Description>Categoria Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>Gx0020</ObjName>
+<ObjPgmName>Gx0020</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></OutputParameters>
+<PromptType>User</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>7</ObjId>
+<ObjName>Gx0050</ObjName>
+<ObjPgmName>Gx0050</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>JuegoId</AttriName>
+<Description>Juego Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt></Prompts>
+<Suggests></Suggests></ObjectSpec>

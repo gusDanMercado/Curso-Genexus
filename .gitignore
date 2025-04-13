@@ -1,0 +1,37 @@
+# Archivos y carpetas generadas por GeneXus en cualquier subcarpeta
+**/*.rpo
+**/*.ari
+**/*.dat
+**/*.log
+**/*.ldf
+**/*.mdf
+**/OutputLogs/
+**/Locks/
+**/FTIndex/
+**/GXLOCK/
+
+# Ignorar archivos comunes de builds y temporales
+*.rpo
+*.log
+*.lck
+*.class
+*.dll
+*.exe
+*.pdb
+*.obj
+*.user
+*.tmp
+*.bak
+*.~*
+.gxoutput
+.gxignore
+Deploy/
+model/
+*.lastbuild
+*.data
+*.exp
+*.lib
+.gxobjectcache
+.gxcryptokey
+.gxgit
+gxui/

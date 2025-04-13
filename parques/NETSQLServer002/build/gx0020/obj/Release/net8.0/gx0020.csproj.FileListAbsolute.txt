@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\gx0020\bin\Release\net8.0\gx0020.dll
+C:\KBs\parques\NETSQLServer002\build\gx0020\obj\Release\net8.0\gx0020.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\gx0020\obj\Release\net8.0\gx0020.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\gx0020\obj\Release\net8.0\gx0020.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\gx0020\obj\Release\net8.0\gx0020.dll
+C:\KBs\parques\NETSQLServer002\build\gx0020\obj\Release\net8.0\refint\gx0020.dll
+C:\KBs\parques\NETSQLServer002\build\gx0020\obj\Release\net8.0\ref\gx0020.dll

@@ -1,0 +1,7 @@
+C:\KBs\prueba01\NETSQLServer002\build\transaccionprueba\bin\Release\net8.0\transaccionprueba.dll
+C:\KBs\prueba01\NETSQLServer002\build\transaccionprueba\obj\Release\net8.0\transaccionprueba.csproj.AssemblyReference.cache
+C:\KBs\prueba01\NETSQLServer002\build\transaccionprueba\obj\Release\net8.0\transaccionprueba.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\prueba01\NETSQLServer002\build\transaccionprueba\obj\Release\net8.0\transaccionprueba.csproj.CoreCompileInputs.cache
+C:\KBs\prueba01\NETSQLServer002\build\transaccionprueba\obj\Release\net8.0\transaccionprueba.dll
+C:\KBs\prueba01\NETSQLServer002\build\transaccionprueba\obj\Release\net8.0\refint\transaccionprueba.dll
+C:\KBs\prueba01\NETSQLServer002\build\transaccionprueba\obj\Release\net8.0\ref\transaccionprueba.dll

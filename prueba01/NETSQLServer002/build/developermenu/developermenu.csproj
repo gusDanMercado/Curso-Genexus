@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+	
+	
+	<PropertyGroup>
+		<AssemblyName>developermenu</AssemblyName>
+		<TargetFramework>$(TargetFramework)</TargetFramework>
+		<OutputType>Library</OutputType>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+		<PostgresqlSupport>false</PostgresqlSupport>
+		<OfficeSupport>false</OfficeSupport>
+		<MailSupport>false</MailSupport>
+		<GrpcClientSupport>false</GrpcClientSupport>
+		<PdfLibrary></PdfLibrary>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include=".\..\transaccionprueba\transaccionprueba.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\gx0010\gx0010.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\general.ui.masterprompt\general.ui.masterprompt.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\general.ui.masterunanimosidebar\general.ui.masterunanimosidebar.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\GeneXus.Programs.Common\GeneXus.Programs.Common.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+
+	</ItemGroup>
+
+	<ItemGroup>
+
+
+	</ItemGroup>
+
+	<ItemGroup>
+
+	</ItemGroup>
+	<ItemGroup Condition="'$(PostgresqlSupport)'=='true'">
+		<PackageReference Include="Npgsql" Version="8.0.3" PrivateAssets="All"/>
+	</ItemGroup>
+
+	<Import Project="..\DotNetCoreBaseProject.targets"/>	
+</Project>
+

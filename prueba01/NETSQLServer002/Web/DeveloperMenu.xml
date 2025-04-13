@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="prgs.xsl"?>
+<Objects>
+   <Charset>UTF-8</Charset>
+   <Path>file:///C:/Program Files (x86)/GeneXus/GeneXus18Trial/</Path>
+   <Object>
+      <ObjCls>0</ObjCls>
+      <ObjName>Transaccionprueba</ObjName>
+      <ObjDesc>Transaccionprueba</ObjDesc>
+      <ObjLink>transaccionprueba.aspx</ObjLink>
+   </Object>
+</Objects>

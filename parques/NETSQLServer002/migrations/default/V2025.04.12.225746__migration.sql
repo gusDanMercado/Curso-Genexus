@@ -1,0 +1,9 @@
+ALTER TABLE [parqueAtraccion] ADD [PaisId] smallint NOT NULL CONSTRAINT PaisIdparqueAtraccion_DEFAULT DEFAULT 1;
+ALTER TABLE [parqueAtraccion] DROP CONSTRAINT PaisIdparqueAtraccion_DEFAULT;
+SET IDENTITY_INSERT [Pais] ON;
+INSERT INTO [Pais] ([PaisId], [PaisNombre]) SELECT TOP 1 1, ' ' FROM [parqueAtraccion] WHERE NOT EXISTS (SELECT 1 FROM [Pais] WHERE PaisId=1);
+SET IDENTITY_INSERT [Pais] OFF;
+CREATE NONCLUSTERED INDEX [IPARQUEATRACCION1] ON [parqueAtraccion] ([PaisId] );
+
+ALTER TABLE [parqueAtraccion] ADD CONSTRAINT [IPARQUEATRACCION1] FOREIGN KEY ([PaisId]) REFERENCES [Pais] ([PaisId]);
+

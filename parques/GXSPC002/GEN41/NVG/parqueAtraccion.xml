@@ -1,0 +1,242 @@
+
+<ObjectSpec>
+<SpecVersion>18_0_10-184260</SpecVersion>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>2</ObjId>
+<ObjName>parqueAtraccion</ObjName>
+<ObjDesc>parque Atraccion</ObjDesc>
+<ObjPgmName>parqueAtraccion</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>41</GenId>
+<GenName>Default (.NET)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>2</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>3</TableId>
+<TableName>Pais</TableName>
+<Description>Pais</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>PaisId</AttriName>
+<Description>Pais Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>4</TableId>
+<TableName>Show</TableName>
+<Description>Show</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>20</AttriId>
+<AttriName>ShowId</AttriName>
+<Description>Show Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>parqueAtraccionNombre</AttriName>
+<Description>parque Atraccion Nombre</Description></Attribute>
+<Attribute>
+<AttriId>15</AttriId>
+<AttriName>parqueAtraccionSitioWeb</AttriName>
+<Description>parque Atraccion Sitio Web</Description></Attribute>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>parqueAtraccionDireccion</AttriName>
+<Description>parque Atraccion Direccion</Description></Attribute>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>parqueAtraccionFoto</AttriName>
+<Description>parque Atraccion Foto</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>parqueAtraccionFoto.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>23</AttriId>
+<AttriName>parqueAtraccionShowFechaHora</AttriName>
+<Description>parque Atraccion Show Fecha Hora</Description></Attribute>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>PaisId</AttriName>
+<Description>Pais Id</Description></Attribute>
+<Attribute>
+<AttriId>20</AttriId>
+<AttriName>ShowId</AttriName>
+<Description>Show Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>parqueAtraccionNombre</AttriName>
+<Description>parque Atraccion Nombre</Description></Attribute>
+<Attribute>
+<AttriId>15</AttriId>
+<AttriName>parqueAtraccionSitioWeb</AttriName>
+<Description>parque Atraccion Sitio Web</Description></Attribute>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>parqueAtraccionDireccion</AttriName>
+<Description>parque Atraccion Direccion</Description></Attribute>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>parqueAtraccionFoto</AttriName>
+<Description>parque Atraccion Foto</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>parqueAtraccionFoto.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>23</AttriId>
+<AttriName>parqueAtraccionShowFechaHora</AttriName>
+<Description>parque Atraccion Show Fecha Hora</Description></Attribute>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>PaisId</AttriName>
+<Description>Pais Id</Description></Attribute>
+<Attribute>
+<AttriId>20</AttriId>
+<AttriName>ShowId</AttriName>
+<Description>Show Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></KeyAttributes></Table>
+<Table>
+<TableId>1</TableId>
+<TableName>Empleado</TableName>
+<Description>Empleado</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></KeyAttributes></Table></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Prompts>
+<Prompt>
+<Table>
+<TableId>4</TableId>
+<TableName>Show</TableName>
+<Description>Show</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>6</ObjId>
+<ObjName>Gx0040</ObjName>
+<ObjPgmName>Gx0040</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>20</AttriId>
+<AttriName>ShowId</AttriName>
+<Description>Show Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>3</TableId>
+<TableName>Pais</TableName>
+<Description>Pais</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>5</ObjId>
+<ObjName>Gx0030</ObjName>
+<ObjPgmName>Gx0030</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>PaisId</AttriName>
+<Description>Pais Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>Gx0020</ObjName>
+<ObjPgmName>Gx0020</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></OutputParameters>
+<PromptType>User</PromptType></Prompt></Prompts>
+<Suggests></Suggests></ObjectSpec>

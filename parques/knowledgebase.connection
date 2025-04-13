@@ -1,0 +1,11 @@
+﻿<ConnectionInformation>
+	<DBName>GX_KB_parques</DBName>
+	<IntegratedSecurity>True</IntegratedSecurity>
+	<ServerInstance>(LocalDB)\MSSQLLocalDB</ServerInstance>
+	<CreateDbInKbFolder>True</CreateDbInKbFolder>
+	<Directory>C:\KBs\parques</Directory>
+	<DataFile>GX_KB_parques.mdf</DataFile>
+	<LogFile>GX_KB_parques_log.ldf</LogFile>
+	<HostName>GUSTAVOMERCADO</HostName>
+	<DetachOnClose>False</DetachOnClose>
+</ConnectionInformation>

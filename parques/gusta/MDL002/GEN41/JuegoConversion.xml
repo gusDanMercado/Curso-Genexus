@@ -1,0 +1,232 @@
+
+<ReorgSpec>
+<SpecVersion>18_0_10-184260</SpecVersion>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<ReorgCls>c</ReorgCls>
+<ReorgCode>pk</ReorgCode>
+<ReorgMsg>Juego needs conversion</ReorgMsg>
+<ReorgAction>#</ReorgAction>
+<TableAttributes>
+<AttrisInTable>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>JuegoId</AttriName>
+<Description>Juego Id</Description>
+<TakesValueFrom>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>JuegoId</AttriName>
+<Description>Juego Id</Description></Attribute></FromValue></TakesValueFrom>
+<OnPrimaryKey>Yes</OnPrimaryKey>
+<AttriType>
+<DataType>N</DataType>
+<Presicion>4</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>Yes</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property></Properties></AttriType></Attribute>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>JuegoNombre</AttriName>
+<Description>Juego Nombre</Description>
+<TakesValueFrom>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>JuegoNombre</AttriName>
+<Description>Juego Nombre</Description></Attribute></FromValue></TakesValueFrom>
+<AttriType>
+<DataType>V</DataType>
+<Presicion>40</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>NLS</Name>
+<Value>Yes</Value></Property></Properties></AttriType></Attribute>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description>
+<TakesValueFrom>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></FromValue></TakesValueFrom>
+<AttriType>
+<DataType>N</DataType>
+<Presicion>4</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property></Properties></AttriType></Attribute>
+<Attribute>
+<AttriId>26</AttriId>
+<AttriName>CategoriaId</AttriName>
+<Description>Categoria Id</Description>
+<TakesValueFrom>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>26</AttriId>
+<AttriName>CategoriaId</AttriName>
+<Description>Categoria Id</Description></Attribute></FromValue></TakesValueFrom>
+<AttriType>
+<DataType>N</DataType>
+<Presicion>4</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>Yes</Value></Property></Properties></AttriType>
+<AttriOldType>
+<DataType>N</DataType>
+<Presicion>4</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property></Properties></AttriOldType>
+<AttriChangeType>upd</AttriChangeType></Attribute></AttrisInTable>
+<AttrisNoLongerInTable></AttrisNoLongerInTable>
+<AttrisInManyTables></AttrisInManyTables></TableAttributes>
+<NavigationTree>
+<Table>
+<TableId>5</TableId>
+<TableName>Juego</TableName>
+<Description>Juego</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>JuegoId</AttriName>
+<Description>Juego Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<TableIndices>
+<Indices>
+<Index>
+<IndexName>IJUEGO</IndexName>
+<IndexType>u</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>24</AttriId>
+<AttriName>JuegoId</AttriName>
+<Description>Juego Id</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>Yes</Clustered></Index>
+<Index>
+<IndexName>IJUEGO1</IndexName>
+<IndexType>d</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index>
+<Index>
+<IndexName>IJUEGO2</IndexName>
+<IndexType>d</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>26</AttriId>
+<AttriName>CategoriaId</AttriName>
+<Description>Categoria Id</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index></Indices></TableIndices>
+<FKConstraints>
+<FKConstraint>
+<ChangeType>none</ChangeType>
+<Table>
+<TableId>6</TableId>
+<TableName>Categoria</TableName>
+<Description>Categoria</Description></Table>
+<Attributes>
+<Attribute>
+<AttriId>26</AttriId>
+<AttriName>CategoriaId</AttriName>
+<Description>Categoria Id</Description></Attribute></Attributes></FKConstraint>
+<FKConstraint>
+<ChangeType>none</ChangeType>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description></Table>
+<Attributes>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
+<Statements>
+<Statement>DROP INDEX [IJUEGO2] ON [Juego]</Statement>
+<Statement>ALTER TABLE [Juego] DROP CONSTRAINT [IJUEGO2]</Statement>
+<Statement>ALTER TABLE [Juego] ALTER COLUMN [CategoriaId] smallint NULL </Statement>
+<Statement>CREATE NONCLUSTERED INDEX [IJUEGO2] ON [Juego] ([CategoriaId] )</Statement>
+<Statement>ALTER TABLE [Juego] ADD CONSTRAINT [IJUEGO1] FOREIGN KEY ([parqueAtraccionId]) REFERENCES [parqueAtraccion] ([parqueAtraccionId])</Statement>
+<Statement>ALTER TABLE [Juego] ADD CONSTRAINT [IJUEGO2] FOREIGN KEY ([CategoriaId]) REFERENCES [Categoria] ([CategoriaId])</Statement></Statements>
+<NeedReorganizationProgram>False</NeedReorganizationProgram>
+<Warnings></Warnings>
+<Errors></Errors></ReorgSpec>

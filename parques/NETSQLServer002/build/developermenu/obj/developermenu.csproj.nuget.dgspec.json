@@ -1,0 +1,1262 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\developermenu\\developermenu.csproj": {}
+  },
+  "projects": {
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\categoria\\categoria.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\categoria\\categoria.csproj",
+        "projectName": "categoria",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\categoria\\categoria.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\categoria\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\developermenu\\developermenu.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\developermenu\\developermenu.csproj",
+        "projectName": "developermenu",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\developermenu\\developermenu.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\developermenu\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\categoria\\categoria.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\categoria\\categoria.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\empleado\\empleado.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\empleado\\empleado.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterunanimosidebar\\general.ui.masterunanimosidebar.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterunanimosidebar\\general.ui.masterunanimosidebar.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0010\\gx0010.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0010\\gx0010.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0020\\gx0020.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0020\\gx0020.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0030\\gx0030.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0030\\gx0030.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0040\\gx0040.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0040\\gx0040.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0050\\gx0050.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0050\\gx0050.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0060\\gx0060.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0060\\gx0060.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\juego\\juego.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\juego\\juego.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\pais\\pais.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\pais\\pais.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccion\\parqueatraccion.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccion\\parqueatraccion.csproj"
+              },
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\show\\show.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\show\\show.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\empleado\\empleado.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\empleado\\empleado.csproj",
+        "projectName": "empleado",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\empleado\\empleado.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\empleado\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj",
+        "projectName": "general.ui.masterprompt",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterprompt\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterunanimosidebar\\general.ui.masterunanimosidebar.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterunanimosidebar\\general.ui.masterunanimosidebar.csproj",
+        "projectName": "general.ui.masterunanimosidebar",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterunanimosidebar\\general.ui.masterunanimosidebar.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterunanimosidebar\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj",
+        "projectName": "GeneXus.Programs.Common",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0010\\gx0010.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0010\\gx0010.csproj",
+        "projectName": "gx0010",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0010\\gx0010.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0010\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0020\\gx0020.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0020\\gx0020.csproj",
+        "projectName": "gx0020",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0020\\gx0020.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0020\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0030\\gx0030.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0030\\gx0030.csproj",
+        "projectName": "gx0030",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0030\\gx0030.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0030\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0040\\gx0040.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0040\\gx0040.csproj",
+        "projectName": "gx0040",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0040\\gx0040.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0040\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0050\\gx0050.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0050\\gx0050.csproj",
+        "projectName": "gx0050",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0050\\gx0050.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0050\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0060\\gx0060.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0060\\gx0060.csproj",
+        "projectName": "gx0060",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0060\\gx0060.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0060\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\juego\\juego.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\juego\\juego.csproj",
+        "projectName": "juego",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\juego\\juego.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\juego\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\pais\\pais.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\pais\\pais.csproj",
+        "projectName": "pais",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\pais\\pais.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\pais\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccion\\parqueatraccion.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccion\\parqueatraccion.csproj",
+        "projectName": "parqueatraccion",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccion\\parqueatraccion.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccion\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\KBs\\parques\\NETSQLServer002\\build\\show\\show.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\KBs\\parques\\NETSQLServer002\\build\\show\\show.csproj",
+        "projectName": "show",
+        "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\show\\show.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\show\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\KBs\\parques\\NETSQLServer002\\NuGet.Config",
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/genexuslabs/13fb82d9-57a8-49ef-95bb-0ec8324e470c/_packaging/dotnet-prereleases/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj": {
+                "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\GeneXus.Programs.Common\\GeneXus.Programs.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "GeneXus.Classes.Web.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            },
+            "GeneXus.PdfReportsCS.Core": {
+              "target": "Package",
+              "version": "[1.30.0, 1.30.0]"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

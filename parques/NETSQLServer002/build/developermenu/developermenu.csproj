@@ -1,0 +1,80 @@
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+	
+	
+	<PropertyGroup>
+		<AssemblyName>developermenu</AssemblyName>
+		<TargetFramework>$(TargetFramework)</TargetFramework>
+		<OutputType>Library</OutputType>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+		<PostgresqlSupport>false</PostgresqlSupport>
+		<OfficeSupport>false</OfficeSupport>
+		<MailSupport>false</MailSupport>
+		<GrpcClientSupport>false</GrpcClientSupport>
+		<PdfLibrary></PdfLibrary>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include=".\..\categoria\categoria.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\juego\juego.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\show\show.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\pais\pais.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\parqueatraccion\parqueatraccion.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\empleado\empleado.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\gx0060\gx0060.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\gx0050\gx0050.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\gx0040\gx0040.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\gx0030\gx0030.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\gx0020\gx0020.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\gx0010\gx0010.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\general.ui.masterprompt\general.ui.masterprompt.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\general.ui.masterunanimosidebar\general.ui.masterunanimosidebar.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\GeneXus.Programs.Common\GeneXus.Programs.Common.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+
+	</ItemGroup>
+
+	<ItemGroup>
+
+
+	</ItemGroup>
+
+	<ItemGroup>
+
+	</ItemGroup>
+	<ItemGroup Condition="'$(PostgresqlSupport)'=='true'">
+		<PackageReference Include="Npgsql" Version="8.0.3" PrivateAssets="All"/>
+	</ItemGroup>
+
+	<Import Project="..\DotNetCoreBaseProject.targets"/>	
+</Project>
+

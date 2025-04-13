@@ -1,0 +1,40 @@
+<?xml-stylesheet type='text/xsl' href='prgs.xsl'?><Objects>
+  <Charset>UTF-8</Charset>
+  <Path>file:///C:/Program Files (x86)/GeneXus/GeneXus18Trial/</Path>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Empleado</ObjName>
+    <ObjDesc>Empleado</ObjDesc>
+    <ObjLink>empleado.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>parqueAtraccion</ObjName>
+    <ObjDesc>parque Atraccion</ObjDesc>
+    <ObjLink>parqueatraccion.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Pais</ObjName>
+    <ObjDesc>Pais</ObjDesc>
+    <ObjLink>pais.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Show</ObjName>
+    <ObjDesc>Show</ObjDesc>
+    <ObjLink>show.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Juego</ObjName>
+    <ObjDesc>Juego</ObjDesc>
+    <ObjLink>juego.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Categoria</ObjName>
+    <ObjDesc>Categoria</ObjDesc>
+    <ObjLink>categoria.aspx</ObjLink>
+  </Object>
+</Objects>

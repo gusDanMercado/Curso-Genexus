@@ -1,0 +1,11 @@
+﻿<ConnectionInformation>
+	<DBName>GX_KB_prueba01</DBName>
+	<IntegratedSecurity>True</IntegratedSecurity>
+	<ServerInstance>(LocalDB)\MSSQLLocalDB</ServerInstance>
+	<CreateDbInKbFolder>True</CreateDbInKbFolder>
+	<Directory>C:\KBs\prueba01</Directory>
+	<DataFile>GX_KB_prueba01.mdf</DataFile>
+	<LogFile>GX_KB_prueba01_log.ldf</LogFile>
+	<HostName>GUSTAVOMERCADO</HostName>
+	<DetachOnClose>False</DetachOnClose>
+</ConnectionInformation>

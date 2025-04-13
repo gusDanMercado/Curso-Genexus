@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\juego\bin\Release\net8.0\juego.dll
+C:\KBs\parques\NETSQLServer002\build\juego\obj\Release\net8.0\juego.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\juego\obj\Release\net8.0\juego.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\juego\obj\Release\net8.0\juego.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\juego\obj\Release\net8.0\juego.dll
+C:\KBs\parques\NETSQLServer002\build\juego\obj\Release\net8.0\refint\juego.dll
+C:\KBs\parques\NETSQLServer002\build\juego\obj\Release\net8.0\ref\juego.dll
