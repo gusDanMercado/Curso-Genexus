@@ -655,7 +655,7 @@ html_comp_i(29,'Colwidth',measure(0,px),d,[ measure ]).
 html_comp_i(29,'Height',measure(17,px),d,[ measure ]).
 html_comp_i(29,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
 html_comp_i(29,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(29,'Coltitle','Atraccion Nombre',d,[ str ]).
+html_comp_i(29,'Coltitle','Nombre de la Atracción',d,[ str ]).
 html_comp_i(29,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
 html_comp_i(29,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(29,'Horizontalalignment',left,d,[ str ]).
@@ -717,7 +717,7 @@ html_comp_i(31,'Colwidth',measure(0,px),d,[ measure ]).
 html_comp_i(31,'Height',measure(17,px),d,[ measure ]).
 html_comp_i(31,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
 html_comp_i(31,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(31,'Coltitle','Atraccion Direccion',d,[ str ]).
+html_comp_i(31,'Coltitle','Direccion de la Atracción',d,[ str ]).
 html_comp_i(31,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
 html_comp_i(31,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(31,'Horizontalalignment',left,d,[ str ]).
@@ -741,7 +741,7 @@ html_comp_i(32,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(32,'Colautoresize',-1,d,[ bool ]).
 html_comp_i(32,'Colwidth',measure(0,px),d,[ measure ]).
 html_comp_i(32,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(32,'Coltitle','Atraccion Foto',d,[ str ]).
+html_comp_i(32,'Coltitle','Foto',d,[ str ]).
 html_comp_i(32,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
 html_comp_i(32,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(32,'Colvisible',-1,v,[ bool ]).
@@ -947,7 +947,7 @@ html_comp_i(39,'Colwidth',measure(0,px),d,[ measure ]).
 html_comp_i(39,'Height',measure(17,px),d,[ measure ]).
 html_comp_i(39,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
 html_comp_i(39,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(39,'Coltitle','Fecha Hora',d,[ str ]).
+html_comp_i(39,'Coltitle','Fecha',d,[ str ]).
 html_comp_i(39,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
 html_comp_i(39,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(39,'Horizontalalignment',right,d,[ str ]).

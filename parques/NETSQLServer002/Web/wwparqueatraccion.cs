@@ -1281,7 +1281,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202541223451826", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202541314595832", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1299,7 +1299,7 @@ namespace GeneXus.Programs {
          if ( nGXWrapped != 1 )
          {
             context.AddJavascriptSource("messages.spa.js", "?"+GetCacheInvalidationToken( ), false, true);
-            context.AddJavascriptSource("wwparqueatraccion.js", "?202541223451826", false, true);
+            context.AddJavascriptSource("wwparqueatraccion.js", "?202541314595832", false, true);
          }
          /* End function include_jscripts */
       }
@@ -1576,16 +1576,16 @@ namespace GeneXus.Programs {
             context.SendWebValue( "Atraccion Id") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"attribute-description"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Atraccion Nombre") ;
+            context.SendWebValue( "Nombre de la Atracción") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "Sitio Web") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Atraccion Direccion") ;
+            context.SendWebValue( "Direccion de la Atracción") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+""+"\" "+" nowrap=\"nowrap\" "+" class=\""+"ImageAttribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Atraccion Foto") ;
+            context.SendWebValue( "Foto") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "Pais Id") ;
@@ -1606,7 +1606,7 @@ namespace GeneXus.Programs {
             context.SendWebValue( "Show Nombre") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Fecha Hora") ;
+            context.SendWebValue( "Fecha") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"TextActionAttribute TextLikeLink"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "") ;

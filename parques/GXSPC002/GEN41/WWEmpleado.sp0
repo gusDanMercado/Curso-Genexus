@@ -808,7 +808,7 @@ html_comp_i(34,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]
 html_comp_i(34,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(34,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(34,'Gxformat',0,d,[ num ]).
-html_comp_i(34,'Colvisible',-1,v,[ bool ]).
+html_comp_i(34,'Colvisible',0,v,[ bool ]).
 html_comp_i(34,'Title','',d,[ str ]).
 html_comp_i(34,'Invitemsg','',d,[ str ]).
 html_comp_i(34,'Use_datepicker',-1,d,[ bool ]).
@@ -838,7 +838,7 @@ html_comp_i(35,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]
 html_comp_i(35,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(35,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(35,'Gxformat',0,d,[ num ]).
-html_comp_i(35,'Colvisible',-1,v,[ bool ]).
+html_comp_i(35,'Colvisible',0,v,[ bool ]).
 html_comp_i(35,'Title','',d,[ str ]).
 html_comp_i(35,'Invitemsg','',d,[ str ]).
 html_comp_i(35,'Use_datepicker',-1,d,[ bool ]).
@@ -868,7 +868,7 @@ html_comp_i(36,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]
 html_comp_i(36,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(36,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(36,'Gxformat',0,d,[ num ]).
-html_comp_i(36,'Colvisible',-1,v,[ bool ]).
+html_comp_i(36,'Colvisible',0,v,[ bool ]).
 html_comp_i(36,'Title','',d,[ str ]).
 html_comp_i(36,'Invitemsg','',d,[ str ]).
 html_comp_i(36,'Use_datepicker',-1,d,[ bool ]).
@@ -901,7 +901,7 @@ html_comp_i(37,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]
 html_comp_i(37,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(37,'Horizontalalignment',left,d,[ str ]).
 html_comp_i(37,'Gxformat',0,d,[ num ]).
-html_comp_i(37,'Colvisible',-1,v,[ bool ]).
+html_comp_i(37,'Colvisible',0,v,[ bool ]).
 html_comp_i(37,'Title','',d,[ str ]).
 html_comp_i(37,'Invitemsg','',d,[ str ]).
 html_comp_i(38,'Isabstractlayoutcontrol',0,d,[ bool ]).
@@ -932,7 +932,7 @@ html_comp_i(38,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]
 html_comp_i(38,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(38,'Horizontalalignment',left,d,[ str ]).
 html_comp_i(38,'Gxformat',0,d,[ num ]).
-html_comp_i(38,'Colvisible',-1,v,[ bool ]).
+html_comp_i(38,'Colvisible',0,v,[ bool ]).
 html_comp_i(38,'Title','',d,[ str ]).
 html_comp_i(38,'Invitemsg','',d,[ str ]).
 html_comp_i(39,'Isabstractlayoutcontrol',0,d,[ bool ]).
@@ -963,7 +963,7 @@ html_comp_i(39,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]
 html_comp_i(39,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(39,'Horizontalalignment',left,d,[ str ]).
 html_comp_i(39,'Gxformat',0,d,[ num ]).
-html_comp_i(39,'Colvisible',-1,v,[ bool ]).
+html_comp_i(39,'Colvisible',0,v,[ bool ]).
 html_comp_i(39,'Title','',d,[ str ]).
 html_comp_i(39,'Invitemsg','',d,[ str ]).
 html_comp_i(40,'Isabstractlayoutcontrol',0,d,[ bool ]).

@@ -80,7 +80,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "showparqueatraccionwc", "sh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "developermenu", "developermenu\developermenu.csproj", "{F0866BD6-60F4-4FCD-A1DF-E897592FC214}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneXus.Programs.Common", "GeneXus.Programs.Common\GeneXus.Programs.Common.csproj", "{BDBE552C-03EC-4E80-9B02-8DCB3B295BD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneXus.Programs.Common", "GeneXus.Programs.Common\GeneXus.Programs.Common.csproj", "{484AEE29-E895-49BE-80CC-E25370DA5D9D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GxWebStartup", "GxWebStartup\GxWebStartup.csproj", "{E73F5F30-1979-4AE2-8204-400788D5B7D5}"
 EndProject
@@ -250,10 +250,10 @@ Global
 		{F0866BD6-60F4-4FCD-A1DF-E897592FC214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0866BD6-60F4-4FCD-A1DF-E897592FC214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0866BD6-60F4-4FCD-A1DF-E897592FC214}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BDBE552C-03EC-4E80-9B02-8DCB3B295BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDBE552C-03EC-4E80-9B02-8DCB3B295BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDBE552C-03EC-4E80-9B02-8DCB3B295BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDBE552C-03EC-4E80-9B02-8DCB3B295BD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484AEE29-E895-49BE-80CC-E25370DA5D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484AEE29-E895-49BE-80CC-E25370DA5D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484AEE29-E895-49BE-80CC-E25370DA5D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484AEE29-E895-49BE-80CC-E25370DA5D9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E73F5F30-1979-4AE2-8204-400788D5B7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E73F5F30-1979-4AE2-8204-400788D5B7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E73F5F30-1979-4AE2-8204-400788D5B7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
