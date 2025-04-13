@@ -16,7 +16,17 @@
 <GenId>41</GenId>
 <GenName>Default (.NET)</GenName></Generator>
 <FormClass>HTML</FormClass>
-<Parameters></Parameters>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Paisid</VarId>
+<VarName>&amp;PaisId</VarName></Variable></Parameter></Parameters>
 <Levels>
 <Level>
 <LevelType>Trn</LevelType>
@@ -79,6 +89,81 @@
 <AfterInsertRules></AfterInsertRules>
 <AfterUpdateRules></AfterUpdateRules>
 <AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>7</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>7</TableId>
+<TableName>PaisCiudad</TableName>
+<Description>Ciudad</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>7</TableId>
+<TableName>PaisCiudad</TableName>
+<Description>Ciudad</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>PaisId</AttriName>
+<Description>Pais Id</Description></Attribute>
+<Attribute>
+<AttriId>28</AttriId>
+<AttriName>CiudadId</AttriName>
+<Description>Ciudad Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>7</TableId>
+<TableName>PaisCiudad</TableName>
+<Description>Ciudad</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>PaisId</AttriName>
+<Description>Pais Id</Description></Attribute>
+<Attribute>
+<AttriId>28</AttriId>
+<AttriName>CiudadId</AttriName>
+<Description>Ciudad Id</Description></Attribute>
+<Attribute>
+<AttriId>29</AttriId>
+<AttriName>CiudadNombre</AttriName>
+<Description>Ciudad Nombre</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>7</TableId>
+<TableName>PaisCiudad</TableName>
+<Description>Ciudad</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>29</AttriId>
+<AttriName>CiudadNombre</AttriName>
+<Description>Ciudad Nombre</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>7</TableId>
+<TableName>PaisCiudad</TableName>
+<Description>Ciudad</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
 <TablesToControlOnDelete>
 <Table>
 <TableId>2</TableId>
@@ -89,28 +174,37 @@
 <Attribute>
 <AttriId>18</AttriId>
 <AttriName>PaisId</AttriName>
-<Description>Pais Id</Description></Attribute></KeyAttributes></Table></TablesToControlOnDelete>
+<Description>Pais Id</Description></Attribute>
+<Attribute>
+<AttriId>28</AttriId>
+<AttriName>CiudadId</AttriName>
+<Description>Ciudad Id</Description></Attribute></KeyAttributes></Table></TablesToControlOnDelete>
 <Levels></Levels>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>
 <Prompts>
 <Prompt>
 <Table>
-<TableId>3</TableId>
-<TableName>Pais</TableName>
-<Description>Pais</Description></Table>
+<TableId>7</TableId>
+<TableName>PaisCiudad</TableName>
+<Description>Ciudad</Description></Table>
 <Object>
 <ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
 <ObjCls>13</ObjCls>
-<ObjId>5</ObjId>
-<ObjName>Gx0030</ObjName>
-<ObjPgmName>Gx0030</ObjPgmName>
+<ObjId>9</ObjId>
+<ObjName>Gx0071</ObjName>
+<ObjPgmName>Gx0071</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
-<InputParameters></InputParameters>
-<OutputParameters>
+<InputParameters>
 <Attribute>
 <AttriId>18</AttriId>
 <AttriName>PaisId</AttriName>
-<Description>Pais Id</Description></Attribute></OutputParameters>
+<Description>Pais Id</Description></Attribute></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>28</AttriId>
+<AttriName>CiudadId</AttriName>
+<Description>Ciudad Id</Description></Attribute></OutputParameters>
 <PromptType>System</PromptType></Prompt></Prompts>
 <Suggests></Suggests></ObjectSpec>

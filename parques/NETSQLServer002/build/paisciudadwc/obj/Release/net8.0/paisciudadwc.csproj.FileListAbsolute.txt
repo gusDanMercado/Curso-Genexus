@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\paisciudadwc\bin\Release\net8.0\paisciudadwc.dll
+C:\KBs\parques\NETSQLServer002\build\paisciudadwc\obj\Release\net8.0\paisciudadwc.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\paisciudadwc\obj\Release\net8.0\paisciudadwc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\paisciudadwc\obj\Release\net8.0\paisciudadwc.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\paisciudadwc\obj\Release\net8.0\paisciudadwc.dll
+C:\KBs\parques\NETSQLServer002\build\paisciudadwc\obj\Release\net8.0\refint\paisciudadwc.dll
+C:\KBs\parques\NETSQLServer002\build\paisciudadwc\obj\Release\net8.0\ref\paisciudadwc.dll

@@ -2260,6 +2260,42 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "categoriageneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/categoriageneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/categoriageneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "categoriajuegowc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/categoriajuegowc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/categoriajuegowc.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "empleado/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2273,6 +2309,42 @@
         },
         "runtime": {
           "bin/placeholder/empleado.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "empleadogeneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/empleadogeneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/empleadogeneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "general.security.notauthorized/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/general.security.notauthorized.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/general.security.notauthorized.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -2439,6 +2511,24 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "gx0071/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/gx0071.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/gx0071.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "juego/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2452,6 +2542,24 @@
         },
         "runtime": {
           "bin/placeholder/juego.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "juegogeneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/juegogeneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/juegogeneral.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -2475,6 +2583,42 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "paisciudadwc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/paisciudadwc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/paisciudadwc.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "paisgeneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/paisgeneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/paisgeneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "parqueatraccion/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2493,6 +2637,60 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "parqueatraccionempleadowc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/parqueatraccionempleadowc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/parqueatraccionempleadowc.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "parqueatracciongeneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/parqueatracciongeneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/parqueatracciongeneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "parqueatraccionjuegowc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/parqueatraccionjuegowc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/parqueatraccionjuegowc.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "show/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2506,6 +2704,258 @@
         },
         "runtime": {
           "bin/placeholder/show.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "showgeneral/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/showgeneral.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/showgeneral.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "showparqueatraccionwc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/showparqueatraccionwc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/showparqueatraccionwc.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "viewcategoria/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewcategoria.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewcategoria.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "viewempleado/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewempleado.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewempleado.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "viewjuego/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewjuego.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewjuego.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "viewpais/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewpais.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewpais.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "viewparqueatraccion/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewparqueatraccion.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewparqueatraccion.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "viewshow/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/viewshow.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/viewshow.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwcategoria/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwcategoria.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwcategoria.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwempleado/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwempleado.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwempleado.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwjuego/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwjuego.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwjuego.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwpais/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwpais.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwpais.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwparqueatraccion/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwparqueatraccion.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwparqueatraccion.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "wwshow/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GeneXus.Classes.Web.Core": "[1.30.0]",
+          "GeneXus.PdfReportsCS.Core": "[1.30.0]",
+          "GeneXus.Programs.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/wwshow.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wwshow.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -7406,10 +7856,30 @@
       "path": "../categoria/categoria.csproj",
       "msbuildProject": "../categoria/categoria.csproj"
     },
+    "categoriageneral/1.0.0": {
+      "type": "project",
+      "path": "../categoriageneral/categoriageneral.csproj",
+      "msbuildProject": "../categoriageneral/categoriageneral.csproj"
+    },
+    "categoriajuegowc/1.0.0": {
+      "type": "project",
+      "path": "../categoriajuegowc/categoriajuegowc.csproj",
+      "msbuildProject": "../categoriajuegowc/categoriajuegowc.csproj"
+    },
     "empleado/1.0.0": {
       "type": "project",
       "path": "../empleado/empleado.csproj",
       "msbuildProject": "../empleado/empleado.csproj"
+    },
+    "empleadogeneral/1.0.0": {
+      "type": "project",
+      "path": "../empleadogeneral/empleadogeneral.csproj",
+      "msbuildProject": "../empleadogeneral/empleadogeneral.csproj"
+    },
+    "general.security.notauthorized/1.0.0": {
+      "type": "project",
+      "path": "../general.security.notauthorized/general.security.notauthorized.csproj",
+      "msbuildProject": "../general.security.notauthorized/general.security.notauthorized.csproj"
     },
     "general.ui.masterprompt/1.0.0": {
       "type": "project",
@@ -7456,25 +7926,130 @@
       "path": "../gx0060/gx0060.csproj",
       "msbuildProject": "../gx0060/gx0060.csproj"
     },
+    "gx0071/1.0.0": {
+      "type": "project",
+      "path": "../gx0071/gx0071.csproj",
+      "msbuildProject": "../gx0071/gx0071.csproj"
+    },
     "juego/1.0.0": {
       "type": "project",
       "path": "../juego/juego.csproj",
       "msbuildProject": "../juego/juego.csproj"
+    },
+    "juegogeneral/1.0.0": {
+      "type": "project",
+      "path": "../juegogeneral/juegogeneral.csproj",
+      "msbuildProject": "../juegogeneral/juegogeneral.csproj"
     },
     "pais/1.0.0": {
       "type": "project",
       "path": "../pais/pais.csproj",
       "msbuildProject": "../pais/pais.csproj"
     },
+    "paisciudadwc/1.0.0": {
+      "type": "project",
+      "path": "../paisciudadwc/paisciudadwc.csproj",
+      "msbuildProject": "../paisciudadwc/paisciudadwc.csproj"
+    },
+    "paisgeneral/1.0.0": {
+      "type": "project",
+      "path": "../paisgeneral/paisgeneral.csproj",
+      "msbuildProject": "../paisgeneral/paisgeneral.csproj"
+    },
     "parqueatraccion/1.0.0": {
       "type": "project",
       "path": "../parqueatraccion/parqueatraccion.csproj",
       "msbuildProject": "../parqueatraccion/parqueatraccion.csproj"
     },
+    "parqueatraccionempleadowc/1.0.0": {
+      "type": "project",
+      "path": "../parqueatraccionempleadowc/parqueatraccionempleadowc.csproj",
+      "msbuildProject": "../parqueatraccionempleadowc/parqueatraccionempleadowc.csproj"
+    },
+    "parqueatracciongeneral/1.0.0": {
+      "type": "project",
+      "path": "../parqueatracciongeneral/parqueatracciongeneral.csproj",
+      "msbuildProject": "../parqueatracciongeneral/parqueatracciongeneral.csproj"
+    },
+    "parqueatraccionjuegowc/1.0.0": {
+      "type": "project",
+      "path": "../parqueatraccionjuegowc/parqueatraccionjuegowc.csproj",
+      "msbuildProject": "../parqueatraccionjuegowc/parqueatraccionjuegowc.csproj"
+    },
     "show/1.0.0": {
       "type": "project",
       "path": "../show/show.csproj",
       "msbuildProject": "../show/show.csproj"
+    },
+    "showgeneral/1.0.0": {
+      "type": "project",
+      "path": "../showgeneral/showgeneral.csproj",
+      "msbuildProject": "../showgeneral/showgeneral.csproj"
+    },
+    "showparqueatraccionwc/1.0.0": {
+      "type": "project",
+      "path": "../showparqueatraccionwc/showparqueatraccionwc.csproj",
+      "msbuildProject": "../showparqueatraccionwc/showparqueatraccionwc.csproj"
+    },
+    "viewcategoria/1.0.0": {
+      "type": "project",
+      "path": "../viewcategoria/viewcategoria.csproj",
+      "msbuildProject": "../viewcategoria/viewcategoria.csproj"
+    },
+    "viewempleado/1.0.0": {
+      "type": "project",
+      "path": "../viewempleado/viewempleado.csproj",
+      "msbuildProject": "../viewempleado/viewempleado.csproj"
+    },
+    "viewjuego/1.0.0": {
+      "type": "project",
+      "path": "../viewjuego/viewjuego.csproj",
+      "msbuildProject": "../viewjuego/viewjuego.csproj"
+    },
+    "viewpais/1.0.0": {
+      "type": "project",
+      "path": "../viewpais/viewpais.csproj",
+      "msbuildProject": "../viewpais/viewpais.csproj"
+    },
+    "viewparqueatraccion/1.0.0": {
+      "type": "project",
+      "path": "../viewparqueatraccion/viewparqueatraccion.csproj",
+      "msbuildProject": "../viewparqueatraccion/viewparqueatraccion.csproj"
+    },
+    "viewshow/1.0.0": {
+      "type": "project",
+      "path": "../viewshow/viewshow.csproj",
+      "msbuildProject": "../viewshow/viewshow.csproj"
+    },
+    "wwcategoria/1.0.0": {
+      "type": "project",
+      "path": "../wwcategoria/wwcategoria.csproj",
+      "msbuildProject": "../wwcategoria/wwcategoria.csproj"
+    },
+    "wwempleado/1.0.0": {
+      "type": "project",
+      "path": "../wwempleado/wwempleado.csproj",
+      "msbuildProject": "../wwempleado/wwempleado.csproj"
+    },
+    "wwjuego/1.0.0": {
+      "type": "project",
+      "path": "../wwjuego/wwjuego.csproj",
+      "msbuildProject": "../wwjuego/wwjuego.csproj"
+    },
+    "wwpais/1.0.0": {
+      "type": "project",
+      "path": "../wwpais/wwpais.csproj",
+      "msbuildProject": "../wwpais/wwpais.csproj"
+    },
+    "wwparqueatraccion/1.0.0": {
+      "type": "project",
+      "path": "../wwparqueatraccion/wwparqueatraccion.csproj",
+      "msbuildProject": "../wwparqueatraccion/wwparqueatraccion.csproj"
+    },
+    "wwshow/1.0.0": {
+      "type": "project",
+      "path": "../wwshow/wwshow.csproj",
+      "msbuildProject": "../wwshow/wwshow.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7483,7 +8058,11 @@
       "GeneXus.PdfReportsCS.Core >= 1.30.0 <= 1.30.0",
       "GeneXus.Programs.Common >= 1.0.0",
       "categoria >= 1.0.0",
+      "categoriageneral >= 1.0.0",
+      "categoriajuegowc >= 1.0.0",
       "empleado >= 1.0.0",
+      "empleadogeneral >= 1.0.0",
+      "general.security.notauthorized >= 1.0.0",
       "general.ui.masterprompt >= 1.0.0",
       "general.ui.masterunanimosidebar >= 1.0.0",
       "gx0010 >= 1.0.0",
@@ -7492,10 +8071,31 @@
       "gx0040 >= 1.0.0",
       "gx0050 >= 1.0.0",
       "gx0060 >= 1.0.0",
+      "gx0071 >= 1.0.0",
       "juego >= 1.0.0",
+      "juegogeneral >= 1.0.0",
       "pais >= 1.0.0",
+      "paisciudadwc >= 1.0.0",
+      "paisgeneral >= 1.0.0",
       "parqueatraccion >= 1.0.0",
-      "show >= 1.0.0"
+      "parqueatraccionempleadowc >= 1.0.0",
+      "parqueatracciongeneral >= 1.0.0",
+      "parqueatraccionjuegowc >= 1.0.0",
+      "show >= 1.0.0",
+      "showgeneral >= 1.0.0",
+      "showparqueatraccionwc >= 1.0.0",
+      "viewcategoria >= 1.0.0",
+      "viewempleado >= 1.0.0",
+      "viewjuego >= 1.0.0",
+      "viewpais >= 1.0.0",
+      "viewparqueatraccion >= 1.0.0",
+      "viewshow >= 1.0.0",
+      "wwcategoria >= 1.0.0",
+      "wwempleado >= 1.0.0",
+      "wwjuego >= 1.0.0",
+      "wwpais >= 1.0.0",
+      "wwparqueatraccion >= 1.0.0",
+      "wwshow >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7525,11 +8125,23 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\categoriageneral\\categoriageneral.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\categoriageneral\\categoriageneral.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\categoriajuegowc\\categoriajuegowc.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\categoriajuegowc\\categoriajuegowc.csproj"
+            },
             "C:\\KBs\\parques\\NETSQLServer002\\build\\categoria\\categoria.csproj": {
               "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\categoria\\categoria.csproj"
             },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\empleadogeneral\\empleadogeneral.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\empleadogeneral\\empleadogeneral.csproj"
+            },
             "C:\\KBs\\parques\\NETSQLServer002\\build\\empleado\\empleado.csproj": {
               "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\empleado\\empleado.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\general.security.notauthorized\\general.security.notauthorized.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.security.notauthorized\\general.security.notauthorized.csproj"
             },
             "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj": {
               "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\general.ui.masterprompt\\general.ui.masterprompt.csproj"
@@ -7558,17 +8170,80 @@
             "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0060\\gx0060.csproj": {
               "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0060\\gx0060.csproj"
             },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0071\\gx0071.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\gx0071\\gx0071.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\juegogeneral\\juegogeneral.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\juegogeneral\\juegogeneral.csproj"
+            },
             "C:\\KBs\\parques\\NETSQLServer002\\build\\juego\\juego.csproj": {
               "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\juego\\juego.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\paisciudadwc\\paisciudadwc.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\paisciudadwc\\paisciudadwc.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\paisgeneral\\paisgeneral.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\paisgeneral\\paisgeneral.csproj"
             },
             "C:\\KBs\\parques\\NETSQLServer002\\build\\pais\\pais.csproj": {
               "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\pais\\pais.csproj"
             },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccionempleadowc\\parqueatraccionempleadowc.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccionempleadowc\\parqueatraccionempleadowc.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatracciongeneral\\parqueatracciongeneral.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatracciongeneral\\parqueatracciongeneral.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccionjuegowc\\parqueatraccionjuegowc.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccionjuegowc\\parqueatraccionjuegowc.csproj"
+            },
             "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccion\\parqueatraccion.csproj": {
               "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\parqueatraccion\\parqueatraccion.csproj"
             },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\showgeneral\\showgeneral.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\showgeneral\\showgeneral.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\showparqueatraccionwc\\showparqueatraccionwc.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\showparqueatraccionwc\\showparqueatraccionwc.csproj"
+            },
             "C:\\KBs\\parques\\NETSQLServer002\\build\\show\\show.csproj": {
               "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\show\\show.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\viewcategoria\\viewcategoria.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\viewcategoria\\viewcategoria.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\viewempleado\\viewempleado.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\viewempleado\\viewempleado.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\viewjuego\\viewjuego.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\viewjuego\\viewjuego.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\viewpais\\viewpais.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\viewpais\\viewpais.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\viewparqueatraccion\\viewparqueatraccion.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\viewparqueatraccion\\viewparqueatraccion.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\viewshow\\viewshow.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\viewshow\\viewshow.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\wwcategoria\\wwcategoria.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\wwcategoria\\wwcategoria.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\wwempleado\\wwempleado.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\wwempleado\\wwempleado.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\wwjuego\\wwjuego.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\wwjuego\\wwjuego.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\wwpais\\wwpais.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\wwpais\\wwpais.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\wwparqueatraccion\\wwparqueatraccion.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\wwparqueatraccion\\wwparqueatraccion.csproj"
+            },
+            "C:\\KBs\\parques\\NETSQLServer002\\build\\wwshow\\wwshow.csproj": {
+              "projectPath": "C:\\KBs\\parques\\NETSQLServer002\\build\\wwshow\\wwshow.csproj"
             }
           }
         }

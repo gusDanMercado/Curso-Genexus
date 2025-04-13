@@ -16,7 +16,17 @@
 <GenId>41</GenId>
 <GenName>Default (.NET)</GenName></Generator>
 <FormClass>HTML</FormClass>
-<Parameters></Parameters>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Juegoid</VarId>
+<VarName>&amp;JuegoId</VarName></Variable></Parameter></Parameters>
 <Levels>
 <Level>
 <LevelType>Trn</LevelType>
@@ -160,24 +170,5 @@
 <AttriId>13</AttriId>
 <AttriName>parqueAtraccionId</AttriName>
 <Description>parque Atraccion Id</Description></Attribute></OutputParameters>
-<PromptType>User</PromptType></Prompt>
-<Prompt>
-<Table>
-<TableId>5</TableId>
-<TableName>Juego</TableName>
-<Description>Juego</Description></Table>
-<Object>
-<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
-<ObjCls>13</ObjCls>
-<ObjId>7</ObjId>
-<ObjName>Gx0050</ObjName>
-<ObjPgmName>Gx0050</ObjPgmName>
-<ObjClsName>Web Panel</ObjClsName></Object>
-<InputParameters></InputParameters>
-<OutputParameters>
-<Attribute>
-<AttriId>24</AttriId>
-<AttriName>JuegoId</AttriName>
-<Description>Juego Id</Description></Attribute></OutputParameters>
-<PromptType>System</PromptType></Prompt></Prompts>
+<PromptType>User</PromptType></Prompt></Prompts>
 <Suggests></Suggests></ObjectSpec>

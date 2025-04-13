@@ -56,79 +56,13 @@ namespace GeneXus.Programs {
          /* Load data into tables. */
       }
 
-      public void ReorganizeEmpleado( )
+      public void ReorganizeJuego( )
       {
          string cmdBuffer = "";
-         /* Indices for table Empleado */
-         cmdBuffer=" ALTER TABLE [Empleado] ADD [parqueAtraccionId] smallint NOT NULL CONSTRAINT parqueAtraccionIdEmpleado_DEFAULT DEFAULT 1 "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [Empleado] DROP CONSTRAINT parqueAtraccionIdEmpleado_DEFAULT "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Show] ON "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" INSERT INTO [Show] ([ShowId], [ShowNombre], [ShowImagen]) SELECT TOP 1 1, ' ', CONVERT(varbinary(1), '') FROM [Empleado] WHERE NOT EXISTS (SELECT 1 FROM [Show] WHERE ShowId=1) "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Show] OFF "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Pais] ON "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" INSERT INTO [Pais] ([PaisId], [PaisNombre]) SELECT TOP 1 1, ' ' FROM [Empleado] WHERE NOT EXISTS (SELECT 1 FROM [Pais] WHERE PaisId=1) "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Pais] OFF "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [parqueAtraccion] ON "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" INSERT INTO [parqueAtraccion] ([parqueAtraccionId], [parqueAtraccionNombre], [parqueAtraccionSitioWeb], [parqueAtraccionDireccion], [parqueAtraccionFoto], [parqueAtraccionFoto_GXI], [PaisId], [ShowId], [parqueAtraccionShowFechaHora]) SELECT TOP 1 1, ' ', ' ', ' ', CONVERT(varbinary(1), ''), ' ', 1, 1, convert( DATETIME, '1753-1-1 0:0:0', 120) FROM [Empleado] WHERE NOT EXISTS (SELECT 1 FROM [parqueAtraccion] WHERE parqueAtraccionId=1) "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [parqueAtraccion] OFF "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
+         /* Indices for table Juego */
          try
          {
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IEMPLEADO1] ON [Empleado] ([parqueAtraccionId] ) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [NJUEGO] ON [Juego] ([JuegoNombre] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -137,48 +71,13 @@ namespace GeneXus.Programs {
          }
          catch
          {
-            cmdBuffer=" DROP INDEX [IEMPLEADO1] ON [Empleado] "
+            cmdBuffer=" DROP INDEX [NJUEGO] ON [Juego] "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
             RGZ.ExecuteStmt() ;
             RGZ.Drop();
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IEMPLEADO1] ON [Empleado] ([parqueAtraccionId] ) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-      }
-
-      public void RIEmpleadoparqueAtraccion( )
-      {
-         string cmdBuffer;
-         try
-         {
-            cmdBuffer=" ALTER TABLE [Empleado] ADD CONSTRAINT [IEMPLEADO1] FOREIGN KEY ([parqueAtraccionId]) REFERENCES [parqueAtraccion] ([parqueAtraccionId]) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-         catch
-         {
-            try
-            {
-               cmdBuffer=" ALTER TABLE [Empleado] DROP CONSTRAINT [IEMPLEADO1] "
-               ;
-               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-               RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-               RGZ.ExecuteStmt() ;
-               RGZ.Drop();
-            }
-            catch
-            {
-            }
-            cmdBuffer=" ALTER TABLE [Empleado] ADD CONSTRAINT [IEMPLEADO1] FOREIGN KEY ([parqueAtraccionId]) REFERENCES [parqueAtraccion] ([parqueAtraccionId]) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [NJUEGO] ON [Juego] ([JuegoNombre] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -193,9 +92,9 @@ namespace GeneXus.Programs {
          {
             /* Using cursor P00012 */
             pr_default.execute(0);
-            EmpleadoCount = P00012_AEmpleadoCount[0];
+            JuegoCount = P00012_AJuegoCount[0];
             pr_default.close(0);
-            PrintRecordCount ( "Empleado" ,  EmpleadoCount );
+            PrintRecordCount ( "Juego" ,  JuegoCount );
          }
       }
 
@@ -237,45 +136,16 @@ namespace GeneXus.Programs {
             }
             pr_default.close(2);
          }
-         if ( ColumnExist("Empleado",sSchemaVar,"parqueAtraccionId") )
-         {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"parqueAtraccionId", "Empleado"}) ) ;
-            return false ;
-         }
          return true ;
-      }
-
-      private bool ColumnExist( string sTableName ,
-                                string sMySchemaName ,
-                                string sMyColumnName )
-      {
-         bool result;
-         result = false;
-         /* Using cursor P00045 */
-         pr_default.execute(3, new Object[] {sTableName, sMySchemaName, sMyColumnName});
-         while ( (pr_default.getStatus(3) != 101) )
-         {
-            tablename = P00045_Atablename[0];
-            ntablename = P00045_ntablename[0];
-            schemaname = P00045_Aschemaname[0];
-            nschemaname = P00045_nschemaname[0];
-            columnname = P00045_Acolumnname[0];
-            ncolumnname = P00045_ncolumnname[0];
-            result = true;
-            pr_default.readNext(3);
-         }
-         pr_default.close(3);
-         return result ;
       }
 
       private void ExecuteOnlyTablesReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeEmpleado" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeJuego" , new Object[]{ });
       }
 
       private void ExecuteOnlyRisReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 2 ,  "RIEmpleadoparqueAtraccion" , new Object[]{ });
       }
 
       private void ExecuteTablesReorganization( )
@@ -293,13 +163,11 @@ namespace GeneXus.Programs {
 
       private void SetPrecedencetables( )
       {
-         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Empleado", ""}) );
+         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Juego", ""}) );
       }
 
       private void SetPrecedenceris( )
       {
-         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[IEMPLEADO1]"}) );
-         ReorgExecute.RegisterPrecedence( "RIEmpleadoparqueAtraccion" ,  "ReorganizeEmpleado" );
       }
 
       private void ExecuteReorganization( )
@@ -328,32 +196,17 @@ namespace GeneXus.Programs {
 
       public override void initialize( )
       {
-         P00012_AEmpleadoCount = new int[1] ;
+         P00012_AJuegoCount = new int[1] ;
          sSchemaVar = "";
          nsSchemaVar = false;
          P00023_AsSchemaVar = new string[] {""} ;
          P00023_nsSchemaVar = new bool[] {false} ;
          P00034_AsSchemaVar = new string[] {""} ;
          P00034_nsSchemaVar = new bool[] {false} ;
-         sTableName = "";
-         sMySchemaName = "";
-         sMyColumnName = "";
-         tablename = "";
-         ntablename = false;
-         schemaname = "";
-         nschemaname = false;
-         columnname = "";
-         ncolumnname = false;
-         P00045_Atablename = new string[] {""} ;
-         P00045_ntablename = new bool[] {false} ;
-         P00045_Aschemaname = new string[] {""} ;
-         P00045_nschemaname = new bool[] {false} ;
-         P00045_Acolumnname = new string[] {""} ;
-         P00045_ncolumnname = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
-               P00012_AEmpleadoCount
+               P00012_AJuegoCount
                }
                , new Object[] {
                P00023_AsSchemaVar
@@ -361,41 +214,23 @@ namespace GeneXus.Programs {
                , new Object[] {
                P00034_AsSchemaVar
                }
-               , new Object[] {
-               P00045_Atablename, P00045_Aschemaname, P00045_Acolumnname
-               }
             }
          );
          /* GeneXus formulas. */
       }
 
       protected short ErrCode ;
-      protected int EmpleadoCount ;
+      protected int JuegoCount ;
       protected string sSchemaVar ;
-      protected string sTableName ;
-      protected string sMySchemaName ;
-      protected string sMyColumnName ;
       protected bool nsSchemaVar ;
-      protected bool ntablename ;
-      protected bool nschemaname ;
-      protected bool ncolumnname ;
-      protected string tablename ;
-      protected string schemaname ;
-      protected string columnname ;
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
-      protected int[] P00012_AEmpleadoCount ;
+      protected int[] P00012_AJuegoCount ;
       protected string[] P00023_AsSchemaVar ;
       protected bool[] P00023_nsSchemaVar ;
       protected string[] P00034_AsSchemaVar ;
       protected bool[] P00034_nsSchemaVar ;
-      protected string[] P00045_Atablename ;
-      protected bool[] P00045_ntablename ;
-      protected string[] P00045_Aschemaname ;
-      protected bool[] P00045_nschemaname ;
-      protected string[] P00045_Acolumnname ;
-      protected bool[] P00045_ncolumnname ;
    }
 
    public class reorg__default : DataStoreHelperBase, IDataStoreHelper
@@ -407,7 +242,6 @@ namespace GeneXus.Programs {
           new ForEachCursor(def[0])
          ,new ForEachCursor(def[1])
          ,new ForEachCursor(def[2])
-         ,new ForEachCursor(def[3])
        };
     }
 
@@ -425,17 +259,10 @@ namespace GeneXus.Programs {
           Object[] prmP00034;
           prmP00034 = new Object[] {
           };
-          Object[] prmP00045;
-          prmP00045 = new Object[] {
-          new ParDef("@sTableName",GXType.Char,255,0) ,
-          new ParDef("@sMySchemaName",GXType.Char,255,0) ,
-          new ParDef("@sMyColumnName",GXType.Char,255,0)
-          };
           def= new CursorDef[] {
-              new CursorDef("P00012", "SELECT COUNT(*) FROM [Empleado] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00012", "SELECT COUNT(*) FROM [Juego] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00023", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00034", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00045", "SELECT TABLE_NAME, TABLE_SCHEMA, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE (TABLE_NAME = @sTableName) AND (TABLE_SCHEMA = @sMySchemaName) AND (COLUMN_NAME = @sMyColumnName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -454,11 +281,6 @@ namespace GeneXus.Programs {
                 return;
              case 2 :
                 ((string[]) buf[0])[0] = rslt.getString(1, 255);
-                return;
-             case 3 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((string[]) buf[1])[0] = rslt.getVarchar(2);
-                ((string[]) buf[2])[0] = rslt.getVarchar(3);
                 return;
        }
     }

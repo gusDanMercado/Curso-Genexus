@@ -6,9 +6,9 @@
 <TableName>Pais</TableName>
 <Description>Pais</Description></Table>
 <ReorgCls>c</ReorgCls>
-<ReorgCode>new</ReorgCode>
-<ReorgMsg>Pais is new</ReorgMsg>
-<ReorgAction>*</ReorgAction>
+<ReorgCode>same</ReorgCode>
+<ReorgMsg>Pais needs conversion</ReorgMsg>
+<ReorgAction>#</ReorgAction>
 <TableAttributes>
 <AttrisInTable>
 <Attribute>
@@ -66,10 +66,21 @@
 <AttriName>PaisId</AttriName>
 <Description>Pais Id</Description></Attribute></IndexAttris>
 <IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>Yes</Clustered></Index></Indices></TableIndices>
+<Clustered>Yes</Clustered></Index></Indices>
+<NewIndices>
+<Index>
+<IndexName>NPAIS</IndexName>
+<IndexType>d</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>PaisNombre</AttriName>
+<Description>Pais Nombre</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index></NewIndices></TableIndices>
 <FKConstraints></FKConstraints>
 <Statements>
-<Statement>CREATE TABLE [Pais] ([PaisId] smallint NOT NULL IDENTITY(1,1), [PaisNombre] nvarchar(50) NOT NULL , PRIMARY KEY([PaisId])) </Statement></Statements>
+<Statement>CREATE NONCLUSTERED INDEX [NPAIS] ON [Pais] ([PaisNombre] )</Statement></Statements>
 <NeedReorganizationProgram>False</NeedReorganizationProgram>
 <Warnings></Warnings>
 <Errors></Errors></ReorgSpec>

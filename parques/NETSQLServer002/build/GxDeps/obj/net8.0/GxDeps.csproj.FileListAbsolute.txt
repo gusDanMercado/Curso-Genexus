@@ -16,3 +16,4 @@ C:\KBs\parques\NETSQLServer002\build\GxDeps\obj\net8.0\GxDeps.dll
 C:\KBs\parques\NETSQLServer002\build\GxDeps\obj\net8.0\refint\GxDeps.dll
 C:\KBs\parques\NETSQLServer002\build\GxDeps\obj\net8.0\GxDeps.pdb
 C:\KBs\parques\NETSQLServer002\build\GxDeps\obj\net8.0\ref\GxDeps.dll
+C:\KBs\parques\NETSQLServer002\build\GxDeps\obj\net8.0\GxDeps.sourcelink.json

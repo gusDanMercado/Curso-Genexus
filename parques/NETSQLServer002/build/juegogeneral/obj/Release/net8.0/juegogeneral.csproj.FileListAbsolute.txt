@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\juegogeneral\bin\Release\net8.0\juegogeneral.dll
+C:\KBs\parques\NETSQLServer002\build\juegogeneral\obj\Release\net8.0\juegogeneral.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\juegogeneral\obj\Release\net8.0\juegogeneral.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\juegogeneral\obj\Release\net8.0\juegogeneral.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\juegogeneral\obj\Release\net8.0\juegogeneral.dll
+C:\KBs\parques\NETSQLServer002\build\juegogeneral\obj\Release\net8.0\refint\juegogeneral.dll
+C:\KBs\parques\NETSQLServer002\build\juegogeneral\obj\Release\net8.0\ref\juegogeneral.dll

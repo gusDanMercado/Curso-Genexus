@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\wwempleado\bin\Release\net8.0\wwempleado.dll
+C:\KBs\parques\NETSQLServer002\build\wwempleado\obj\Release\net8.0\wwempleado.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\wwempleado\obj\Release\net8.0\wwempleado.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\wwempleado\obj\Release\net8.0\wwempleado.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\wwempleado\obj\Release\net8.0\wwempleado.dll
+C:\KBs\parques\NETSQLServer002\build\wwempleado\obj\Release\net8.0\refint\wwempleado.dll
+C:\KBs\parques\NETSQLServer002\build\wwempleado\obj\Release\net8.0\ref\wwempleado.dll

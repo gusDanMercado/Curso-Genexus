@@ -1298,8 +1298,6 @@ att_prop_i(2,40000,'AttValidationFailedMsg','',d).
 att_prop_i(2,40000,'FullName','',v).
  
 tbl_prop_i(2,2,'AllDirSuper',[ [ 3,[ 18 ] ] ],v).
-tbl_prop_i(2,3,'DirSubor',[ [ 2,[ 18 ] ] ],v).
-tbl_prop_i(2,2,'DirSuper',[ [ 3,[ 18 ] ] ],v).
  
 tbl_att_prop_i(2,2,13,'AllowNulls',n).
 tbl_att_prop_i(2,2,13,'AUTONUMBER',y).

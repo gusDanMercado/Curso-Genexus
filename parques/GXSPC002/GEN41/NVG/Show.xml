@@ -16,7 +16,17 @@
 <GenId>41</GenId>
 <GenName>Default (.NET)</GenName></Generator>
 <FormClass>HTML</FormClass>
-<Parameters></Parameters>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Showid</VarId>
+<VarName>&amp;ShowId</VarName></Variable></Parameter></Parameters>
 <Levels>
 <Level>
 <LevelType>Trn</LevelType>
@@ -109,24 +119,4 @@
 <Levels></Levels>
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>
-<Prompts>
-<Prompt>
-<Table>
-<TableId>4</TableId>
-<TableName>Show</TableName>
-<Description>Show</Description></Table>
-<Object>
-<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
-<ObjCls>13</ObjCls>
-<ObjId>6</ObjId>
-<ObjName>Gx0040</ObjName>
-<ObjPgmName>Gx0040</ObjPgmName>
-<ObjClsName>Web Panel</ObjClsName></Object>
-<InputParameters></InputParameters>
-<OutputParameters>
-<Attribute>
-<AttriId>20</AttriId>
-<AttriName>ShowId</AttriName>
-<Description>Show Id</Description></Attribute></OutputParameters>
-<PromptType>System</PromptType></Prompt></Prompts>
 <Suggests></Suggests></ObjectSpec>

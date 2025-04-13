@@ -34,7 +34,7 @@ namespace GeneXus.Programs {
       {
          initialize_properties( ) ;
          entryPointCalled = false;
-         gxfirstwebparm = GetNextPar( );
+         gxfirstwebparm = GetFirstPar( "Mode");
          gxfirstwebparm_bkp = gxfirstwebparm;
          gxfirstwebparm = DecryptAjaxCall( gxfirstwebparm);
          toggleJsOutput = isJsOutputEnabled( );
@@ -61,7 +61,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxfirstwebparm = GetNextPar( );
+            gxfirstwebparm = GetFirstPar( "Mode");
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxfullajaxEvt") == 0 )
          {
@@ -70,7 +70,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxfirstwebparm = GetNextPar( );
+            gxfirstwebparm = GetFirstPar( "Mode");
          }
          else
          {
@@ -80,6 +80,17 @@ namespace GeneXus.Programs {
                return  ;
             }
             gxfirstwebparm = gxfirstwebparm_bkp;
+         }
+         if ( ! entryPointCalled && ! ( isAjaxCallMode( ) || isFullAjaxMode( ) ) )
+         {
+            Gx_mode = gxfirstwebparm;
+            AssignAttri("", false, "Gx_mode", Gx_mode);
+            if ( StringUtil.StrCmp(gxfirstwebparm, "viewer") != 0 )
+            {
+               AV7ShowId = (short)(Math.Round(NumberUtil.Val( GetPar( "ShowId"), "."), 18, MidpointRounding.ToEven));
+               AssignAttri("", false, "AV7ShowId", StringUtil.LTrimStr( (decimal)(AV7ShowId), 4, 0));
+               GxWebStd.gx_hidden_field( context, "gxhash_vSHOWID", GetSecureSignedToken( "", context.localUtil.Format( (decimal)(AV7ShowId), "ZZZ9"), context));
+            }
          }
          if ( toggleJsOutput )
          {
@@ -122,7 +133,7 @@ namespace GeneXus.Programs {
          }
          if ( ! context.isAjaxRequest( ) )
          {
-            GX_FocusControl = edtShowId_Internalname;
+            GX_FocusControl = edtShowNombre_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
          wbErr = false;
@@ -149,8 +160,11 @@ namespace GeneXus.Programs {
          dsDefault = context.GetDataStore("Default");
       }
 
-      public void execute( )
+      public void execute( string aP0_Gx_mode ,
+                           short aP1_ShowId )
       {
+         this.Gx_mode = aP0_Gx_mode;
+         this.AV7ShowId = aP1_ShowId;
          ExecuteImpl();
       }
 
@@ -275,35 +289,35 @@ namespace GeneXus.Programs {
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 21,'',false,'',0)\"";
          ClassString = "Button button-auxiliary ico__arrow-first";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_first_Internalname, "", "", bttBtn_first_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_first_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"EFIRST."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_first_Internalname, "", "", bttBtn_first_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_first_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"EFIRST."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 23,'',false,'',0)\"";
          ClassString = "Button button-auxiliary ico__arrow-prev";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_previous_Internalname, "", "", bttBtn_previous_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_previous_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"EPREVIOUS."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_previous_Internalname, "", "", bttBtn_previous_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_previous_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"EPREVIOUS."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 25,'',false,'',0)\"";
          ClassString = "Button button-auxiliary ico__arrow-next";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_next_Internalname, "", "", bttBtn_next_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_next_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ENEXT."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_next_Internalname, "", "", bttBtn_next_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_next_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"ENEXT."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 27,'',false,'',0)\"";
          ClassString = "Button button-auxiliary ico__arrow-last";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_last_Internalname, "", "", bttBtn_last_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_last_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ELAST."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_last_Internalname, "", "", bttBtn_last_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_last_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"ELAST."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 29,'',false,'',0)\"";
          ClassString = "Button button-secondary";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_select_Internalname, "", "Seleccionar", bttBtn_select_Jsonclick, 4, "Seleccionar", "", StyleString, ClassString, bttBtn_select_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ESELECT."+"'", TempTags, "gx.popup.openPrompt('"+"gx0040.aspx"+"',["+"{Ctrl:gx.dom.el('"+"SHOWID"+"'), id:'"+"SHOWID"+"'"+",IOType:'out',isKey:true,isLastKey:true}"+"],"+"null"+","+"'', false"+","+"true"+");"+"return false;", 2, "HLP_Show.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_select_Internalname, "", "Seleccionar", bttBtn_select_Jsonclick, 5, "Seleccionar", "", StyleString, ClassString, bttBtn_select_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"ESELECT."+"'", TempTags, "", 2, "HLP_Show.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -380,7 +394,7 @@ namespace GeneXus.Programs {
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 49,'',false,'',0)\"";
          ClassString = "Button button-primary";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_enter_Internalname, "", "Confirmar", bttBtn_enter_Jsonclick, 5, "Confirmar", "", StyleString, ClassString, bttBtn_enter_Visible, bttBtn_enter_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EENTER."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_enter_Internalname, "", bttBtn_enter_Caption, bttBtn_enter_Jsonclick, 5, bttBtn_enter_Tooltiptext, "", StyleString, ClassString, bttBtn_enter_Visible, bttBtn_enter_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EENTER."+"'", TempTags, "", context.GetButtonType( ), "HLP_Show.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
@@ -427,69 +441,136 @@ namespace GeneXus.Programs {
 
       protected void standaloneStartupServer( )
       {
+         /* Execute Start event if defined. */
+         context.wbGlbDoneStart = 0;
+         /* Execute user event: Start */
+         E11042 ();
          context.wbGlbDoneStart = 1;
          assign_properties_default( ) ;
-         if ( StringUtil.StrCmp(context.GetRequestMethod( ), "POST") == 0 )
+         if ( AnyError == 0 )
          {
-            /* Read saved SDTs. */
-            /* Read saved values. */
-            Z20ShowId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z20ShowId"), ",", "."), 18, MidpointRounding.ToEven));
-            Z21ShowNombre = cgiGet( "Z21ShowNombre");
-            IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), ",", "."), 18, MidpointRounding.ToEven));
-            IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ",", "."), 18, MidpointRounding.ToEven));
-            Gx_mode = cgiGet( "Mode");
-            Gx_BScreen = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ",", "."), 18, MidpointRounding.ToEven));
-            A40000ShowImagen_GXI = cgiGet( "SHOWIMAGEN_GXI");
-            /* Read variables values. */
-            if ( ( ( context.localUtil.CToN( cgiGet( edtShowId_Internalname), ",", ".") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtShowId_Internalname), ",", ".") > Convert.ToDecimal( 9999 )) ) )
+            if ( StringUtil.StrCmp(context.GetRequestMethod( ), "POST") == 0 )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "SHOWID");
-               AnyError = 1;
-               GX_FocusControl = edtShowId_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               A20ShowId = 0;
-               AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
-            }
-            else
-            {
+               /* Read saved SDTs. */
+               /* Read saved values. */
+               Z20ShowId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z20ShowId"), ",", "."), 18, MidpointRounding.ToEven));
+               Z21ShowNombre = cgiGet( "Z21ShowNombre");
+               IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), ",", "."), 18, MidpointRounding.ToEven));
+               IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ",", "."), 18, MidpointRounding.ToEven));
+               Gx_mode = cgiGet( "Mode");
+               AV7ShowId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vSHOWID"), ",", "."), 18, MidpointRounding.ToEven));
+               Gx_BScreen = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ",", "."), 18, MidpointRounding.ToEven));
+               A40000ShowImagen_GXI = cgiGet( "SHOWIMAGEN_GXI");
+               AV11Pgmname = cgiGet( "vPGMNAME");
+               /* Read variables values. */
                A20ShowId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtShowId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
                AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
-            }
-            A21ShowNombre = cgiGet( edtShowNombre_Internalname);
-            AssignAttri("", false, "A21ShowNombre", A21ShowNombre);
-            A22ShowImagen = cgiGet( imgShowImagen_Internalname);
-            AssignAttri("", false, "A22ShowImagen", A22ShowImagen);
-            /* Read subfile selected row values. */
-            /* Read hidden variables. */
-            getMultimediaValue(imgShowImagen_Internalname, ref  A22ShowImagen, ref  A40000ShowImagen_GXI);
-            GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
-            standaloneNotModal( ) ;
-         }
-         else
-         {
-            standaloneNotModal( ) ;
-            if ( StringUtil.StrCmp(gxfirstwebparm, "viewer") == 0 )
-            {
-               Gx_mode = "DSP";
-               AssignAttri("", false, "Gx_mode", Gx_mode);
-               A20ShowId = (short)(Math.Round(NumberUtil.Val( GetPar( "ShowId"), "."), 18, MidpointRounding.ToEven));
+               A21ShowNombre = cgiGet( edtShowNombre_Internalname);
+               AssignAttri("", false, "A21ShowNombre", A21ShowNombre);
+               A22ShowImagen = cgiGet( imgShowImagen_Internalname);
+               AssignAttri("", false, "A22ShowImagen", A22ShowImagen);
+               /* Read subfile selected row values. */
+               /* Read hidden variables. */
+               getMultimediaValue(imgShowImagen_Internalname, ref  A22ShowImagen, ref  A40000ShowImagen_GXI);
+               GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
+               forbiddenHiddens = new GXProperties();
+               forbiddenHiddens.Add("hshsalt", "hsh"+"Show");
+               A20ShowId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtShowId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
                AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
-               getEqualNoModal( ) ;
-               if ( IsIns( )  && (0==A20ShowId) && ( Gx_BScreen == 0 ) )
+               forbiddenHiddens.Add("ShowId", context.localUtil.Format( (decimal)(A20ShowId), "ZZZ9"));
+               forbiddenHiddens.Add("Gx_mode", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")));
+               hsh = cgiGet( "hsh");
+               if ( ( ! ( ( A20ShowId != Z20ShowId ) ) || ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) ) && ! GXUtil.CheckEncryptedHash( forbiddenHiddens.ToString(), hsh, GXKey) )
                {
-                  A20ShowId = 1;
-                  AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
+                  GXUtil.WriteLogError("show:[ SecurityCheckFailed (403 Forbidden) value for]"+forbiddenHiddens.ToJSonString());
+                  GxWebError = 1;
+                  context.HttpContext.Response.StatusCode = 403;
+                  context.WriteHtmlText( "<title>403 Forbidden</title>") ;
+                  context.WriteHtmlText( "<h1>403 Forbidden</h1>") ;
+                  context.WriteHtmlText( "<p /><hr />") ;
+                  GXUtil.WriteLog("send_http_error_code " + 403.ToString());
+                  AnyError = 1;
+                  return  ;
                }
-               Gx_mode = "DSP";
-               AssignAttri("", false, "Gx_mode", Gx_mode);
-               disable_std_buttons_dsp( ) ;
-               standaloneModal( ) ;
+               standaloneNotModal( ) ;
             }
             else
             {
-               getEqualNoModal( ) ;
-               standaloneModal( ) ;
+               standaloneNotModal( ) ;
+               if ( StringUtil.StrCmp(gxfirstwebparm, "viewer") == 0 )
+               {
+                  Gx_mode = "DSP";
+                  AssignAttri("", false, "Gx_mode", Gx_mode);
+                  A20ShowId = (short)(Math.Round(NumberUtil.Val( GetPar( "ShowId"), "."), 18, MidpointRounding.ToEven));
+                  AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
+                  getEqualNoModal( ) ;
+                  if ( ! (0==AV7ShowId) )
+                  {
+                     A20ShowId = AV7ShowId;
+                     AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
+                  }
+                  else
+                  {
+                     if ( IsIns( )  && (0==A20ShowId) && ( Gx_BScreen == 0 ) )
+                     {
+                        A20ShowId = 1;
+                        AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
+                     }
+                  }
+                  Gx_mode = "DSP";
+                  AssignAttri("", false, "Gx_mode", Gx_mode);
+                  disable_std_buttons( ) ;
+                  standaloneModal( ) ;
+               }
+               else
+               {
+                  if ( IsDsp( ) )
+                  {
+                     sMode4 = Gx_mode;
+                     Gx_mode = "UPD";
+                     AssignAttri("", false, "Gx_mode", Gx_mode);
+                     if ( ! (0==AV7ShowId) )
+                     {
+                        A20ShowId = AV7ShowId;
+                        AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
+                     }
+                     else
+                     {
+                        if ( IsIns( )  && (0==A20ShowId) && ( Gx_BScreen == 0 ) )
+                        {
+                           A20ShowId = 1;
+                           AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
+                        }
+                     }
+                     Gx_mode = sMode4;
+                     AssignAttri("", false, "Gx_mode", Gx_mode);
+                  }
+                  standaloneModal( ) ;
+                  if ( ! IsIns( ) )
+                  {
+                     getByPrimaryKey( ) ;
+                     if ( RcdFound4 == 1 )
+                     {
+                        if ( IsDlt( ) )
+                        {
+                           /* Confirm record */
+                           CONFIRM_040( ) ;
+                           if ( AnyError == 0 )
+                           {
+                              GX_FocusControl = bttBtn_enter_Internalname;
+                              AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                           }
+                        }
+                     }
+                     else
+                     {
+                        GX_msglist.addItem(context.GetMessage( "GXM_noinsert", ""), 1, "SHOWID");
+                        AnyError = 1;
+                        GX_FocusControl = edtShowId_Internalname;
+                        AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                     }
+                  }
+               }
             }
          }
       }
@@ -514,46 +595,28 @@ namespace GeneXus.Programs {
                      if ( StringUtil.StrCmp(sEvtType, ".") == 0 )
                      {
                         sEvt = StringUtil.Left( sEvt, (short)(StringUtil.Len( sEvt)-1));
-                        if ( StringUtil.StrCmp(sEvt, "ENTER") == 0 )
+                        if ( StringUtil.StrCmp(sEvt, "START") == 0 )
                         {
                            context.wbHandled = 1;
-                           btn_enter( ) ;
+                           dynload_actions( ) ;
+                           /* Execute user event: Start */
+                           E11042 ();
+                        }
+                        else if ( StringUtil.StrCmp(sEvt, "AFTER TRN") == 0 )
+                        {
+                           context.wbHandled = 1;
+                           dynload_actions( ) ;
+                           /* Execute user event: After Trn */
+                           E12042 ();
+                        }
+                        else if ( StringUtil.StrCmp(sEvt, "ENTER") == 0 )
+                        {
+                           context.wbHandled = 1;
+                           if ( ! IsDsp( ) )
+                           {
+                              btn_enter( ) ;
+                           }
                            /* No code required for Cancel button. It is implemented as the Reset button. */
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "FIRST") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_first( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "PREVIOUS") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_previous( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "NEXT") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_next( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "LAST") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_last( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "SELECT") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_select( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "DELETE") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_delete( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "LSCR") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           AfterKeyLoadScreen( ) ;
                         }
                      }
                      else
@@ -574,6 +637,8 @@ namespace GeneXus.Programs {
             {
                GX_msglist.addItem(endTrnMsgTxt, endTrnMsgCod, 0, "", true);
             }
+            /* Execute user event: After Trn */
+            E12042 ();
             trnEnded = 0;
             standaloneNotModal( ) ;
             standaloneModal( ) ;
@@ -600,15 +665,6 @@ namespace GeneXus.Programs {
 
       protected void disable_std_buttons( )
       {
-         if ( IsIns( ) )
-         {
-            bttBtn_delete_Enabled = 0;
-            AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
-         }
-      }
-
-      protected void disable_std_buttons_dsp( )
-      {
          bttBtn_delete_Visible = 0;
          AssignProp("", false, bttBtn_delete_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Visible), 5, 0), true);
          bttBtn_first_Visible = 0;
@@ -621,14 +677,17 @@ namespace GeneXus.Programs {
          AssignProp("", false, bttBtn_last_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_last_Visible), 5, 0), true);
          bttBtn_select_Visible = 0;
          AssignProp("", false, bttBtn_select_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_select_Visible), 5, 0), true);
-         bttBtn_delete_Visible = 0;
-         AssignProp("", false, bttBtn_delete_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Visible), 5, 0), true);
-         if ( IsDsp( ) )
+         if ( IsDsp( ) || IsDlt( ) )
          {
-            bttBtn_enter_Visible = 0;
-            AssignProp("", false, bttBtn_enter_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Visible), 5, 0), true);
+            bttBtn_delete_Visible = 0;
+            AssignProp("", false, bttBtn_delete_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Visible), 5, 0), true);
+            if ( IsDsp( ) )
+            {
+               bttBtn_enter_Visible = 0;
+               AssignProp("", false, bttBtn_enter_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Visible), 5, 0), true);
+            }
+            DisableAttributes044( ) ;
          }
-         DisableAttributes044( ) ;
       }
 
       protected void set_caption( )
@@ -646,13 +705,71 @@ namespace GeneXus.Programs {
          }
       }
 
+      protected void CONFIRM_040( )
+      {
+         BeforeValidate044( ) ;
+         if ( AnyError == 0 )
+         {
+            if ( IsDlt( ) )
+            {
+               OnDeleteControls044( ) ;
+            }
+            else
+            {
+               CheckExtendedTable044( ) ;
+               CloseExtendedTableCursors044( ) ;
+            }
+         }
+         if ( AnyError == 0 )
+         {
+            IsConfirmed = 1;
+            AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
+         }
+      }
+
       protected void ResetCaption040( )
       {
       }
 
+      protected void E11042( )
+      {
+         /* Start Routine */
+         returnInSub = false;
+         if ( ! new GeneXus.Programs.general.security.isauthorized(context).executeUdp(  AV11Pgmname) )
+         {
+            CallWebObject(formatLink("general.security.notauthorized.aspx", new object[] {UrlEncode(StringUtil.RTrim(AV11Pgmname))}, new string[] {"GxObject"}) );
+            context.wjLocDisableFrm = 1;
+         }
+         AV9TrnContext.FromXml(AV10WebSession.Get("TrnContext"), null, "", "");
+         if ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )
+         {
+            bttBtn_enter_Caption = "Eliminar";
+            AssignProp("", false, bttBtn_enter_Internalname, "Caption", bttBtn_enter_Caption, true);
+            bttBtn_enter_Tooltiptext = "Eliminar";
+            AssignProp("", false, bttBtn_enter_Internalname, "Tooltiptext", bttBtn_enter_Tooltiptext, true);
+         }
+      }
+
+      protected void E12042( )
+      {
+         /* After Trn Routine */
+         returnInSub = false;
+         if ( ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 ) && ! AV9TrnContext.gxTpr_Callerondelete )
+         {
+            CallWebObject(formatLink("wwshow.aspx") );
+            context.wjLocDisableFrm = 1;
+         }
+         context.setWebReturnParms(new Object[] {});
+         context.setWebReturnParmsMetadata(new Object[] {});
+         context.wjLocDisableFrm = 1;
+         context.nUserReturn = 1;
+         returnInSub = true;
+         if (true) return;
+      }
+
       protected void ZM044( short GX_JID )
       {
-         if ( ( GX_JID == 2 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 3 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -663,7 +780,7 @@ namespace GeneXus.Programs {
                Z21ShowNombre = A21ShowNombre;
             }
          }
-         if ( GX_JID == -2 )
+         if ( GX_JID == -3 )
          {
             Z20ShowId = A20ShowId;
             Z21ShowNombre = A21ShowNombre;
@@ -674,27 +791,18 @@ namespace GeneXus.Programs {
 
       protected void standaloneNotModal( )
       {
+         edtShowId_Enabled = 0;
+         AssignProp("", false, edtShowId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtShowId_Enabled), 5, 0), true);
          Gx_BScreen = 0;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
+         edtShowId_Enabled = 0;
+         AssignProp("", false, edtShowId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtShowId_Enabled), 5, 0), true);
+         bttBtn_delete_Enabled = 0;
+         AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
       }
 
       protected void standaloneModal( )
       {
-         if ( IsIns( )  && (0==A20ShowId) && ( Gx_BScreen == 0 ) )
-         {
-            A20ShowId = 1;
-            AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
-         }
-         if ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )
-         {
-            bttBtn_delete_Enabled = 0;
-            AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
-         }
-         else
-         {
-            bttBtn_delete_Enabled = 1;
-            AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
-         }
          if ( StringUtil.StrCmp(Gx_mode, "DSP") == 0 )
          {
             bttBtn_enter_Enabled = 0;
@@ -704,6 +812,19 @@ namespace GeneXus.Programs {
          {
             bttBtn_enter_Enabled = 1;
             AssignProp("", false, bttBtn_enter_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Enabled), 5, 0), true);
+         }
+         if ( ! (0==AV7ShowId) )
+         {
+            A20ShowId = AV7ShowId;
+            AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
+         }
+         else
+         {
+            if ( IsIns( )  && (0==A20ShowId) && ( Gx_BScreen == 0 ) )
+            {
+               A20ShowId = 1;
+               AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
+            }
          }
       }
 
@@ -723,7 +844,7 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "A22ShowImagen", A22ShowImagen);
             AssignProp("", false, imgShowImagen_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( A22ShowImagen)) ? A40000ShowImagen_GXI : context.convertURL( context.PathToRelativeUrl( A22ShowImagen))), true);
             AssignProp("", false, imgShowImagen_Internalname, "SrcSet", context.GetImageSrcSet( A22ShowImagen), true);
-            ZM044( -2) ;
+            ZM044( -3) ;
          }
          pr_default.close(2);
          OnLoadActions044( ) ;
@@ -731,6 +852,8 @@ namespace GeneXus.Programs {
 
       protected void OnLoadActions044( )
       {
+         AV11Pgmname = "Show";
+         AssignAttri("", false, "AV11Pgmname", AV11Pgmname);
       }
 
       protected void CheckExtendedTable044( )
@@ -738,6 +861,8 @@ namespace GeneXus.Programs {
          Gx_BScreen = 1;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal( ) ;
+         AV11Pgmname = "Show";
+         AssignAttri("", false, "AV11Pgmname", AV11Pgmname);
       }
 
       protected void CloseExtendedTableCursors044( )
@@ -769,7 +894,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A20ShowId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM044( 2) ;
+            ZM044( 3) ;
             RcdFound4 = 1;
             A20ShowId = T00043_A20ShowId[0];
             AssignAttri("", false, "A20ShowId", StringUtil.LTrimStr( (decimal)(A20ShowId), 4, 0));
@@ -786,7 +911,6 @@ namespace GeneXus.Programs {
             sMode4 = Gx_mode;
             Gx_mode = "DSP";
             AssignAttri("", false, "Gx_mode", Gx_mode);
-            standaloneModal( ) ;
             Load044( ) ;
             if ( AnyError == 1 )
             {
@@ -815,13 +939,9 @@ namespace GeneXus.Programs {
          GetKey044( ) ;
          if ( RcdFound4 == 0 )
          {
-            Gx_mode = "INS";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
          }
          else
          {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
          }
          getByPrimaryKey( ) ;
       }
@@ -875,7 +995,7 @@ namespace GeneXus.Programs {
          if ( IsIns( ) )
          {
             /* Insert record */
-            GX_FocusControl = edtShowId_Internalname;
+            GX_FocusControl = edtShowNombre_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
             Insert044( ) ;
             if ( AnyError == 1 )
@@ -901,16 +1021,14 @@ namespace GeneXus.Programs {
                {
                   delete( ) ;
                   AfterTrn( ) ;
-                  GX_FocusControl = edtShowId_Internalname;
+                  GX_FocusControl = edtShowNombre_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                }
                else
                {
-                  Gx_mode = "UPD";
-                  AssignAttri("", false, "Gx_mode", Gx_mode);
                   /* Update record */
                   Update044( ) ;
-                  GX_FocusControl = edtShowId_Internalname;
+                  GX_FocusControl = edtShowNombre_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                }
             }
@@ -918,10 +1036,8 @@ namespace GeneXus.Programs {
             {
                if ( A20ShowId != Z20ShowId )
                {
-                  Gx_mode = "INS";
-                  AssignAttri("", false, "Gx_mode", Gx_mode);
                   /* Insert record */
-                  GX_FocusControl = edtShowId_Internalname;
+                  GX_FocusControl = edtShowNombre_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                   Insert044( ) ;
                   if ( AnyError == 1 )
@@ -941,10 +1057,8 @@ namespace GeneXus.Programs {
                   }
                   else
                   {
-                     Gx_mode = "INS";
-                     AssignAttri("", false, "Gx_mode", Gx_mode);
                      /* Insert record */
-                     GX_FocusControl = edtShowId_Internalname;
+                     GX_FocusControl = edtShowNombre_Internalname;
                      AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                      Insert044( ) ;
                      if ( AnyError == 1 )
@@ -957,6 +1071,13 @@ namespace GeneXus.Programs {
             }
          }
          AfterTrn( ) ;
+         if ( IsIns( ) || IsUpd( ) || IsDlt( ) )
+         {
+            if ( AnyError == 0 )
+            {
+               context.nUserReturn = 1;
+            }
+         }
       }
 
       protected void btn_delete( )
@@ -974,137 +1095,12 @@ namespace GeneXus.Programs {
          {
             delete( ) ;
             AfterTrn( ) ;
-            GX_FocusControl = edtShowId_Internalname;
+            GX_FocusControl = edtShowNombre_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
          if ( AnyError != 0 )
          {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
          }
-         else
-         {
-            getByPrimaryKey( ) ;
-         }
-         CloseCursors();
-      }
-
-      protected void btn_get( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         getEqualNoModal( ) ;
-         if ( RcdFound4 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_keynfound", ""), "PrimaryKeyNotFound", 1, "SHOWID");
-            AnyError = 1;
-            GX_FocusControl = edtShowId_Internalname;
-            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         }
-         GX_FocusControl = edtShowNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_first( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         ScanStart044( ) ;
-         if ( RcdFound4 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
-         }
-         else
-         {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
-         }
-         GX_FocusControl = edtShowNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         ScanEnd044( ) ;
-         getByPrimaryKey( ) ;
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_previous( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         move_previous( ) ;
-         if ( RcdFound4 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
-         }
-         else
-         {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
-         }
-         GX_FocusControl = edtShowNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         getByPrimaryKey( ) ;
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_next( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         move_next( ) ;
-         if ( RcdFound4 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
-         }
-         else
-         {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
-         }
-         GX_FocusControl = edtShowNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         getByPrimaryKey( ) ;
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_last( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         ScanStart044( ) ;
-         if ( RcdFound4 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
-         }
-         else
-         {
-            while ( RcdFound4 != 0 )
-            {
-               ScanNext044( ) ;
-            }
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
-         }
-         GX_FocusControl = edtShowNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         ScanEnd044( ) ;
-         getByPrimaryKey( ) ;
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_select( )
-      {
-         getEqualNoModal( ) ;
       }
 
       protected void CheckOptimisticConcurrency044( )
@@ -1165,10 +1161,13 @@ namespace GeneXus.Programs {
                         /* End of After( Insert) rules */
                         if ( AnyError == 0 )
                         {
-                           /* Save values for previous() function. */
-                           endTrnMsgTxt = context.GetMessage( "GXM_sucadded", "");
-                           endTrnMsgCod = "SuccessfullyAdded";
-                           ResetCaption040( ) ;
+                           if ( IsIns( ) || IsUpd( ) || IsDlt( ) )
+                           {
+                              if ( AnyError == 0 )
+                              {
+                                 context.nUserReturn = 1;
+                              }
+                           }
                         }
                      }
                   }
@@ -1222,10 +1221,13 @@ namespace GeneXus.Programs {
                         /* End of After( update) rules */
                         if ( AnyError == 0 )
                         {
-                           getByPrimaryKey( ) ;
-                           endTrnMsgTxt = context.GetMessage( "GXM_sucupdated", "");
-                           endTrnMsgCod = "SuccessfullyUpdated";
-                           ResetCaption040( ) ;
+                           if ( IsIns( ) || IsUpd( ) || IsDlt( ) )
+                           {
+                              if ( AnyError == 0 )
+                              {
+                                 context.nUserReturn = 1;
+                              }
+                           }
                         }
                      }
                      else
@@ -1254,8 +1256,6 @@ namespace GeneXus.Programs {
 
       protected void delete( )
       {
-         Gx_mode = "DLT";
-         AssignAttri("", false, "Gx_mode", Gx_mode);
          BeforeValidate044( ) ;
          if ( AnyError == 0 )
          {
@@ -1281,22 +1281,13 @@ namespace GeneXus.Programs {
                      /* End of After( delete) rules */
                      if ( AnyError == 0 )
                      {
-                        move_next( ) ;
-                        if ( RcdFound4 == 0 )
+                        if ( IsIns( ) || IsUpd( ) || IsDlt( ) )
                         {
-                           InitAll044( ) ;
-                           Gx_mode = "INS";
-                           AssignAttri("", false, "Gx_mode", Gx_mode);
+                           if ( AnyError == 0 )
+                           {
+                              context.nUserReturn = 1;
+                           }
                         }
-                        else
-                        {
-                           getByPrimaryKey( ) ;
-                           Gx_mode = "UPD";
-                           AssignAttri("", false, "Gx_mode", Gx_mode);
-                        }
-                        endTrnMsgTxt = context.GetMessage( "GXM_sucdeleted", "");
-                        endTrnMsgCod = "SuccessfullyDeleted";
-                        ResetCaption040( ) ;
                      }
                   }
                   else
@@ -1318,7 +1309,12 @@ namespace GeneXus.Programs {
       protected void OnDeleteControls044( )
       {
          standaloneModal( ) ;
-         /* No delete mode formulas found. */
+         if ( AnyError == 0 )
+         {
+            /* Delete mode formulas */
+            AV11Pgmname = "Show";
+            AssignAttri("", false, "AV11Pgmname", AV11Pgmname);
+         }
          if ( AnyError == 0 )
          {
             /* Using cursor T000412 */
@@ -1369,6 +1365,7 @@ namespace GeneXus.Programs {
 
       public void ScanStart044( )
       {
+         /* Scan By routine */
          /* Using cursor T000413 */
          pr_default.execute(11);
          RcdFound4 = 0;
@@ -1508,7 +1505,7 @@ namespace GeneXus.Programs {
          context.WriteHtmlText( " "+"class=\"form-horizontal Form\""+" "+ "style='"+bodyStyle+"'") ;
          context.WriteHtmlText( FormProcess+">") ;
          context.skipLines(1);
-         context.WriteHtmlTextNl( "<form id=\"MAINFORM\" autocomplete=\"off\" name=\"MAINFORM\" method=\"post\" tabindex=-1  class=\"form-horizontal Form\" data-gx-class=\"form-horizontal Form\" novalidate action=\""+formatLink("show.aspx") +"\">") ;
+         context.WriteHtmlTextNl( "<form id=\"MAINFORM\" autocomplete=\"off\" name=\"MAINFORM\" method=\"post\" tabindex=-1  class=\"form-horizontal Form\" data-gx-class=\"form-horizontal Form\" novalidate action=\""+formatLink("show.aspx", new object[] {UrlEncode(StringUtil.RTrim(Gx_mode)),UrlEncode(StringUtil.LTrimStr(AV7ShowId,4,0))}, new string[] {"Gx_mode","ShowId"}) +"\">") ;
          GxWebStd.gx_hidden_field( context, "_EventName", "");
          GxWebStd.gx_hidden_field( context, "_EventGridId", "");
          GxWebStd.gx_hidden_field( context, "_EventRowId", "");
@@ -1524,6 +1521,12 @@ namespace GeneXus.Programs {
       protected void send_integrity_footer_hashes( )
       {
          GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
+         forbiddenHiddens = new GXProperties();
+         forbiddenHiddens.Add("hshsalt", "hsh"+"Show");
+         forbiddenHiddens.Add("ShowId", context.localUtil.Format( (decimal)(A20ShowId), "ZZZ9"));
+         forbiddenHiddens.Add("Gx_mode", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")));
+         GxWebStd.gx_hidden_field( context, "hsh", GetEncryptedHash( forbiddenHiddens.ToString(), GXKey));
+         GXUtil.WriteLogInfo("show:[ SendSecurityCheck value for]"+forbiddenHiddens.ToJSonString());
       }
 
       protected void SendCloseFormHiddens( )
@@ -1536,8 +1539,23 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, ",", "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ",", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
+         GxWebStd.gx_hidden_field( context, "gxhash_Mode", GetSecureSignedToken( "", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")), context));
+         GxWebStd.gx_hidden_field( context, "vMODE", StringUtil.RTrim( Gx_mode));
+         GxWebStd.gx_hidden_field( context, "gxhash_vMODE", GetSecureSignedToken( "", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")), context));
+         if ( context.isAjaxRequest( ) )
+         {
+            context.httpAjaxContext.ajax_rsp_assign_sdt_attri("", false, "vTRNCONTEXT", AV9TrnContext);
+         }
+         else
+         {
+            context.httpAjaxContext.ajax_rsp_assign_hidden_sdt("vTRNCONTEXT", AV9TrnContext);
+         }
+         GxWebStd.gx_hidden_field( context, "gxhash_vTRNCONTEXT", GetSecureSignedToken( "", AV9TrnContext, context));
+         GxWebStd.gx_hidden_field( context, "vSHOWID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV7ShowId), 4, 0, ",", "")));
+         GxWebStd.gx_hidden_field( context, "gxhash_vSHOWID", GetSecureSignedToken( "", context.localUtil.Format( (decimal)(AV7ShowId), "ZZZ9"), context));
          GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, ",", "")));
          GxWebStd.gx_hidden_field( context, "SHOWIMAGEN_GXI", A40000ShowImagen_GXI);
+         GxWebStd.gx_hidden_field( context, "vPGMNAME", StringUtil.RTrim( AV11Pgmname));
          GXCCtlgxBlob = "SHOWIMAGEN" + "_gxBlob";
          GxWebStd.gx_hidden_field( context, GXCCtlgxBlob, A22ShowImagen);
       }
@@ -1596,7 +1614,7 @@ namespace GeneXus.Programs {
 
       public override string GetSelfLink( )
       {
-         return formatLink("show.aspx")  ;
+         return formatLink("show.aspx", new object[] {UrlEncode(StringUtil.RTrim(Gx_mode)),UrlEncode(StringUtil.LTrimStr(AV7ShowId,4,0))}, new string[] {"Gx_mode","ShowId"})  ;
       }
 
       public override string GetPgmname( )
@@ -1645,7 +1663,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254122151260", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202541223451615", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1661,7 +1679,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.spa.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("show.js", "?20254122151260", false, true);
+         context.AddJavascriptSource("show.js", "?202541223451615", false, true);
          /* End function include_jscripts */
       }
 
@@ -1699,16 +1717,18 @@ namespace GeneXus.Programs {
          Form.Textcolor = 0;
          Form.Backcolor = (int)(0xFFFFFF);
          Form.Caption = "Show";
-         bttBtn_delete_Enabled = 1;
+         bttBtn_delete_Enabled = 0;
          bttBtn_delete_Visible = 1;
          bttBtn_cancel_Visible = 1;
+         bttBtn_enter_Tooltiptext = "Confirmar";
+         bttBtn_enter_Caption = "Confirmar";
          bttBtn_enter_Enabled = 1;
          bttBtn_enter_Visible = 1;
          imgShowImagen_Enabled = 1;
          edtShowNombre_Jsonclick = "";
          edtShowNombre_Enabled = 1;
          edtShowId_Jsonclick = "";
-         edtShowId_Enabled = 1;
+         edtShowId_Enabled = 0;
          bttBtn_select_Visible = 1;
          bttBtn_last_Visible = 1;
          bttBtn_next_Visible = 1;
@@ -1731,18 +1751,6 @@ namespace GeneXus.Programs {
          /* End function init_web_controls */
       }
 
-      protected void AfterKeyLoadScreen( )
-      {
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         getEqualNoModal( ) ;
-         GX_FocusControl = edtShowNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-         /* End function AfterKeyLoadScreen */
-      }
-
       protected bool IsIns( )
       {
          return ((StringUtil.StrCmp(Gx_mode, "INS")==0) ? true : false) ;
@@ -1763,30 +1771,6 @@ namespace GeneXus.Programs {
          return ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? true : false) ;
       }
 
-      public void Valid_Showid( )
-      {
-         context.wbHandled = 1;
-         AfterKeyLoadScreen( ) ;
-         Draw( ) ;
-         send_integrity_footer_hashes( ) ;
-         dynload_actions( ) ;
-         /*  Sending validation outputs */
-         AssignAttri("", false, "A21ShowNombre", A21ShowNombre);
-         AssignAttri("", false, "A22ShowImagen", context.PathToRelativeUrl( A22ShowImagen));
-         GXCCtlgxBlob = "SHOWIMAGEN" + "_gxBlob";
-         AssignAttri("", false, "GXCCtlgxBlob", GXCCtlgxBlob);
-         GxWebStd.gx_hidden_field( context, GXCCtlgxBlob, context.PathToRelativeUrl( A22ShowImagen));
-         AssignAttri("", false, "A40000ShowImagen_GXI", A40000ShowImagen_GXI);
-         AssignAttri("", false, "Gx_mode", StringUtil.RTrim( Gx_mode));
-         GxWebStd.gx_hidden_field( context, "Z20ShowId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z20ShowId), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "Z21ShowNombre", Z21ShowNombre);
-         GxWebStd.gx_hidden_field( context, "Z22ShowImagen", context.PathToRelativeUrl( Z22ShowImagen));
-         GxWebStd.gx_hidden_field( context, "Z40000ShowImagen_GXI", Z40000ShowImagen_GXI);
-         AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
-         AssignProp("", false, bttBtn_enter_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Enabled), 5, 0), true);
-         SendCloseFormHiddens( ) ;
-      }
-
       public override bool SupportAjaxEvent( )
       {
          return true ;
@@ -1794,10 +1778,10 @@ namespace GeneXus.Programs {
 
       public override void InitializeDynEvents( )
       {
-         setEventMetadata("ENTER","""{"handler":"UserMainFullajax","iparms":[{"postForm":true}]}""");
-         setEventMetadata("REFRESH","""{"handler":"Refresh","iparms":[]}""");
-         setEventMetadata("VALID_SHOWID","""{"handler":"Valid_Showid","iparms":[{"av":"A20ShowId","fld":"SHOWID","pic":"ZZZ9"},{"av":"Gx_BScreen","fld":"vGXBSCREEN","pic":"9"},{"av":"Gx_mode","fld":"vMODE","pic":"@!"}]""");
-         setEventMetadata("VALID_SHOWID",""","oparms":[{"av":"A21ShowNombre","fld":"SHOWNOMBRE"},{"av":"A22ShowImagen","fld":"SHOWIMAGEN"},{"av":"A40000ShowImagen_GXI","fld":"SHOWIMAGEN_GXI"},{"av":"Gx_mode","fld":"vMODE","pic":"@!"},{"av":"Z20ShowId"},{"av":"Z21ShowNombre"},{"av":"Z22ShowImagen"},{"av":"Z40000ShowImagen_GXI"},{"ctrl":"BTN_DELETE","prop":"Enabled"},{"ctrl":"BTN_ENTER","prop":"Enabled"}]}""");
+         setEventMetadata("ENTER","""{"handler":"UserMainFullajax","iparms":[{"postForm":true},{"av":"Gx_mode","fld":"vMODE","pic":"@!","hsh":true},{"av":"AV7ShowId","fld":"vSHOWID","pic":"ZZZ9","hsh":true}]}""");
+         setEventMetadata("REFRESH","""{"handler":"Refresh","iparms":[{"av":"Gx_mode","fld":"vMODE","pic":"@!","hsh":true},{"av":"AV9TrnContext","fld":"vTRNCONTEXT","hsh":true},{"av":"AV7ShowId","fld":"vSHOWID","pic":"ZZZ9","hsh":true},{"av":"A20ShowId","fld":"SHOWID","pic":"ZZZ9"}]}""");
+         setEventMetadata("AFTER TRN","""{"handler":"E12042","iparms":[{"av":"Gx_mode","fld":"vMODE","pic":"@!","hsh":true},{"av":"AV9TrnContext","fld":"vTRNCONTEXT","hsh":true}]}""");
+         setEventMetadata("VALID_SHOWID","""{"handler":"Valid_Showid","iparms":[]}""");
          return  ;
       }
 
@@ -1818,6 +1802,7 @@ namespace GeneXus.Programs {
       public override void initialize( )
       {
          sPrefix = "";
+         wcpOGx_mode = "";
          Z21ShowNombre = "";
          gxfirstwebparm = "";
          gxfirstwebparm_bkp = "";
@@ -1842,13 +1827,18 @@ namespace GeneXus.Programs {
          bttBtn_enter_Jsonclick = "";
          bttBtn_cancel_Jsonclick = "";
          bttBtn_delete_Jsonclick = "";
-         Gx_mode = "";
+         AV11Pgmname = "";
+         forbiddenHiddens = new GXProperties();
+         hsh = "";
+         sMode4 = "";
          sEvt = "";
          EvtGridId = "";
          EvtRowId = "";
          sEvtType = "";
          endTrnMsgTxt = "";
          endTrnMsgCod = "";
+         AV9TrnContext = new GeneXus.Programs.general.ui.SdtTransactionContext(context);
+         AV10WebSession = context.GetSession();
          Z22ShowImagen = "";
          Z40000ShowImagen_GXI = "";
          T00044_A20ShowId = new short[1] ;
@@ -1860,7 +1850,6 @@ namespace GeneXus.Programs {
          T00043_A21ShowNombre = new string[] {""} ;
          T00043_A40000ShowImagen_GXI = new string[] {""} ;
          T00043_A22ShowImagen = new string[] {""} ;
-         sMode4 = "";
          T00046_A20ShowId = new short[1] ;
          T00047_A20ShowId = new short[1] ;
          T00042_A20ShowId = new short[1] ;
@@ -1874,9 +1863,6 @@ namespace GeneXus.Programs {
          FormProcess = "";
          bodyStyle = "";
          GXCCtlgxBlob = "";
-         ZZ21ShowNombre = "";
-         ZZ22ShowImagen = "";
-         ZZ40000ShowImagen_GXI = "";
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.show__default(),
             new Object[][] {
                 new Object[] {
@@ -1916,10 +1902,13 @@ namespace GeneXus.Programs {
          );
          Z20ShowId = 1;
          A20ShowId = 1;
+         AV11Pgmname = "Show";
       }
 
+      private short wcpOAV7ShowId ;
       private short Z20ShowId ;
       private short GxWebError ;
+      private short AV7ShowId ;
       private short gxcookieaux ;
       private short AnyError ;
       private short IsModified ;
@@ -1929,7 +1918,6 @@ namespace GeneXus.Programs {
       private short Gx_BScreen ;
       private short RcdFound4 ;
       private short gxajaxcallmode ;
-      private short ZZ20ShowId ;
       private int trnEnded ;
       private int bttBtn_first_Visible ;
       private int bttBtn_previous_Visible ;
@@ -1946,13 +1934,15 @@ namespace GeneXus.Programs {
       private int bttBtn_delete_Enabled ;
       private int idxLst ;
       private string sPrefix ;
+      private string wcpOGx_mode ;
       private string gxfirstwebparm ;
       private string gxfirstwebparm_bkp ;
+      private string Gx_mode ;
       private string GXKey ;
       private string PreviousTooltip ;
       private string PreviousCaption ;
       private string GX_FocusControl ;
-      private string edtShowId_Internalname ;
+      private string edtShowNombre_Internalname ;
       private string divMaintable_Internalname ;
       private string divTitlecontainer_Internalname ;
       private string lblTitle_Internalname ;
@@ -1972,25 +1962,28 @@ namespace GeneXus.Programs {
       private string bttBtn_last_Jsonclick ;
       private string bttBtn_select_Internalname ;
       private string bttBtn_select_Jsonclick ;
+      private string edtShowId_Internalname ;
       private string edtShowId_Jsonclick ;
-      private string edtShowNombre_Internalname ;
       private string edtShowNombre_Jsonclick ;
       private string imgShowImagen_Internalname ;
       private string sImgUrl ;
       private string bttBtn_enter_Internalname ;
+      private string bttBtn_enter_Caption ;
       private string bttBtn_enter_Jsonclick ;
+      private string bttBtn_enter_Tooltiptext ;
       private string bttBtn_cancel_Internalname ;
       private string bttBtn_cancel_Jsonclick ;
       private string bttBtn_delete_Internalname ;
       private string bttBtn_delete_Jsonclick ;
-      private string Gx_mode ;
+      private string AV11Pgmname ;
+      private string hsh ;
+      private string sMode4 ;
       private string sEvt ;
       private string EvtGridId ;
       private string EvtRowId ;
       private string sEvtType ;
       private string endTrnMsgTxt ;
       private string endTrnMsgCod ;
-      private string sMode4 ;
       private string sDynURL ;
       private string FormProcess ;
       private string bodyStyle ;
@@ -1999,17 +1992,18 @@ namespace GeneXus.Programs {
       private bool toggleJsOutput ;
       private bool wbErr ;
       private bool A22ShowImagen_IsBlob ;
+      private bool returnInSub ;
       private string Z21ShowNombre ;
       private string A21ShowNombre ;
       private string A40000ShowImagen_GXI ;
       private string Z40000ShowImagen_GXI ;
-      private string ZZ21ShowNombre ;
-      private string ZZ40000ShowImagen_GXI ;
       private string A22ShowImagen ;
       private string Z22ShowImagen ;
-      private string ZZ22ShowImagen ;
+      private IGxSession AV10WebSession ;
+      private GXProperties forbiddenHiddens ;
       private GXWebForm Form ;
       private IGxDataStore dsDefault ;
+      private GeneXus.Programs.general.ui.SdtTransactionContext AV9TrnContext ;
       private IDataStoreProvider pr_default ;
       private short[] T00044_A20ShowId ;
       private string[] T00044_A21ShowNombre ;

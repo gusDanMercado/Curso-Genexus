@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\viewshow\bin\Release\net8.0\viewshow.dll
+C:\KBs\parques\NETSQLServer002\build\viewshow\obj\Release\net8.0\viewshow.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\viewshow\obj\Release\net8.0\viewshow.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\viewshow\obj\Release\net8.0\viewshow.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\viewshow\obj\Release\net8.0\viewshow.dll
+C:\KBs\parques\NETSQLServer002\build\viewshow\obj\Release\net8.0\refint\viewshow.dll
+C:\KBs\parques\NETSQLServer002\build\viewshow\obj\Release\net8.0\ref\viewshow.dll

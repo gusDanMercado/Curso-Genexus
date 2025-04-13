@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\categoriajuegowc\bin\Release\net8.0\categoriajuegowc.dll
+C:\KBs\parques\NETSQLServer002\build\categoriajuegowc\obj\Release\net8.0\categoriajuegowc.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\categoriajuegowc\obj\Release\net8.0\categoriajuegowc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\categoriajuegowc\obj\Release\net8.0\categoriajuegowc.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\categoriajuegowc\obj\Release\net8.0\categoriajuegowc.dll
+C:\KBs\parques\NETSQLServer002\build\categoriajuegowc\obj\Release\net8.0\refint\categoriajuegowc.dll
+C:\KBs\parques\NETSQLServer002\build\categoriajuegowc\obj\Release\net8.0\ref\categoriajuegowc.dll

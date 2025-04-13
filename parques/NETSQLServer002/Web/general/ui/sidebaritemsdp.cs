@@ -61,8 +61,21 @@ namespace GeneXus.Programs.general.ui {
       {
          /* GeneXus formulas */
          /* Output device settings */
-         Gxm1sidebaritems = new GeneXus.Programs.genexusunanimo.SdtSidebarItems_SidebarItem(context);
-         Gxm2rootcol.Add(Gxm1sidebaritems, 0);
+         GXt_objcol_SdtProgramNames_ProgramName1 = AV5wwProgramNames;
+         new GeneXus.Programs.general.ui.listprograms(context ).execute( out  GXt_objcol_SdtProgramNames_ProgramName1) ;
+         AV5wwProgramNames = GXt_objcol_SdtProgramNames_ProgramName1;
+         AV9GXV1 = 1;
+         while ( AV9GXV1 <= AV5wwProgramNames.Count )
+         {
+            AV6wwProgramName = ((GeneXus.Programs.general.ui.SdtProgramNames_ProgramName)AV5wwProgramNames.Item(AV9GXV1));
+            Gxm1sidebaritems = new GeneXus.Programs.genexusunanimo.SdtSidebarItems_SidebarItem(context);
+            Gxm2rootcol.Add(Gxm1sidebaritems, 0);
+            Gxm1sidebaritems.gxTpr_Id = AV6wwProgramName.gxTpr_Name;
+            Gxm1sidebaritems.gxTpr_Title = AV6wwProgramName.gxTpr_Description;
+            Gxm1sidebaritems.gxTpr_Target = AV6wwProgramName.gxTpr_Link;
+            Gxm1sidebaritems.gxTpr_Hassubitems = false;
+            AV9GXV1 = (int)(AV9GXV1+1);
+         }
          cleanup();
       }
 
@@ -78,11 +91,18 @@ namespace GeneXus.Programs.general.ui {
 
       public override void initialize( )
       {
+         AV5wwProgramNames = new GXBaseCollection<GeneXus.Programs.general.ui.SdtProgramNames_ProgramName>( context, "ProgramName", "parques");
+         GXt_objcol_SdtProgramNames_ProgramName1 = new GXBaseCollection<GeneXus.Programs.general.ui.SdtProgramNames_ProgramName>( context, "ProgramName", "parques");
+         AV6wwProgramName = new GeneXus.Programs.general.ui.SdtProgramNames_ProgramName(context);
          Gxm1sidebaritems = new GeneXus.Programs.genexusunanimo.SdtSidebarItems_SidebarItem(context);
          /* GeneXus formulas. */
       }
 
+      private int AV9GXV1 ;
       private GXBaseCollection<GeneXus.Programs.genexusunanimo.SdtSidebarItems_SidebarItem> Gxm2rootcol ;
+      private GXBaseCollection<GeneXus.Programs.general.ui.SdtProgramNames_ProgramName> AV5wwProgramNames ;
+      private GXBaseCollection<GeneXus.Programs.general.ui.SdtProgramNames_ProgramName> GXt_objcol_SdtProgramNames_ProgramName1 ;
+      private GeneXus.Programs.general.ui.SdtProgramNames_ProgramName AV6wwProgramName ;
       private GeneXus.Programs.genexusunanimo.SdtSidebarItems_SidebarItem Gxm1sidebaritems ;
       private GXBaseCollection<GeneXus.Programs.genexusunanimo.SdtSidebarItems_SidebarItem> aP0_Gxm2rootcol ;
    }

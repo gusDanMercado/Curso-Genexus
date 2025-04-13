@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\parqueatracciongeneral\bin\Release\net8.0\parqueatracciongeneral.dll
+C:\KBs\parques\NETSQLServer002\build\parqueatracciongeneral\obj\Release\net8.0\parqueatracciongeneral.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\parqueatracciongeneral\obj\Release\net8.0\parqueatracciongeneral.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\parqueatracciongeneral\obj\Release\net8.0\parqueatracciongeneral.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\parqueatracciongeneral\obj\Release\net8.0\parqueatracciongeneral.dll
+C:\KBs\parques\NETSQLServer002\build\parqueatracciongeneral\obj\Release\net8.0\refint\parqueatracciongeneral.dll
+C:\KBs\parques\NETSQLServer002\build\parqueatracciongeneral\obj\Release\net8.0\ref\parqueatracciongeneral.dll

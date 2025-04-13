@@ -97,13 +97,17 @@ rule_i(0,parmio([ [ 'Gxm2rootcol',out ] ])).
  
  
  
-attri_i('Gxm1sidebaritems',[ 'Gxm1sidebaritems',o('GeneXusUnanimo\SidebarItems.SidebarItem'),0,0,'',0,'Gxm1sidebaritems','',6 ]).
-attri_i('Gxm2rootcol',[ 'Gxm2rootcol',o(objectcollection('GeneXusUnanimo\SidebarItems.SidebarItem')),0,0,'',0,'Gxm2rootcol','',5 ]).
+attri_i('GXV1',[ 'GXV1',int,8,0,'',0,'','',9 ]).
+attri_i('Gxm1sidebaritems',[ 'Gxm1sidebaritems',o('GeneXusUnanimo\SidebarItems.SidebarItem'),0,0,'',0,'Gxm1sidebaritems','',8 ]).
+attri_i('Gxm2rootcol',[ 'Gxm2rootcol',o(objectcollection('GeneXusUnanimo\SidebarItems.SidebarItem')),0,0,'',0,'Gxm2rootcol','',7 ]).
+attri_i('Wwprogramname',[ wwProgramName,o('General\UI\ProgramNames.ProgramName'),0,0,'',0,'ww Program Name','',6 ]).
+attri_i('Wwprogramnames',[ wwProgramNames,o(objectcollection('General\UI\ProgramNames.ProgramName')),0,0,'',0,'ww Program Names','',5 ]).
  
  
  
  
  
+function_i(1,'Wwprogramnames',yes,udp,o(1,'General\UI\ListPrograms'),[],4,'Wwprogramnames',[ [] ]).
  
  
  
@@ -132,8 +136,18 @@ break_i(1,rpt,0,[],[ [],[],[] ]).
  
 b_group_i(1,1,lit,0,1,0).
  
-b_line_i(1,1,1,cmd,1,[ t('',107,1,0),t('Gxm1sidebaritems',23,1,0),t(=,10,1,0),t([ 'GeneXusUnanimo\SidebarItems.SidebarItem',[ t('(',0,1,0),t(')',4,1,0) ],n ],46,1,0) ]).
-b_line_i([ 1,1 ],1,1,cmd,1,[ t('',107,1,0),t([ t('Gxm2rootcol',23,1,0),t('add(',1,1,0) ],31,1,0),t('Gxm1sidebaritems',23,1,0),t(')',4,1,0) ]).
+b_line_i(4,1,1,cmd,4,[ t('',107,4,0),t('Wwprogramnames',23,4,0),t(=,10,4,0),t('udp(',1,4,0),t('Wwprogramnames',3,4,0),t(4,3,4,0),t(')',4,4,0) ]).
+b_line_i(6,1,1,cmd,4,[ t('',107,6,0),t('GXV1',23,4,0),t(=,10,4,0),t(1,3,4,0) ]).
+b_line_i([ 6,2 ],1,1,cmd,4,[ t('',114,6,0),t('GXV1',23,4,0),t(<=,10,4,0),t([ t('Wwprogramnames',23,6,40),t('Count',3,6,0) ],29,6,0) ]).
+b_line_i([ 6,3 ],1,1,cmd,4,[ t('',107,6,0),t('Wwprogramname',23,4,0),t(=,10,4,0),t([ t('Wwprogramnames',23,4,0),t('item(',1,4,0) ],31,4,0),t('GXV1',23,4,0),t(')',4,4,0) ]).
+b_line_i([ 6,4 ],1,1,cmd,4,[ t('',107,6,0),t('Gxm1sidebaritems',23,4,0),t(=,10,4,0),t([ 'GeneXusUnanimo\SidebarItems.SidebarItem',[ t('(',0,6,0),t(')',4,6,0) ],n ],46,4,0) ]).
+b_line_i([ 6,5 ],1,1,cmd,4,[ t('',107,6,0),t([ t('Gxm2rootcol',23,6,0),t('add(',1,6,0) ],31,6,0),t('Gxm1sidebaritems',23,4,0),t(')',4,4,0) ]).
+b_line_i(9,1,1,cmd,7,[ t('',107,9,0),t([ t('Gxm1sidebaritems',23,7,0),t('Id',3,7,0) ],29,7,0),t(=,10,7,0),t([ t('Wwprogramname',23,7,0),t('Name',3,7,0) ],29,7,0) ]).
+b_line_i(10,1,1,cmd,7,[ t('',107,10,0),t([ t('Gxm1sidebaritems',23,7,0),t('Title',3,7,0) ],29,7,0),t(=,10,7,0),t([ t('Wwprogramname',23,7,0),t('Description',3,7,0) ],29,7,0) ]).
+b_line_i(11,1,1,cmd,7,[ t('',107,11,0),t([ t('Gxm1sidebaritems',23,7,0),t('Target',3,7,0) ],29,7,0),t(=,10,7,0),t([ t('Wwprogramname',23,7,0),t('Link',3,7,0) ],29,7,0) ]).
+b_line_i(12,1,1,cmd,7,[ t('',107,12,0),t([ t('Gxm1sidebaritems',23,7,0),t('Hassubitems',3,7,0) ],29,7,0),t(=,10,7,0),t('FALSE',41,7,0) ]).
+b_line_i([ 13,1 ],1,1,cmd,7,[ t('',107,13,0),t('GXV1',23,7,0),t(=,10,7,0),t('GXV1',23,7,0),t(+,5,7,0),t(1,3,7,0) ]).
+b_line_i([ 13,2 ],1,1,cmd,7,[ t('',115,13,0) ]).
  
  
  
@@ -178,6 +192,26 @@ page_layout_i([ 66,0,6 ]).
  
  
  
+struct_dt_i([ 26,61,0 ],name,'General\UI\ProgramNames').
+struct_dt_i([ 26,61,0 ],namespace,parques).
+struct_dt_i([ 26,61,0 ],'ObjName','ProgramNames').
+struct_dt_i([ 26,61,0 ],'ObjDesc','Program Names').
+struct_dt_i([ 26,61,0 ],'ExternalName','ProgramNames').
+struct_dt_i([ 26,61,0 ],'ExternalNamespace',parques).
+struct_dt_i([ 26,61,0 ],'JsonInputFormat','JsonInputWrapped').
+struct_dt_i([ 26,61,0 ],collection,'True').
+struct_dt_i([ 26,61,0 ],datatype,[ 26,61,91 ]).
+struct_dt_i([ 26,61,0 ],'CollectionItemName','ProgramName').
+struct_dt_i([ 26,61,0 ],'XmlName','').
+struct_dt_i([ 26,61,0 ],'XmlCollectionItemName','').
+struct_dt_i([ 26,61,0 ],'XmlNamespace','').
+struct_dt_i([ 26,61,0 ],'CollectionSerialization',idXmlCollectionWrapped).
+struct_dt_i([ 26,61,0 ],'XmlInclude',idXmlIncludeAlways).
+struct_dt_i([ 26,61,0 ],'JsonName','').
+struct_dt_i([ 26,61,0 ],'JsonInclude',idJsonNoProperty).
+struct_dt_i([ 26,61,0 ],'JsonCollectionSerialization',idXmlCollectionWrapped).
+struct_dt_i([ 26,61,91 ],name,'ProgramName').
+struct_dt_i([ 26,61,91 ],namespace,'parques.ProgramNames').
 struct_dt_i([ 26,58,0 ],name,'GeneXusUnanimo\SidebarItems').
 struct_dt_i([ 26,58,0 ],namespace,'GeneXusUnanimo').
 struct_dt_i([ 26,58,0 ],'ObjName','SidebarItems').
@@ -203,15 +237,69 @@ struct_dt_i([ 26,58,85 ],name,'SubItem').
 struct_dt_i([ 26,58,85 ],namespace,'GeneXusUnanimo.SidebarItems.SidebarItem').
 struct_dt_i([ 26,58,86 ],name,'SubSubItem').
 struct_dt_i([ 26,58,86 ],namespace,'GeneXusUnanimo.SidebarItems.SidebarItem.SubItem').
+struct_dt_i([ 26,61,0 ],fullname,'General\UI\ProgramNames').
+struct_dt_i([ 26,61,91 ],fullname,'General\UI\ProgramNames.ProgramName').
 struct_dt_i([ 26,58,0 ],fullname,'GeneXusUnanimo\SidebarItems').
 struct_dt_i([ 26,58,84 ],fullname,'GeneXusUnanimo\SidebarItems.SidebarItem').
 struct_dt_i([ 26,58,85 ],fullname,'GeneXusUnanimo\SidebarItems.SidebarItem.SubItem').
 struct_dt_i([ 26,58,86 ],fullname,'GeneXusUnanimo\SidebarItems.SidebarItem.SubItem.SubSubItem').
+struct_dt_i([ 26,61,0 ],camelname,'General\ui\programnames').
+struct_dt_i([ 26,61,91 ],camelname,'Programname').
 struct_dt_i([ 26,58,0 ],camelname,'Genexusunanimo\sidebaritems').
 struct_dt_i([ 26,58,84 ],camelname,'Sidebaritem').
 struct_dt_i([ 26,58,85 ],camelname,'Subitem').
 struct_dt_i([ 26,58,86 ],camelname,'Subsubitem').
  
+struct_dt_elem_i([ 26,61,91 ],1,name,'Name').
+struct_dt_elem_i([ 26,61,91 ],1,camelname,'Name').
+struct_dt_elem_i([ 26,61,91 ],1,basedon,51).
+struct_dt_elem_i([ 26,61,91 ],1,length,256).
+struct_dt_elem_i([ 26,61,91 ],1,decimals,0).
+struct_dt_elem_i([ 26,61,91 ],1,type,[ 13,256,0 ]).
+struct_dt_elem_i([ 26,61,91 ],1,pic,'').
+struct_dt_elem_i([ 26,61,91 ],1,collection,'False').
+struct_dt_elem_i([ 26,61,91 ],1,'ExternalName','Name').
+struct_dt_elem_i([ 26,61,91 ],1,'ExternalNamespace',parques).
+struct_dt_elem_i([ 26,61,91 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,61,91 ],1,'XmlName','').
+struct_dt_elem_i([ 26,61,91 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,91 ],1,soaptype,'').
+struct_dt_elem_i([ 26,61,91 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,91 ],1,'JsonName','').
+struct_dt_elem_i([ 26,61,91 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,91 ],2,name,'Description').
+struct_dt_elem_i([ 26,61,91 ],2,camelname,'Description').
+struct_dt_elem_i([ 26,61,91 ],2,length,255).
+struct_dt_elem_i([ 26,61,91 ],2,decimals,0).
+struct_dt_elem_i([ 26,61,91 ],2,type,[ 13,255,0 ]).
+struct_dt_elem_i([ 26,61,91 ],2,pic,'').
+struct_dt_elem_i([ 26,61,91 ],2,collection,'False').
+struct_dt_elem_i([ 26,61,91 ],2,'ExternalName','Description').
+struct_dt_elem_i([ 26,61,91 ],2,'ExternalNamespace',parques).
+struct_dt_elem_i([ 26,61,91 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,61,91 ],2,'XmlName','').
+struct_dt_elem_i([ 26,61,91 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,91 ],2,soaptype,'').
+struct_dt_elem_i([ 26,61,91 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,91 ],2,'JsonName','').
+struct_dt_elem_i([ 26,61,91 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,91 ],3,name,'Link').
+struct_dt_elem_i([ 26,61,91 ],3,camelname,'Link').
+struct_dt_elem_i([ 26,61,91 ],3,basedon,8).
+struct_dt_elem_i([ 26,61,91 ],3,length,1000).
+struct_dt_elem_i([ 26,61,91 ],3,decimals,0).
+struct_dt_elem_i([ 26,61,91 ],3,type,[ 13,1000,0 ]).
+struct_dt_elem_i([ 26,61,91 ],3,pic,'').
+struct_dt_elem_i([ 26,61,91 ],3,collection,'False').
+struct_dt_elem_i([ 26,61,91 ],3,'ExternalName','Link').
+struct_dt_elem_i([ 26,61,91 ],3,'ExternalNamespace',parques).
+struct_dt_elem_i([ 26,61,91 ],3,'XmlType','Element').
+struct_dt_elem_i([ 26,61,91 ],3,'XmlName','').
+struct_dt_elem_i([ 26,61,91 ],3,'XmlNamespace','').
+struct_dt_elem_i([ 26,61,91 ],3,soaptype,'').
+struct_dt_elem_i([ 26,61,91 ],3,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,61,91 ],3,'JsonName','').
+struct_dt_elem_i([ 26,61,91 ],3,'JsonInclude',idJsonEmpty).
 struct_dt_elem_i([ 26,58,84 ],1,name,'Id').
 struct_dt_elem_i([ 26,58,84 ],1,camelname,id).
 struct_dt_elem_i([ 26,58,84 ],1,basedon,93).
@@ -462,6 +550,7 @@ struct_dt_elem_i([ 26,58,84 ],7,soaptype,'').
 struct_dt_elem_i([ 26,58,84 ],7,'XmlInclude',idXmlIncludeAlways).
 struct_dt_elem_i([ 26,58,84 ],7,'JsonName','').
 struct_dt_elem_i([ 26,58,84 ],7,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,61,91 ],3,pic,'99/99/99 99:99').
 struct_dt_elem_i([ 26,58,84 ],4,pic,'99/99/99 99:99').
 struct_dt_elem_i([ 26,58,85 ],3,pic,'99/99/99 99:99').
 struct_dt_elem_i([ 26,58,86 ],3,pic,'99/99/99 99:99').
@@ -471,8 +560,10 @@ struct_dt_elem_i([ 26,58,86 ],3,pic,'99/99/99 99:99').
  
  
  
+pgm_parm_i(proc,14,'GENERAL\UI\LISTPROGRAMS',[ [ o(objectcollection('General\UI\ProgramNames.ProgramName')),0,0,0 ] ],[ [ 'ProgramNames',out,[] ] ]).
  
 pgm_callprotocol_i(mnproc,1,'GENERAL\UI\SIDEBARITEMSDP','INTERNAL','').
+pgm_callprotocol_i(proc,14,'GENERAL\UI\LISTPROGRAMS','INTERNAL','Unsecure').
  
  
  

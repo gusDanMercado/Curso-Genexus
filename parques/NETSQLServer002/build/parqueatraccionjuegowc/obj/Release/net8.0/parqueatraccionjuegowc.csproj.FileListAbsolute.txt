@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\parqueatraccionjuegowc\bin\Release\net8.0\parqueatraccionjuegowc.dll
+C:\KBs\parques\NETSQLServer002\build\parqueatraccionjuegowc\obj\Release\net8.0\parqueatraccionjuegowc.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\parqueatraccionjuegowc\obj\Release\net8.0\parqueatraccionjuegowc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\parqueatraccionjuegowc\obj\Release\net8.0\parqueatraccionjuegowc.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\parqueatraccionjuegowc\obj\Release\net8.0\parqueatraccionjuegowc.dll
+C:\KBs\parques\NETSQLServer002\build\parqueatraccionjuegowc\obj\Release\net8.0\refint\parqueatraccionjuegowc.dll
+C:\KBs\parques\NETSQLServer002\build\parqueatraccionjuegowc\obj\Release\net8.0\ref\parqueatraccionjuegowc.dll

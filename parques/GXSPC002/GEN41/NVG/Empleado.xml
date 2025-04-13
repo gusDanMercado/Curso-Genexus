@@ -16,7 +16,17 @@
 <GenId>41</GenId>
 <GenName>Default (.NET)</GenName></Generator>
 <FormClass>HTML</FormClass>
-<Parameters></Parameters>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Empleadoid</VarId>
+<VarName>&amp;EmpleadoId</VarName></Variable></Parameter></Parameters>
 <Levels>
 <Level>
 <LevelType>Trn</LevelType>
@@ -201,24 +211,5 @@
 <AttriId>13</AttriId>
 <AttriName>parqueAtraccionId</AttriName>
 <Description>parque Atraccion Id</Description></Attribute></OutputParameters>
-<PromptType>User</PromptType></Prompt>
-<Prompt>
-<Table>
-<TableId>1</TableId>
-<TableName>Empleado</TableName>
-<Description>Empleado</Description></Table>
-<Object>
-<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
-<ObjCls>13</ObjCls>
-<ObjId>3</ObjId>
-<ObjName>Gx0010</ObjName>
-<ObjPgmName>Gx0010</ObjPgmName>
-<ObjClsName>Web Panel</ObjClsName></Object>
-<InputParameters></InputParameters>
-<OutputParameters>
-<Attribute>
-<AttriId>1</AttriId>
-<AttriName>EmpleadoId</AttriName>
-<Description>Empleado Id</Description></Attribute></OutputParameters>
 <PromptType>User</PromptType></Prompt></Prompts>
 <Suggests></Suggests></ObjectSpec>

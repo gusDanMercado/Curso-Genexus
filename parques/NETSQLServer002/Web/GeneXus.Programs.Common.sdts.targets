@@ -5,6 +5,10 @@
 </ItemGroup>
 
 <ItemGroup>
+ 	<Compile Include="$(WebDirectory)\general\ui\type_SdtProgramNames_ProgramName.cs" />
+ 	<Compile Include="$(WebDirectory)\general\ui\type_SdtTransactionContext.cs" />
+ 	<Compile Include="$(WebDirectory)\general\ui\type_SdtTransactionContext_Attribute.cs" />
+
 </ItemGroup>
 
 </Project>

@@ -34,7 +34,7 @@ namespace GeneXus.Programs {
       {
          initialize_properties( ) ;
          entryPointCalled = false;
-         gxfirstwebparm = GetNextPar( );
+         gxfirstwebparm = GetFirstPar( "Mode");
          gxfirstwebparm_bkp = gxfirstwebparm;
          gxfirstwebparm = DecryptAjaxCall( gxfirstwebparm);
          toggleJsOutput = isJsOutputEnabled( );
@@ -53,7 +53,7 @@ namespace GeneXus.Programs {
             dyncall( GetNextPar( )) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_9") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_14") == 0 )
          {
             A13parqueAtraccionId = (short)(Math.Round(NumberUtil.Val( GetPar( "parqueAtraccionId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
@@ -63,7 +63,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_9( A13parqueAtraccionId) ;
+            gxLoad_14( A13parqueAtraccionId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -74,7 +74,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxfirstwebparm = GetNextPar( );
+            gxfirstwebparm = GetFirstPar( "Mode");
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxfullajaxEvt") == 0 )
          {
@@ -83,7 +83,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxfirstwebparm = GetNextPar( );
+            gxfirstwebparm = GetFirstPar( "Mode");
          }
          else
          {
@@ -93,6 +93,17 @@ namespace GeneXus.Programs {
                return  ;
             }
             gxfirstwebparm = gxfirstwebparm_bkp;
+         }
+         if ( ! entryPointCalled && ! ( isAjaxCallMode( ) || isFullAjaxMode( ) ) )
+         {
+            Gx_mode = gxfirstwebparm;
+            AssignAttri("", false, "Gx_mode", Gx_mode);
+            if ( StringUtil.StrCmp(gxfirstwebparm, "viewer") != 0 )
+            {
+               AV7EmpleadoId = (short)(Math.Round(NumberUtil.Val( GetPar( "EmpleadoId"), "."), 18, MidpointRounding.ToEven));
+               AssignAttri("", false, "AV7EmpleadoId", StringUtil.LTrimStr( (decimal)(AV7EmpleadoId), 4, 0));
+               GxWebStd.gx_hidden_field( context, "gxhash_vEMPLEADOID", GetSecureSignedToken( "", context.localUtil.Format( (decimal)(AV7EmpleadoId), "ZZZ9"), context));
+            }
          }
          if ( toggleJsOutput )
          {
@@ -135,7 +146,7 @@ namespace GeneXus.Programs {
          }
          if ( ! context.isAjaxRequest( ) )
          {
-            GX_FocusControl = edtEmpleadoId_Internalname;
+            GX_FocusControl = edtEmpleadoNombre_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
          wbErr = false;
@@ -162,8 +173,11 @@ namespace GeneXus.Programs {
          dsDefault = context.GetDataStore("Default");
       }
 
-      public void execute( )
+      public void execute( string aP0_Gx_mode ,
+                           short aP1_EmpleadoId )
       {
+         this.Gx_mode = aP0_Gx_mode;
+         this.AV7EmpleadoId = aP1_EmpleadoId;
          ExecuteImpl();
       }
 
@@ -288,35 +302,35 @@ namespace GeneXus.Programs {
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 21,'',false,'',0)\"";
          ClassString = "Button button-auxiliary ico__arrow-first";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_first_Internalname, "", "", bttBtn_first_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_first_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"EFIRST."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_first_Internalname, "", "", bttBtn_first_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_first_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"EFIRST."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 23,'',false,'',0)\"";
          ClassString = "Button button-auxiliary ico__arrow-prev";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_previous_Internalname, "", "", bttBtn_previous_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_previous_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"EPREVIOUS."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_previous_Internalname, "", "", bttBtn_previous_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_previous_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"EPREVIOUS."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 25,'',false,'',0)\"";
          ClassString = "Button button-auxiliary ico__arrow-next";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_next_Internalname, "", "", bttBtn_next_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_next_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ENEXT."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_next_Internalname, "", "", bttBtn_next_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_next_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"ENEXT."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 27,'',false,'',0)\"";
          ClassString = "Button button-auxiliary ico__arrow-last";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_last_Internalname, "", "", bttBtn_last_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_last_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ELAST."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_last_Internalname, "", "", bttBtn_last_Jsonclick, 5, "", "", StyleString, ClassString, bttBtn_last_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"ELAST."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 29,'',false,'',0)\"";
          ClassString = "Button button-secondary";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_select_Internalname, "", "Seleccionar", bttBtn_select_Jsonclick, 4, "Seleccionar", "", StyleString, ClassString, bttBtn_select_Visible, 1, "standard", "'"+""+"'"+",false,"+"'"+"ESELECT."+"'", TempTags, "gx.popup.openPrompt('"+"gx0010.aspx"+"',["+"{Ctrl:gx.dom.el('"+"EMPLEADOID"+"'), id:'"+"EMPLEADOID"+"'"+",IOType:'out',isKey:true,isLastKey:true}"+"],"+"null"+","+"'', false"+","+"true"+");"+"return false;", 2, "HLP_Empleado.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_select_Internalname, "", "Seleccionar", bttBtn_select_Jsonclick, 5, "Seleccionar", "", StyleString, ClassString, bttBtn_select_Visible, 0, "standard", "'"+""+"'"+",false,"+"'"+"ESELECT."+"'", TempTags, "", 2, "HLP_Empleado.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -563,7 +577,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-sm-9 gx-attribute", "start", "top", "", "", "div");
          /* Single line edit */
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 94,'',false,'',0)\"";
-         GxWebStd.gx_single_line_edit( context, edtparqueAtraccionId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A13parqueAtraccionId), 4, 0, ",", "")), StringUtil.LTrim( ((edtparqueAtraccionId_Enabled!=0) ? context.localUtil.Format( (decimal)(A13parqueAtraccionId), "ZZZ9") : context.localUtil.Format( (decimal)(A13parqueAtraccionId), "ZZZ9"))), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,'.');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,'.');"+";gx.evt.onblur(this,94);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtparqueAtraccionId_Jsonclick, 0, "Attribute", "", "", "", "", 1, edtparqueAtraccionId_Enabled, 0, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Empleado.htm");
+         GxWebStd.gx_single_line_edit( context, edtparqueAtraccionId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A13parqueAtraccionId), 4, 0, ",", "")), StringUtil.LTrim( context.localUtil.Format( (decimal)(A13parqueAtraccionId), "ZZZ9")), " dir=\"ltr\" inputmode=\"numeric\" pattern=\"[0-9]*\""+TempTags+" onchange=\""+"gx.num.valid_integer( this,'.');"+";gx.evt.onchange(this, event)\" "+" onblur=\""+"gx.num.valid_integer( this,'.');"+";gx.evt.onblur(this,94);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtparqueAtraccionId_Jsonclick, 0, "Attribute", "", "", "", "", 1, edtparqueAtraccionId_Enabled, 1, "text", "1", 4, "chr", 1, "row", 4, 0, 0, 0, 0, -1, 0, true, "", "end", false, "", "HLP_Empleado.htm");
          /* Static images/pictures */
          ClassString = "gx-prompt Image" + " " + ((StringUtil.StrCmp(imgprompt_13_gximage, "")==0) ? "" : "GX_Image_"+imgprompt_13_gximage+"_Class");
          StyleString = "";
@@ -604,7 +618,7 @@ namespace GeneXus.Programs {
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 104,'',false,'',0)\"";
          ClassString = "Button button-primary";
          StyleString = "";
-         GxWebStd.gx_button_ctrl( context, bttBtn_enter_Internalname, "", "Confirmar", bttBtn_enter_Jsonclick, 5, "Confirmar", "", StyleString, ClassString, bttBtn_enter_Visible, bttBtn_enter_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EENTER."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
+         GxWebStd.gx_button_ctrl( context, bttBtn_enter_Internalname, "", bttBtn_enter_Caption, bttBtn_enter_Jsonclick, 5, bttBtn_enter_Tooltiptext, "", StyleString, ClassString, bttBtn_enter_Visible, bttBtn_enter_Enabled, "standard", "'"+""+"'"+",false,"+"'"+"EENTER."+"'", TempTags, "", context.GetButtonType( ), "HLP_Empleado.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "gx-button", "start", "top", "", "", "div");
@@ -651,182 +665,251 @@ namespace GeneXus.Programs {
 
       protected void standaloneStartupServer( )
       {
+         /* Execute Start event if defined. */
+         context.wbGlbDoneStart = 0;
+         /* Execute user event: Start */
+         E11012 ();
          context.wbGlbDoneStart = 1;
          assign_properties_default( ) ;
-         if ( StringUtil.StrCmp(context.GetRequestMethod( ), "POST") == 0 )
+         if ( AnyError == 0 )
          {
-            /* Read saved SDTs. */
-            /* Read saved values. */
-            Z1EmpleadoId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z1EmpleadoId"), ",", "."), 18, MidpointRounding.ToEven));
-            Z2EmpleadoNombre = cgiGet( "Z2EmpleadoNombre");
-            Z3EmpleadoApellido = cgiGet( "Z3EmpleadoApellido");
-            Z4EmpleadoDireccion = cgiGet( "Z4EmpleadoDireccion");
-            n4EmpleadoDireccion = (String.IsNullOrEmpty(StringUtil.RTrim( A4EmpleadoDireccion)) ? true : false);
-            Z5EmpleadoTelefono = cgiGet( "Z5EmpleadoTelefono");
-            n5EmpleadoTelefono = (String.IsNullOrEmpty(StringUtil.RTrim( A5EmpleadoTelefono)) ? true : false);
-            Z6EmpleadoEmail = cgiGet( "Z6EmpleadoEmail");
-            n6EmpleadoEmail = (String.IsNullOrEmpty(StringUtil.RTrim( A6EmpleadoEmail)) ? true : false);
-            Z7EmpleadoFch_Alta = context.localUtil.CToT( cgiGet( "Z7EmpleadoFch_Alta"), 0);
-            n7EmpleadoFch_Alta = ((DateTime.MinValue==A7EmpleadoFch_Alta) ? true : false);
-            Z8EmpleadoFcha_Mod = context.localUtil.CToT( cgiGet( "Z8EmpleadoFcha_Mod"), 0);
-            n8EmpleadoFcha_Mod = ((DateTime.MinValue==A8EmpleadoFcha_Mod) ? true : false);
-            Z9EmpleadoFch_Cad = context.localUtil.CToT( cgiGet( "Z9EmpleadoFch_Cad"), 0);
-            n9EmpleadoFch_Cad = ((DateTime.MinValue==A9EmpleadoFch_Cad) ? true : false);
-            Z10EmpleadoUsu_Alta = cgiGet( "Z10EmpleadoUsu_Alta");
-            n10EmpleadoUsu_Alta = (String.IsNullOrEmpty(StringUtil.RTrim( A10EmpleadoUsu_Alta)) ? true : false);
-            Z11EmpleadoUsu_Mod = cgiGet( "Z11EmpleadoUsu_Mod");
-            n11EmpleadoUsu_Mod = (String.IsNullOrEmpty(StringUtil.RTrim( A11EmpleadoUsu_Mod)) ? true : false);
-            Z12EmpleadoUso_Cad = cgiGet( "Z12EmpleadoUso_Cad");
-            n12EmpleadoUso_Cad = (String.IsNullOrEmpty(StringUtil.RTrim( A12EmpleadoUso_Cad)) ? true : false);
-            Z13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z13parqueAtraccionId"), ",", "."), 18, MidpointRounding.ToEven));
-            IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), ",", "."), 18, MidpointRounding.ToEven));
-            IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ",", "."), 18, MidpointRounding.ToEven));
-            Gx_mode = cgiGet( "Mode");
-            Gx_BScreen = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ",", "."), 18, MidpointRounding.ToEven));
-            /* Read variables values. */
-            if ( ( ( context.localUtil.CToN( cgiGet( edtEmpleadoId_Internalname), ",", ".") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtEmpleadoId_Internalname), ",", ".") > Convert.ToDecimal( 9999 )) ) )
+            if ( StringUtil.StrCmp(context.GetRequestMethod( ), "POST") == 0 )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "EMPLEADOID");
-               AnyError = 1;
-               GX_FocusControl = edtEmpleadoId_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               A1EmpleadoId = 0;
-               AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
-            }
-            else
-            {
+               /* Read saved SDTs. */
+               /* Read saved values. */
+               Z1EmpleadoId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z1EmpleadoId"), ",", "."), 18, MidpointRounding.ToEven));
+               Z2EmpleadoNombre = cgiGet( "Z2EmpleadoNombre");
+               Z3EmpleadoApellido = cgiGet( "Z3EmpleadoApellido");
+               Z4EmpleadoDireccion = cgiGet( "Z4EmpleadoDireccion");
+               n4EmpleadoDireccion = (String.IsNullOrEmpty(StringUtil.RTrim( A4EmpleadoDireccion)) ? true : false);
+               Z5EmpleadoTelefono = cgiGet( "Z5EmpleadoTelefono");
+               n5EmpleadoTelefono = (String.IsNullOrEmpty(StringUtil.RTrim( A5EmpleadoTelefono)) ? true : false);
+               Z6EmpleadoEmail = cgiGet( "Z6EmpleadoEmail");
+               n6EmpleadoEmail = (String.IsNullOrEmpty(StringUtil.RTrim( A6EmpleadoEmail)) ? true : false);
+               Z7EmpleadoFch_Alta = context.localUtil.CToT( cgiGet( "Z7EmpleadoFch_Alta"), 0);
+               n7EmpleadoFch_Alta = ((DateTime.MinValue==A7EmpleadoFch_Alta) ? true : false);
+               Z8EmpleadoFcha_Mod = context.localUtil.CToT( cgiGet( "Z8EmpleadoFcha_Mod"), 0);
+               n8EmpleadoFcha_Mod = ((DateTime.MinValue==A8EmpleadoFcha_Mod) ? true : false);
+               Z9EmpleadoFch_Cad = context.localUtil.CToT( cgiGet( "Z9EmpleadoFch_Cad"), 0);
+               n9EmpleadoFch_Cad = ((DateTime.MinValue==A9EmpleadoFch_Cad) ? true : false);
+               Z10EmpleadoUsu_Alta = cgiGet( "Z10EmpleadoUsu_Alta");
+               n10EmpleadoUsu_Alta = (String.IsNullOrEmpty(StringUtil.RTrim( A10EmpleadoUsu_Alta)) ? true : false);
+               Z11EmpleadoUsu_Mod = cgiGet( "Z11EmpleadoUsu_Mod");
+               n11EmpleadoUsu_Mod = (String.IsNullOrEmpty(StringUtil.RTrim( A11EmpleadoUsu_Mod)) ? true : false);
+               Z12EmpleadoUso_Cad = cgiGet( "Z12EmpleadoUso_Cad");
+               n12EmpleadoUso_Cad = (String.IsNullOrEmpty(StringUtil.RTrim( A12EmpleadoUso_Cad)) ? true : false);
+               Z13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z13parqueAtraccionId"), ",", "."), 18, MidpointRounding.ToEven));
+               IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), ",", "."), 18, MidpointRounding.ToEven));
+               IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ",", "."), 18, MidpointRounding.ToEven));
+               Gx_mode = cgiGet( "Mode");
+               N13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "N13parqueAtraccionId"), ",", "."), 18, MidpointRounding.ToEven));
+               AV7EmpleadoId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vEMPLEADOID"), ",", "."), 18, MidpointRounding.ToEven));
+               Gx_BScreen = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ",", "."), 18, MidpointRounding.ToEven));
+               AV11Insert_parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vINSERT_PARQUEATRACCIONID"), ",", "."), 18, MidpointRounding.ToEven));
+               AV13Pgmname = cgiGet( "vPGMNAME");
+               /* Read variables values. */
                A1EmpleadoId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtEmpleadoId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
                AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
-            }
-            A2EmpleadoNombre = cgiGet( edtEmpleadoNombre_Internalname);
-            AssignAttri("", false, "A2EmpleadoNombre", A2EmpleadoNombre);
-            A3EmpleadoApellido = cgiGet( edtEmpleadoApellido_Internalname);
-            AssignAttri("", false, "A3EmpleadoApellido", A3EmpleadoApellido);
-            A4EmpleadoDireccion = cgiGet( edtEmpleadoDireccion_Internalname);
-            n4EmpleadoDireccion = false;
-            AssignAttri("", false, "A4EmpleadoDireccion", A4EmpleadoDireccion);
-            n4EmpleadoDireccion = (String.IsNullOrEmpty(StringUtil.RTrim( A4EmpleadoDireccion)) ? true : false);
-            A5EmpleadoTelefono = cgiGet( edtEmpleadoTelefono_Internalname);
-            n5EmpleadoTelefono = false;
-            AssignAttri("", false, "A5EmpleadoTelefono", A5EmpleadoTelefono);
-            n5EmpleadoTelefono = (String.IsNullOrEmpty(StringUtil.RTrim( A5EmpleadoTelefono)) ? true : false);
-            A6EmpleadoEmail = cgiGet( edtEmpleadoEmail_Internalname);
-            n6EmpleadoEmail = false;
-            AssignAttri("", false, "A6EmpleadoEmail", A6EmpleadoEmail);
-            n6EmpleadoEmail = (String.IsNullOrEmpty(StringUtil.RTrim( A6EmpleadoEmail)) ? true : false);
-            if ( context.localUtil.VCDateTime( cgiGet( edtEmpleadoFch_Alta_Internalname), 2, 0) == 0 )
-            {
-               GX_msglist.addItem(context.GetMessage( "GXM_baddatetime", new   object[]  {"Empleado Fch_Alta"}), 1, "EMPLEADOFCH_ALTA");
-               AnyError = 1;
-               GX_FocusControl = edtEmpleadoFch_Alta_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               A7EmpleadoFch_Alta = (DateTime)(DateTime.MinValue);
-               n7EmpleadoFch_Alta = false;
-               AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
-            }
-            else
-            {
-               A7EmpleadoFch_Alta = context.localUtil.CToT( cgiGet( edtEmpleadoFch_Alta_Internalname));
-               n7EmpleadoFch_Alta = false;
-               AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
-            }
-            n7EmpleadoFch_Alta = ((DateTime.MinValue==A7EmpleadoFch_Alta) ? true : false);
-            if ( context.localUtil.VCDateTime( cgiGet( edtEmpleadoFcha_Mod_Internalname), 2, 0) == 0 )
-            {
-               GX_msglist.addItem(context.GetMessage( "GXM_baddatetime", new   object[]  {"Empleado Fcha_Mod"}), 1, "EMPLEADOFCHA_MOD");
-               AnyError = 1;
-               GX_FocusControl = edtEmpleadoFcha_Mod_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               A8EmpleadoFcha_Mod = (DateTime)(DateTime.MinValue);
-               n8EmpleadoFcha_Mod = false;
-               AssignAttri("", false, "A8EmpleadoFcha_Mod", context.localUtil.TToC( A8EmpleadoFcha_Mod, 8, 5, 0, 3, "/", ":", " "));
-            }
-            else
-            {
-               A8EmpleadoFcha_Mod = context.localUtil.CToT( cgiGet( edtEmpleadoFcha_Mod_Internalname));
-               n8EmpleadoFcha_Mod = false;
-               AssignAttri("", false, "A8EmpleadoFcha_Mod", context.localUtil.TToC( A8EmpleadoFcha_Mod, 8, 5, 0, 3, "/", ":", " "));
-            }
-            n8EmpleadoFcha_Mod = ((DateTime.MinValue==A8EmpleadoFcha_Mod) ? true : false);
-            if ( context.localUtil.VCDateTime( cgiGet( edtEmpleadoFch_Cad_Internalname), 2, 0) == 0 )
-            {
-               GX_msglist.addItem(context.GetMessage( "GXM_baddatetime", new   object[]  {"Empleado Fch_Cad"}), 1, "EMPLEADOFCH_CAD");
-               AnyError = 1;
-               GX_FocusControl = edtEmpleadoFch_Cad_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               A9EmpleadoFch_Cad = (DateTime)(DateTime.MinValue);
-               n9EmpleadoFch_Cad = false;
-               AssignAttri("", false, "A9EmpleadoFch_Cad", context.localUtil.TToC( A9EmpleadoFch_Cad, 8, 5, 0, 3, "/", ":", " "));
-            }
-            else
-            {
-               A9EmpleadoFch_Cad = context.localUtil.CToT( cgiGet( edtEmpleadoFch_Cad_Internalname));
-               n9EmpleadoFch_Cad = false;
-               AssignAttri("", false, "A9EmpleadoFch_Cad", context.localUtil.TToC( A9EmpleadoFch_Cad, 8, 5, 0, 3, "/", ":", " "));
-            }
-            n9EmpleadoFch_Cad = ((DateTime.MinValue==A9EmpleadoFch_Cad) ? true : false);
-            A10EmpleadoUsu_Alta = cgiGet( edtEmpleadoUsu_Alta_Internalname);
-            n10EmpleadoUsu_Alta = false;
-            AssignAttri("", false, "A10EmpleadoUsu_Alta", A10EmpleadoUsu_Alta);
-            n10EmpleadoUsu_Alta = (String.IsNullOrEmpty(StringUtil.RTrim( A10EmpleadoUsu_Alta)) ? true : false);
-            A11EmpleadoUsu_Mod = cgiGet( edtEmpleadoUsu_Mod_Internalname);
-            n11EmpleadoUsu_Mod = false;
-            AssignAttri("", false, "A11EmpleadoUsu_Mod", A11EmpleadoUsu_Mod);
-            n11EmpleadoUsu_Mod = (String.IsNullOrEmpty(StringUtil.RTrim( A11EmpleadoUsu_Mod)) ? true : false);
-            A12EmpleadoUso_Cad = cgiGet( edtEmpleadoUso_Cad_Internalname);
-            n12EmpleadoUso_Cad = false;
-            AssignAttri("", false, "A12EmpleadoUso_Cad", A12EmpleadoUso_Cad);
-            n12EmpleadoUso_Cad = (String.IsNullOrEmpty(StringUtil.RTrim( A12EmpleadoUso_Cad)) ? true : false);
-            if ( ( ( context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", ".") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", ".") > Convert.ToDecimal( 9999 )) ) )
-            {
-               GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "PARQUEATRACCIONID");
-               AnyError = 1;
-               GX_FocusControl = edtparqueAtraccionId_Internalname;
-               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-               wbErr = true;
-               A13parqueAtraccionId = 0;
-               AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
-            }
-            else
-            {
-               A13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
-               AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
-            }
-            A14parqueAtraccionNombre = cgiGet( edtparqueAtraccionNombre_Internalname);
-            AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
-            /* Read subfile selected row values. */
-            /* Read hidden variables. */
-            GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
-            standaloneNotModal( ) ;
-         }
-         else
-         {
-            standaloneNotModal( ) ;
-            if ( StringUtil.StrCmp(gxfirstwebparm, "viewer") == 0 )
-            {
-               Gx_mode = "DSP";
-               AssignAttri("", false, "Gx_mode", Gx_mode);
-               A1EmpleadoId = (short)(Math.Round(NumberUtil.Val( GetPar( "EmpleadoId"), "."), 18, MidpointRounding.ToEven));
-               AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
-               getEqualNoModal( ) ;
-               if ( IsIns( )  && (0==A1EmpleadoId) && ( Gx_BScreen == 0 ) )
+               A2EmpleadoNombre = cgiGet( edtEmpleadoNombre_Internalname);
+               AssignAttri("", false, "A2EmpleadoNombre", A2EmpleadoNombre);
+               A3EmpleadoApellido = cgiGet( edtEmpleadoApellido_Internalname);
+               AssignAttri("", false, "A3EmpleadoApellido", A3EmpleadoApellido);
+               A4EmpleadoDireccion = cgiGet( edtEmpleadoDireccion_Internalname);
+               n4EmpleadoDireccion = false;
+               AssignAttri("", false, "A4EmpleadoDireccion", A4EmpleadoDireccion);
+               n4EmpleadoDireccion = (String.IsNullOrEmpty(StringUtil.RTrim( A4EmpleadoDireccion)) ? true : false);
+               A5EmpleadoTelefono = cgiGet( edtEmpleadoTelefono_Internalname);
+               n5EmpleadoTelefono = false;
+               AssignAttri("", false, "A5EmpleadoTelefono", A5EmpleadoTelefono);
+               n5EmpleadoTelefono = (String.IsNullOrEmpty(StringUtil.RTrim( A5EmpleadoTelefono)) ? true : false);
+               A6EmpleadoEmail = cgiGet( edtEmpleadoEmail_Internalname);
+               n6EmpleadoEmail = false;
+               AssignAttri("", false, "A6EmpleadoEmail", A6EmpleadoEmail);
+               n6EmpleadoEmail = (String.IsNullOrEmpty(StringUtil.RTrim( A6EmpleadoEmail)) ? true : false);
+               if ( context.localUtil.VCDateTime( cgiGet( edtEmpleadoFch_Alta_Internalname), 2, 0) == 0 )
                {
-                  A1EmpleadoId = 1;
-                  AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+                  GX_msglist.addItem(context.GetMessage( "GXM_baddatetime", new   object[]  {"Empleado Fch_Alta"}), 1, "EMPLEADOFCH_ALTA");
+                  AnyError = 1;
+                  GX_FocusControl = edtEmpleadoFch_Alta_Internalname;
+                  AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                  wbErr = true;
+                  A7EmpleadoFch_Alta = (DateTime)(DateTime.MinValue);
+                  n7EmpleadoFch_Alta = false;
+                  AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
                }
-               Gx_mode = "DSP";
-               AssignAttri("", false, "Gx_mode", Gx_mode);
-               disable_std_buttons_dsp( ) ;
-               standaloneModal( ) ;
+               else
+               {
+                  A7EmpleadoFch_Alta = context.localUtil.CToT( cgiGet( edtEmpleadoFch_Alta_Internalname));
+                  n7EmpleadoFch_Alta = false;
+                  AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
+               }
+               n7EmpleadoFch_Alta = ((DateTime.MinValue==A7EmpleadoFch_Alta) ? true : false);
+               if ( context.localUtil.VCDateTime( cgiGet( edtEmpleadoFcha_Mod_Internalname), 2, 0) == 0 )
+               {
+                  GX_msglist.addItem(context.GetMessage( "GXM_baddatetime", new   object[]  {"Empleado Fcha_Mod"}), 1, "EMPLEADOFCHA_MOD");
+                  AnyError = 1;
+                  GX_FocusControl = edtEmpleadoFcha_Mod_Internalname;
+                  AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                  wbErr = true;
+                  A8EmpleadoFcha_Mod = (DateTime)(DateTime.MinValue);
+                  n8EmpleadoFcha_Mod = false;
+                  AssignAttri("", false, "A8EmpleadoFcha_Mod", context.localUtil.TToC( A8EmpleadoFcha_Mod, 8, 5, 0, 3, "/", ":", " "));
+               }
+               else
+               {
+                  A8EmpleadoFcha_Mod = context.localUtil.CToT( cgiGet( edtEmpleadoFcha_Mod_Internalname));
+                  n8EmpleadoFcha_Mod = false;
+                  AssignAttri("", false, "A8EmpleadoFcha_Mod", context.localUtil.TToC( A8EmpleadoFcha_Mod, 8, 5, 0, 3, "/", ":", " "));
+               }
+               n8EmpleadoFcha_Mod = ((DateTime.MinValue==A8EmpleadoFcha_Mod) ? true : false);
+               if ( context.localUtil.VCDateTime( cgiGet( edtEmpleadoFch_Cad_Internalname), 2, 0) == 0 )
+               {
+                  GX_msglist.addItem(context.GetMessage( "GXM_baddatetime", new   object[]  {"Empleado Fch_Cad"}), 1, "EMPLEADOFCH_CAD");
+                  AnyError = 1;
+                  GX_FocusControl = edtEmpleadoFch_Cad_Internalname;
+                  AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                  wbErr = true;
+                  A9EmpleadoFch_Cad = (DateTime)(DateTime.MinValue);
+                  n9EmpleadoFch_Cad = false;
+                  AssignAttri("", false, "A9EmpleadoFch_Cad", context.localUtil.TToC( A9EmpleadoFch_Cad, 8, 5, 0, 3, "/", ":", " "));
+               }
+               else
+               {
+                  A9EmpleadoFch_Cad = context.localUtil.CToT( cgiGet( edtEmpleadoFch_Cad_Internalname));
+                  n9EmpleadoFch_Cad = false;
+                  AssignAttri("", false, "A9EmpleadoFch_Cad", context.localUtil.TToC( A9EmpleadoFch_Cad, 8, 5, 0, 3, "/", ":", " "));
+               }
+               n9EmpleadoFch_Cad = ((DateTime.MinValue==A9EmpleadoFch_Cad) ? true : false);
+               A10EmpleadoUsu_Alta = cgiGet( edtEmpleadoUsu_Alta_Internalname);
+               n10EmpleadoUsu_Alta = false;
+               AssignAttri("", false, "A10EmpleadoUsu_Alta", A10EmpleadoUsu_Alta);
+               n10EmpleadoUsu_Alta = (String.IsNullOrEmpty(StringUtil.RTrim( A10EmpleadoUsu_Alta)) ? true : false);
+               A11EmpleadoUsu_Mod = cgiGet( edtEmpleadoUsu_Mod_Internalname);
+               n11EmpleadoUsu_Mod = false;
+               AssignAttri("", false, "A11EmpleadoUsu_Mod", A11EmpleadoUsu_Mod);
+               n11EmpleadoUsu_Mod = (String.IsNullOrEmpty(StringUtil.RTrim( A11EmpleadoUsu_Mod)) ? true : false);
+               A12EmpleadoUso_Cad = cgiGet( edtEmpleadoUso_Cad_Internalname);
+               n12EmpleadoUso_Cad = false;
+               AssignAttri("", false, "A12EmpleadoUso_Cad", A12EmpleadoUso_Cad);
+               n12EmpleadoUso_Cad = (String.IsNullOrEmpty(StringUtil.RTrim( A12EmpleadoUso_Cad)) ? true : false);
+               if ( ( ( context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", ".") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", ".") > Convert.ToDecimal( 9999 )) ) )
+               {
+                  GX_msglist.addItem(context.GetMessage( "GXM_badnum", ""), 1, "PARQUEATRACCIONID");
+                  AnyError = 1;
+                  GX_FocusControl = edtparqueAtraccionId_Internalname;
+                  AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                  wbErr = true;
+                  A13parqueAtraccionId = 0;
+                  AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
+               }
+               else
+               {
+                  A13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
+                  AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
+               }
+               A14parqueAtraccionNombre = cgiGet( edtparqueAtraccionNombre_Internalname);
+               AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
+               /* Read subfile selected row values. */
+               /* Read hidden variables. */
+               GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
+               forbiddenHiddens = new GXProperties();
+               forbiddenHiddens.Add("hshsalt", "hsh"+"Empleado");
+               A1EmpleadoId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtEmpleadoId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
+               AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+               forbiddenHiddens.Add("EmpleadoId", context.localUtil.Format( (decimal)(A1EmpleadoId), "ZZZ9"));
+               forbiddenHiddens.Add("Gx_mode", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")));
+               hsh = cgiGet( "hsh");
+               if ( ( ! ( ( A1EmpleadoId != Z1EmpleadoId ) ) || ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) ) && ! GXUtil.CheckEncryptedHash( forbiddenHiddens.ToString(), hsh, GXKey) )
+               {
+                  GXUtil.WriteLogError("empleado:[ SecurityCheckFailed (403 Forbidden) value for]"+forbiddenHiddens.ToJSonString());
+                  GxWebError = 1;
+                  context.HttpContext.Response.StatusCode = 403;
+                  context.WriteHtmlText( "<title>403 Forbidden</title>") ;
+                  context.WriteHtmlText( "<h1>403 Forbidden</h1>") ;
+                  context.WriteHtmlText( "<p /><hr />") ;
+                  GXUtil.WriteLog("send_http_error_code " + 403.ToString());
+                  AnyError = 1;
+                  return  ;
+               }
+               standaloneNotModal( ) ;
             }
             else
             {
-               getEqualNoModal( ) ;
-               standaloneModal( ) ;
+               standaloneNotModal( ) ;
+               if ( StringUtil.StrCmp(gxfirstwebparm, "viewer") == 0 )
+               {
+                  Gx_mode = "DSP";
+                  AssignAttri("", false, "Gx_mode", Gx_mode);
+                  A1EmpleadoId = (short)(Math.Round(NumberUtil.Val( GetPar( "EmpleadoId"), "."), 18, MidpointRounding.ToEven));
+                  AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+                  getEqualNoModal( ) ;
+                  if ( ! (0==AV7EmpleadoId) )
+                  {
+                     A1EmpleadoId = AV7EmpleadoId;
+                     AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+                  }
+                  else
+                  {
+                     if ( IsIns( )  && (0==A1EmpleadoId) && ( Gx_BScreen == 0 ) )
+                     {
+                        A1EmpleadoId = 1;
+                        AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+                     }
+                  }
+                  Gx_mode = "DSP";
+                  AssignAttri("", false, "Gx_mode", Gx_mode);
+                  disable_std_buttons( ) ;
+                  standaloneModal( ) ;
+               }
+               else
+               {
+                  if ( IsDsp( ) )
+                  {
+                     sMode1 = Gx_mode;
+                     Gx_mode = "UPD";
+                     AssignAttri("", false, "Gx_mode", Gx_mode);
+                     if ( ! (0==AV7EmpleadoId) )
+                     {
+                        A1EmpleadoId = AV7EmpleadoId;
+                        AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+                     }
+                     else
+                     {
+                        if ( IsIns( )  && (0==A1EmpleadoId) && ( Gx_BScreen == 0 ) )
+                        {
+                           A1EmpleadoId = 1;
+                           AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+                        }
+                     }
+                     Gx_mode = sMode1;
+                     AssignAttri("", false, "Gx_mode", Gx_mode);
+                  }
+                  standaloneModal( ) ;
+                  if ( ! IsIns( ) )
+                  {
+                     getByPrimaryKey( ) ;
+                     if ( RcdFound1 == 1 )
+                     {
+                        if ( IsDlt( ) )
+                        {
+                           /* Confirm record */
+                           CONFIRM_010( ) ;
+                           if ( AnyError == 0 )
+                           {
+                              GX_FocusControl = bttBtn_enter_Internalname;
+                              AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                           }
+                        }
+                     }
+                     else
+                     {
+                        GX_msglist.addItem(context.GetMessage( "GXM_noinsert", ""), 1, "EMPLEADOID");
+                        AnyError = 1;
+                        GX_FocusControl = edtEmpleadoId_Internalname;
+                        AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+                     }
+                  }
+               }
             }
          }
       }
@@ -851,46 +934,28 @@ namespace GeneXus.Programs {
                      if ( StringUtil.StrCmp(sEvtType, ".") == 0 )
                      {
                         sEvt = StringUtil.Left( sEvt, (short)(StringUtil.Len( sEvt)-1));
-                        if ( StringUtil.StrCmp(sEvt, "ENTER") == 0 )
+                        if ( StringUtil.StrCmp(sEvt, "START") == 0 )
                         {
                            context.wbHandled = 1;
-                           btn_enter( ) ;
+                           dynload_actions( ) ;
+                           /* Execute user event: Start */
+                           E11012 ();
+                        }
+                        else if ( StringUtil.StrCmp(sEvt, "AFTER TRN") == 0 )
+                        {
+                           context.wbHandled = 1;
+                           dynload_actions( ) ;
+                           /* Execute user event: After Trn */
+                           E12012 ();
+                        }
+                        else if ( StringUtil.StrCmp(sEvt, "ENTER") == 0 )
+                        {
+                           context.wbHandled = 1;
+                           if ( ! IsDsp( ) )
+                           {
+                              btn_enter( ) ;
+                           }
                            /* No code required for Cancel button. It is implemented as the Reset button. */
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "FIRST") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_first( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "PREVIOUS") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_previous( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "NEXT") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_next( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "LAST") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_last( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "SELECT") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_select( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "DELETE") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           btn_delete( ) ;
-                        }
-                        else if ( StringUtil.StrCmp(sEvt, "LSCR") == 0 )
-                        {
-                           context.wbHandled = 1;
-                           AfterKeyLoadScreen( ) ;
                         }
                      }
                      else
@@ -911,6 +976,8 @@ namespace GeneXus.Programs {
             {
                GX_msglist.addItem(endTrnMsgTxt, endTrnMsgCod, 0, "", true);
             }
+            /* Execute user event: After Trn */
+            E12012 ();
             trnEnded = 0;
             standaloneNotModal( ) ;
             standaloneModal( ) ;
@@ -937,15 +1004,6 @@ namespace GeneXus.Programs {
 
       protected void disable_std_buttons( )
       {
-         if ( IsIns( ) )
-         {
-            bttBtn_delete_Enabled = 0;
-            AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
-         }
-      }
-
-      protected void disable_std_buttons_dsp( )
-      {
          bttBtn_delete_Visible = 0;
          AssignProp("", false, bttBtn_delete_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Visible), 5, 0), true);
          bttBtn_first_Visible = 0;
@@ -958,14 +1016,17 @@ namespace GeneXus.Programs {
          AssignProp("", false, bttBtn_last_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_last_Visible), 5, 0), true);
          bttBtn_select_Visible = 0;
          AssignProp("", false, bttBtn_select_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_select_Visible), 5, 0), true);
-         bttBtn_delete_Visible = 0;
-         AssignProp("", false, bttBtn_delete_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Visible), 5, 0), true);
-         if ( IsDsp( ) )
+         if ( IsDsp( ) || IsDlt( ) )
          {
-            bttBtn_enter_Visible = 0;
-            AssignProp("", false, bttBtn_enter_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Visible), 5, 0), true);
+            bttBtn_delete_Visible = 0;
+            AssignProp("", false, bttBtn_delete_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Visible), 5, 0), true);
+            if ( IsDsp( ) )
+            {
+               bttBtn_enter_Visible = 0;
+               AssignProp("", false, bttBtn_enter_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Visible), 5, 0), true);
+            }
+            DisableAttributes011( ) ;
          }
-         DisableAttributes011( ) ;
       }
 
       protected void set_caption( )
@@ -983,13 +1044,89 @@ namespace GeneXus.Programs {
          }
       }
 
+      protected void CONFIRM_010( )
+      {
+         BeforeValidate011( ) ;
+         if ( AnyError == 0 )
+         {
+            if ( IsDlt( ) )
+            {
+               OnDeleteControls011( ) ;
+            }
+            else
+            {
+               CheckExtendedTable011( ) ;
+               CloseExtendedTableCursors011( ) ;
+            }
+         }
+         if ( AnyError == 0 )
+         {
+            IsConfirmed = 1;
+            AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
+         }
+      }
+
       protected void ResetCaption010( )
       {
       }
 
+      protected void E11012( )
+      {
+         /* Start Routine */
+         returnInSub = false;
+         if ( ! new GeneXus.Programs.general.security.isauthorized(context).executeUdp(  AV13Pgmname) )
+         {
+            CallWebObject(formatLink("general.security.notauthorized.aspx", new object[] {UrlEncode(StringUtil.RTrim(AV13Pgmname))}, new string[] {"GxObject"}) );
+            context.wjLocDisableFrm = 1;
+         }
+         AV9TrnContext.FromXml(AV10WebSession.Get("TrnContext"), null, "", "");
+         AV11Insert_parqueAtraccionId = 0;
+         AssignAttri("", false, "AV11Insert_parqueAtraccionId", StringUtil.LTrimStr( (decimal)(AV11Insert_parqueAtraccionId), 4, 0));
+         if ( ( StringUtil.StrCmp(AV9TrnContext.gxTpr_Transactionname, AV13Pgmname) == 0 ) && ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) )
+         {
+            AV14GXV1 = 1;
+            AssignAttri("", false, "AV14GXV1", StringUtil.LTrimStr( (decimal)(AV14GXV1), 8, 0));
+            while ( AV14GXV1 <= AV9TrnContext.gxTpr_Attributes.Count )
+            {
+               AV12TrnContextAtt = ((GeneXus.Programs.general.ui.SdtTransactionContext_Attribute)AV9TrnContext.gxTpr_Attributes.Item(AV14GXV1));
+               if ( StringUtil.StrCmp(AV12TrnContextAtt.gxTpr_Attributename, "parqueAtraccionId") == 0 )
+               {
+                  AV11Insert_parqueAtraccionId = (short)(Math.Round(NumberUtil.Val( AV12TrnContextAtt.gxTpr_Attributevalue, "."), 18, MidpointRounding.ToEven));
+                  AssignAttri("", false, "AV11Insert_parqueAtraccionId", StringUtil.LTrimStr( (decimal)(AV11Insert_parqueAtraccionId), 4, 0));
+               }
+               AV14GXV1 = (int)(AV14GXV1+1);
+               AssignAttri("", false, "AV14GXV1", StringUtil.LTrimStr( (decimal)(AV14GXV1), 8, 0));
+            }
+         }
+         if ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )
+         {
+            bttBtn_enter_Caption = "Eliminar";
+            AssignProp("", false, bttBtn_enter_Internalname, "Caption", bttBtn_enter_Caption, true);
+            bttBtn_enter_Tooltiptext = "Eliminar";
+            AssignProp("", false, bttBtn_enter_Internalname, "Tooltiptext", bttBtn_enter_Tooltiptext, true);
+         }
+      }
+
+      protected void E12012( )
+      {
+         /* After Trn Routine */
+         returnInSub = false;
+         if ( ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 ) && ! AV9TrnContext.gxTpr_Callerondelete )
+         {
+            CallWebObject(formatLink("wwempleado.aspx") );
+            context.wjLocDisableFrm = 1;
+         }
+         context.setWebReturnParms(new Object[] {});
+         context.setWebReturnParmsMetadata(new Object[] {});
+         context.wjLocDisableFrm = 1;
+         context.nUserReturn = 1;
+         returnInSub = true;
+         if (true) return;
+      }
+
       protected void ZM011( short GX_JID )
       {
-         if ( ( GX_JID == 8 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 13 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -1022,7 +1159,7 @@ namespace GeneXus.Programs {
                Z13parqueAtraccionId = A13parqueAtraccionId;
             }
          }
-         if ( GX_JID == -8 )
+         if ( GX_JID == -13 )
          {
             Z1EmpleadoId = A1EmpleadoId;
             Z2EmpleadoNombre = A2EmpleadoNombre;
@@ -1043,39 +1180,29 @@ namespace GeneXus.Programs {
 
       protected void standaloneNotModal( )
       {
+         edtEmpleadoId_Enabled = 0;
+         AssignProp("", false, edtEmpleadoId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtEmpleadoId_Enabled), 5, 0), true);
          Gx_BScreen = 0;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          imgprompt_13_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx0020.aspx"+"',["+"{Ctrl:gx.dom.el('"+"PARQUEATRACCIONID"+"'), id:'"+"PARQUEATRACCIONID"+"'"+",IOType:'out'}"+"],"+"null"+","+"'', false"+","+"false"+");");
+         edtEmpleadoId_Enabled = 0;
+         AssignProp("", false, edtEmpleadoId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtEmpleadoId_Enabled), 5, 0), true);
+         bttBtn_delete_Enabled = 0;
+         AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
+         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) && ! (0==AV11Insert_parqueAtraccionId) )
+         {
+            edtparqueAtraccionId_Enabled = 0;
+            AssignProp("", false, edtparqueAtraccionId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtparqueAtraccionId_Enabled), 5, 0), true);
+         }
+         else
+         {
+            edtparqueAtraccionId_Enabled = 1;
+            AssignProp("", false, edtparqueAtraccionId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtparqueAtraccionId_Enabled), 5, 0), true);
+         }
       }
 
       protected void standaloneModal( )
       {
-         if ( IsIns( )  && (0==A13parqueAtraccionId) && ( Gx_BScreen == 0 ) )
-         {
-            A13parqueAtraccionId = 1;
-            AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
-         }
-         if ( IsIns( )  && (DateTime.MinValue==A7EmpleadoFch_Alta) && ( Gx_BScreen == 0 ) )
-         {
-            A7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
-            n7EmpleadoFch_Alta = false;
-            AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
-         }
-         if ( IsIns( )  && (0==A1EmpleadoId) && ( Gx_BScreen == 0 ) )
-         {
-            A1EmpleadoId = 1;
-            AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
-         }
-         if ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )
-         {
-            bttBtn_delete_Enabled = 0;
-            AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
-         }
-         else
-         {
-            bttBtn_delete_Enabled = 1;
-            AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
-         }
          if ( StringUtil.StrCmp(Gx_mode, "DSP") == 0 )
          {
             bttBtn_enter_Enabled = 0;
@@ -1086,8 +1213,42 @@ namespace GeneXus.Programs {
             bttBtn_enter_Enabled = 1;
             AssignProp("", false, bttBtn_enter_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Enabled), 5, 0), true);
          }
+         if ( ! (0==AV7EmpleadoId) )
+         {
+            A1EmpleadoId = AV7EmpleadoId;
+            AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+         }
+         else
+         {
+            if ( IsIns( )  && (0==A1EmpleadoId) && ( Gx_BScreen == 0 ) )
+            {
+               A1EmpleadoId = 1;
+               AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
+            }
+         }
+         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) && ! (0==AV11Insert_parqueAtraccionId) )
+         {
+            A13parqueAtraccionId = AV11Insert_parqueAtraccionId;
+            AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
+         }
+         else
+         {
+            if ( IsIns( )  && (0==A13parqueAtraccionId) && ( Gx_BScreen == 0 ) )
+            {
+               A13parqueAtraccionId = 1;
+               AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
+            }
+         }
+         if ( IsIns( )  && (DateTime.MinValue==A7EmpleadoFch_Alta) && ( Gx_BScreen == 0 ) )
+         {
+            A7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
+            n7EmpleadoFch_Alta = false;
+            AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
+         }
          if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) && ( Gx_BScreen == 0 ) )
          {
+            AV13Pgmname = "Empleado";
+            AssignAttri("", false, "AV13Pgmname", AV13Pgmname);
             /* Using cursor T00014 */
             pr_default.execute(2, new Object[] {A13parqueAtraccionId});
             A14parqueAtraccionNombre = T00014_A14parqueAtraccionNombre[0];
@@ -1138,7 +1299,7 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
             A13parqueAtraccionId = T00015_A13parqueAtraccionId[0];
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
-            ZM011( -8) ;
+            ZM011( -13) ;
          }
          pr_default.close(3);
          OnLoadActions011( ) ;
@@ -1146,6 +1307,8 @@ namespace GeneXus.Programs {
 
       protected void OnLoadActions011( )
       {
+         AV13Pgmname = "Empleado";
+         AssignAttri("", false, "AV13Pgmname", AV13Pgmname);
       }
 
       protected void CheckExtendedTable011( )
@@ -1153,6 +1316,8 @@ namespace GeneXus.Programs {
          Gx_BScreen = 1;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal( ) ;
+         AV13Pgmname = "Empleado";
+         AssignAttri("", false, "AV13Pgmname", AV13Pgmname);
          if ( ! ( GxRegex.IsMatch(A6EmpleadoEmail,"^((\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)|(\\s*))$") || String.IsNullOrEmpty(StringUtil.RTrim( A6EmpleadoEmail)) ) )
          {
             GX_msglist.addItem("El valor de Empleado Email no coincide con el patrón especificado", "OutOfRange", 1, "EMPLEADOEMAIL");
@@ -1204,7 +1369,7 @@ namespace GeneXus.Programs {
       {
       }
 
-      protected void gxLoad_9( short A13parqueAtraccionId )
+      protected void gxLoad_14( short A13parqueAtraccionId )
       {
          /* Using cursor T00016 */
          pr_default.execute(4, new Object[] {A13parqueAtraccionId});
@@ -1251,7 +1416,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A1EmpleadoId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM011( 8) ;
+            ZM011( 13) ;
             RcdFound1 = 1;
             A1EmpleadoId = T00013_A1EmpleadoId[0];
             AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
@@ -1292,7 +1457,6 @@ namespace GeneXus.Programs {
             sMode1 = Gx_mode;
             Gx_mode = "DSP";
             AssignAttri("", false, "Gx_mode", Gx_mode);
-            standaloneModal( ) ;
             Load011( ) ;
             if ( AnyError == 1 )
             {
@@ -1321,13 +1485,9 @@ namespace GeneXus.Programs {
          GetKey011( ) ;
          if ( RcdFound1 == 0 )
          {
-            Gx_mode = "INS";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
          }
          else
          {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
          }
          getByPrimaryKey( ) ;
       }
@@ -1381,7 +1541,7 @@ namespace GeneXus.Programs {
          if ( IsIns( ) )
          {
             /* Insert record */
-            GX_FocusControl = edtEmpleadoId_Internalname;
+            GX_FocusControl = edtEmpleadoNombre_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
             Insert011( ) ;
             if ( AnyError == 1 )
@@ -1407,16 +1567,14 @@ namespace GeneXus.Programs {
                {
                   delete( ) ;
                   AfterTrn( ) ;
-                  GX_FocusControl = edtEmpleadoId_Internalname;
+                  GX_FocusControl = edtEmpleadoNombre_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                }
                else
                {
-                  Gx_mode = "UPD";
-                  AssignAttri("", false, "Gx_mode", Gx_mode);
                   /* Update record */
                   Update011( ) ;
-                  GX_FocusControl = edtEmpleadoId_Internalname;
+                  GX_FocusControl = edtEmpleadoNombre_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                }
             }
@@ -1424,10 +1582,8 @@ namespace GeneXus.Programs {
             {
                if ( A1EmpleadoId != Z1EmpleadoId )
                {
-                  Gx_mode = "INS";
-                  AssignAttri("", false, "Gx_mode", Gx_mode);
                   /* Insert record */
-                  GX_FocusControl = edtEmpleadoId_Internalname;
+                  GX_FocusControl = edtEmpleadoNombre_Internalname;
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                   Insert011( ) ;
                   if ( AnyError == 1 )
@@ -1447,10 +1603,8 @@ namespace GeneXus.Programs {
                   }
                   else
                   {
-                     Gx_mode = "INS";
-                     AssignAttri("", false, "Gx_mode", Gx_mode);
                      /* Insert record */
-                     GX_FocusControl = edtEmpleadoId_Internalname;
+                     GX_FocusControl = edtEmpleadoNombre_Internalname;
                      AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                      Insert011( ) ;
                      if ( AnyError == 1 )
@@ -1463,6 +1617,13 @@ namespace GeneXus.Programs {
             }
          }
          AfterTrn( ) ;
+         if ( IsIns( ) || IsUpd( ) || IsDlt( ) )
+         {
+            if ( AnyError == 0 )
+            {
+               context.nUserReturn = 1;
+            }
+         }
       }
 
       protected void btn_delete( )
@@ -1480,137 +1641,12 @@ namespace GeneXus.Programs {
          {
             delete( ) ;
             AfterTrn( ) ;
-            GX_FocusControl = edtEmpleadoId_Internalname;
+            GX_FocusControl = edtEmpleadoNombre_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
          if ( AnyError != 0 )
          {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
          }
-         else
-         {
-            getByPrimaryKey( ) ;
-         }
-         CloseCursors();
-      }
-
-      protected void btn_get( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         getEqualNoModal( ) ;
-         if ( RcdFound1 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_keynfound", ""), "PrimaryKeyNotFound", 1, "EMPLEADOID");
-            AnyError = 1;
-            GX_FocusControl = edtEmpleadoId_Internalname;
-            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         }
-         GX_FocusControl = edtEmpleadoNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_first( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         ScanStart011( ) ;
-         if ( RcdFound1 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
-         }
-         else
-         {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
-         }
-         GX_FocusControl = edtEmpleadoNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         ScanEnd011( ) ;
-         getByPrimaryKey( ) ;
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_previous( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         move_previous( ) ;
-         if ( RcdFound1 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
-         }
-         else
-         {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
-         }
-         GX_FocusControl = edtEmpleadoNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         getByPrimaryKey( ) ;
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_next( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         move_next( ) ;
-         if ( RcdFound1 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
-         }
-         else
-         {
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
-         }
-         GX_FocusControl = edtEmpleadoNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         getByPrimaryKey( ) ;
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_last( )
-      {
-         nKeyPressed = 2;
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         ScanStart011( ) ;
-         if ( RcdFound1 == 0 )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_norectobrow", ""), 0, "", true);
-         }
-         else
-         {
-            while ( RcdFound1 != 0 )
-            {
-               ScanNext011( ) ;
-            }
-            Gx_mode = "UPD";
-            AssignAttri("", false, "Gx_mode", Gx_mode);
-         }
-         GX_FocusControl = edtEmpleadoNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         ScanEnd011( ) ;
-         getByPrimaryKey( ) ;
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-      }
-
-      protected void btn_select( )
-      {
-         getEqualNoModal( ) ;
       }
 
       protected void CheckOptimisticConcurrency011( )
@@ -1746,10 +1782,13 @@ namespace GeneXus.Programs {
                         /* End of After( Insert) rules */
                         if ( AnyError == 0 )
                         {
-                           /* Save values for previous() function. */
-                           endTrnMsgTxt = context.GetMessage( "GXM_sucadded", "");
-                           endTrnMsgCod = "SuccessfullyAdded";
-                           ResetCaption010( ) ;
+                           if ( IsIns( ) || IsUpd( ) || IsDlt( ) )
+                           {
+                              if ( AnyError == 0 )
+                              {
+                                 context.nUserReturn = 1;
+                              }
+                           }
                         }
                      }
                   }
@@ -1803,10 +1842,13 @@ namespace GeneXus.Programs {
                         /* End of After( update) rules */
                         if ( AnyError == 0 )
                         {
-                           getByPrimaryKey( ) ;
-                           endTrnMsgTxt = context.GetMessage( "GXM_sucupdated", "");
-                           endTrnMsgCod = "SuccessfullyUpdated";
-                           ResetCaption010( ) ;
+                           if ( IsIns( ) || IsUpd( ) || IsDlt( ) )
+                           {
+                              if ( AnyError == 0 )
+                              {
+                                 context.nUserReturn = 1;
+                              }
+                           }
                         }
                      }
                      else
@@ -1828,8 +1870,6 @@ namespace GeneXus.Programs {
 
       protected void delete( )
       {
-         Gx_mode = "DLT";
-         AssignAttri("", false, "Gx_mode", Gx_mode);
          BeforeValidate011( ) ;
          if ( AnyError == 0 )
          {
@@ -1855,22 +1895,13 @@ namespace GeneXus.Programs {
                      /* End of After( delete) rules */
                      if ( AnyError == 0 )
                      {
-                        move_next( ) ;
-                        if ( RcdFound1 == 0 )
+                        if ( IsIns( ) || IsUpd( ) || IsDlt( ) )
                         {
-                           InitAll011( ) ;
-                           Gx_mode = "INS";
-                           AssignAttri("", false, "Gx_mode", Gx_mode);
+                           if ( AnyError == 0 )
+                           {
+                              context.nUserReturn = 1;
+                           }
                         }
-                        else
-                        {
-                           getByPrimaryKey( ) ;
-                           Gx_mode = "UPD";
-                           AssignAttri("", false, "Gx_mode", Gx_mode);
-                        }
-                        endTrnMsgTxt = context.GetMessage( "GXM_sucdeleted", "");
-                        endTrnMsgCod = "SuccessfullyDeleted";
-                        ResetCaption010( ) ;
                      }
                   }
                   else
@@ -1895,6 +1926,8 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Delete mode formulas */
+            AV13Pgmname = "Empleado";
+            AssignAttri("", false, "AV13Pgmname", AV13Pgmname);
             /* Using cursor T000113 */
             pr_default.execute(11, new Object[] {A13parqueAtraccionId});
             A14parqueAtraccionNombre = T000113_A14parqueAtraccionNombre[0];
@@ -1942,6 +1975,7 @@ namespace GeneXus.Programs {
 
       public void ScanStart011( )
       {
+         /* Scan By routine */
          /* Using cursor T000114 */
          pr_default.execute(12);
          RcdFound1 = 0;
@@ -2106,7 +2140,7 @@ namespace GeneXus.Programs {
          context.WriteHtmlText( " "+"class=\"form-horizontal Form\""+" "+ "style='"+bodyStyle+"'") ;
          context.WriteHtmlText( FormProcess+">") ;
          context.skipLines(1);
-         context.WriteHtmlTextNl( "<form id=\"MAINFORM\" autocomplete=\"off\" name=\"MAINFORM\" method=\"post\" tabindex=-1  class=\"form-horizontal Form\" data-gx-class=\"form-horizontal Form\" novalidate action=\""+formatLink("empleado.aspx") +"\">") ;
+         context.WriteHtmlTextNl( "<form id=\"MAINFORM\" autocomplete=\"off\" name=\"MAINFORM\" method=\"post\" tabindex=-1  class=\"form-horizontal Form\" data-gx-class=\"form-horizontal Form\" novalidate action=\""+formatLink("empleado.aspx", new object[] {UrlEncode(StringUtil.RTrim(Gx_mode)),UrlEncode(StringUtil.LTrimStr(AV7EmpleadoId,4,0))}, new string[] {"Gx_mode","EmpleadoId"}) +"\">") ;
          GxWebStd.gx_hidden_field( context, "_EventName", "");
          GxWebStd.gx_hidden_field( context, "_EventGridId", "");
          GxWebStd.gx_hidden_field( context, "_EventRowId", "");
@@ -2122,6 +2156,12 @@ namespace GeneXus.Programs {
       protected void send_integrity_footer_hashes( )
       {
          GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
+         forbiddenHiddens = new GXProperties();
+         forbiddenHiddens.Add("hshsalt", "hsh"+"Empleado");
+         forbiddenHiddens.Add("EmpleadoId", context.localUtil.Format( (decimal)(A1EmpleadoId), "ZZZ9"));
+         forbiddenHiddens.Add("Gx_mode", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")));
+         GxWebStd.gx_hidden_field( context, "hsh", GetEncryptedHash( forbiddenHiddens.ToString(), GXKey));
+         GXUtil.WriteLogInfo("empleado:[ SendSecurityCheck value for]"+forbiddenHiddens.ToJSonString());
       }
 
       protected void SendCloseFormHiddens( )
@@ -2145,7 +2185,24 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, ",", "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ",", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
+         GxWebStd.gx_hidden_field( context, "gxhash_Mode", GetSecureSignedToken( "", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")), context));
+         GxWebStd.gx_hidden_field( context, "N13parqueAtraccionId", StringUtil.LTrim( StringUtil.NToC( (decimal)(A13parqueAtraccionId), 4, 0, ",", "")));
+         GxWebStd.gx_hidden_field( context, "vMODE", StringUtil.RTrim( Gx_mode));
+         GxWebStd.gx_hidden_field( context, "gxhash_vMODE", GetSecureSignedToken( "", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")), context));
+         if ( context.isAjaxRequest( ) )
+         {
+            context.httpAjaxContext.ajax_rsp_assign_sdt_attri("", false, "vTRNCONTEXT", AV9TrnContext);
+         }
+         else
+         {
+            context.httpAjaxContext.ajax_rsp_assign_hidden_sdt("vTRNCONTEXT", AV9TrnContext);
+         }
+         GxWebStd.gx_hidden_field( context, "gxhash_vTRNCONTEXT", GetSecureSignedToken( "", AV9TrnContext, context));
+         GxWebStd.gx_hidden_field( context, "vEMPLEADOID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV7EmpleadoId), 4, 0, ",", "")));
+         GxWebStd.gx_hidden_field( context, "gxhash_vEMPLEADOID", GetSecureSignedToken( "", context.localUtil.Format( (decimal)(AV7EmpleadoId), "ZZZ9"), context));
          GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, ",", "")));
+         GxWebStd.gx_hidden_field( context, "vINSERT_PARQUEATRACCIONID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV11Insert_parqueAtraccionId), 4, 0, ",", "")));
+         GxWebStd.gx_hidden_field( context, "vPGMNAME", StringUtil.RTrim( AV13Pgmname));
       }
 
       public override void RenderHtmlCloseForm( )
@@ -2202,7 +2259,7 @@ namespace GeneXus.Programs {
 
       public override string GetSelfLink( )
       {
-         return formatLink("empleado.aspx")  ;
+         return formatLink("empleado.aspx", new object[] {UrlEncode(StringUtil.RTrim(Gx_mode)),UrlEncode(StringUtil.LTrimStr(AV7EmpleadoId,4,0))}, new string[] {"Gx_mode","EmpleadoId"})  ;
       }
 
       public override string GetPgmname( )
@@ -2255,11 +2312,11 @@ namespace GeneXus.Programs {
          n12EmpleadoUso_Cad = (String.IsNullOrEmpty(StringUtil.RTrim( A12EmpleadoUso_Cad)) ? true : false);
          A14parqueAtraccionNombre = "";
          AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
+         A13parqueAtraccionId = 1;
+         AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
          A7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
          n7EmpleadoFch_Alta = false;
          AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
-         A13parqueAtraccionId = 1;
-         AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
          Z2EmpleadoNombre = "";
          Z3EmpleadoApellido = "";
          Z4EmpleadoDireccion = "";
@@ -2302,7 +2359,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254122151358", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202541223451655", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2318,7 +2375,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.spa.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("empleado.js", "?20254122151358", false, true);
+         context.AddJavascriptSource("empleado.js", "?202541223451655", false, true);
          /* End function include_jscripts */
       }
 
@@ -2368,9 +2425,11 @@ namespace GeneXus.Programs {
          Form.Textcolor = 0;
          Form.Backcolor = (int)(0xFFFFFF);
          Form.Caption = "Empleado";
-         bttBtn_delete_Enabled = 1;
+         bttBtn_delete_Enabled = 0;
          bttBtn_delete_Visible = 1;
          bttBtn_cancel_Visible = 1;
+         bttBtn_enter_Tooltiptext = "Confirmar";
+         bttBtn_enter_Caption = "Confirmar";
          bttBtn_enter_Enabled = 1;
          bttBtn_enter_Visible = 1;
          edtparqueAtraccionNombre_Jsonclick = "";
@@ -2399,7 +2458,7 @@ namespace GeneXus.Programs {
          edtEmpleadoApellido_Enabled = 1;
          edtEmpleadoNombre_Enabled = 1;
          edtEmpleadoId_Jsonclick = "";
-         edtEmpleadoId_Enabled = 1;
+         edtEmpleadoId_Enabled = 0;
          bttBtn_select_Visible = 1;
          bttBtn_last_Visible = 1;
          bttBtn_next_Visible = 1;
@@ -2422,18 +2481,6 @@ namespace GeneXus.Programs {
          /* End function init_web_controls */
       }
 
-      protected void AfterKeyLoadScreen( )
-      {
-         IsConfirmed = 0;
-         AssignAttri("", false, "IsConfirmed", StringUtil.LTrimStr( (decimal)(IsConfirmed), 4, 0));
-         getEqualNoModal( ) ;
-         GX_FocusControl = edtEmpleadoNombre_Internalname;
-         AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
-         standaloneNotModal( ) ;
-         standaloneModal( ) ;
-         /* End function AfterKeyLoadScreen */
-      }
-
       protected bool IsIns( )
       {
          return ((StringUtil.StrCmp(Gx_mode, "INS")==0) ? true : false) ;
@@ -2452,48 +2499,6 @@ namespace GeneXus.Programs {
       protected bool IsDsp( )
       {
          return ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? true : false) ;
-      }
-
-      public void Valid_Empleadoid( )
-      {
-         n7EmpleadoFch_Alta = false;
-         context.wbHandled = 1;
-         AfterKeyLoadScreen( ) ;
-         Draw( ) ;
-         send_integrity_footer_hashes( ) ;
-         dynload_actions( ) ;
-         /*  Sending validation outputs */
-         AssignAttri("", false, "A2EmpleadoNombre", A2EmpleadoNombre);
-         AssignAttri("", false, "A3EmpleadoApellido", A3EmpleadoApellido);
-         AssignAttri("", false, "A4EmpleadoDireccion", A4EmpleadoDireccion);
-         AssignAttri("", false, "A5EmpleadoTelefono", StringUtil.RTrim( A5EmpleadoTelefono));
-         AssignAttri("", false, "A6EmpleadoEmail", A6EmpleadoEmail);
-         AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 10, 8, 0, 3, "/", ":", " "));
-         AssignAttri("", false, "A8EmpleadoFcha_Mod", context.localUtil.TToC( A8EmpleadoFcha_Mod, 10, 8, 0, 3, "/", ":", " "));
-         AssignAttri("", false, "A9EmpleadoFch_Cad", context.localUtil.TToC( A9EmpleadoFch_Cad, 10, 8, 0, 3, "/", ":", " "));
-         AssignAttri("", false, "A10EmpleadoUsu_Alta", A10EmpleadoUsu_Alta);
-         AssignAttri("", false, "A11EmpleadoUsu_Mod", A11EmpleadoUsu_Mod);
-         AssignAttri("", false, "A12EmpleadoUso_Cad", A12EmpleadoUso_Cad);
-         AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrim( StringUtil.NToC( (decimal)(A13parqueAtraccionId), 4, 0, ".", "")));
-         AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
-         AssignAttri("", false, "Gx_mode", StringUtil.RTrim( Gx_mode));
-         GxWebStd.gx_hidden_field( context, "Z1EmpleadoId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z1EmpleadoId), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "Z2EmpleadoNombre", Z2EmpleadoNombre);
-         GxWebStd.gx_hidden_field( context, "Z3EmpleadoApellido", Z3EmpleadoApellido);
-         GxWebStd.gx_hidden_field( context, "Z4EmpleadoDireccion", Z4EmpleadoDireccion);
-         GxWebStd.gx_hidden_field( context, "Z5EmpleadoTelefono", StringUtil.RTrim( Z5EmpleadoTelefono));
-         GxWebStd.gx_hidden_field( context, "Z6EmpleadoEmail", Z6EmpleadoEmail);
-         GxWebStd.gx_hidden_field( context, "Z7EmpleadoFch_Alta", context.localUtil.TToC( Z7EmpleadoFch_Alta, 10, 8, 0, 3, "/", ":", " "));
-         GxWebStd.gx_hidden_field( context, "Z8EmpleadoFcha_Mod", context.localUtil.TToC( Z8EmpleadoFcha_Mod, 10, 8, 0, 3, "/", ":", " "));
-         GxWebStd.gx_hidden_field( context, "Z9EmpleadoFch_Cad", context.localUtil.TToC( Z9EmpleadoFch_Cad, 10, 8, 0, 3, "/", ":", " "));
-         GxWebStd.gx_hidden_field( context, "Z10EmpleadoUsu_Alta", Z10EmpleadoUsu_Alta);
-         GxWebStd.gx_hidden_field( context, "Z11EmpleadoUsu_Mod", Z11EmpleadoUsu_Mod);
-         GxWebStd.gx_hidden_field( context, "Z12EmpleadoUso_Cad", Z12EmpleadoUso_Cad);
-         GxWebStd.gx_hidden_field( context, "Z13parqueAtraccionId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z13parqueAtraccionId), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "Z14parqueAtraccionNombre", Z14parqueAtraccionNombre);
-         AssignProp("", false, bttBtn_delete_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_delete_Enabled), 5, 0), true);
-         AssignProp("", false, bttBtn_enter_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(bttBtn_enter_Enabled), 5, 0), true);
-         SendCloseFormHiddens( ) ;
       }
 
       public void Valid_Parqueatraccionid( )
@@ -2520,10 +2525,10 @@ namespace GeneXus.Programs {
 
       public override void InitializeDynEvents( )
       {
-         setEventMetadata("ENTER","""{"handler":"UserMainFullajax","iparms":[{"postForm":true}]}""");
-         setEventMetadata("REFRESH","""{"handler":"Refresh","iparms":[]}""");
-         setEventMetadata("VALID_EMPLEADOID","""{"handler":"Valid_Empleadoid","iparms":[{"av":"A1EmpleadoId","fld":"EMPLEADOID","pic":"ZZZ9"},{"av":"Gx_BScreen","fld":"vGXBSCREEN","pic":"9"},{"av":"Gx_mode","fld":"vMODE","pic":"@!"},{"av":"A13parqueAtraccionId","fld":"PARQUEATRACCIONID","pic":"ZZZ9"},{"av":"A7EmpleadoFch_Alta","fld":"EMPLEADOFCH_ALTA","pic":"99/99/99 99:99"}]""");
-         setEventMetadata("VALID_EMPLEADOID",""","oparms":[{"av":"A2EmpleadoNombre","fld":"EMPLEADONOMBRE"},{"av":"A3EmpleadoApellido","fld":"EMPLEADOAPELLIDO"},{"av":"A4EmpleadoDireccion","fld":"EMPLEADODIRECCION"},{"av":"A5EmpleadoTelefono","fld":"EMPLEADOTELEFONO"},{"av":"A6EmpleadoEmail","fld":"EMPLEADOEMAIL"},{"av":"A7EmpleadoFch_Alta","fld":"EMPLEADOFCH_ALTA","pic":"99/99/99 99:99"},{"av":"A8EmpleadoFcha_Mod","fld":"EMPLEADOFCHA_MOD","pic":"99/99/99 99:99"},{"av":"A9EmpleadoFch_Cad","fld":"EMPLEADOFCH_CAD","pic":"99/99/99 99:99"},{"av":"A10EmpleadoUsu_Alta","fld":"EMPLEADOUSU_ALTA"},{"av":"A11EmpleadoUsu_Mod","fld":"EMPLEADOUSU_MOD"},{"av":"A12EmpleadoUso_Cad","fld":"EMPLEADOUSO_CAD"},{"av":"A13parqueAtraccionId","fld":"PARQUEATRACCIONID","pic":"ZZZ9"},{"av":"A14parqueAtraccionNombre","fld":"PARQUEATRACCIONNOMBRE"},{"av":"Gx_mode","fld":"vMODE","pic":"@!"},{"av":"Z1EmpleadoId"},{"av":"Z2EmpleadoNombre"},{"av":"Z3EmpleadoApellido"},{"av":"Z4EmpleadoDireccion"},{"av":"Z5EmpleadoTelefono"},{"av":"Z6EmpleadoEmail"},{"av":"Z7EmpleadoFch_Alta"},{"av":"Z8EmpleadoFcha_Mod"},{"av":"Z9EmpleadoFch_Cad"},{"av":"Z10EmpleadoUsu_Alta"},{"av":"Z11EmpleadoUsu_Mod"},{"av":"Z12EmpleadoUso_Cad"},{"av":"Z13parqueAtraccionId"},{"av":"Z14parqueAtraccionNombre"},{"ctrl":"BTN_DELETE","prop":"Enabled"},{"ctrl":"BTN_ENTER","prop":"Enabled"}]}""");
+         setEventMetadata("ENTER","""{"handler":"UserMainFullajax","iparms":[{"postForm":true},{"av":"Gx_mode","fld":"vMODE","pic":"@!","hsh":true},{"av":"AV7EmpleadoId","fld":"vEMPLEADOID","pic":"ZZZ9","hsh":true}]}""");
+         setEventMetadata("REFRESH","""{"handler":"Refresh","iparms":[{"av":"Gx_mode","fld":"vMODE","pic":"@!","hsh":true},{"av":"AV9TrnContext","fld":"vTRNCONTEXT","hsh":true},{"av":"AV7EmpleadoId","fld":"vEMPLEADOID","pic":"ZZZ9","hsh":true},{"av":"A1EmpleadoId","fld":"EMPLEADOID","pic":"ZZZ9"}]}""");
+         setEventMetadata("AFTER TRN","""{"handler":"E12012","iparms":[{"av":"Gx_mode","fld":"vMODE","pic":"@!","hsh":true},{"av":"AV9TrnContext","fld":"vTRNCONTEXT","hsh":true}]}""");
+         setEventMetadata("VALID_EMPLEADOID","""{"handler":"Valid_Empleadoid","iparms":[]}""");
          setEventMetadata("VALID_EMPLEADOEMAIL","""{"handler":"Valid_Empleadoemail","iparms":[]}""");
          setEventMetadata("VALID_EMPLEADOFCH_ALTA","""{"handler":"Valid_Empleadofch_alta","iparms":[]}""");
          setEventMetadata("VALID_EMPLEADOFCHA_MOD","""{"handler":"Valid_Empleadofcha_mod","iparms":[]}""");
@@ -2551,6 +2556,7 @@ namespace GeneXus.Programs {
       public override void initialize( )
       {
          sPrefix = "";
+         wcpOGx_mode = "";
          Z2EmpleadoNombre = "";
          Z3EmpleadoApellido = "";
          Z4EmpleadoDireccion = "";
@@ -2596,13 +2602,20 @@ namespace GeneXus.Programs {
          bttBtn_enter_Jsonclick = "";
          bttBtn_cancel_Jsonclick = "";
          bttBtn_delete_Jsonclick = "";
-         Gx_mode = "";
+         AV11Insert_parqueAtraccionId = 1;
+         AV13Pgmname = "";
+         forbiddenHiddens = new GXProperties();
+         hsh = "";
+         sMode1 = "";
          sEvt = "";
          EvtGridId = "";
          EvtRowId = "";
          sEvtType = "";
          endTrnMsgTxt = "";
          endTrnMsgCod = "";
+         AV9TrnContext = new GeneXus.Programs.general.ui.SdtTransactionContext(context);
+         AV10WebSession = context.GetSession();
+         AV12TrnContextAtt = new GeneXus.Programs.general.ui.SdtTransactionContext_Attribute(context);
          Z14parqueAtraccionNombre = "";
          T00014_A14parqueAtraccionNombre = new string[] {""} ;
          T00015_A1EmpleadoId = new short[1] ;
@@ -2652,7 +2665,6 @@ namespace GeneXus.Programs {
          T00013_A12EmpleadoUso_Cad = new string[] {""} ;
          T00013_n12EmpleadoUso_Cad = new bool[] {false} ;
          T00013_A13parqueAtraccionId = new short[1] ;
-         sMode1 = "";
          T00018_A1EmpleadoId = new short[1] ;
          T00019_A1EmpleadoId = new short[1] ;
          T00012_A1EmpleadoId = new short[1] ;
@@ -2684,18 +2696,6 @@ namespace GeneXus.Programs {
          FormProcess = "";
          bodyStyle = "";
          i7EmpleadoFch_Alta = (DateTime)(DateTime.MinValue);
-         ZZ2EmpleadoNombre = "";
-         ZZ3EmpleadoApellido = "";
-         ZZ4EmpleadoDireccion = "";
-         ZZ5EmpleadoTelefono = "";
-         ZZ6EmpleadoEmail = "";
-         ZZ7EmpleadoFch_Alta = (DateTime)(DateTime.MinValue);
-         ZZ8EmpleadoFcha_Mod = (DateTime)(DateTime.MinValue);
-         ZZ9EmpleadoFch_Cad = (DateTime)(DateTime.MinValue);
-         ZZ10EmpleadoUsu_Alta = "";
-         ZZ11EmpleadoUsu_Mod = "";
-         ZZ12EmpleadoUso_Cad = "";
-         ZZ14parqueAtraccionNombre = "";
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.empleado__default(),
             new Object[][] {
                 new Object[] {
@@ -2744,6 +2744,7 @@ namespace GeneXus.Programs {
             }
          );
          Z13parqueAtraccionId = 1;
+         N13parqueAtraccionId = 1;
          i13parqueAtraccionId = 1;
          A13parqueAtraccionId = 1;
          Z7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
@@ -2754,12 +2755,16 @@ namespace GeneXus.Programs {
          n7EmpleadoFch_Alta = false;
          Z1EmpleadoId = 1;
          A1EmpleadoId = 1;
+         AV13Pgmname = "Empleado";
       }
 
+      private short wcpOAV7EmpleadoId ;
       private short Z1EmpleadoId ;
       private short Z13parqueAtraccionId ;
+      private short N13parqueAtraccionId ;
       private short GxWebError ;
       private short A13parqueAtraccionId ;
+      private short AV7EmpleadoId ;
       private short gxcookieaux ;
       private short AnyError ;
       private short IsModified ;
@@ -2767,11 +2772,10 @@ namespace GeneXus.Programs {
       private short nKeyPressed ;
       private short A1EmpleadoId ;
       private short Gx_BScreen ;
+      private short AV11Insert_parqueAtraccionId ;
       private short RcdFound1 ;
       private short gxajaxcallmode ;
       private short i13parqueAtraccionId ;
-      private short ZZ1EmpleadoId ;
-      private short ZZ13parqueAtraccionId ;
       private int trnEnded ;
       private int bttBtn_first_Visible ;
       private int bttBtn_previous_Visible ;
@@ -2798,16 +2802,19 @@ namespace GeneXus.Programs {
       private int bttBtn_cancel_Visible ;
       private int bttBtn_delete_Visible ;
       private int bttBtn_delete_Enabled ;
+      private int AV14GXV1 ;
       private int idxLst ;
       private string sPrefix ;
+      private string wcpOGx_mode ;
       private string Z5EmpleadoTelefono ;
       private string gxfirstwebparm ;
       private string gxfirstwebparm_bkp ;
+      private string Gx_mode ;
       private string GXKey ;
       private string PreviousTooltip ;
       private string PreviousCaption ;
       private string GX_FocusControl ;
-      private string edtEmpleadoId_Internalname ;
+      private string edtEmpleadoNombre_Internalname ;
       private string divMaintable_Internalname ;
       private string divTitlecontainer_Internalname ;
       private string lblTitle_Internalname ;
@@ -2827,8 +2834,8 @@ namespace GeneXus.Programs {
       private string bttBtn_last_Jsonclick ;
       private string bttBtn_select_Internalname ;
       private string bttBtn_select_Jsonclick ;
+      private string edtEmpleadoId_Internalname ;
       private string edtEmpleadoId_Jsonclick ;
-      private string edtEmpleadoNombre_Internalname ;
       private string edtEmpleadoApellido_Internalname ;
       private string edtEmpleadoDireccion_Internalname ;
       private string edtEmpleadoTelefono_Internalname ;
@@ -2858,23 +2865,25 @@ namespace GeneXus.Programs {
       private string edtparqueAtraccionNombre_Internalname ;
       private string edtparqueAtraccionNombre_Jsonclick ;
       private string bttBtn_enter_Internalname ;
+      private string bttBtn_enter_Caption ;
       private string bttBtn_enter_Jsonclick ;
+      private string bttBtn_enter_Tooltiptext ;
       private string bttBtn_cancel_Internalname ;
       private string bttBtn_cancel_Jsonclick ;
       private string bttBtn_delete_Internalname ;
       private string bttBtn_delete_Jsonclick ;
-      private string Gx_mode ;
+      private string AV13Pgmname ;
+      private string hsh ;
+      private string sMode1 ;
       private string sEvt ;
       private string EvtGridId ;
       private string EvtRowId ;
       private string sEvtType ;
       private string endTrnMsgTxt ;
       private string endTrnMsgCod ;
-      private string sMode1 ;
       private string sDynURL ;
       private string FormProcess ;
       private string bodyStyle ;
-      private string ZZ5EmpleadoTelefono ;
       private DateTime Z7EmpleadoFch_Alta ;
       private DateTime Z8EmpleadoFcha_Mod ;
       private DateTime Z9EmpleadoFch_Cad ;
@@ -2882,9 +2891,6 @@ namespace GeneXus.Programs {
       private DateTime A8EmpleadoFcha_Mod ;
       private DateTime A9EmpleadoFch_Cad ;
       private DateTime i7EmpleadoFch_Alta ;
-      private DateTime ZZ7EmpleadoFch_Alta ;
-      private DateTime ZZ8EmpleadoFcha_Mod ;
-      private DateTime ZZ9EmpleadoFch_Cad ;
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
       private bool wbErr ;
@@ -2897,6 +2903,7 @@ namespace GeneXus.Programs {
       private bool n10EmpleadoUsu_Alta ;
       private bool n11EmpleadoUsu_Mod ;
       private bool n12EmpleadoUso_Cad ;
+      private bool returnInSub ;
       private bool Gx_longc ;
       private string Z2EmpleadoNombre ;
       private string Z3EmpleadoApellido ;
@@ -2914,16 +2921,12 @@ namespace GeneXus.Programs {
       private string A12EmpleadoUso_Cad ;
       private string A14parqueAtraccionNombre ;
       private string Z14parqueAtraccionNombre ;
-      private string ZZ2EmpleadoNombre ;
-      private string ZZ3EmpleadoApellido ;
-      private string ZZ4EmpleadoDireccion ;
-      private string ZZ6EmpleadoEmail ;
-      private string ZZ10EmpleadoUsu_Alta ;
-      private string ZZ11EmpleadoUsu_Mod ;
-      private string ZZ12EmpleadoUso_Cad ;
-      private string ZZ14parqueAtraccionNombre ;
+      private IGxSession AV10WebSession ;
+      private GXProperties forbiddenHiddens ;
       private GXWebForm Form ;
       private IGxDataStore dsDefault ;
+      private GeneXus.Programs.general.ui.SdtTransactionContext AV9TrnContext ;
+      private GeneXus.Programs.general.ui.SdtTransactionContext_Attribute AV12TrnContextAtt ;
       private IDataStoreProvider pr_default ;
       private string[] T00014_A14parqueAtraccionNombre ;
       private short[] T00015_A1EmpleadoId ;

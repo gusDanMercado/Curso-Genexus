@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\wwjuego\bin\Release\net8.0\wwjuego.dll
+C:\KBs\parques\NETSQLServer002\build\wwjuego\obj\Release\net8.0\wwjuego.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\wwjuego\obj\Release\net8.0\wwjuego.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\wwjuego\obj\Release\net8.0\wwjuego.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\wwjuego\obj\Release\net8.0\wwjuego.dll
+C:\KBs\parques\NETSQLServer002\build\wwjuego\obj\Release\net8.0\refint\wwjuego.dll
+C:\KBs\parques\NETSQLServer002\build\wwjuego\obj\Release\net8.0\ref\wwjuego.dll

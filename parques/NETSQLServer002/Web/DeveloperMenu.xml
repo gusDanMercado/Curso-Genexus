@@ -4,39 +4,39 @@
    <Charset>UTF-8</Charset>
    <Path>file:///C:/Program Files (x86)/GeneXus/GeneXus18Trial/</Path>
    <Object>
-      <ObjCls>0</ObjCls>
-      <ObjName>Empleado</ObjName>
-      <ObjDesc>Empleado</ObjDesc>
-      <ObjLink>empleado.aspx</ObjLink>
-   </Object>
-   <Object>
-      <ObjCls>0</ObjCls>
-      <ObjName>parqueAtraccion</ObjName>
-      <ObjDesc>parque Atraccion</ObjDesc>
-      <ObjLink>parqueatraccion.aspx</ObjLink>
-   </Object>
-   <Object>
-      <ObjCls>0</ObjCls>
-      <ObjName>Pais</ObjName>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWPais</ObjName>
       <ObjDesc>Pais</ObjDesc>
-      <ObjLink>pais.aspx</ObjLink>
+      <ObjLink>wwpais.aspx</ObjLink>
    </Object>
    <Object>
-      <ObjCls>0</ObjCls>
-      <ObjName>Show</ObjName>
-      <ObjDesc>Show</ObjDesc>
-      <ObjLink>show.aspx</ObjLink>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWCategoria</ObjName>
+      <ObjDesc>Categorias</ObjDesc>
+      <ObjLink>wwcategoria.aspx</ObjLink>
    </Object>
    <Object>
-      <ObjCls>0</ObjCls>
-      <ObjName>Juego</ObjName>
-      <ObjDesc>Juego</ObjDesc>
-      <ObjLink>juego.aspx</ObjLink>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWEmpleado</ObjName>
+      <ObjDesc>Empleados</ObjDesc>
+      <ObjLink>wwempleado.aspx</ObjLink>
    </Object>
    <Object>
-      <ObjCls>0</ObjCls>
-      <ObjName>Categoria</ObjName>
-      <ObjDesc>Categoria</ObjDesc>
-      <ObjLink>categoria.aspx</ObjLink>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWJuego</ObjName>
+      <ObjDesc>Juegos</ObjDesc>
+      <ObjLink>wwjuego.aspx</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWparqueAtraccion</ObjName>
+      <ObjDesc>Parques de Atracciones</ObjDesc>
+      <ObjLink>wwparqueatraccion.aspx</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWShow</ObjName>
+      <ObjDesc>Shows</ObjDesc>
+      <ObjLink>wwshow.aspx</ObjLink>
    </Object>
 </Objects>
