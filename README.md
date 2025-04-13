@@ -1,2 +1,3 @@
 # Curso-Genexus
-mis proyectos Genexus (KBs)
+
+Mis proyectos Genexus (KBs) del Curso.
