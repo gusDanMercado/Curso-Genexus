@@ -1,0 +1,323 @@
+spec_i([ proc,16,'Reporte Empleado Excel','ReporteEmpleadoExcel',78,spa,'18_0_10-184260' ]).
+ 
+struct_i(2,1,[],[]).
+ 
+level_i(2,[ 1,[ [ 1,many ] ],[],[],[ [ [ 1 ],[ 2,3 ] ] ],[ [ [ 1 ],[] ] ],[ 3,2 ],'',[],[] ]).
+ 
+tw_i(2,[]).
+ 
+lwi_i(2,[ [] ]).
+ 
+ 
+ 
+ 
+ta_i(2,[ [ [ 1,2 ],[ 1,3 ] ] ]).
+ 
+las_i(2,[ [ 2,3 ] ]).
+ 
+lac_i(2,[ [] ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
+rule_i(0,datastore(1,'LOCK_RETRY','10')).
+rule_i(0,datastore(1,'WAIT_RECORD','0')).
+rule_i(0,datastore(1,'ISOLATION_LEVEL','CR')).
+rule_i(0,datastore(1,'SQLSERVER_VERSION','10')).
+rule_i(0,datastore(1,'COMMENT_ON','No')).
+rule_i(0,datastore(1,'DFT_TMP_TBLSPACE','')).
+rule_i(0,datastore(1,'DFT_IDX_TBLSPACE','')).
+rule_i(0,datastore(1,'DFT_TBL_TBLSPACE','')).
+rule_i(0,datastore(1,'DCL_REF_INT_DB','Yes')).
+rule_i(0,datastore(1,'PRIMARY_KEY_TYPE','PK')).
+rule_i(0,datastore(1,'CS_SCHEMA','')).
+rule_i(0,datastore(1,'SORT_ATTRIBUTES','Yes')).
+rule_i(0,datastore(1,'JRN400','QSQJRN')).
+rule_i(0,datastore(1,'CREATE_SAVF','Yes')).
+rule_i(0,datastore(1,'PGMLIB','')).
+rule_i(0,datastore(1,'DTALIB','')).
+rule_i(0,datastore(1,'RecycleRWMin','30')).
+rule_i(0,datastore(1,'RecycleRWType','1')).
+rule_i(0,datastore(1,'RecycleRW','-1')).
+rule_i(0,datastore(1,'POOL_STARTUP','No')).
+rule_i(0,datastore(1,'POOLSIZE_RW','10')).
+rule_i(0,datastore(1,'UnlimitedRWPool','-1')).
+rule_i(0,datastore(1,'PoolRWEnabled','-1')).
+rule_i(0,datastore(1,'CS_RPCPGML','')).
+rule_i(0,datastore(1,'DS_READ_REPLICA','No')).
+rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
+rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','')).
+rule_i(0,datastore(1,'USER_PASSWORD','')).
+rule_i(0,datastore(1,'USER_ID','')).
+rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).
+rule_i(0,datastore(1,'CS_CONNECT','First')).
+rule_i(0,datastore(1,'DBMS_PORT','')).
+rule_i(0,datastore(1,'CS_SERVER','GUSTAVOMERCADO\SQLEXPRESS01')).
+rule_i(0,datastore(1,'CS_DBNAME',db_parques)).
+rule_i(0,datastore(1,'CS_FLEDSNAME','')).
+rule_i(0,datastore(1,'CS_DRVNAME','sql server')).
+rule_i(0,datastore(1,'CS_DSNAME','')).
+rule_i(0,datastore(1,'DB_URL','')).
+rule_i(0,datastore(1,'JDBC_CUSTOM_URL','0')).
+rule_i(0,datastore(1,'JDBC_CUSTOM_DRIVER','')).
+rule_i(0,datastore(1,'JDBC_DRIVER','com.microsoft.sqlserver.jdbc.SQLServerDriver')).
+rule_i(0,datastore(1,'CONNECT_METHOD','OPSYS')).
+rule_i(0,datastore(1,'ACCESS_TECHNO','ADONET')).
+rule_i(0,datastore(1,'MAIN_DS','-1')).
+rule_i(0,datastore(1,'REORG_GEN','8')).
+rule_i(0,datastore(1,'HelpKeyword','20')).
+rule_i(0,datastore(1,'DBMS',12)).
+rule_i(0,datastore(1,'NAME','Default')).
+rule_i(0,prop(idNULLS_BEHAVIOR,idNB_Current)).
+rule_i(0,prop(gxtest_ignoreForTestCoverage,'0')).
+rule_i(0,prop('PWFCallable','0')).
+rule_i(0,prop('ObjectVisibility','KnowledgeBase')).
+rule_i(0,prop('FullyQualifiedName','ReporteEmpleadoExcel')).
+rule_i(0,prop('GenerateObject','-1')).
+rule_i(0,prop('CS_ORA_FORUPD','UMPV')).
+rule_i(0,prop('Optimize_copy','UMPV')).
+rule_i(0,prop('JOIN_TYPE','UMPV')).
+rule_i(0,prop('DBMS_JOINS','UMPV')).
+rule_i(0,prop('NULLVALUE_AS_NULL','UMPV')).
+rule_i(0,prop('INITIALIZE_NEW','UMPV')).
+rule_i(0,prop('STD_FUNC_OBJECT','Yes')).
+rule_i(0,prop('SPC_WARNINGS_DISABLED','spc0096 spc0107 spc0142')).
+rule_i(0,prop('TRNEND','Yes')).
+rule_i(0,prop('AUTOCENTER','UMPV')).
+rule_i(0,prop('LSTPFOOT','YES')).
+rule_i(0,prop('CANCEL','YES')).
+rule_i(0,prop('CONFIRM','UMPV')).
+rule_i(0,prop('TRNCFM','UMPV')).
+rule_i(0,prop('PRINT_CUST_LAYOUT','UMPV')).
+rule_i(0,prop('OUTPUT','FIL')).
+rule_i(0,prop(idConnectivitySupport,idInherit)).
+rule_i(0,prop(idISPRCWEBSERVICE,'0')).
+rule_i(0,prop('AppGenerator','1')).
+rule_i(0,prop('AppLocation','')).
+rule_i(0,prop('AppIcon','')).
+rule_i(0,prop('AppTitle','')).
+rule_i(0,prop('WEB_SECURITY_LEVEL','High')).
+rule_i(0,prop('HTTP_PROTOCOL','Unsecure')).
+rule_i(0,prop('USE_ENCRYPTION','NO')).
+rule_i(0,prop('HTTP_STREAMING_SUPPORT','Off')).
+rule_i(0,prop('COMPRESS_HTML','UMPV')).
+rule_i(0,prop('EXECUTE_IN_NEW_UTL','0')).
+rule_i(0,prop('Theme',o(102,parques))).
+rule_i(0,prop('OBJECT_METADATA','')).
+rule_i(0,prop('CALL_PROTOCOL','HTTP')).
+rule_i(0,prop('IsMain','-1')).
+rule_i(0,prop(sessiontype,'RW')).
+rule_i(0,prop('Folder',o(120,'Root Module'))).
+rule_i(0,prop('ObjDesc','Reporte Empleado Excel')).
+rule_i(0,prop('ObjName','ReporteEmpleadoExcel')).
+rule_i(0,maingen(41)).
+rule_i(0,prop('PGMTYPE',main)).
+rule_i(0,output_file(t('ReporteEmpleadoExcel',3),t('XML',3))).
+rule_i(0,output('FIL')).
+ 
+a_i(1,2,t,1,[],[ [],'',[] ]).
+ 
+v_i(t,i,1,[]).
+v_i(t,o,1,2).
+v_i(t,o,1,3).
+ 
+ 
+ 
+ 
+ 
+ 
+attri_i('Gxxmlwrt',[ 'Gx_xmlwrt',o(xmlwrt),0,0,'',0,'','',11 ]).
+attri_i('Output',[ 'Gx_out',char,3,0,'',1,'','',10 ]).
+attri_i(1,[ 'EmpleadoId',int,4,0,'ZZZ9',0,'Empleado Id','',0 ]).
+attri_i(2,[ 'EmpleadoNombre',svchar,1024,0,'',0,'Empleado Nombre','',0 ]).
+attri_i(3,[ 'EmpleadoApellido',svchar,1024,0,'',0,'Empleado Apellido','',0 ]).
+attri_i('Row',[ 'Row',int,4,0,'ZZZ9',0,'Row','',8 ]).
+ 
+table_i(1,[ 'Empleado',[ 1,2,3 ],'Empleado','Empleado' ]).
+ 
+index_i(1,[ '',a,[ 3,2 ],'' ]).
+index_i(1,[ 'IEMPLEADO',u,[ 1 ],'IEmpleado' ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+add_att_i(bits,2,40000,17,parqueAtraccionFoto_GXI,[ svchar,2048,0,0 ]).
+add_att_i(bits,2,40001,22,'ShowImagen_GXI',[ svchar,2048,0,0 ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+dom_info_i(13,[ 'GeneXus\Address' ]).
+dom_info_i(53,[ 'GeneXus\Phone' ]).
+dom_info_i(52,[ 'GeneXus\Email' ]).
+ 
+ 
+break_i(2,nvg,1,[ 3,2 ],[ [ 3,2 ],[],[] ]).
+break_i(1,rpt,0,[],[ [],[],[] ]).
+ 
+b_group_i(1,1,lit,0,1,0).
+b_group_i(1,2,nvg,2,4,4).
+b_group_i(2,1,lit,0,5,5).
+b_group_i(1,3,lit,0,8,0).
+ 
+b_line_i([ 0,1 ],1,1,cmd,0,[ t('',107,0,0),t([ t('Gxxmlwrt',23,0,0),t('open(',1,0,0) ],31,0,0),t('''ReporteEmpleadoExcel.xml''',3,0,0),t(')',4,0,0) ]).
+b_line_i([ 0,2 ],1,1,cmd,0,[ t('',109,0,0),t([ t('Gxxmlwrt',23,0,0),t('Errcode',3,0,0) ],29,0,0),t(=,10,0,0),t(0,3,0,0) ]).
+b_line_i([ 0,3 ],1,1,cmd,0,[ t('',107,0,0),t([ t('Gxxmlwrt',23,0,0),t('writestartdocument(',1,0,0) ],31,0,0),t('"UTF-8"',3,0,0),t(')',4,0,0) ]).
+b_line_i([ 0,4 ],1,1,cmd,0,[ t('',109,0,0),t([ t('Gxxmlwrt',23,0,0),t('Errcode',3,0,0) ],29,0,0),t(=,10,0,0),t(0,3,0,0) ]).
+b_line_i([ 0,5 ],1,1,cmd,0,[ t('',107,0,0),t([ t('Gxxmlwrt',23,0,0),t('writestartelement(',1,0,0) ],31,0,0),t('''DATA''',3,0,0),t(')',4,0,0) ]).
+b_line_i(0,1,1,cmd,0,[]).
+b_line_i(1,1,1,cmd,0,[ t('',107,1,0),t('Row',23,0,0),t(=,10,0,0),t('1',3,0,0) ]).
+b_line_i(2,1,1,cmd,0,[]).
+b_line_i(3,1,1,cmd,0,[]).
+b_line_i([ 4,10 ],1,1,cmd,4,[ t('',107,4,0),t([ t('Gxxmlwrt',23,4,0),t('writestartelement(',1,4,0) ],31,4,0),t('''Empleado_Group''',3,4,0),t(')',4,4,0) ]).
+b_line_i(4,2,1,cmd,5,[ t('',121,4,0),t(table,3,4,10),t(1,3,4,10),t('ORDER',39,4,23),t(3,2,4,29),t(',',7,4,45),t(2,2,4,47) ]).
+b_line_i([ 4,12 ],2,1,cmd,4,[ t('',107,4,0),t([ t('Gxxmlwrt',23,4,0),t('writestartelement(',1,4,0) ],31,4,0),t('''Empleado''',3,4,0),t(')',4,4,0) ]).
+b_line_i(5,2,1,cmd,5,[]).
+b_line_i(6,2,1,cmd,5,[ t('',107,6,0),t('Row',23,5,0),t(=,10,5,0),t('Row',23,5,0),t(+,5,5,0),t('1',3,5,0) ]).
+b_line_i([ 7,15 ],2,1,cmd,7,[ t('',107,7,0),t([ t('Gxxmlwrt',23,7,0),t('writeendelement(',1,7,0) ],31,7,0),t(')',4,7,0) ]).
+b_line_i(7,2,1,cmd,5,[ t('',128,7,0) ]).
+b_line_i([ 7,17 ],1,3,cmd,7,[ t('',107,7,0),t([ t('Gxxmlwrt',23,7,0),t('writeendelement(',1,7,0) ],31,7,0),t(')',4,7,0) ]).
+b_line_i([ 18,18 ],1,3,cmd,18,[ t('',107,18,0),t([ t('Gxxmlwrt',23,18,0),t('writeendelement(',1,18,0) ],31,18,0),t(')',4,18,0) ]).
+b_line_i([ 19,19 ],1,3,cmd,19,[ t('',107,19,0),t([ t('Gxxmlwrt',23,19,0),t('writeprocessinginstruction(',1,19,0) ],31,19,0),t('"xmlend"',3,19,0),t(',',7,19,0),t('""',3,19,0),t(')',4,19,0) ]).
+b_line_i([ 19,20 ],1,3,cmd,19,[ t('',111,19,0) ]).
+b_line_i([ 19,21 ],1,3,cmd,19,[ t('',107,19,0),t([ t('Gxxmlwrt',23,19,0),t('close(',1,19,0) ],31,19,0),t(')',4,19,0) ]).
+b_line_i([ 19,22 ],1,3,cmd,19,[ t('',111,19,0) ]).
+ 
+ 
+ 
+ 
+ 
+ 
+page_layout_i([ 66,0,6 ]).
+ 
+ 
+ 
+paper_info_i([ 0,256,'',11909,16834,0,0,0,0,1 ]).
+ 
+ppi_i([ 100,100 ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+warn_gen_i(msg([],spc0038,[ 'There is no index for order ',[ att(2,3),', ',att(2,2) ],'; poor performance may be noticed',[ ' in group starting at line ','4','' ],'.' ])).
+ 
+ 
+ 
+ 
+grid_i(7,15).
+ 
+ 
+ 
+form_class_i(1,'Graphic').
+ 
+ 
+ 
+ 
+calling_main_i(1,16).
+ 
+att_prop_i(2,3,'ExternalName','EmpleadoApellido',d).
+att_prop_i(2,3,'ExternalNamespace',parques,d).
+att_prop_i(2,3,'EmptyAsNull','Yes',d).
+att_prop_i(2,3,idBasedOn,'',d).
+att_prop_i(2,3,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,3,'DB_NLS_SUPPORT','Yes',d).
+att_prop_i(2,3,'AttRegEx','',d).
+att_prop_i(2,3,'AttValidationFailedMsg','',d).
+att_prop_i(2,3,'DownloadOffline','0',d).
+att_prop_i(2,3,'VarServiceExtName','',d).
+att_prop_i(2,3,'FullName','EmpleadoApellido',v).
+att_prop_i(2,2,'ExternalName','EmpleadoNombre',d).
+att_prop_i(2,2,'ExternalNamespace',parques,d).
+att_prop_i(2,2,'EmptyAsNull','Yes',d).
+att_prop_i(2,2,idBasedOn,'',d).
+att_prop_i(2,2,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,2,'DB_NLS_SUPPORT','Yes',d).
+att_prop_i(2,2,'AttRegEx','',d).
+att_prop_i(2,2,'AttValidationFailedMsg','',d).
+att_prop_i(2,2,'DownloadOffline','0',d).
+att_prop_i(2,2,'VarServiceExtName','',d).
+att_prop_i(2,2,'FullName','EmpleadoNombre',v).
+att_prop_i(2,1,'ExternalName','EmpleadoId',d).
+att_prop_i(2,1,'ExternalNamespace',parques,d).
+att_prop_i(2,1,'EmptyAsNull','Yes',d).
+att_prop_i(2,1,idBasedOn,'',d).
+att_prop_i(2,1,'AUTONUMBER','-1',v).
+att_prop_i(2,1,'AUTONUMBER_START','1',d).
+att_prop_i(2,1,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,1,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,1,'ATT_INITIAL_VALUE',[ t('1',3) ],v).
+att_prop_i(2,1,'AttRegEx','',d).
+att_prop_i(2,1,'AttValidationFailedMsg','',d).
+att_prop_i(2,1,'DownloadOffline','0',d).
+att_prop_i(2,1,'VarServiceExtName','',d).
+att_prop_i(2,1,'FullName','EmpleadoId',v).
+ 
+ 
+tbl_att_prop_i(2,1,1,'AllowNulls',n).
+tbl_att_prop_i(2,1,1,'AUTONUMBER',y).
+tbl_att_prop_i(2,1,2,'AllowNulls',n).
+tbl_att_prop_i(2,1,3,'AllowNulls',n).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+pgm_callprotocol_i(proc,16,'REPORTEEMPLEADOEXCEL','HTTP','Unsecure').
+ 
+ 
+pgm_main_info_i(proc,16,'REPORTEEMPLEADOEXCEL',[ 41,'AREPORTEEMPLEADOEXCEL','Reporte Empleado Excel','','','','HTTP' ]).
+ 
+ 
+ 
+module_info_i('GeneXus','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus','AssemblyName','GeneXus.dll').
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

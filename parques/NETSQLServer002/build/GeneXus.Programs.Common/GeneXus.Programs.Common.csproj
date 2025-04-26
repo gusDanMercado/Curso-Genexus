@@ -20,12 +20,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Reference Include="GeneXus.dll" > 
+			<HintPath>$(WebBinDirectory)\GeneXus.dll</HintPath>
+		</Reference>
 
 
 	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Include = "$(WebDirectory)\GxWebServicesConfig.cs" />
+		<Compile Include = "$(WebDirectory)\type_SdtEmpleado.cs" />
 		<Compile Include = "$(WebDirectory)\SoapParm.cs" />
 		<Compile Include = "$(WebDirectory)\GxWebStd.cs" />
 		<Compile Include = "$(WebDirectory)\GxFullTextSearchReindexer.cs" />

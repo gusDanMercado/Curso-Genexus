@@ -1700,6 +1700,7 @@ att_prop_i(2,14,'VarServiceExtName','',d).
 att_prop_i(2,14,'FullName',parqueAtraccionNombre,v).
  
 tbl_prop_i(2,1,'AllDirSuper',[ [ 2,[ 13 ] ] ],v).
+tbl_prop_i(2,1,'DirSuperNull',[ [ 2,[ 13 ] ] ],v).
 tbl_prop_i(2,2,'DirSubor',[ [ 1,[ 13 ] ] ],v).
 tbl_prop_i(2,1,'DirSuper',[ [ 2,[ 13 ] ] ],v).
  
@@ -1707,7 +1708,6 @@ tbl_att_prop_i(2,1,1,'AllowNulls',n).
 tbl_att_prop_i(2,1,1,'AUTONUMBER',y).
 tbl_att_prop_i(2,1,2,'AllowNulls',n).
 tbl_att_prop_i(2,1,3,'AllowNulls',n).
-tbl_att_prop_i(2,1,13,'AllowNulls',n).
 tbl_att_prop_i(2,2,13,'AllowNulls',n).
 tbl_att_prop_i(2,2,13,'AUTONUMBER',y).
 tbl_att_prop_i(2,2,14,'AllowNulls',n).

@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\areporteempleadoexcel\bin\Release\net8.0\areporteempleadoexcel.dll
+C:\KBs\parques\NETSQLServer002\build\areporteempleadoexcel\obj\Release\net8.0\areporteempleadoexcel.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\areporteempleadoexcel\obj\Release\net8.0\areporteempleadoexcel.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\areporteempleadoexcel\obj\Release\net8.0\areporteempleadoexcel.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\areporteempleadoexcel\obj\Release\net8.0\areporteempleadoexcel.dll
+C:\KBs\parques\NETSQLServer002\build\areporteempleadoexcel\obj\Release\net8.0\refint\areporteempleadoexcel.dll
+C:\KBs\parques\NETSQLServer002\build\areporteempleadoexcel\obj\Release\net8.0\ref\areporteempleadoexcel.dll

@@ -37,6 +37,9 @@ C:\KBs\parques\NETSQLServer002\web\bin\gx0020.dll
 C:\KBs\parques\NETSQLServer002\web\bin\gx0010.dll
 C:\KBs\parques\NETSQLServer002\web\bin\general.ui.masterprompt.dll
 C:\KBs\parques\NETSQLServer002\web\bin\general.ui.masterunanimosidebar.dll
+C:\KBs\parques\NETSQLServer002\web\bin\areporteempleadoexcel.dll
+C:\KBs\parques\NETSQLServer002\web\bin\areporteempleado.dll
+C:\KBs\parques\NETSQLServer002\web\bin\aempleado_dataprovider.dll
 C:\KBs\parques\NETSQLServer002\web\bin\GeneXus.Programs.Common.dll
 C:\KBs\parques\NETSQLServer002\web\bin\developermenu.dll
 C:\KBs\parques\NETSQLServer002\web\bin\Experimental.System.Messaging.dll
@@ -48,6 +51,7 @@ C:\KBs\parques\NETSQLServer002\web\bin\GxCryptographyCommon.dll
 C:\KBs\parques\NETSQLServer002\web\bin\GxEncrypt.dll
 C:\KBs\parques\NETSQLServer002\web\bin\GxPdfReportsCS.dll
 C:\KBs\parques\NETSQLServer002\web\bin\GxXsl.dll
+C:\KBs\parques\NETSQLServer002\web\bin\iTextSharp.dll
 C:\KBs\parques\NETSQLServer002\web\bin\log4net.dll
 C:\KBs\parques\NETSQLServer002\web\bin\Microsoft.Data.SqlClient.dll
 C:\KBs\parques\NETSQLServer002\web\bin\Microsoft.Identity.Client.dll

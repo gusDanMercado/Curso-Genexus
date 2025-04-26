@@ -1937,6 +1937,7 @@ tbl_prop_i(2,5,'AllDirSuper',[ [ 2,[ 13 ] ] ],v).
 tbl_prop_i(2,1,'AllDirSuper',[ [ 2,[ 13 ] ] ],v).
 tbl_prop_i(2,7,'AllDirSuper',[ [ 3,[ 18 ] ] ],v).
 tbl_prop_i(2,2,'AllDirSuper',[ [ 7,[ 18,28 ] ],[ 4,[ 20 ] ],[ 3,[ 18 ] ] ],v).
+tbl_prop_i(2,1,'DirSuperNull',[ [ 2,[ 13 ] ] ],v).
 tbl_prop_i(2,2,'DirSuperNull',[ [ 7,[ 18,28 ] ] ],v).
 tbl_prop_i(2,4,'DirSubor',[ [ 2,[ 20 ] ] ],v).
 tbl_prop_i(2,7,'DirSubor',[ [ 2,[ 18,28 ] ] ],v).
@@ -1968,7 +1969,6 @@ tbl_att_prop_i(2,4,20,'AUTONUMBER',y).
 tbl_att_prop_i(2,4,21,'AllowNulls',n).
 tbl_att_prop_i(2,1,1,'AllowNulls',n).
 tbl_att_prop_i(2,1,1,'AUTONUMBER',y).
-tbl_att_prop_i(2,1,13,'AllowNulls',n).
 tbl_att_prop_i(2,5,24,'AllowNulls',n).
 tbl_att_prop_i(2,5,24,'AUTONUMBER',y).
 tbl_att_prop_i(2,5,13,'AllowNulls',n).

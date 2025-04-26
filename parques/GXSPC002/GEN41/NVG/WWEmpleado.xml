@@ -10,20 +10,7 @@
 <ObjPgmName>WWEmpleado</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
 <Result>genreq</Result>
-<Warnings>
-<Warning>
-<MsgCode>spc0038</MsgCode>
-<Message>
-<Token>There is no index for order </Token>
-<Attribute>
-<AttriId>2</AttriId>
-<AttriName>EmpleadoNombre</AttriName>
-<Description>Empleado Nombre</Description></Attribute>
-<Token>; poor performance may be noticed</Token>
-<Token> in grid '</Token>
-<Token>Grid</Token>
-<Token>'</Token>
-<Token>.</Token></Message></Warning></Warnings>
+<Warnings></Warnings>
 <Errors></Errors>
 <Generator>
 <GenId>41</GenId>
@@ -47,6 +34,8 @@
 <VarName>&amp;Pgmname</VarName></Variable></Expression>
 <IF></IF></CALL></Event>
 <Event>
+<EventName>'Toggle'</EventName></Event>
+<Event>
 <EventName>Refresh</EventName></Event>
 <Event>
 <EventName>Grid.Load</EventName>
@@ -59,12 +48,43 @@
 <TableId>1</TableId>
 <TableName>Empleado</TableName>
 <Description>Empleado</Description></Table></BaseTable>
+<ConditionalOrders>
+<ConditionalOrder>
+<Order>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>EmpleadoApellido</AttriName>
+<Description>Empleado Apellido</Description></Attribute></Order>
+<Condition>
+<Variable>
+<VarId>Orderedby</VarId>
+<VarName>&amp;OrderedBy</VarName></Variable>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Token>1</Token></Condition></ConditionalOrder>
+<ConditionalOrder>
 <Order>
 <Attribute>
 <AttriId>2</AttriId>
 <AttriName>EmpleadoNombre</AttriName>
 <Description>Empleado Nombre</Description></Attribute></Order>
+<Condition>
+<Variable>
+<VarId>Orderedby</VarId>
+<VarName>&amp;OrderedBy</VarName></Variable>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Token>2</Token></Condition></ConditionalOrder>
+<ConditionalOrder>
+<Order>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>EmpleadoId</AttriName>
+<Description>Empleado Id</Description></Attribute></Order>
 <Condition></Condition>
+<IndexName>IEMPLEADO</IndexName></ConditionalOrder></ConditionalOrders>
 <LevelOptions></LevelOptions>
 <Optimizations>
 <Optimization>
@@ -121,6 +141,7 @@
 <AttriId>13</AttriId>
 <AttriName>parqueAtraccionId</AttriName>
 <Description>parque Atraccion Id</Description></Attribute></KeyAttributes>
+<JoinType>Outer</JoinType>
 <Tables></Tables></Table></Tables></Table></NavigationTree>
 <TablesToUpdate></TablesToUpdate>
 <Formulas>
@@ -148,6 +169,30 @@
 <AttriName>EmpleadoId</AttriName>
 <Description>Empleado Id</Description></Attribute>
 <Token>)</Token></Expression>
+<IF></IF></CALL></Event>
+<Event>
+<EventName>'DoReporteEmpleado'</EventName>
+<CALL>
+<Object>
+<ObjClsGuid>84a12160-f59b-4ad7-a683-ea4481ac23e9</ObjClsGuid>
+<ObjCls>1</ObjCls>
+<ObjId>15</ObjId>
+<ObjName>ReporteEmpleado</ObjName>
+<ObjPgmName>ReporteEmpleado</ObjPgmName>
+<ObjClsName>Procedure</ObjClsName></Object>
+<Expression></Expression>
+<IF></IF></CALL></Event>
+<Event>
+<EventName>'DoReporteEmpleadoExcel'</EventName>
+<CALL>
+<Object>
+<ObjClsGuid>84a12160-f59b-4ad7-a683-ea4481ac23e9</ObjClsGuid>
+<ObjCls>1</ObjCls>
+<ObjId>16</ObjId>
+<ObjName>ReporteEmpleadoExcel</ObjName>
+<ObjPgmName>ReporteEmpleadoExcel</ObjPgmName>
+<ObjClsName>Procedure</ObjClsName></Object>
+<Expression></Expression>
 <IF></IF></CALL></Event>
 <Event>
 <EventName>'PREPARETRANSACTION'</EventName>

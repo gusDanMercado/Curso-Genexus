@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\aempleado_dataprovider\bin\Release\net8.0\aempleado_dataprovider.dll
+C:\KBs\parques\NETSQLServer002\build\aempleado_dataprovider\obj\Release\net8.0\aempleado_dataprovider.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\aempleado_dataprovider\obj\Release\net8.0\aempleado_dataprovider.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\aempleado_dataprovider\obj\Release\net8.0\aempleado_dataprovider.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\aempleado_dataprovider\obj\Release\net8.0\aempleado_dataprovider.dll
+C:\KBs\parques\NETSQLServer002\build\aempleado_dataprovider\obj\Release\net8.0\refint\aempleado_dataprovider.dll
+C:\KBs\parques\NETSQLServer002\build\aempleado_dataprovider\obj\Release\net8.0\ref\aempleado_dataprovider.dll

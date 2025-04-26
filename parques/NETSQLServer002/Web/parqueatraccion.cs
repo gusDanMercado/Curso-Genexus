@@ -695,6 +695,7 @@ namespace GeneXus.Programs {
                AV15Pgmname = cgiGet( "vPGMNAME");
                /* Read variables values. */
                A13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
+               n13parqueAtraccionId = false;
                AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                A14parqueAtraccionNombre = cgiGet( edtparqueAtraccionNombre_Internalname);
                AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
@@ -780,6 +781,7 @@ namespace GeneXus.Programs {
                forbiddenHiddens = new GXProperties();
                forbiddenHiddens.Add("hshsalt", "hsh"+"parqueAtraccion");
                A13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
+               n13parqueAtraccionId = false;
                AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                forbiddenHiddens.Add("parqueAtraccionId", context.localUtil.Format( (decimal)(A13parqueAtraccionId), "ZZZ9"));
                forbiddenHiddens.Add("Gx_mode", StringUtil.RTrim( context.localUtil.Format( Gx_mode, "@!")));
@@ -806,11 +808,13 @@ namespace GeneXus.Programs {
                   Gx_mode = "DSP";
                   AssignAttri("", false, "Gx_mode", Gx_mode);
                   A13parqueAtraccionId = (short)(Math.Round(NumberUtil.Val( GetPar( "parqueAtraccionId"), "."), 18, MidpointRounding.ToEven));
+                  n13parqueAtraccionId = false;
                   AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                   getEqualNoModal( ) ;
                   if ( ! (0==AV7parqueAtraccionId) )
                   {
                      A13parqueAtraccionId = AV7parqueAtraccionId;
+                     n13parqueAtraccionId = false;
                      AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                   }
                   else
@@ -818,6 +822,7 @@ namespace GeneXus.Programs {
                      if ( IsIns( )  && (0==A13parqueAtraccionId) && ( Gx_BScreen == 0 ) )
                      {
                         A13parqueAtraccionId = 1;
+                        n13parqueAtraccionId = false;
                         AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                      }
                   }
@@ -836,6 +841,7 @@ namespace GeneXus.Programs {
                      if ( ! (0==AV7parqueAtraccionId) )
                      {
                         A13parqueAtraccionId = AV7parqueAtraccionId;
+                        n13parqueAtraccionId = false;
                         AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                      }
                      else
@@ -843,6 +849,7 @@ namespace GeneXus.Programs {
                         if ( IsIns( )  && (0==A13parqueAtraccionId) && ( Gx_BScreen == 0 ) )
                         {
                            A13parqueAtraccionId = 1;
+                           n13parqueAtraccionId = false;
                            AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                         }
                      }
@@ -1216,6 +1223,7 @@ namespace GeneXus.Programs {
          if ( ! (0==AV7parqueAtraccionId) )
          {
             A13parqueAtraccionId = AV7parqueAtraccionId;
+            n13parqueAtraccionId = false;
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
          }
          else
@@ -1223,6 +1231,7 @@ namespace GeneXus.Programs {
             if ( IsIns( )  && (0==A13parqueAtraccionId) && ( Gx_BScreen == 0 ) )
             {
                A13parqueAtraccionId = 1;
+               n13parqueAtraccionId = false;
                AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             }
          }
@@ -1277,7 +1286,7 @@ namespace GeneXus.Programs {
       protected void Load022( )
       {
          /* Using cursor T00027 */
-         pr_default.execute(5, new Object[] {A13parqueAtraccionId});
+         pr_default.execute(5, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
          if ( (pr_default.getStatus(5) != 101) )
          {
             RcdFound2 = 1;
@@ -1472,7 +1481,7 @@ namespace GeneXus.Programs {
       protected void GetKey022( )
       {
          /* Using cursor T000211 */
-         pr_default.execute(9, new Object[] {A13parqueAtraccionId});
+         pr_default.execute(9, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
          if ( (pr_default.getStatus(9) != 101) )
          {
             RcdFound2 = 1;
@@ -1487,12 +1496,13 @@ namespace GeneXus.Programs {
       protected void getByPrimaryKey( )
       {
          /* Using cursor T00023 */
-         pr_default.execute(1, new Object[] {A13parqueAtraccionId});
+         pr_default.execute(1, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
          if ( (pr_default.getStatus(1) != 101) )
          {
             ZM022( 15) ;
             RcdFound2 = 1;
             A13parqueAtraccionId = T00023_A13parqueAtraccionId[0];
+            n13parqueAtraccionId = T00023_n13parqueAtraccionId[0];
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             A14parqueAtraccionNombre = T00023_A14parqueAtraccionNombre[0];
             AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
@@ -1559,7 +1569,7 @@ namespace GeneXus.Programs {
       {
          RcdFound2 = 0;
          /* Using cursor T000212 */
-         pr_default.execute(10, new Object[] {A13parqueAtraccionId});
+         pr_default.execute(10, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
          if ( (pr_default.getStatus(10) != 101) )
          {
             while ( (pr_default.getStatus(10) != 101) && ( ( T000212_A13parqueAtraccionId[0] < A13parqueAtraccionId ) ) )
@@ -1569,6 +1579,7 @@ namespace GeneXus.Programs {
             if ( (pr_default.getStatus(10) != 101) && ( ( T000212_A13parqueAtraccionId[0] > A13parqueAtraccionId ) ) )
             {
                A13parqueAtraccionId = T000212_A13parqueAtraccionId[0];
+               n13parqueAtraccionId = T000212_n13parqueAtraccionId[0];
                AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                RcdFound2 = 1;
             }
@@ -1580,7 +1591,7 @@ namespace GeneXus.Programs {
       {
          RcdFound2 = 0;
          /* Using cursor T000213 */
-         pr_default.execute(11, new Object[] {A13parqueAtraccionId});
+         pr_default.execute(11, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
          if ( (pr_default.getStatus(11) != 101) )
          {
             while ( (pr_default.getStatus(11) != 101) && ( ( T000213_A13parqueAtraccionId[0] > A13parqueAtraccionId ) ) )
@@ -1590,6 +1601,7 @@ namespace GeneXus.Programs {
             if ( (pr_default.getStatus(11) != 101) && ( ( T000213_A13parqueAtraccionId[0] < A13parqueAtraccionId ) ) )
             {
                A13parqueAtraccionId = T000213_A13parqueAtraccionId[0];
+               n13parqueAtraccionId = T000213_n13parqueAtraccionId[0];
                AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                RcdFound2 = 1;
             }
@@ -1620,6 +1632,7 @@ namespace GeneXus.Programs {
                if ( A13parqueAtraccionId != Z13parqueAtraccionId )
                {
                   A13parqueAtraccionId = Z13parqueAtraccionId;
+                  n13parqueAtraccionId = false;
                   AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                   GX_msglist.addItem(context.GetMessage( "GXM_getbeforeupd", ""), "CandidateKeyNotFound", 1, "PARQUEATRACCIONID");
                   AnyError = 1;
@@ -1694,6 +1707,7 @@ namespace GeneXus.Programs {
          if ( A13parqueAtraccionId != Z13parqueAtraccionId )
          {
             A13parqueAtraccionId = Z13parqueAtraccionId;
+            n13parqueAtraccionId = false;
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             GX_msglist.addItem(context.GetMessage( "GXM_getbeforedlt", ""), 1, "PARQUEATRACCIONID");
             AnyError = 1;
@@ -1717,7 +1731,7 @@ namespace GeneXus.Programs {
          if ( ! IsIns( ) )
          {
             /* Using cursor T00022 */
-            pr_default.execute(0, new Object[] {A13parqueAtraccionId});
+            pr_default.execute(0, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
             if ( (pr_default.getStatus(0) == 103) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"parqueAtraccion"}), "RecordIsLocked", 1, "");
@@ -1802,6 +1816,7 @@ namespace GeneXus.Programs {
                      /* Using cursor T000214 */
                      pr_default.execute(12, new Object[] {A14parqueAtraccionNombre, A15parqueAtraccionSitioWeb, A16parqueAtraccionDireccion, A17parqueAtraccionFoto, A40000parqueAtraccionFoto_GXI, A23parqueAtraccionShowFechaHora, A18PaisId, n28CiudadId, A28CiudadId, A20ShowId});
                      A13parqueAtraccionId = T000214_A13parqueAtraccionId[0];
+                     n13parqueAtraccionId = T000214_n13parqueAtraccionId[0];
                      AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                      pr_default.close(12);
                      pr_default.SmartCacheProvider.SetUpdated("parqueAtraccion");
@@ -1856,7 +1871,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor T000215 */
-                     pr_default.execute(13, new Object[] {A14parqueAtraccionNombre, A15parqueAtraccionSitioWeb, A16parqueAtraccionDireccion, A23parqueAtraccionShowFechaHora, A18PaisId, n28CiudadId, A28CiudadId, A20ShowId, A13parqueAtraccionId});
+                     pr_default.execute(13, new Object[] {A14parqueAtraccionNombre, A15parqueAtraccionSitioWeb, A16parqueAtraccionDireccion, A23parqueAtraccionShowFechaHora, A18PaisId, n28CiudadId, A28CiudadId, A20ShowId, n13parqueAtraccionId, A13parqueAtraccionId});
                      pr_default.close(13);
                      pr_default.SmartCacheProvider.SetUpdated("parqueAtraccion");
                      if ( (pr_default.getStatus(13) == 103) )
@@ -1898,7 +1913,7 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Using cursor T000216 */
-            pr_default.execute(14, new Object[] {A17parqueAtraccionFoto, A40000parqueAtraccionFoto_GXI, A13parqueAtraccionId});
+            pr_default.execute(14, new Object[] {A17parqueAtraccionFoto, A40000parqueAtraccionFoto_GXI, n13parqueAtraccionId, A13parqueAtraccionId});
             pr_default.close(14);
             pr_default.SmartCacheProvider.SetUpdated("parqueAtraccion");
          }
@@ -1922,7 +1937,7 @@ namespace GeneXus.Programs {
                {
                   /* No cascading delete specified. */
                   /* Using cursor T000217 */
-                  pr_default.execute(15, new Object[] {A13parqueAtraccionId});
+                  pr_default.execute(15, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
                   pr_default.close(15);
                   pr_default.SmartCacheProvider.SetUpdated("parqueAtraccion");
                   if ( AnyError == 0 )
@@ -1983,7 +1998,7 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Using cursor T000221 */
-            pr_default.execute(19, new Object[] {A13parqueAtraccionId});
+            pr_default.execute(19, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
             if ( (pr_default.getStatus(19) != 101) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Juego"}), "CannotDeleteReferencedRecord", 1, "");
@@ -1991,7 +2006,7 @@ namespace GeneXus.Programs {
             }
             pr_default.close(19);
             /* Using cursor T000222 */
-            pr_default.execute(20, new Object[] {A13parqueAtraccionId});
+            pr_default.execute(20, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
             if ( (pr_default.getStatus(20) != 101) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Empleado"}), "CannotDeleteReferencedRecord", 1, "");
@@ -2052,6 +2067,7 @@ namespace GeneXus.Programs {
          {
             RcdFound2 = 1;
             A13parqueAtraccionId = T000223_A13parqueAtraccionId[0];
+            n13parqueAtraccionId = T000223_n13parqueAtraccionId[0];
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
          }
          /* Load Subordinate Levels */
@@ -2066,6 +2082,7 @@ namespace GeneXus.Programs {
          {
             RcdFound2 = 1;
             A13parqueAtraccionId = T000223_A13parqueAtraccionId[0];
+            n13parqueAtraccionId = T000223_n13parqueAtraccionId[0];
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
          }
       }
@@ -2382,6 +2399,7 @@ namespace GeneXus.Programs {
       protected void InitAll022( )
       {
          A13parqueAtraccionId = 1;
+         n13parqueAtraccionId = false;
          AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
          InitializeNonKey022( ) ;
       }
@@ -2406,7 +2424,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254131459560", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202542616524241", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2422,7 +2440,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.spa.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("parqueatraccion.js", "?20254131459560", false, true);
+         context.AddJavascriptSource("parqueatraccion.js", "?202542616524241", false, true);
          /* End function include_jscripts */
       }
 
@@ -2706,6 +2724,7 @@ namespace GeneXus.Programs {
          T00025_A29CiudadNombre = new string[] {""} ;
          T00026_A21ShowNombre = new string[] {""} ;
          T00027_A13parqueAtraccionId = new short[1] ;
+         T00027_n13parqueAtraccionId = new bool[] {false} ;
          T00027_A14parqueAtraccionNombre = new string[] {""} ;
          T00027_A15parqueAtraccionSitioWeb = new string[] {""} ;
          T00027_A16parqueAtraccionDireccion = new string[] {""} ;
@@ -2723,7 +2742,9 @@ namespace GeneXus.Programs {
          T00029_A29CiudadNombre = new string[] {""} ;
          T000210_A21ShowNombre = new string[] {""} ;
          T000211_A13parqueAtraccionId = new short[1] ;
+         T000211_n13parqueAtraccionId = new bool[] {false} ;
          T00023_A13parqueAtraccionId = new short[1] ;
+         T00023_n13parqueAtraccionId = new bool[] {false} ;
          T00023_A14parqueAtraccionNombre = new string[] {""} ;
          T00023_A15parqueAtraccionSitioWeb = new string[] {""} ;
          T00023_A16parqueAtraccionDireccion = new string[] {""} ;
@@ -2735,8 +2756,11 @@ namespace GeneXus.Programs {
          T00023_A20ShowId = new short[1] ;
          T00023_A17parqueAtraccionFoto = new string[] {""} ;
          T000212_A13parqueAtraccionId = new short[1] ;
+         T000212_n13parqueAtraccionId = new bool[] {false} ;
          T000213_A13parqueAtraccionId = new short[1] ;
+         T000213_n13parqueAtraccionId = new bool[] {false} ;
          T00022_A13parqueAtraccionId = new short[1] ;
+         T00022_n13parqueAtraccionId = new bool[] {false} ;
          T00022_A14parqueAtraccionNombre = new string[] {""} ;
          T00022_A15parqueAtraccionSitioWeb = new string[] {""} ;
          T00022_A16parqueAtraccionDireccion = new string[] {""} ;
@@ -2748,12 +2772,14 @@ namespace GeneXus.Programs {
          T00022_A20ShowId = new short[1] ;
          T00022_A17parqueAtraccionFoto = new string[] {""} ;
          T000214_A13parqueAtraccionId = new short[1] ;
+         T000214_n13parqueAtraccionId = new bool[] {false} ;
          T000218_A19PaisNombre = new string[] {""} ;
          T000219_A29CiudadNombre = new string[] {""} ;
          T000220_A21ShowNombre = new string[] {""} ;
          T000221_A24JuegoId = new short[1] ;
          T000222_A1EmpleadoId = new short[1] ;
          T000223_A13parqueAtraccionId = new short[1] ;
+         T000223_n13parqueAtraccionId = new bool[] {false} ;
          sDynURL = "";
          FormProcess = "";
          bodyStyle = "";
@@ -2837,7 +2863,9 @@ namespace GeneXus.Programs {
          i18PaisId = 1;
          A18PaisId = 1;
          Z13parqueAtraccionId = 1;
+         n13parqueAtraccionId = false;
          A13parqueAtraccionId = 1;
+         n13parqueAtraccionId = false;
          AV15Pgmname = "parqueAtraccion";
       }
 
@@ -2984,6 +3012,7 @@ namespace GeneXus.Programs {
       private bool n28CiudadId ;
       private bool wbErr ;
       private bool A17parqueAtraccionFoto_IsBlob ;
+      private bool n13parqueAtraccionId ;
       private bool returnInSub ;
       private bool Gx_longc ;
       private string Z14parqueAtraccionNombre ;
@@ -3013,6 +3042,7 @@ namespace GeneXus.Programs {
       private string[] T00025_A29CiudadNombre ;
       private string[] T00026_A21ShowNombre ;
       private short[] T00027_A13parqueAtraccionId ;
+      private bool[] T00027_n13parqueAtraccionId ;
       private string[] T00027_A14parqueAtraccionNombre ;
       private string[] T00027_A15parqueAtraccionSitioWeb ;
       private string[] T00027_A16parqueAtraccionDireccion ;
@@ -3030,7 +3060,9 @@ namespace GeneXus.Programs {
       private string[] T00029_A29CiudadNombre ;
       private string[] T000210_A21ShowNombre ;
       private short[] T000211_A13parqueAtraccionId ;
+      private bool[] T000211_n13parqueAtraccionId ;
       private short[] T00023_A13parqueAtraccionId ;
+      private bool[] T00023_n13parqueAtraccionId ;
       private string[] T00023_A14parqueAtraccionNombre ;
       private string[] T00023_A15parqueAtraccionSitioWeb ;
       private string[] T00023_A16parqueAtraccionDireccion ;
@@ -3042,8 +3074,11 @@ namespace GeneXus.Programs {
       private short[] T00023_A20ShowId ;
       private string[] T00023_A17parqueAtraccionFoto ;
       private short[] T000212_A13parqueAtraccionId ;
+      private bool[] T000212_n13parqueAtraccionId ;
       private short[] T000213_A13parqueAtraccionId ;
+      private bool[] T000213_n13parqueAtraccionId ;
       private short[] T00022_A13parqueAtraccionId ;
+      private bool[] T00022_n13parqueAtraccionId ;
       private string[] T00022_A14parqueAtraccionNombre ;
       private string[] T00022_A15parqueAtraccionSitioWeb ;
       private string[] T00022_A16parqueAtraccionDireccion ;
@@ -3055,12 +3090,14 @@ namespace GeneXus.Programs {
       private short[] T00022_A20ShowId ;
       private string[] T00022_A17parqueAtraccionFoto ;
       private short[] T000214_A13parqueAtraccionId ;
+      private bool[] T000214_n13parqueAtraccionId ;
       private string[] T000218_A19PaisNombre ;
       private string[] T000219_A29CiudadNombre ;
       private string[] T000220_A21ShowNombre ;
       private short[] T000221_A24JuegoId ;
       private short[] T000222_A1EmpleadoId ;
       private short[] T000223_A13parqueAtraccionId ;
+      private bool[] T000223_n13parqueAtraccionId ;
    }
 
    public class parqueatraccion__default : DataStoreHelperBase, IDataStoreHelper
@@ -3101,11 +3138,11 @@ namespace GeneXus.Programs {
        {
           Object[] prmT00022;
           prmT00022 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT00023;
           prmT00023 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT00024;
           prmT00024 = new Object[] {
@@ -3122,7 +3159,7 @@ namespace GeneXus.Programs {
           };
           Object[] prmT00027;
           prmT00027 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT00028;
           prmT00028 = new Object[] {
@@ -3139,15 +3176,15 @@ namespace GeneXus.Programs {
           };
           Object[] prmT000211;
           prmT000211 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000212;
           prmT000212 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000213;
           prmT000213 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000214;
           prmT000214 = new Object[] {
@@ -3170,17 +3207,17 @@ namespace GeneXus.Programs {
           new ParDef("@PaisId",GXType.Int16,4,0) ,
           new ParDef("@CiudadId",GXType.Int16,4,0){Nullable=true} ,
           new ParDef("@ShowId",GXType.Int16,4,0) ,
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000216;
           prmT000216 = new Object[] {
           new ParDef("@parqueAtraccionFoto",GXType.Blob,1024,0){InDB=false} ,
           new ParDef("@parqueAtraccionFoto_GXI",GXType.VarChar,2048,0){AddAtt=true, ImgIdx=0, Tbl="parqueAtraccion", Fld="parqueAtraccionFoto"} ,
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000217;
           prmT000217 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000218;
           prmT000218 = new Object[] {
@@ -3197,11 +3234,11 @@ namespace GeneXus.Programs {
           };
           Object[] prmT000221;
           prmT000221 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000222;
           prmT000222 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000223;
           prmT000223 = new Object[] {

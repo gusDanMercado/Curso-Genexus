@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CallableObject guid="6fb408ea-c6c4-7b3a-88e1-6305f6e392f7" name="Empleado_DataProvider" description="Empleado_Data Provider" namespace="GeneXus.Programs">
+  <Signature name="parm">
+    <Parameter name="ReturnValue" accessor="out" collection="true">
+      <Field name="Empleado" description="Empleado">
+        <Fields>
+          <Field name="EmpleadoId" description="Empleado Id">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>Numeric</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>4</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoNombre" description="Empleado Nombre">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>VarChar</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>1024</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoApellido" description="Empleado Apellido">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>VarChar</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>1024</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoDireccion" description="Empleado Direccion">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>VarChar</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>1024</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoTelefono" description="Empleado Telefono">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>Character</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>20</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoEmail" description="Empleado Email">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>VarChar</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>100</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoFch_Alta" description="Empleado Fch_Alta">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>DateTime</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>8</Value>
+              </Property>
+              <Property>
+                <Name>Decimals</Name>
+                <Value>5</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoFcha_Mod" description="Empleado Fcha_Mod">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>DateTime</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>8</Value>
+              </Property>
+              <Property>
+                <Name>Decimals</Name>
+                <Value>5</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoFch_Cad" description="Empleado Fch_Cad">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>DateTime</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>8</Value>
+              </Property>
+              <Property>
+                <Name>Decimals</Name>
+                <Value>5</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoUsu_Alta" description="Empleado Usu_Alta">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>VarChar</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>40</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoUsu_Mod" description="Empleado Usu_Mod">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>VarChar</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>40</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="EmpleadoUso_Cad" description="Empleado Uso_Cad">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>VarChar</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>40</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="parqueAtraccionId" description="parque Atraccion Id">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>Numeric</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>4</Value>
+              </Property>
+            </Properties>
+          </Field>
+          <Field name="parqueAtraccionNombre" description="parque Atraccion Nombre">
+            <Properties>
+              <Property>
+                <Name>Type</Name>
+                <Value>VarChar</Value>
+              </Property>
+              <Property>
+                <Name>Length</Name>
+                <Value>20</Value>
+              </Property>
+            </Properties>
+          </Field>
+        </Fields>
+      </Field>
+    </Parameter>
+  </Signature>
+</CallableObject>

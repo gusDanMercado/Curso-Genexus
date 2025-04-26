@@ -1,0 +1,186 @@
+
+<ObjectSpec>
+<SpecVersion>18_0_10-184260</SpecVersion>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>1</ObjId>
+<ObjName>Empleado_BC</ObjName>
+<ObjDesc>Empleado</ObjDesc>
+<ObjPgmName>Empleado_BC</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>41</GenId>
+<GenName>Default (.NET)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>1</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>1</TableId>
+<TableName>Empleado</TableName>
+<Description>Empleado</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>1</TableId>
+<TableName>Empleado</TableName>
+<Description>Empleado</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>EmpleadoId</AttriName>
+<Description>Empleado Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>2</TableId>
+<TableName>parqueAtraccion</TableName>
+<Description>parque Atraccion</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></KeyAttributes>
+<JoinType>Outer</JoinType>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>1</TableId>
+<TableName>Empleado</TableName>
+<Description>Empleado</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>EmpleadoNombre</AttriName>
+<Description>Empleado Nombre</Description></Attribute>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>EmpleadoApellido</AttriName>
+<Description>Empleado Apellido</Description></Attribute>
+<Attribute>
+<AttriId>4</AttriId>
+<AttriName>EmpleadoDireccion</AttriName>
+<Description>Empleado Direccion</Description></Attribute>
+<Attribute>
+<AttriId>5</AttriId>
+<AttriName>EmpleadoTelefono</AttriName>
+<Description>Empleado Telefono</Description></Attribute>
+<Attribute>
+<AttriId>6</AttriId>
+<AttriName>EmpleadoEmail</AttriName>
+<Description>Empleado Email</Description></Attribute>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>EmpleadoFch_Alta</AttriName>
+<Description>Empleado Fch_Alta</Description></Attribute>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>EmpleadoFcha_Mod</AttriName>
+<Description>Empleado Fcha_Mod</Description></Attribute>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>EmpleadoFch_Cad</AttriName>
+<Description>Empleado Fch_Cad</Description></Attribute>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>EmpleadoUsu_Alta</AttriName>
+<Description>Empleado Usu_Alta</Description></Attribute>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>EmpleadoUsu_Mod</AttriName>
+<Description>Empleado Usu_Mod</Description></Attribute>
+<Attribute>
+<AttriId>12</AttriId>
+<AttriName>EmpleadoUso_Cad</AttriName>
+<Description>Empleado Uso_Cad</Description></Attribute>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>1</TableId>
+<TableName>Empleado</TableName>
+<Description>Empleado</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>EmpleadoNombre</AttriName>
+<Description>Empleado Nombre</Description></Attribute>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>EmpleadoApellido</AttriName>
+<Description>Empleado Apellido</Description></Attribute>
+<Attribute>
+<AttriId>4</AttriId>
+<AttriName>EmpleadoDireccion</AttriName>
+<Description>Empleado Direccion</Description></Attribute>
+<Attribute>
+<AttriId>5</AttriId>
+<AttriName>EmpleadoTelefono</AttriName>
+<Description>Empleado Telefono</Description></Attribute>
+<Attribute>
+<AttriId>6</AttriId>
+<AttriName>EmpleadoEmail</AttriName>
+<Description>Empleado Email</Description></Attribute>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>EmpleadoFch_Alta</AttriName>
+<Description>Empleado Fch_Alta</Description></Attribute>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>EmpleadoFcha_Mod</AttriName>
+<Description>Empleado Fcha_Mod</Description></Attribute>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>EmpleadoFch_Cad</AttriName>
+<Description>Empleado Fch_Cad</Description></Attribute>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>EmpleadoUsu_Alta</AttriName>
+<Description>Empleado Usu_Alta</Description></Attribute>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>EmpleadoUsu_Mod</AttriName>
+<Description>Empleado Usu_Mod</Description></Attribute>
+<Attribute>
+<AttriId>12</AttriId>
+<AttriName>EmpleadoUso_Cad</AttriName>
+<Description>Empleado Uso_Cad</Description></Attribute>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>parqueAtraccionId</AttriName>
+<Description>parque Atraccion Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>1</TableId>
+<TableName>Empleado</TableName>
+<Description>Empleado</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Suggests></Suggests></ObjectSpec>

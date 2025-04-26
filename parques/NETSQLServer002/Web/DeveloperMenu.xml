@@ -39,4 +39,16 @@
       <ObjDesc>Shows</ObjDesc>
       <ObjLink>wwshow.aspx</ObjLink>
    </Object>
+   <Object>
+      <ObjCls>1</ObjCls>
+      <ObjName>ReporteEmpleado</ObjName>
+      <ObjDesc>Reporte Empleado</ObjDesc>
+      <ObjLink>areporteempleado.aspx</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>1</ObjCls>
+      <ObjName>ReporteEmpleadoExcel</ObjName>
+      <ObjDesc>Reporte Empleado Excel</ObjDesc>
+      <ObjLink>areporteempleadoexcel.aspx</ObjLink>
+   </Object>
 </Objects>

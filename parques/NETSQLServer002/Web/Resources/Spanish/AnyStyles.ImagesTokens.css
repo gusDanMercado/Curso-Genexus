@@ -2,7 +2,9 @@
 :root
 {
 	--GX-Image_selectRow : url(../selectRow.png);
+	--GX-Image_Image1 : url(../Image1.png);
 }
 
 .GX_Image_selectRow_Class{content: var(--GX-Image_selectRow);}
+.GX_Image_Image1_Class{content: var(--GX-Image_Image1);}
 }

@@ -127,6 +127,10 @@
             "GeneXus.PdfReportsCS.Core": {
               "target": "Package",
               "version": "[1.30.0, 1.30.0]"
+            },
+            "iTextSharp-LGPL": {
+              "target": "Package",
+              "version": "[4.1.6, )"
             }
           },
           "imports": [

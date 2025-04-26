@@ -1,0 +1,7 @@
+C:\KBs\parques\NETSQLServer002\build\empleado_bc\bin\Release\net8.0\empleado_bc.dll
+C:\KBs\parques\NETSQLServer002\build\empleado_bc\obj\Release\net8.0\empleado_bc.csproj.AssemblyReference.cache
+C:\KBs\parques\NETSQLServer002\build\empleado_bc\obj\Release\net8.0\empleado_bc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\parques\NETSQLServer002\build\empleado_bc\obj\Release\net8.0\empleado_bc.csproj.CoreCompileInputs.cache
+C:\KBs\parques\NETSQLServer002\build\empleado_bc\obj\Release\net8.0\empleado_bc.dll
+C:\KBs\parques\NETSQLServer002\build\empleado_bc\obj\Release\net8.0\refint\empleado_bc.dll
+C:\KBs\parques\NETSQLServer002\build\empleado_bc\obj\Release\net8.0\ref\empleado_bc.dll

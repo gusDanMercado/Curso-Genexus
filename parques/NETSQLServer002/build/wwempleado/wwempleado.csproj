@@ -11,7 +11,7 @@
 		<OfficeSupport>false</OfficeSupport>
 		<MailSupport>false</MailSupport>
 		<GrpcClientSupport>false</GrpcClientSupport>
-		<PdfLibrary></PdfLibrary>
+		<PdfLibrary>itext</PdfLibrary>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -35,6 +35,8 @@
 	<ItemGroup>
 		<Compile Include = "$(WebDirectory)\wwempleado.cs" />
 		<Compile Include = "$(WebDirectory)\general\security\isauthorized.cs" />
+		<Compile Include = "$(WebDirectory)\reporteempleadoexcel.cs" />
+		<Compile Include = "$(WebDirectory)\reporteempleado.cs" />
 
 	</ItemGroup>
 	<ItemGroup Condition="'$(PostgresqlSupport)'=='true'">

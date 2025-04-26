@@ -989,6 +989,7 @@ namespace GeneXus.Programs {
                A14parqueAtraccionNombre = H000L2_A14parqueAtraccionNombre[0];
                AssignAttri(sPrefix, false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
                A13parqueAtraccionId = H000L2_A13parqueAtraccionId[0];
+               n13parqueAtraccionId = H000L2_n13parqueAtraccionId[0];
                AssignAttri(sPrefix, false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                A12EmpleadoUso_Cad = H000L2_A12EmpleadoUso_Cad[0];
                n12EmpleadoUso_Cad = H000L2_n12EmpleadoUso_Cad[0];
@@ -1121,6 +1122,7 @@ namespace GeneXus.Programs {
             n12EmpleadoUso_Cad = false;
             AssignAttri(sPrefix, false, "A12EmpleadoUso_Cad", A12EmpleadoUso_Cad);
             A13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
+            n13parqueAtraccionId = false;
             AssignAttri(sPrefix, false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             A14parqueAtraccionNombre = cgiGet( edtparqueAtraccionNombre_Internalname);
             AssignAttri(sPrefix, false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
@@ -1130,6 +1132,7 @@ namespace GeneXus.Programs {
             forbiddenHiddens = new GXProperties();
             forbiddenHiddens.Add("hshsalt", sPrefix+"hsh"+"EmpleadoGeneral");
             A13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
+            n13parqueAtraccionId = false;
             AssignAttri(sPrefix, false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             forbiddenHiddens.Add("parqueAtraccionId", context.localUtil.Format( (decimal)(A13parqueAtraccionId), "ZZZ9"));
             hsh = cgiGet( sPrefix+"hsh");
@@ -1405,7 +1408,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254131459557", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202542616524157", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1421,7 +1424,7 @@ namespace GeneXus.Programs {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("empleadogeneral.js", "?20254131459557", false, true);
+         context.AddJavascriptSource("empleadogeneral.js", "?202542616524157", false, true);
          /* End function include_jscripts */
       }
 
@@ -1565,6 +1568,7 @@ namespace GeneXus.Programs {
          H000L2_A1EmpleadoId = new short[1] ;
          H000L2_A14parqueAtraccionNombre = new string[] {""} ;
          H000L2_A13parqueAtraccionId = new short[1] ;
+         H000L2_n13parqueAtraccionId = new bool[] {false} ;
          H000L2_A12EmpleadoUso_Cad = new string[] {""} ;
          H000L2_n12EmpleadoUso_Cad = new bool[] {false} ;
          H000L2_A11EmpleadoUsu_Mod = new string[] {""} ;
@@ -1597,9 +1601,9 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.empleadogeneral__default(),
             new Object[][] {
                 new Object[] {
-               H000L2_A1EmpleadoId, H000L2_A14parqueAtraccionNombre, H000L2_A13parqueAtraccionId, H000L2_A12EmpleadoUso_Cad, H000L2_n12EmpleadoUso_Cad, H000L2_A11EmpleadoUsu_Mod, H000L2_n11EmpleadoUsu_Mod, H000L2_A10EmpleadoUsu_Alta, H000L2_n10EmpleadoUsu_Alta, H000L2_A9EmpleadoFch_Cad,
-               H000L2_n9EmpleadoFch_Cad, H000L2_A8EmpleadoFcha_Mod, H000L2_n8EmpleadoFcha_Mod, H000L2_A7EmpleadoFch_Alta, H000L2_n7EmpleadoFch_Alta, H000L2_A6EmpleadoEmail, H000L2_n6EmpleadoEmail, H000L2_A5EmpleadoTelefono, H000L2_n5EmpleadoTelefono, H000L2_A4EmpleadoDireccion,
-               H000L2_n4EmpleadoDireccion, H000L2_A3EmpleadoApellido, H000L2_A2EmpleadoNombre
+               H000L2_A1EmpleadoId, H000L2_A14parqueAtraccionNombre, H000L2_A13parqueAtraccionId, H000L2_n13parqueAtraccionId, H000L2_A12EmpleadoUso_Cad, H000L2_n12EmpleadoUso_Cad, H000L2_A11EmpleadoUsu_Mod, H000L2_n11EmpleadoUsu_Mod, H000L2_A10EmpleadoUsu_Alta, H000L2_n10EmpleadoUsu_Alta,
+               H000L2_A9EmpleadoFch_Cad, H000L2_n9EmpleadoFch_Cad, H000L2_A8EmpleadoFcha_Mod, H000L2_n8EmpleadoFcha_Mod, H000L2_A7EmpleadoFch_Alta, H000L2_n7EmpleadoFch_Alta, H000L2_A6EmpleadoEmail, H000L2_n6EmpleadoEmail, H000L2_A5EmpleadoTelefono, H000L2_n5EmpleadoTelefono,
+               H000L2_A4EmpleadoDireccion, H000L2_n4EmpleadoDireccion, H000L2_A3EmpleadoApellido, H000L2_A2EmpleadoNombre
                }
             }
          );
@@ -1701,6 +1705,7 @@ namespace GeneXus.Programs {
       private bool Rfr0gs ;
       private bool wbErr ;
       private bool gxdyncontrolsrefreshing ;
+      private bool n13parqueAtraccionId ;
       private bool n12EmpleadoUso_Cad ;
       private bool n11EmpleadoUsu_Mod ;
       private bool n10EmpleadoUsu_Alta ;
@@ -1728,6 +1733,7 @@ namespace GeneXus.Programs {
       private short[] H000L2_A1EmpleadoId ;
       private string[] H000L2_A14parqueAtraccionNombre ;
       private short[] H000L2_A13parqueAtraccionId ;
+      private bool[] H000L2_n13parqueAtraccionId ;
       private string[] H000L2_A12EmpleadoUso_Cad ;
       private bool[] H000L2_n12EmpleadoUso_Cad ;
       private string[] H000L2_A11EmpleadoUsu_Mod ;
@@ -1774,7 +1780,7 @@ namespace GeneXus.Programs {
           new ParDef("@EmpleadoId",GXType.Int16,4,0)
           };
           def= new CursorDef[] {
-              new CursorDef("H000L2", "SELECT T1.[EmpleadoId], T2.[parqueAtraccionNombre], T1.[parqueAtraccionId], T1.[EmpleadoUso_Cad], T1.[EmpleadoUsu_Mod], T1.[EmpleadoUsu_Alta], T1.[EmpleadoFch_Cad], T1.[EmpleadoFcha_Mod], T1.[EmpleadoFch_Alta], T1.[EmpleadoEmail], T1.[EmpleadoTelefono], T1.[EmpleadoDireccion], T1.[EmpleadoApellido], T1.[EmpleadoNombre] FROM ([Empleado] T1 INNER JOIN [parqueAtraccion] T2 ON T2.[parqueAtraccionId] = T1.[parqueAtraccionId]) WHERE T1.[EmpleadoId] = @EmpleadoId ORDER BY T1.[EmpleadoId] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH000L2,1, GxCacheFrequency.OFF ,true,true )
+              new CursorDef("H000L2", "SELECT T1.[EmpleadoId], T2.[parqueAtraccionNombre], T1.[parqueAtraccionId], T1.[EmpleadoUso_Cad], T1.[EmpleadoUsu_Mod], T1.[EmpleadoUsu_Alta], T1.[EmpleadoFch_Cad], T1.[EmpleadoFcha_Mod], T1.[EmpleadoFch_Alta], T1.[EmpleadoEmail], T1.[EmpleadoTelefono], T1.[EmpleadoDireccion], T1.[EmpleadoApellido], T1.[EmpleadoNombre] FROM ([Empleado] T1 LEFT JOIN [parqueAtraccion] T2 ON T2.[parqueAtraccionId] = T1.[parqueAtraccionId]) WHERE T1.[EmpleadoId] = @EmpleadoId ORDER BY T1.[EmpleadoId] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH000L2,1, GxCacheFrequency.OFF ,true,true )
           };
        }
     }
@@ -1789,26 +1795,27 @@ namespace GeneXus.Programs {
                 ((short[]) buf[0])[0] = rslt.getShort(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 ((short[]) buf[2])[0] = rslt.getShort(3);
-                ((string[]) buf[3])[0] = rslt.getVarchar(4);
-                ((bool[]) buf[4])[0] = rslt.wasNull(4);
-                ((string[]) buf[5])[0] = rslt.getVarchar(5);
-                ((bool[]) buf[6])[0] = rslt.wasNull(5);
-                ((string[]) buf[7])[0] = rslt.getVarchar(6);
-                ((bool[]) buf[8])[0] = rslt.wasNull(6);
-                ((DateTime[]) buf[9])[0] = rslt.getGXDateTime(7);
-                ((bool[]) buf[10])[0] = rslt.wasNull(7);
-                ((DateTime[]) buf[11])[0] = rslt.getGXDateTime(8);
-                ((bool[]) buf[12])[0] = rslt.wasNull(8);
-                ((DateTime[]) buf[13])[0] = rslt.getGXDateTime(9);
-                ((bool[]) buf[14])[0] = rslt.wasNull(9);
-                ((string[]) buf[15])[0] = rslt.getVarchar(10);
-                ((bool[]) buf[16])[0] = rslt.wasNull(10);
-                ((string[]) buf[17])[0] = rslt.getString(11, 20);
-                ((bool[]) buf[18])[0] = rslt.wasNull(11);
-                ((string[]) buf[19])[0] = rslt.getVarchar(12);
-                ((bool[]) buf[20])[0] = rslt.wasNull(12);
-                ((string[]) buf[21])[0] = rslt.getVarchar(13);
-                ((string[]) buf[22])[0] = rslt.getVarchar(14);
+                ((bool[]) buf[3])[0] = rslt.wasNull(3);
+                ((string[]) buf[4])[0] = rslt.getVarchar(4);
+                ((bool[]) buf[5])[0] = rslt.wasNull(4);
+                ((string[]) buf[6])[0] = rslt.getVarchar(5);
+                ((bool[]) buf[7])[0] = rslt.wasNull(5);
+                ((string[]) buf[8])[0] = rslt.getVarchar(6);
+                ((bool[]) buf[9])[0] = rslt.wasNull(6);
+                ((DateTime[]) buf[10])[0] = rslt.getGXDateTime(7);
+                ((bool[]) buf[11])[0] = rslt.wasNull(7);
+                ((DateTime[]) buf[12])[0] = rslt.getGXDateTime(8);
+                ((bool[]) buf[13])[0] = rslt.wasNull(8);
+                ((DateTime[]) buf[14])[0] = rslt.getGXDateTime(9);
+                ((bool[]) buf[15])[0] = rslt.wasNull(9);
+                ((string[]) buf[16])[0] = rslt.getVarchar(10);
+                ((bool[]) buf[17])[0] = rslt.wasNull(10);
+                ((string[]) buf[18])[0] = rslt.getString(11, 20);
+                ((bool[]) buf[19])[0] = rslt.wasNull(11);
+                ((string[]) buf[20])[0] = rslt.getVarchar(12);
+                ((bool[]) buf[21])[0] = rslt.wasNull(12);
+                ((string[]) buf[22])[0] = rslt.getVarchar(13);
+                ((string[]) buf[23])[0] = rslt.getVarchar(14);
                 return;
        }
     }

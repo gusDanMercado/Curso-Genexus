@@ -75,6 +75,7 @@ dd1aaecd-7f95-4983-9b3f-9e271796146e=GeneXusUnanimo.featured
 ef73725b-c186-4f57-94bc-867e0a183c3e=GeneXusUnanimo.list_view_white
 94cb0e3a-c9f3-48c4-bff0-2c0436ca9a65=GeneXusUnanimo.resize_column
 3914535b-0c03-44c5-9538-906a99cdd2bc=selectRow
+657c29e4-06a1-4644-88cb-5e3d8dd2d40a=Image1
 [Location]
 4f19426c-8435-4c2c-875e-81f26ea9237e=Spanish,GeneXusUnanimo.Unanimo,I,GeneXusUnanimo.Unanimo/color-scheme_light/GeneXusUnanimo.show_more.svg,
 4f19426c-8435-4c2c-875e-81f26ea9237e=Spanish,GeneXusUnanimo.Unanimo,I,GeneXusUnanimo.Unanimo/color-scheme_dark/GeneXusUnanimo.show_more.svg,
@@ -718,3 +719,9 @@ ef73725b-c186-4f57-94bc-867e0a183c3e=Spanish,parques,I,GeneXusUnanimo.Unanimo/Ge
 3914535b-0c03-44c5-9538-906a99cdd2bc=Spanish,GeneXusUnanimo.UnanimoWeb,I,selectRow.png,
 3914535b-0c03-44c5-9538-906a99cdd2bc=Spanish,GeneXusUnanimo.UnanimoAngular,I,selectRow.png,
 3914535b-0c03-44c5-9538-906a99cdd2bc=Spanish,parques,I,selectRow.png,
+657c29e4-06a1-4644-88cb-5e3d8dd2d40a=Spanish,GeneXusUnanimo.Unanimo,I,Image1.png,
+657c29e4-06a1-4644-88cb-5e3d8dd2d40a=Spanish,GeneXusUnanimo.UnanimoControls,I,Image1.png,
+657c29e4-06a1-4644-88cb-5e3d8dd2d40a=Spanish,GeneXusUnanimo.UnanimoMobile,I,Image1.png,
+657c29e4-06a1-4644-88cb-5e3d8dd2d40a=Spanish,GeneXusUnanimo.UnanimoWeb,I,Image1.png,
+657c29e4-06a1-4644-88cb-5e3d8dd2d40a=Spanish,GeneXusUnanimo.UnanimoAngular,I,Image1.png,
+657c29e4-06a1-4644-88cb-5e3d8dd2d40a=Spanish,parques,I,Image1.png,

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mqDPFUMhyuJExkeOta9hErKHN4LJfz+W1g5mjg+r1E4DvH9Ejls7dPnJsB0FV73HR37mPGtAiTuLLinaE+x7pQ==",
+  "dgSpecHash": "4TBI9rDNQv/Umhb0ZRFgmwxSD0WghAHgbmMr4DMhwaEYc1scL9307h1uhR8tUD6RcrcoiZ3Vph8BMREQgui8fQ==",
   "success": true,
   "projectFilePath": "C:\\KBs\\parques\\NETSQLServer002\\build\\developermenu\\developermenu.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\gusta\\.nuget\\packages\\genexus.encrypt\\1.30.0\\genexus.encrypt.1.30.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\genexus.pdfreportscs.core\\1.30.0\\genexus.pdfreportscs.core.1.30.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\genexus.xsl.core\\1.30.0\\genexus.xsl.core.1.30.0.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\itextsharp-lgpl\\4.1.6\\itextsharp-lgpl.4.1.6.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",

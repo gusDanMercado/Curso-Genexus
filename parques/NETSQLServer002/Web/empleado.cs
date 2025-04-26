@@ -56,6 +56,7 @@ namespace GeneXus.Programs {
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_14") == 0 )
          {
             A13parqueAtraccionId = (short)(Math.Round(NumberUtil.Val( GetPar( "parqueAtraccionId"), "."), 18, MidpointRounding.ToEven));
+            n13parqueAtraccionId = false;
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             setAjaxCallMode();
             if ( ! IsValidAjaxCall( true) )
@@ -699,14 +700,17 @@ namespace GeneXus.Programs {
                Z12EmpleadoUso_Cad = cgiGet( "Z12EmpleadoUso_Cad");
                n12EmpleadoUso_Cad = (String.IsNullOrEmpty(StringUtil.RTrim( A12EmpleadoUso_Cad)) ? true : false);
                Z13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "Z13parqueAtraccionId"), ",", "."), 18, MidpointRounding.ToEven));
+               n13parqueAtraccionId = ((0==A13parqueAtraccionId) ? true : false);
                IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), ",", "."), 18, MidpointRounding.ToEven));
                IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), ",", "."), 18, MidpointRounding.ToEven));
                Gx_mode = cgiGet( "Mode");
                N13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "N13parqueAtraccionId"), ",", "."), 18, MidpointRounding.ToEven));
+               n13parqueAtraccionId = ((0==A13parqueAtraccionId) ? true : false);
                AV7EmpleadoId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vEMPLEADOID"), ",", "."), 18, MidpointRounding.ToEven));
                Gx_BScreen = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ",", "."), 18, MidpointRounding.ToEven));
                AV11Insert_parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vINSERT_PARQUEATRACCIONID"), ",", "."), 18, MidpointRounding.ToEven));
-               AV13Pgmname = cgiGet( "vPGMNAME");
+               Gx_date = context.localUtil.CToD( cgiGet( "vTODAY"), 0);
+               AV15Pgmname = cgiGet( "vPGMNAME");
                /* Read variables values. */
                A1EmpleadoId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtEmpleadoId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
                AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
@@ -800,13 +804,16 @@ namespace GeneXus.Programs {
                   AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
                   wbErr = true;
                   A13parqueAtraccionId = 0;
+                  n13parqueAtraccionId = false;
                   AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                }
                else
                {
                   A13parqueAtraccionId = (short)(Math.Round(context.localUtil.CToN( cgiGet( edtparqueAtraccionId_Internalname), ",", "."), 18, MidpointRounding.ToEven));
+                  n13parqueAtraccionId = false;
                   AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
                }
+               n13parqueAtraccionId = ((0==A13parqueAtraccionId) ? true : false);
                A14parqueAtraccionNombre = cgiGet( edtparqueAtraccionNombre_Internalname);
                AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
                /* Read subfile selected row values. */
@@ -1074,28 +1081,28 @@ namespace GeneXus.Programs {
       {
          /* Start Routine */
          returnInSub = false;
-         if ( ! new GeneXus.Programs.general.security.isauthorized(context).executeUdp(  AV13Pgmname) )
+         if ( ! new GeneXus.Programs.general.security.isauthorized(context).executeUdp(  AV15Pgmname) )
          {
-            CallWebObject(formatLink("general.security.notauthorized.aspx", new object[] {UrlEncode(StringUtil.RTrim(AV13Pgmname))}, new string[] {"GxObject"}) );
+            CallWebObject(formatLink("general.security.notauthorized.aspx", new object[] {UrlEncode(StringUtil.RTrim(AV15Pgmname))}, new string[] {"GxObject"}) );
             context.wjLocDisableFrm = 1;
          }
          AV9TrnContext.FromXml(AV10WebSession.Get("TrnContext"), null, "", "");
          AV11Insert_parqueAtraccionId = 0;
          AssignAttri("", false, "AV11Insert_parqueAtraccionId", StringUtil.LTrimStr( (decimal)(AV11Insert_parqueAtraccionId), 4, 0));
-         if ( ( StringUtil.StrCmp(AV9TrnContext.gxTpr_Transactionname, AV13Pgmname) == 0 ) && ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) )
+         if ( ( StringUtil.StrCmp(AV9TrnContext.gxTpr_Transactionname, AV15Pgmname) == 0 ) && ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) )
          {
-            AV14GXV1 = 1;
-            AssignAttri("", false, "AV14GXV1", StringUtil.LTrimStr( (decimal)(AV14GXV1), 8, 0));
-            while ( AV14GXV1 <= AV9TrnContext.gxTpr_Attributes.Count )
+            AV16GXV1 = 1;
+            AssignAttri("", false, "AV16GXV1", StringUtil.LTrimStr( (decimal)(AV16GXV1), 8, 0));
+            while ( AV16GXV1 <= AV9TrnContext.gxTpr_Attributes.Count )
             {
-               AV12TrnContextAtt = ((GeneXus.Programs.general.ui.SdtTransactionContext_Attribute)AV9TrnContext.gxTpr_Attributes.Item(AV14GXV1));
+               AV12TrnContextAtt = ((GeneXus.Programs.general.ui.SdtTransactionContext_Attribute)AV9TrnContext.gxTpr_Attributes.Item(AV16GXV1));
                if ( StringUtil.StrCmp(AV12TrnContextAtt.gxTpr_Attributename, "parqueAtraccionId") == 0 )
                {
                   AV11Insert_parqueAtraccionId = (short)(Math.Round(NumberUtil.Val( AV12TrnContextAtt.gxTpr_Attributevalue, "."), 18, MidpointRounding.ToEven));
                   AssignAttri("", false, "AV11Insert_parqueAtraccionId", StringUtil.LTrimStr( (decimal)(AV11Insert_parqueAtraccionId), 4, 0));
                }
-               AV14GXV1 = (int)(AV14GXV1+1);
-               AssignAttri("", false, "AV14GXV1", StringUtil.LTrimStr( (decimal)(AV14GXV1), 8, 0));
+               AV16GXV1 = (int)(AV16GXV1+1);
+               AssignAttri("", false, "AV16GXV1", StringUtil.LTrimStr( (decimal)(AV16GXV1), 8, 0));
             }
          }
          if ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )
@@ -1184,6 +1191,8 @@ namespace GeneXus.Programs {
          AssignProp("", false, edtEmpleadoId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtEmpleadoId_Enabled), 5, 0), true);
          Gx_BScreen = 0;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
+         Gx_date = DateTimeUtil.Today( context);
+         AssignAttri("", false, "Gx_date", context.localUtil.Format(Gx_date, "99/99/99"));
          imgprompt_13_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx0020.aspx"+"',["+"{Ctrl:gx.dom.el('"+"PARQUEATRACCIONID"+"'), id:'"+"PARQUEATRACCIONID"+"'"+",IOType:'out'}"+"],"+"null"+","+"'', false"+","+"false"+");");
          edtEmpleadoId_Enabled = 0;
          AssignProp("", false, edtEmpleadoId_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtEmpleadoId_Enabled), 5, 0), true);
@@ -1229,6 +1238,7 @@ namespace GeneXus.Programs {
          if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) && ! (0==AV11Insert_parqueAtraccionId) )
          {
             A13parqueAtraccionId = AV11Insert_parqueAtraccionId;
+            n13parqueAtraccionId = false;
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
          }
          else
@@ -1236,21 +1246,22 @@ namespace GeneXus.Programs {
             if ( IsIns( )  && (0==A13parqueAtraccionId) && ( Gx_BScreen == 0 ) )
             {
                A13parqueAtraccionId = 1;
+               n13parqueAtraccionId = false;
                AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             }
          }
          if ( IsIns( )  && (DateTime.MinValue==A7EmpleadoFch_Alta) && ( Gx_BScreen == 0 ) )
          {
-            A7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
+            A7EmpleadoFch_Alta = DateTimeUtil.ResetTime( Gx_date ) ;
             n7EmpleadoFch_Alta = false;
             AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
          }
          if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) && ( Gx_BScreen == 0 ) )
          {
-            AV13Pgmname = "Empleado";
-            AssignAttri("", false, "AV13Pgmname", AV13Pgmname);
+            AV15Pgmname = "Empleado";
+            AssignAttri("", false, "AV15Pgmname", AV15Pgmname);
             /* Using cursor T00014 */
-            pr_default.execute(2, new Object[] {A13parqueAtraccionId});
+            pr_default.execute(2, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
             A14parqueAtraccionNombre = T00014_A14parqueAtraccionNombre[0];
             AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
             pr_default.close(2);
@@ -1298,6 +1309,7 @@ namespace GeneXus.Programs {
             A14parqueAtraccionNombre = T00015_A14parqueAtraccionNombre[0];
             AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
             A13parqueAtraccionId = T00015_A13parqueAtraccionId[0];
+            n13parqueAtraccionId = T00015_n13parqueAtraccionId[0];
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             ZM011( -13) ;
          }
@@ -1307,8 +1319,8 @@ namespace GeneXus.Programs {
 
       protected void OnLoadActions011( )
       {
-         AV13Pgmname = "Empleado";
-         AssignAttri("", false, "AV13Pgmname", AV13Pgmname);
+         AV15Pgmname = "Empleado";
+         AssignAttri("", false, "AV15Pgmname", AV15Pgmname);
       }
 
       protected void CheckExtendedTable011( )
@@ -1316,8 +1328,8 @@ namespace GeneXus.Programs {
          Gx_BScreen = 1;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal( ) ;
-         AV13Pgmname = "Empleado";
-         AssignAttri("", false, "AV13Pgmname", AV13Pgmname);
+         AV15Pgmname = "Empleado";
+         AssignAttri("", false, "AV15Pgmname", AV15Pgmname);
          if ( ! ( GxRegex.IsMatch(A6EmpleadoEmail,"^((\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)|(\\s*))$") || String.IsNullOrEmpty(StringUtil.RTrim( A6EmpleadoEmail)) ) )
          {
             GX_msglist.addItem("El valor de Empleado Email no coincide con el patrón especificado", "OutOfRange", 1, "EMPLEADOEMAIL");
@@ -1347,13 +1359,16 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
          /* Using cursor T00014 */
-         pr_default.execute(2, new Object[] {A13parqueAtraccionId});
+         pr_default.execute(2, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
          if ( (pr_default.getStatus(2) == 101) )
          {
-            GX_msglist.addItem("No existe 'parque Atraccion'.", "ForeignKeyNotFound", 1, "PARQUEATRACCIONID");
-            AnyError = 1;
-            GX_FocusControl = edtparqueAtraccionId_Internalname;
-            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+            if ( ! ( (0==A13parqueAtraccionId) ) )
+            {
+               GX_msglist.addItem("No existe 'parque Atraccion'.", "ForeignKeyNotFound", 1, "PARQUEATRACCIONID");
+               AnyError = 1;
+               GX_FocusControl = edtparqueAtraccionId_Internalname;
+               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+            }
          }
          A14parqueAtraccionNombre = T00014_A14parqueAtraccionNombre[0];
          AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
@@ -1372,13 +1387,16 @@ namespace GeneXus.Programs {
       protected void gxLoad_14( short A13parqueAtraccionId )
       {
          /* Using cursor T00016 */
-         pr_default.execute(4, new Object[] {A13parqueAtraccionId});
+         pr_default.execute(4, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
          if ( (pr_default.getStatus(4) == 101) )
          {
-            GX_msglist.addItem("No existe 'parque Atraccion'.", "ForeignKeyNotFound", 1, "PARQUEATRACCIONID");
-            AnyError = 1;
-            GX_FocusControl = edtparqueAtraccionId_Internalname;
-            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+            if ( ! ( (0==A13parqueAtraccionId) ) )
+            {
+               GX_msglist.addItem("No existe 'parque Atraccion'.", "ForeignKeyNotFound", 1, "PARQUEATRACCIONID");
+               AnyError = 1;
+               GX_FocusControl = edtparqueAtraccionId_Internalname;
+               AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
+            }
          }
          A14parqueAtraccionNombre = T00016_A14parqueAtraccionNombre[0];
          AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
@@ -1452,6 +1470,7 @@ namespace GeneXus.Programs {
             n12EmpleadoUso_Cad = T00013_n12EmpleadoUso_Cad[0];
             AssignAttri("", false, "A12EmpleadoUso_Cad", A12EmpleadoUso_Cad);
             A13parqueAtraccionId = T00013_A13parqueAtraccionId[0];
+            n13parqueAtraccionId = T00013_n13parqueAtraccionId[0];
             AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
             Z1EmpleadoId = A1EmpleadoId;
             sMode1 = Gx_mode;
@@ -1771,7 +1790,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor T000110 */
-                     pr_default.execute(8, new Object[] {A2EmpleadoNombre, A3EmpleadoApellido, n4EmpleadoDireccion, A4EmpleadoDireccion, n5EmpleadoTelefono, A5EmpleadoTelefono, n6EmpleadoEmail, A6EmpleadoEmail, n7EmpleadoFch_Alta, A7EmpleadoFch_Alta, n8EmpleadoFcha_Mod, A8EmpleadoFcha_Mod, n9EmpleadoFch_Cad, A9EmpleadoFch_Cad, n10EmpleadoUsu_Alta, A10EmpleadoUsu_Alta, n11EmpleadoUsu_Mod, A11EmpleadoUsu_Mod, n12EmpleadoUso_Cad, A12EmpleadoUso_Cad, A13parqueAtraccionId});
+                     pr_default.execute(8, new Object[] {A2EmpleadoNombre, A3EmpleadoApellido, n4EmpleadoDireccion, A4EmpleadoDireccion, n5EmpleadoTelefono, A5EmpleadoTelefono, n6EmpleadoEmail, A6EmpleadoEmail, n7EmpleadoFch_Alta, A7EmpleadoFch_Alta, n8EmpleadoFcha_Mod, A8EmpleadoFcha_Mod, n9EmpleadoFch_Cad, A9EmpleadoFch_Cad, n10EmpleadoUsu_Alta, A10EmpleadoUsu_Alta, n11EmpleadoUsu_Mod, A11EmpleadoUsu_Mod, n12EmpleadoUso_Cad, A12EmpleadoUso_Cad, n13parqueAtraccionId, A13parqueAtraccionId});
                      A1EmpleadoId = T000110_A1EmpleadoId[0];
                      AssignAttri("", false, "A1EmpleadoId", StringUtil.LTrimStr( (decimal)(A1EmpleadoId), 4, 0));
                      pr_default.close(8);
@@ -1827,7 +1846,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor T000111 */
-                     pr_default.execute(9, new Object[] {A2EmpleadoNombre, A3EmpleadoApellido, n4EmpleadoDireccion, A4EmpleadoDireccion, n5EmpleadoTelefono, A5EmpleadoTelefono, n6EmpleadoEmail, A6EmpleadoEmail, n7EmpleadoFch_Alta, A7EmpleadoFch_Alta, n8EmpleadoFcha_Mod, A8EmpleadoFcha_Mod, n9EmpleadoFch_Cad, A9EmpleadoFch_Cad, n10EmpleadoUsu_Alta, A10EmpleadoUsu_Alta, n11EmpleadoUsu_Mod, A11EmpleadoUsu_Mod, n12EmpleadoUso_Cad, A12EmpleadoUso_Cad, A13parqueAtraccionId, A1EmpleadoId});
+                     pr_default.execute(9, new Object[] {A2EmpleadoNombre, A3EmpleadoApellido, n4EmpleadoDireccion, A4EmpleadoDireccion, n5EmpleadoTelefono, A5EmpleadoTelefono, n6EmpleadoEmail, A6EmpleadoEmail, n7EmpleadoFch_Alta, A7EmpleadoFch_Alta, n8EmpleadoFcha_Mod, A8EmpleadoFcha_Mod, n9EmpleadoFch_Cad, A9EmpleadoFch_Cad, n10EmpleadoUsu_Alta, A10EmpleadoUsu_Alta, n11EmpleadoUsu_Mod, A11EmpleadoUsu_Mod, n12EmpleadoUso_Cad, A12EmpleadoUso_Cad, n13parqueAtraccionId, A13parqueAtraccionId, A1EmpleadoId});
                      pr_default.close(9);
                      pr_default.SmartCacheProvider.SetUpdated("Empleado");
                      if ( (pr_default.getStatus(9) == 103) )
@@ -1926,10 +1945,10 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Delete mode formulas */
-            AV13Pgmname = "Empleado";
-            AssignAttri("", false, "AV13Pgmname", AV13Pgmname);
+            AV15Pgmname = "Empleado";
+            AssignAttri("", false, "AV15Pgmname", AV15Pgmname);
             /* Using cursor T000113 */
-            pr_default.execute(11, new Object[] {A13parqueAtraccionId});
+            pr_default.execute(11, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
             A14parqueAtraccionNombre = T000113_A14parqueAtraccionNombre[0];
             AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
             pr_default.close(11);
@@ -2202,7 +2221,8 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "gxhash_vEMPLEADOID", GetSecureSignedToken( "", context.localUtil.Format( (decimal)(AV7EmpleadoId), "ZZZ9"), context));
          GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, ",", "")));
          GxWebStd.gx_hidden_field( context, "vINSERT_PARQUEATRACCIONID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV11Insert_parqueAtraccionId), 4, 0, ",", "")));
-         GxWebStd.gx_hidden_field( context, "vPGMNAME", StringUtil.RTrim( AV13Pgmname));
+         GxWebStd.gx_hidden_field( context, "vTODAY", context.localUtil.DToC( Gx_date, 0, "/"));
+         GxWebStd.gx_hidden_field( context, "vPGMNAME", StringUtil.RTrim( AV15Pgmname));
       }
 
       public override void RenderHtmlCloseForm( )
@@ -2313,8 +2333,9 @@ namespace GeneXus.Programs {
          A14parqueAtraccionNombre = "";
          AssignAttri("", false, "A14parqueAtraccionNombre", A14parqueAtraccionNombre);
          A13parqueAtraccionId = 1;
+         n13parqueAtraccionId = false;
          AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
-         A7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
+         A7EmpleadoFch_Alta = DateTimeUtil.ResetTime( Gx_date ) ;
          n7EmpleadoFch_Alta = false;
          AssignAttri("", false, "A7EmpleadoFch_Alta", context.localUtil.TToC( A7EmpleadoFch_Alta, 8, 5, 0, 3, "/", ":", " "));
          Z2EmpleadoNombre = "";
@@ -2341,6 +2362,7 @@ namespace GeneXus.Programs {
       protected void StandaloneModalInsert( )
       {
          A13parqueAtraccionId = i13parqueAtraccionId;
+         n13parqueAtraccionId = false;
          AssignAttri("", false, "A13parqueAtraccionId", StringUtil.LTrimStr( (decimal)(A13parqueAtraccionId), 4, 0));
          A7EmpleadoFch_Alta = i7EmpleadoFch_Alta;
          n7EmpleadoFch_Alta = false;
@@ -2359,7 +2381,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202541314595877", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202542616524238", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2375,7 +2397,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.spa.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("empleado.js", "?202541314595877", false, true);
+         context.AddJavascriptSource("empleado.js", "?202542616524238", false, true);
          /* End function include_jscripts */
       }
 
@@ -2503,13 +2525,17 @@ namespace GeneXus.Programs {
 
       public void Valid_Parqueatraccionid( )
       {
+         n13parqueAtraccionId = false;
          /* Using cursor T000113 */
-         pr_default.execute(11, new Object[] {A13parqueAtraccionId});
+         pr_default.execute(11, new Object[] {n13parqueAtraccionId, A13parqueAtraccionId});
          if ( (pr_default.getStatus(11) == 101) )
          {
-            GX_msglist.addItem("No existe 'parque Atraccion'.", "ForeignKeyNotFound", 1, "PARQUEATRACCIONID");
-            AnyError = 1;
-            GX_FocusControl = edtparqueAtraccionId_Internalname;
+            if ( ! ( (0==A13parqueAtraccionId) ) )
+            {
+               GX_msglist.addItem("No existe 'parque Atraccion'.", "ForeignKeyNotFound", 1, "PARQUEATRACCIONID");
+               AnyError = 1;
+               GX_FocusControl = edtparqueAtraccionId_Internalname;
+            }
          }
          A14parqueAtraccionNombre = T000113_A14parqueAtraccionNombre[0];
          pr_default.close(11);
@@ -2603,7 +2629,8 @@ namespace GeneXus.Programs {
          bttBtn_cancel_Jsonclick = "";
          bttBtn_delete_Jsonclick = "";
          AV11Insert_parqueAtraccionId = 1;
-         AV13Pgmname = "";
+         Gx_date = DateTime.MinValue;
+         AV15Pgmname = "";
          forbiddenHiddens = new GXProperties();
          hsh = "";
          sMode1 = "";
@@ -2641,6 +2668,7 @@ namespace GeneXus.Programs {
          T00015_n12EmpleadoUso_Cad = new bool[] {false} ;
          T00015_A14parqueAtraccionNombre = new string[] {""} ;
          T00015_A13parqueAtraccionId = new short[1] ;
+         T00015_n13parqueAtraccionId = new bool[] {false} ;
          T00016_A14parqueAtraccionNombre = new string[] {""} ;
          T00017_A1EmpleadoId = new short[1] ;
          T00013_A1EmpleadoId = new short[1] ;
@@ -2665,6 +2693,7 @@ namespace GeneXus.Programs {
          T00013_A12EmpleadoUso_Cad = new string[] {""} ;
          T00013_n12EmpleadoUso_Cad = new bool[] {false} ;
          T00013_A13parqueAtraccionId = new short[1] ;
+         T00013_n13parqueAtraccionId = new bool[] {false} ;
          T00018_A1EmpleadoId = new short[1] ;
          T00019_A1EmpleadoId = new short[1] ;
          T00012_A1EmpleadoId = new short[1] ;
@@ -2689,6 +2718,7 @@ namespace GeneXus.Programs {
          T00012_A12EmpleadoUso_Cad = new string[] {""} ;
          T00012_n12EmpleadoUso_Cad = new bool[] {false} ;
          T00012_A13parqueAtraccionId = new short[1] ;
+         T00012_n13parqueAtraccionId = new bool[] {false} ;
          T000110_A1EmpleadoId = new short[1] ;
          T000113_A14parqueAtraccionNombre = new string[] {""} ;
          T000114_A1EmpleadoId = new short[1] ;
@@ -2701,12 +2731,12 @@ namespace GeneXus.Programs {
                 new Object[] {
                T00012_A1EmpleadoId, T00012_A2EmpleadoNombre, T00012_A3EmpleadoApellido, T00012_A4EmpleadoDireccion, T00012_n4EmpleadoDireccion, T00012_A5EmpleadoTelefono, T00012_n5EmpleadoTelefono, T00012_A6EmpleadoEmail, T00012_n6EmpleadoEmail, T00012_A7EmpleadoFch_Alta,
                T00012_n7EmpleadoFch_Alta, T00012_A8EmpleadoFcha_Mod, T00012_n8EmpleadoFcha_Mod, T00012_A9EmpleadoFch_Cad, T00012_n9EmpleadoFch_Cad, T00012_A10EmpleadoUsu_Alta, T00012_n10EmpleadoUsu_Alta, T00012_A11EmpleadoUsu_Mod, T00012_n11EmpleadoUsu_Mod, T00012_A12EmpleadoUso_Cad,
-               T00012_n12EmpleadoUso_Cad, T00012_A13parqueAtraccionId
+               T00012_n12EmpleadoUso_Cad, T00012_A13parqueAtraccionId, T00012_n13parqueAtraccionId
                }
                , new Object[] {
                T00013_A1EmpleadoId, T00013_A2EmpleadoNombre, T00013_A3EmpleadoApellido, T00013_A4EmpleadoDireccion, T00013_n4EmpleadoDireccion, T00013_A5EmpleadoTelefono, T00013_n5EmpleadoTelefono, T00013_A6EmpleadoEmail, T00013_n6EmpleadoEmail, T00013_A7EmpleadoFch_Alta,
                T00013_n7EmpleadoFch_Alta, T00013_A8EmpleadoFcha_Mod, T00013_n8EmpleadoFcha_Mod, T00013_A9EmpleadoFch_Cad, T00013_n9EmpleadoFch_Cad, T00013_A10EmpleadoUsu_Alta, T00013_n10EmpleadoUsu_Alta, T00013_A11EmpleadoUsu_Mod, T00013_n11EmpleadoUsu_Mod, T00013_A12EmpleadoUso_Cad,
-               T00013_n12EmpleadoUso_Cad, T00013_A13parqueAtraccionId
+               T00013_n12EmpleadoUso_Cad, T00013_A13parqueAtraccionId, T00013_n13parqueAtraccionId
                }
                , new Object[] {
                T00014_A14parqueAtraccionNombre
@@ -2714,7 +2744,7 @@ namespace GeneXus.Programs {
                , new Object[] {
                T00015_A1EmpleadoId, T00015_A2EmpleadoNombre, T00015_A3EmpleadoApellido, T00015_A4EmpleadoDireccion, T00015_n4EmpleadoDireccion, T00015_A5EmpleadoTelefono, T00015_n5EmpleadoTelefono, T00015_A6EmpleadoEmail, T00015_n6EmpleadoEmail, T00015_A7EmpleadoFch_Alta,
                T00015_n7EmpleadoFch_Alta, T00015_A8EmpleadoFcha_Mod, T00015_n8EmpleadoFcha_Mod, T00015_A9EmpleadoFch_Cad, T00015_n9EmpleadoFch_Cad, T00015_A10EmpleadoUsu_Alta, T00015_n10EmpleadoUsu_Alta, T00015_A11EmpleadoUsu_Mod, T00015_n11EmpleadoUsu_Mod, T00015_A12EmpleadoUso_Cad,
-               T00015_n12EmpleadoUso_Cad, T00015_A14parqueAtraccionNombre, T00015_A13parqueAtraccionId
+               T00015_n12EmpleadoUso_Cad, T00015_A14parqueAtraccionNombre, T00015_A13parqueAtraccionId, T00015_n13parqueAtraccionId
                }
                , new Object[] {
                T00016_A14parqueAtraccionNombre
@@ -2744,18 +2774,23 @@ namespace GeneXus.Programs {
             }
          );
          Z13parqueAtraccionId = 1;
+         n13parqueAtraccionId = false;
          N13parqueAtraccionId = 1;
+         n13parqueAtraccionId = false;
          i13parqueAtraccionId = 1;
+         n13parqueAtraccionId = false;
          A13parqueAtraccionId = 1;
-         Z7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
-         n7EmpleadoFch_Alta = false;
-         A7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
-         n7EmpleadoFch_Alta = false;
-         i7EmpleadoFch_Alta = DateTimeUtil.ResetTime( DateTimeUtil.Today( context) ) ;
-         n7EmpleadoFch_Alta = false;
+         n13parqueAtraccionId = false;
          Z1EmpleadoId = 1;
          A1EmpleadoId = 1;
-         AV13Pgmname = "Empleado";
+         AV15Pgmname = "Empleado";
+         Z7EmpleadoFch_Alta = (DateTime)(DateTime.MinValue);
+         n7EmpleadoFch_Alta = false;
+         A7EmpleadoFch_Alta = (DateTime)(DateTime.MinValue);
+         n7EmpleadoFch_Alta = false;
+         i7EmpleadoFch_Alta = (DateTime)(DateTime.MinValue);
+         n7EmpleadoFch_Alta = false;
+         Gx_date = DateTimeUtil.Today( context);
       }
 
       private short wcpOAV7EmpleadoId ;
@@ -2802,7 +2837,7 @@ namespace GeneXus.Programs {
       private int bttBtn_cancel_Visible ;
       private int bttBtn_delete_Visible ;
       private int bttBtn_delete_Enabled ;
-      private int AV14GXV1 ;
+      private int AV16GXV1 ;
       private int idxLst ;
       private string sPrefix ;
       private string wcpOGx_mode ;
@@ -2872,7 +2907,7 @@ namespace GeneXus.Programs {
       private string bttBtn_cancel_Jsonclick ;
       private string bttBtn_delete_Internalname ;
       private string bttBtn_delete_Jsonclick ;
-      private string AV13Pgmname ;
+      private string AV15Pgmname ;
       private string hsh ;
       private string sMode1 ;
       private string sEvt ;
@@ -2891,8 +2926,10 @@ namespace GeneXus.Programs {
       private DateTime A8EmpleadoFcha_Mod ;
       private DateTime A9EmpleadoFch_Cad ;
       private DateTime i7EmpleadoFch_Alta ;
+      private DateTime Gx_date ;
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
+      private bool n13parqueAtraccionId ;
       private bool wbErr ;
       private bool n4EmpleadoDireccion ;
       private bool n5EmpleadoTelefono ;
@@ -2952,6 +2989,7 @@ namespace GeneXus.Programs {
       private bool[] T00015_n12EmpleadoUso_Cad ;
       private string[] T00015_A14parqueAtraccionNombre ;
       private short[] T00015_A13parqueAtraccionId ;
+      private bool[] T00015_n13parqueAtraccionId ;
       private string[] T00016_A14parqueAtraccionNombre ;
       private short[] T00017_A1EmpleadoId ;
       private short[] T00013_A1EmpleadoId ;
@@ -2976,6 +3014,7 @@ namespace GeneXus.Programs {
       private string[] T00013_A12EmpleadoUso_Cad ;
       private bool[] T00013_n12EmpleadoUso_Cad ;
       private short[] T00013_A13parqueAtraccionId ;
+      private bool[] T00013_n13parqueAtraccionId ;
       private short[] T00018_A1EmpleadoId ;
       private short[] T00019_A1EmpleadoId ;
       private short[] T00012_A1EmpleadoId ;
@@ -3000,6 +3039,7 @@ namespace GeneXus.Programs {
       private string[] T00012_A12EmpleadoUso_Cad ;
       private bool[] T00012_n12EmpleadoUso_Cad ;
       private short[] T00012_A13parqueAtraccionId ;
+      private bool[] T00012_n13parqueAtraccionId ;
       private short[] T000110_A1EmpleadoId ;
       private string[] T000113_A14parqueAtraccionNombre ;
       private short[] T000114_A1EmpleadoId ;
@@ -3042,7 +3082,7 @@ namespace GeneXus.Programs {
           };
           Object[] prmT00014;
           prmT00014 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT00015;
           prmT00015 = new Object[] {
@@ -3050,7 +3090,7 @@ namespace GeneXus.Programs {
           };
           Object[] prmT00016;
           prmT00016 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT00017;
           prmT00017 = new Object[] {
@@ -3077,7 +3117,7 @@ namespace GeneXus.Programs {
           new ParDef("@EmpleadoUsu_Alta",GXType.NVarChar,40,0){Nullable=true} ,
           new ParDef("@EmpleadoUsu_Mod",GXType.NVarChar,40,0){Nullable=true} ,
           new ParDef("@EmpleadoUso_Cad",GXType.NVarChar,40,0){Nullable=true} ,
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000111;
           prmT000111 = new Object[] {
@@ -3092,7 +3132,7 @@ namespace GeneXus.Programs {
           new ParDef("@EmpleadoUsu_Alta",GXType.NVarChar,40,0){Nullable=true} ,
           new ParDef("@EmpleadoUsu_Mod",GXType.NVarChar,40,0){Nullable=true} ,
           new ParDef("@EmpleadoUso_Cad",GXType.NVarChar,40,0){Nullable=true} ,
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0) ,
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true} ,
           new ParDef("@EmpleadoId",GXType.Int16,4,0)
           };
           Object[] prmT000112;
@@ -3101,7 +3141,7 @@ namespace GeneXus.Programs {
           };
           Object[] prmT000113;
           prmT000113 = new Object[] {
-          new ParDef("@parqueAtraccionId",GXType.Int16,4,0)
+          new ParDef("@parqueAtraccionId",GXType.Int16,4,0){Nullable=true}
           };
           Object[] prmT000114;
           prmT000114 = new Object[] {
@@ -3110,7 +3150,7 @@ namespace GeneXus.Programs {
               new CursorDef("T00012", "SELECT [EmpleadoId], [EmpleadoNombre], [EmpleadoApellido], [EmpleadoDireccion], [EmpleadoTelefono], [EmpleadoEmail], [EmpleadoFch_Alta], [EmpleadoFcha_Mod], [EmpleadoFch_Cad], [EmpleadoUsu_Alta], [EmpleadoUsu_Mod], [EmpleadoUso_Cad], [parqueAtraccionId] FROM [Empleado] WITH (UPDLOCK) WHERE [EmpleadoId] = @EmpleadoId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00012,1, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T00013", "SELECT [EmpleadoId], [EmpleadoNombre], [EmpleadoApellido], [EmpleadoDireccion], [EmpleadoTelefono], [EmpleadoEmail], [EmpleadoFch_Alta], [EmpleadoFcha_Mod], [EmpleadoFch_Cad], [EmpleadoUsu_Alta], [EmpleadoUsu_Mod], [EmpleadoUso_Cad], [parqueAtraccionId] FROM [Empleado] WHERE [EmpleadoId] = @EmpleadoId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00013,1, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T00014", "SELECT [parqueAtraccionNombre] FROM [parqueAtraccion] WHERE [parqueAtraccionId] = @parqueAtraccionId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00014,1, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("T00015", "SELECT TM1.[EmpleadoId], TM1.[EmpleadoNombre], TM1.[EmpleadoApellido], TM1.[EmpleadoDireccion], TM1.[EmpleadoTelefono], TM1.[EmpleadoEmail], TM1.[EmpleadoFch_Alta], TM1.[EmpleadoFcha_Mod], TM1.[EmpleadoFch_Cad], TM1.[EmpleadoUsu_Alta], TM1.[EmpleadoUsu_Mod], TM1.[EmpleadoUso_Cad], T2.[parqueAtraccionNombre], TM1.[parqueAtraccionId] FROM ([Empleado] TM1 INNER JOIN [parqueAtraccion] T2 ON T2.[parqueAtraccionId] = TM1.[parqueAtraccionId]) WHERE TM1.[EmpleadoId] = @EmpleadoId ORDER BY TM1.[EmpleadoId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00015,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("T00015", "SELECT TM1.[EmpleadoId], TM1.[EmpleadoNombre], TM1.[EmpleadoApellido], TM1.[EmpleadoDireccion], TM1.[EmpleadoTelefono], TM1.[EmpleadoEmail], TM1.[EmpleadoFch_Alta], TM1.[EmpleadoFcha_Mod], TM1.[EmpleadoFch_Cad], TM1.[EmpleadoUsu_Alta], TM1.[EmpleadoUsu_Mod], TM1.[EmpleadoUso_Cad], T2.[parqueAtraccionNombre], TM1.[parqueAtraccionId] FROM ([Empleado] TM1 LEFT JOIN [parqueAtraccion] T2 ON T2.[parqueAtraccionId] = TM1.[parqueAtraccionId]) WHERE TM1.[EmpleadoId] = @EmpleadoId ORDER BY TM1.[EmpleadoId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00015,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T00016", "SELECT [parqueAtraccionNombre] FROM [parqueAtraccion] WHERE [parqueAtraccionId] = @parqueAtraccionId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00016,1, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T00017", "SELECT [EmpleadoId] FROM [Empleado] WHERE [EmpleadoId] = @EmpleadoId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00017,1, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("T00018", "SELECT TOP 1 [EmpleadoId] FROM [Empleado] WHERE ( [EmpleadoId] > @EmpleadoId) ORDER BY [EmpleadoId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00018,1, GxCacheFrequency.OFF ,true,true )
@@ -3153,6 +3193,7 @@ namespace GeneXus.Programs {
                 ((string[]) buf[19])[0] = rslt.getVarchar(12);
                 ((bool[]) buf[20])[0] = rslt.wasNull(12);
                 ((short[]) buf[21])[0] = rslt.getShort(13);
+                ((bool[]) buf[22])[0] = rslt.wasNull(13);
                 return;
              case 1 :
                 ((short[]) buf[0])[0] = rslt.getShort(1);
@@ -3177,6 +3218,7 @@ namespace GeneXus.Programs {
                 ((string[]) buf[19])[0] = rslt.getVarchar(12);
                 ((bool[]) buf[20])[0] = rslt.wasNull(12);
                 ((short[]) buf[21])[0] = rslt.getShort(13);
+                ((bool[]) buf[22])[0] = rslt.wasNull(13);
                 return;
              case 2 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);
@@ -3205,6 +3247,7 @@ namespace GeneXus.Programs {
                 ((bool[]) buf[20])[0] = rslt.wasNull(12);
                 ((string[]) buf[21])[0] = rslt.getVarchar(13);
                 ((short[]) buf[22])[0] = rslt.getShort(14);
+                ((bool[]) buf[23])[0] = rslt.wasNull(14);
                 return;
              case 4 :
                 ((string[]) buf[0])[0] = rslt.getVarchar(1);

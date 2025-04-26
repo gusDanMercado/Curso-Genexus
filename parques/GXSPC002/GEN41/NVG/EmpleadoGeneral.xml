@@ -109,6 +109,7 @@
 <AttriId>13</AttriId>
 <AttriName>parqueAtraccionId</AttriName>
 <Description>parque Atraccion Id</Description></Attribute></KeyAttributes>
+<JoinType>Outer</JoinType>
 <Tables></Tables></Table></Tables></Table></NavigationTree>
 <TablesToUpdate></TablesToUpdate>
 <Formulas>

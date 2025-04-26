@@ -34,6 +34,7 @@
 
 	<ItemGroup>
 		<Compile Include = "$(WebDirectory)\empleado.cs" />
+		<Compile Include = "$(WebDirectory)\empleado_bc.cs" />
 		<Compile Include = "$(WebDirectory)\general\security\isauthorized.cs" />
 
 	</ItemGroup>

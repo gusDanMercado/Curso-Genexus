@@ -1,0 +1,173 @@
+ 
+spec_i([ sdt,[ 0,1,0 ],'Empleado','Empleado',0,spa,'18_0_10-184260' ]).
+ 
+struct_dt_i([ 0,1,0 ],name,'Empleado').
+struct_dt_i([ 0,1,0 ],namespace,parques).
+struct_dt_i([ 0,1,0 ],significantName,'Empleado').
+struct_dt_i([ 0,1,0 ],'ObjName','Empleado').
+struct_dt_i([ 0,1,0 ],'ObjDesc','Empleado').
+struct_dt_i([ 0,1,0 ],'ExternalName','Empleado').
+struct_dt_i([ 0,1,0 ],'ExternalNamespace',parques).
+struct_dt_i([ 0,1,0 ],key,[ 1 ]).
+struct_dt_i([ 0,1,0 ],lvl,1).
+struct_dt_i([ 0,1,0 ],fullname,'Empleado').
+ 
+struct_dt_elem_i([ 0,1,0 ],1,name,'Empleadoid').
+struct_dt_elem_i([ 0,1,0 ],1,camelname,'EmpleadoId').
+struct_dt_elem_i([ 0,1,0 ],1,length,4).
+struct_dt_elem_i([ 0,1,0 ],1,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],1,sign,0).
+struct_dt_elem_i([ 0,1,0 ],1,type,[ 4,4,0 ]).
+struct_dt_elem_i([ 0,1,0 ],1,pic,'ZZZ9').
+struct_dt_elem_i([ 0,1,0 ],1,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],1,attributeid,'1').
+struct_dt_elem_i([ 0,1,0 ],1,'ExternalName','EmpleadoId').
+struct_dt_elem_i([ 0,1,0 ],1,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],1,'ATT_INITIAL_VALUE',[ t('1',3) ]).
+struct_dt_elem_i([ 0,1,0 ],2,name,'Empleadonombre').
+struct_dt_elem_i([ 0,1,0 ],2,camelname,'EmpleadoNombre').
+struct_dt_elem_i([ 0,1,0 ],2,length,1024).
+struct_dt_elem_i([ 0,1,0 ],2,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],2,type,[ 13,1024,0 ]).
+struct_dt_elem_i([ 0,1,0 ],2,pic,'').
+struct_dt_elem_i([ 0,1,0 ],2,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],2,attributeid,'2').
+struct_dt_elem_i([ 0,1,0 ],2,'ExternalName','EmpleadoNombre').
+struct_dt_elem_i([ 0,1,0 ],2,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],3,name,'Empleadoapellido').
+struct_dt_elem_i([ 0,1,0 ],3,camelname,'EmpleadoApellido').
+struct_dt_elem_i([ 0,1,0 ],3,length,1024).
+struct_dt_elem_i([ 0,1,0 ],3,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],3,type,[ 13,1024,0 ]).
+struct_dt_elem_i([ 0,1,0 ],3,pic,'').
+struct_dt_elem_i([ 0,1,0 ],3,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],3,attributeid,'3').
+struct_dt_elem_i([ 0,1,0 ],3,'ExternalName','EmpleadoApellido').
+struct_dt_elem_i([ 0,1,0 ],3,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],4,name,'Empleadodireccion').
+struct_dt_elem_i([ 0,1,0 ],4,camelname,'EmpleadoDireccion').
+struct_dt_elem_i([ 0,1,0 ],4,basedon,13).
+struct_dt_elem_i([ 0,1,0 ],4,length,1024).
+struct_dt_elem_i([ 0,1,0 ],4,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],4,type,[ 13,1024,0 ]).
+struct_dt_elem_i([ 0,1,0 ],4,pic,'').
+struct_dt_elem_i([ 0,1,0 ],4,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],4,attributeid,'4').
+struct_dt_elem_i([ 0,1,0 ],4,'ExternalName','EmpleadoDireccion').
+struct_dt_elem_i([ 0,1,0 ],4,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],5,name,'Empleadotelefono').
+struct_dt_elem_i([ 0,1,0 ],5,camelname,'EmpleadoTelefono').
+struct_dt_elem_i([ 0,1,0 ],5,basedon,53).
+struct_dt_elem_i([ 0,1,0 ],5,length,20).
+struct_dt_elem_i([ 0,1,0 ],5,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],5,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 0,1,0 ],5,pic,'').
+struct_dt_elem_i([ 0,1,0 ],5,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],5,attributeid,'5').
+struct_dt_elem_i([ 0,1,0 ],5,'ExternalName','EmpleadoTelefono').
+struct_dt_elem_i([ 0,1,0 ],5,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],6,name,'Empleadoemail').
+struct_dt_elem_i([ 0,1,0 ],6,camelname,'EmpleadoEmail').
+struct_dt_elem_i([ 0,1,0 ],6,basedon,52).
+struct_dt_elem_i([ 0,1,0 ],6,length,100).
+struct_dt_elem_i([ 0,1,0 ],6,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],6,type,[ 13,100,0 ]).
+struct_dt_elem_i([ 0,1,0 ],6,pic,'').
+struct_dt_elem_i([ 0,1,0 ],6,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],6,attributeid,'6').
+struct_dt_elem_i([ 0,1,0 ],6,'ExternalName','EmpleadoEmail').
+struct_dt_elem_i([ 0,1,0 ],6,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],7,name,'Empleadofch_alta').
+struct_dt_elem_i([ 0,1,0 ],7,camelname,'EmpleadoFch_Alta').
+struct_dt_elem_i([ 0,1,0 ],7,length,8).
+struct_dt_elem_i([ 0,1,0 ],7,decimals,5).
+struct_dt_elem_i([ 0,1,0 ],7,type,[ 12,8,5 ]).
+struct_dt_elem_i([ 0,1,0 ],7,pic,'99/99/99 99:99').
+struct_dt_elem_i([ 0,1,0 ],7,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],7,attributeid,'7').
+struct_dt_elem_i([ 0,1,0 ],7,'ExternalName','EmpleadoFch_Alta').
+struct_dt_elem_i([ 0,1,0 ],7,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],7,'ATT_INITIAL_VALUE',[ t('today(',1),t(')',4) ]).
+struct_dt_elem_i([ 0,1,0 ],8,name,'Empleadofcha_mod').
+struct_dt_elem_i([ 0,1,0 ],8,camelname,'EmpleadoFcha_Mod').
+struct_dt_elem_i([ 0,1,0 ],8,length,8).
+struct_dt_elem_i([ 0,1,0 ],8,decimals,5).
+struct_dt_elem_i([ 0,1,0 ],8,type,[ 12,8,5 ]).
+struct_dt_elem_i([ 0,1,0 ],8,pic,'99/99/99 99:99').
+struct_dt_elem_i([ 0,1,0 ],8,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],8,attributeid,'8').
+struct_dt_elem_i([ 0,1,0 ],8,'ExternalName','EmpleadoFcha_Mod').
+struct_dt_elem_i([ 0,1,0 ],8,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],9,name,'Empleadofch_cad').
+struct_dt_elem_i([ 0,1,0 ],9,camelname,'EmpleadoFch_Cad').
+struct_dt_elem_i([ 0,1,0 ],9,length,8).
+struct_dt_elem_i([ 0,1,0 ],9,decimals,5).
+struct_dt_elem_i([ 0,1,0 ],9,type,[ 12,8,5 ]).
+struct_dt_elem_i([ 0,1,0 ],9,pic,'99/99/99 99:99').
+struct_dt_elem_i([ 0,1,0 ],9,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],9,attributeid,'9').
+struct_dt_elem_i([ 0,1,0 ],9,'ExternalName','EmpleadoFch_Cad').
+struct_dt_elem_i([ 0,1,0 ],9,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],10,name,'Empleadousu_alta').
+struct_dt_elem_i([ 0,1,0 ],10,camelname,'EmpleadoUsu_Alta').
+struct_dt_elem_i([ 0,1,0 ],10,length,40).
+struct_dt_elem_i([ 0,1,0 ],10,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],10,type,[ 13,40,0 ]).
+struct_dt_elem_i([ 0,1,0 ],10,pic,'').
+struct_dt_elem_i([ 0,1,0 ],10,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],10,attributeid,'10').
+struct_dt_elem_i([ 0,1,0 ],10,'ExternalName','EmpleadoUsu_Alta').
+struct_dt_elem_i([ 0,1,0 ],10,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],11,name,'Empleadousu_mod').
+struct_dt_elem_i([ 0,1,0 ],11,camelname,'EmpleadoUsu_Mod').
+struct_dt_elem_i([ 0,1,0 ],11,length,40).
+struct_dt_elem_i([ 0,1,0 ],11,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],11,type,[ 13,40,0 ]).
+struct_dt_elem_i([ 0,1,0 ],11,pic,'').
+struct_dt_elem_i([ 0,1,0 ],11,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],11,attributeid,'11').
+struct_dt_elem_i([ 0,1,0 ],11,'ExternalName','EmpleadoUsu_Mod').
+struct_dt_elem_i([ 0,1,0 ],11,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],12,name,'Empleadouso_cad').
+struct_dt_elem_i([ 0,1,0 ],12,camelname,'EmpleadoUso_Cad').
+struct_dt_elem_i([ 0,1,0 ],12,length,40).
+struct_dt_elem_i([ 0,1,0 ],12,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],12,type,[ 13,40,0 ]).
+struct_dt_elem_i([ 0,1,0 ],12,pic,'').
+struct_dt_elem_i([ 0,1,0 ],12,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],12,attributeid,'12').
+struct_dt_elem_i([ 0,1,0 ],12,'ExternalName','EmpleadoUso_Cad').
+struct_dt_elem_i([ 0,1,0 ],12,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],13,name,'Parqueatraccionid').
+struct_dt_elem_i([ 0,1,0 ],13,camelname,parqueAtraccionId).
+struct_dt_elem_i([ 0,1,0 ],13,length,4).
+struct_dt_elem_i([ 0,1,0 ],13,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],13,sign,0).
+struct_dt_elem_i([ 0,1,0 ],13,type,[ 4,4,0 ]).
+struct_dt_elem_i([ 0,1,0 ],13,pic,'ZZZ9').
+struct_dt_elem_i([ 0,1,0 ],13,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],13,attributeid,'13').
+struct_dt_elem_i([ 0,1,0 ],13,'ExternalName',parqueAtraccionId).
+struct_dt_elem_i([ 0,1,0 ],13,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],13,'ATT_INITIAL_VALUE',[ t('1',3) ]).
+struct_dt_elem_i([ 0,1,0 ],14,name,'Parqueatraccionnombre').
+struct_dt_elem_i([ 0,1,0 ],14,camelname,parqueAtraccionNombre).
+struct_dt_elem_i([ 0,1,0 ],14,length,20).
+struct_dt_elem_i([ 0,1,0 ],14,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],14,type,[ 13,20,0 ]).
+struct_dt_elem_i([ 0,1,0 ],14,pic,'').
+struct_dt_elem_i([ 0,1,0 ],14,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],14,attributeid,'14').
+struct_dt_elem_i([ 0,1,0 ],14,'ExternalName',parqueAtraccionNombre).
+struct_dt_elem_i([ 0,1,0 ],14,'ExternalNamespace',parques).
+struct_dt_elem_i([ 0,1,0 ],4,pic,'ZZZ9').
+ 
+ 
+ 
+ 
+ 
+ 
+module_info_i('GeneXus\Common','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus\Common','AssemblyName','GeneXus.dll').
+module_info_i('GeneXus','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus','AssemblyName','GeneXus.dll').

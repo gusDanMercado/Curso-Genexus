@@ -1221,7 +1221,6 @@ tbl_att_prop_i(2,1,1,'AllowNulls',n).
 tbl_att_prop_i(2,1,1,'AUTONUMBER',y).
 tbl_att_prop_i(2,1,2,'AllowNulls',n).
 tbl_att_prop_i(2,1,3,'AllowNulls',n).
-tbl_att_prop_i(2,1,13,'AllowNulls',n).
  
 var_prop_i(2,'Parqueatraccionid',idBasedOn,'',v).
 var_prop_i(2,'Parqueatraccionid','ATT_INITIAL_VALUE',[ t('1',3) ],d).

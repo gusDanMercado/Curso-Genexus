@@ -132,6 +132,21 @@
 		<ProjectReference Include=".\..\general.ui.masterunanimosidebar\general.ui.masterunanimosidebar.csproj" >
 			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
 		</ProjectReference>
+		<ProjectReference Include=".\..\areporteempleadoexcel\areporteempleadoexcel.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\areporteempleadoexcel\areporteempleadoexcel.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\areporteempleado\areporteempleado.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\areporteempleado\areporteempleado.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
+		<ProjectReference Include=".\..\aempleado_dataprovider\aempleado_dataprovider.csproj" >
+			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
+		</ProjectReference>
 		<ProjectReference Include=".\..\GeneXus.Programs.Common\GeneXus.Programs.Common.csproj" >
 			<OutputItemType>$(CommonOutputItemType)</OutputItemType>
 		</ProjectReference>
@@ -139,6 +154,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Reference Include="GeneXus.dll" > 
+			<HintPath>$(WebBinDirectory)\GeneXus.dll</HintPath>
+		</Reference>
 
 
 	</ItemGroup>

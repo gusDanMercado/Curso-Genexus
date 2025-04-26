@@ -9,6 +9,7 @@ C:\KBs\parques\NETSQLServer002\web\bin\GxCryptographyCommon.dll
 C:\KBs\parques\NETSQLServer002\web\bin\GxEncrypt.dll
 C:\KBs\parques\NETSQLServer002\web\bin\GxPdfReportsCS.dll
 C:\KBs\parques\NETSQLServer002\web\bin\GxXsl.dll
+C:\KBs\parques\NETSQLServer002\web\bin\iTextSharp.dll
 C:\KBs\parques\NETSQLServer002\web\bin\log4net.dll
 C:\KBs\parques\NETSQLServer002\web\bin\Microsoft.Data.SqlClient.dll
 C:\KBs\parques\NETSQLServer002\web\bin\Microsoft.Identity.Client.dll
