@@ -212,6 +212,7 @@ table_i(1,[ 'Empleado',[ 1,2,3,4,5,6,7,8,9,10,11,12,13 ],'Empleado','Empleado' ]
 table_i(2,[ parqueAtraccion,[ 13,14 ],'parque Atraccion',parqueAtraccion ]).
  
 index_i(1,[ 'IEMPLEADO',u,[ 1 ],'IEmpleado' ]).
+index_i(1,[ 'UEMPLEADO',d,[ 3,2 ],'UEmpleado' ]).
 index_i(2,[ 'IPARQUEATRACCION',u,[ 13 ],'IparqueAtraccion' ]).
  
  

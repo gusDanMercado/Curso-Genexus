@@ -2,7 +2,7 @@ spec_i([ proc,16,'Reporte Empleado Excel','ReporteEmpleadoExcel',78,spa,'18_0_10
  
 struct_i(2,1,[],[]).
  
-level_i(2,[ 1,[ [ 1,many ] ],[],[],[ [ [ 1 ],[ 2,3 ] ] ],[ [ [ 1 ],[] ] ],[ 3,2 ],'',[],[] ]).
+level_i(2,[ 1,[ [ 1,many ] ],[],[],[ [ [ 1 ],[ 2,3 ] ] ],[ [ [ 1 ],[] ] ],[ 3,2 ],'UEMPLEADO',[],[] ]).
  
 tw_i(2,[]).
  
@@ -120,7 +120,7 @@ rule_i(0,prop('PGMTYPE',main)).
 rule_i(0,output_file(t('ReporteEmpleadoExcel',3),t('XML',3))).
 rule_i(0,output('FIL')).
  
-a_i(1,2,t,1,[],[ [],'',[] ]).
+a_i(1,2,t,1,[],[ [],'UEMPLEADO',[] ]).
  
 v_i(t,i,1,[]).
 v_i(t,o,1,2).
@@ -140,8 +140,8 @@ attri_i('Row',[ 'Row',int,4,0,'ZZZ9',0,'Row','',8 ]).
  
 table_i(1,[ 'Empleado',[ 1,2,3 ],'Empleado','Empleado' ]).
  
-index_i(1,[ '',a,[ 3,2 ],'' ]).
 index_i(1,[ 'IEMPLEADO',u,[ 1 ],'IEmpleado' ]).
+index_i(1,[ 'UEMPLEADO',d,[ 3,2 ],'UEmpleado' ]).
  
  
  
@@ -230,7 +230,6 @@ ppi_i([ 100,100 ]).
  
  
  
-warn_gen_i(msg([],spc0038,[ 'There is no index for order ',[ att(2,3),', ',att(2,2) ],'; poor performance may be noticed',[ ' in group starting at line ','4','' ],'.' ])).
  
  
  

@@ -10,25 +10,7 @@
 <ObjPgmName>ReporteEmpleadoExcel</ObjPgmName>
 <ObjClsName>Procedure</ObjClsName></Object>
 <Result>genreq</Result>
-<Warnings>
-<Warning>
-<MsgCode>spc0038</MsgCode>
-<Message>
-<Token>There is no index for order </Token>
-<Attribute>
-<AttriId>3</AttriId>
-<AttriName>EmpleadoApellido</AttriName>
-<Description>Empleado Apellido</Description></Attribute>
-<Token>, </Token>
-<Attribute>
-<AttriId>2</AttriId>
-<AttriName>EmpleadoNombre</AttriName>
-<Description>Empleado Nombre</Description></Attribute>
-<Token>; poor performance may be noticed</Token>
-<Token> in group starting at line </Token>
-<Token>4</Token>
-<Token></Token>
-<Token>.</Token></Message></Warning></Warnings>
+<Warnings></Warnings>
 <Errors></Errors>
 <OutputDevices>
 <Device>None</Device></OutputDevices>
@@ -68,6 +50,7 @@
 <AttriName>EmpleadoNombre</AttriName>
 <Description>Empleado Nombre</Description></Attribute></Order>
 <Condition></Condition>
+<IndexName>UEMPLEADO</IndexName>
 <LevelOptions></LevelOptions>
 <OptimizedWhere>
 <StartFrom>

@@ -7,7 +7,7 @@
 <Description>Empleado</Description></Table>
 <ReorgCls>c</ReorgCls>
 <ReorgCode>same</ReorgCode>
-<ReorgMsg>Empleado needs initialization (initialize with Empleado_DataProvider)</ReorgMsg>
+<ReorgMsg>Empleado needs conversion (initialize with Empleado_DataProvider)</ReorgMsg>
 <ReorgAction>#</ReorgAction>
 <TableAttributes>
 <AttrisInTable>
@@ -306,7 +306,22 @@
 <AttriName>parqueAtraccionId</AttriName>
 <Description>parque Atraccion Id</Description></Attribute></IndexAttris>
 <IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>No</Clustered></Index></Indices></TableIndices>
+<Clustered>No</Clustered></Index></Indices>
+<NewIndices>
+<Index>
+<IndexName>UEMPLEADO</IndexName>
+<IndexType>d</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>EmpleadoApellido</AttriName>
+<Description>Empleado Apellido</Description></Attribute>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>EmpleadoNombre</AttriName>
+<Description>Empleado Nombre</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index></NewIndices></TableIndices>
 <FKConstraints>
 <FKConstraint>
 <ChangeType>none</ChangeType>
@@ -319,7 +334,8 @@
 <AttriId>13</AttriId>
 <AttriName>parqueAtraccionId</AttriName>
 <Description>parque Atraccion Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
-<Statements></Statements>
+<Statements>
+<Statement>CREATE NONCLUSTERED INDEX [UEMPLEADO] ON [Empleado] ([EmpleadoApellido] ,[EmpleadoNombre] )</Statement></Statements>
 <NeedReorganizationProgram>False</NeedReorganizationProgram>
 <Warnings></Warnings>
 <Errors></Errors></ReorgSpec>

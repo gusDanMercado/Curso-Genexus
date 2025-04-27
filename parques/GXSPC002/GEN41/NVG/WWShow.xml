@@ -10,20 +10,7 @@
 <ObjPgmName>WWShow</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
 <Result>genreq</Result>
-<Warnings>
-<Warning>
-<MsgCode>spc0038</MsgCode>
-<Message>
-<Token>There is no index for order </Token>
-<Attribute>
-<AttriId>21</AttriId>
-<AttriName>ShowNombre</AttriName>
-<Description>Show Nombre</Description></Attribute>
-<Token>; poor performance may be noticed</Token>
-<Token> in grid '</Token>
-<Token>Grid</Token>
-<Token>'</Token>
-<Token>.</Token></Message></Warning></Warnings>
+<Warnings></Warnings>
 <Errors></Errors>
 <Generator>
 <GenId>41</GenId>
@@ -65,6 +52,7 @@
 <AttriName>ShowNombre</AttriName>
 <Description>Show Nombre</Description></Attribute></Order>
 <Condition></Condition>
+<IndexName>USHOW</IndexName>
 <LevelOptions></LevelOptions>
 <Optimizations>
 <Optimization>

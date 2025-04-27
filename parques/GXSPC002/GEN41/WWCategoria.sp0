@@ -2,7 +2,7 @@ spec_i([ web,16,'Categorias','WWCategoria',0,spa,'18_0_10-184260' ]).
  
 struct_i(2,1,[ 'Pgmname','Update','Delete' ],[]).
  
-level_i(2,[ 6,[ [ 6,many ] ],[],[],[ [ [ 6 ],[ 27,26 ] ] ],[ [ [ 6 ],[] ] ],[ 27 ],'',[],[] ]).
+level_i(2,[ 6,[ [ 6,many ] ],[],[],[ [ [ 6 ],[ 27,26 ] ] ],[ [ [ 6 ],[] ] ],[ 27 ],'UCATEGORIA',[],[] ]).
  
 tw_i(2,[]).
  
@@ -127,7 +127,7 @@ rule_i(0,maingen(41)).
 rule_i(0,rule([ a(22,[ '''DoInsert''','''DoInsert''','' ]) ],[],[],[])).
  
 a_i(1,1,f,'Pgmname',[],[ [],[ t('"WWCategoria"',3) ] ]).
-a_i(2,2,t,6,[],[ [],'',[] ]).
+a_i(2,2,t,6,[],[ [],'UCATEGORIA',[] ]).
 a_i(3,1,f,[ t('&Update',23),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
 a_i(4,1,f,[ t('&Delete',23),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
  
@@ -162,8 +162,8 @@ attri_i('Isauthorized',[ 'IsAuthorized',boolean,4,0,'',0,'Is Authorized','',5 ])
  
 table_i(6,[ 'Categoria',[ 26,27 ],'Categoria','Categoria' ]).
  
-index_i(6,[ '',a,[ 27 ],'' ]).
 index_i(6,[ 'ICATEGORIA',u,[ 26 ],'ICategoria' ]).
+index_i(6,[ 'UCATEGORIA',d,[ 27 ],'UCategoria' ]).
  
  
  
@@ -681,7 +681,6 @@ html_comp_i(31,'Invitemsg','',d,[ str ]).
  
  
  
-warn_gen_i(msg([],spc0038,[ 'There is no index for order ',[ att(2,27) ],'; poor performance may be noticed',[ ' in grid ''','Grid','''' ],'.' ])).
  
  
  

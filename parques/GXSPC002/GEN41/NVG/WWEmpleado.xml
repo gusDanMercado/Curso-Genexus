@@ -62,7 +62,8 @@
 <Sp></Sp>
 <Token>=</Token>
 <Sp></Sp>
-<Token>1</Token></Condition></ConditionalOrder>
+<Token>1</Token></Condition>
+<IndexName>UEMPLEADO</IndexName></ConditionalOrder>
 <ConditionalOrder>
 <Order>
 <Attribute>

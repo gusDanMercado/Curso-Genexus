@@ -56,37 +56,13 @@ namespace GeneXus.Programs {
          /* Load data into tables. */
       }
 
-      public void ReorganizeEmpleado( )
+      public void ReorganizeCategoria( )
       {
          string cmdBuffer = "";
-         /* Indices for table Empleado */
-         cmdBuffer=" DROP INDEX [IEMPLEADO1] ON [Empleado] "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
+         /* Indices for table Categoria */
          try
          {
-            cmdBuffer=" ALTER TABLE [Empleado] DROP CONSTRAINT [IEMPLEADO1] "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-         catch
-         {
-         }
-         cmdBuffer=" ALTER TABLE [Empleado] ALTER COLUMN [parqueAtraccionId] smallint NULL  "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         try
-         {
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IEMPLEADO1] ON [Empleado] ([parqueAtraccionId] ) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [UCATEGORIA] ON [Categoria] ([CategoriaNombre] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -95,13 +71,13 @@ namespace GeneXus.Programs {
          }
          catch
          {
-            cmdBuffer=" DROP INDEX [IEMPLEADO1] ON [Empleado] "
+            cmdBuffer=" DROP INDEX [UCATEGORIA] ON [Categoria] "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
             RGZ.ExecuteStmt() ;
             RGZ.Drop();
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [IEMPLEADO1] ON [Empleado] ([parqueAtraccionId] ) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [UCATEGORIA] ON [Categoria] ([CategoriaNombre] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -110,12 +86,13 @@ namespace GeneXus.Programs {
          }
       }
 
-      public void RIEmpleadoparqueAtraccion( )
+      public void ReorganizeShow( )
       {
-         string cmdBuffer;
+         string cmdBuffer = "";
+         /* Indices for table Show */
          try
          {
-            cmdBuffer=" ALTER TABLE [Empleado] ADD CONSTRAINT [IEMPLEADO1] FOREIGN KEY ([parqueAtraccionId]) REFERENCES [parqueAtraccion] ([parqueAtraccionId]) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [USHOW] ON [Show] ([ShowNombre] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -124,19 +101,43 @@ namespace GeneXus.Programs {
          }
          catch
          {
-            try
-            {
-               cmdBuffer=" ALTER TABLE [Empleado] DROP CONSTRAINT [IEMPLEADO1] "
-               ;
-               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-               RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-               RGZ.ExecuteStmt() ;
-               RGZ.Drop();
-            }
-            catch
-            {
-            }
-            cmdBuffer=" ALTER TABLE [Empleado] ADD CONSTRAINT [IEMPLEADO1] FOREIGN KEY ([parqueAtraccionId]) REFERENCES [parqueAtraccion] ([parqueAtraccionId]) "
+            cmdBuffer=" DROP INDEX [USHOW] ON [Show] "
+            ;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [USHOW] ON [Show] ([ShowNombre] ) "
+            ;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+         }
+      }
+
+      public void ReorganizeparqueAtraccion( )
+      {
+         string cmdBuffer = "";
+         /* Indices for table parqueAtraccion */
+         try
+         {
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [UPARQUEATRACCION] ON [parqueAtraccion] ([parqueAtraccionNombre] ) "
+            ;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+         }
+         catch
+         {
+            cmdBuffer=" DROP INDEX [UPARQUEATRACCION] ON [parqueAtraccion] "
+            ;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [UPARQUEATRACCION] ON [parqueAtraccion] ([parqueAtraccionNombre] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -151,9 +152,19 @@ namespace GeneXus.Programs {
          {
             /* Using cursor P00012 */
             pr_default.execute(0);
-            EmpleadoCount = P00012_AEmpleadoCount[0];
+            CategoriaCount = P00012_ACategoriaCount[0];
             pr_default.close(0);
-            PrintRecordCount ( "Empleado" ,  EmpleadoCount );
+            PrintRecordCount ( "Categoria" ,  CategoriaCount );
+            /* Using cursor P00023 */
+            pr_default.execute(1);
+            ShowCount = P00023_AShowCount[0];
+            pr_default.close(1);
+            PrintRecordCount ( "Show" ,  ShowCount );
+            /* Using cursor P00034 */
+            pr_default.execute(2);
+            parqueAtraccionCount = P00034_AparqueAtraccionCount[0];
+            pr_default.close(2);
+            PrintRecordCount ( "parqueAtraccion" ,  parqueAtraccionCount );
          }
       }
 
@@ -173,39 +184,40 @@ namespace GeneXus.Programs {
          }
          if ( GXUtil.IsSQLSERVER2005( context, "DEFAULT") )
          {
-            /* Using cursor P00023 */
-            pr_default.execute(1);
-            while ( (pr_default.getStatus(1) != 101) )
+            /* Using cursor P00045 */
+            pr_default.execute(3);
+            while ( (pr_default.getStatus(3) != 101) )
             {
-               sSchemaVar = P00023_AsSchemaVar[0];
-               nsSchemaVar = P00023_nsSchemaVar[0];
-               pr_default.readNext(1);
+               sSchemaVar = P00045_AsSchemaVar[0];
+               nsSchemaVar = P00045_nsSchemaVar[0];
+               pr_default.readNext(3);
             }
-            pr_default.close(1);
+            pr_default.close(3);
          }
          else
          {
-            /* Using cursor P00034 */
-            pr_default.execute(2);
-            while ( (pr_default.getStatus(2) != 101) )
+            /* Using cursor P00056 */
+            pr_default.execute(4);
+            while ( (pr_default.getStatus(4) != 101) )
             {
-               sSchemaVar = P00034_AsSchemaVar[0];
-               nsSchemaVar = P00034_nsSchemaVar[0];
-               pr_default.readNext(2);
+               sSchemaVar = P00056_AsSchemaVar[0];
+               nsSchemaVar = P00056_nsSchemaVar[0];
+               pr_default.readNext(4);
             }
-            pr_default.close(2);
+            pr_default.close(4);
          }
          return true ;
       }
 
       private void ExecuteOnlyTablesReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeEmpleado" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeCategoria" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 2 ,  "ReorganizeShow" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 3 ,  "ReorganizeparqueAtraccion" , new Object[]{ });
       }
 
       private void ExecuteOnlyRisReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 2 ,  "RIEmpleadoparqueAtraccion" , new Object[]{ });
       }
 
       private void ExecuteTablesReorganization( )
@@ -223,13 +235,13 @@ namespace GeneXus.Programs {
 
       private void SetPrecedencetables( )
       {
-         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Empleado", ""}) );
+         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Categoria", ""}) );
+         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Show", ""}) );
+         GXReorganization.SetMsg( 3 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"parqueAtraccion", ""}) );
       }
 
       private void SetPrecedenceris( )
       {
-         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[IEMPLEADO1]"}) );
-         ReorgExecute.RegisterPrecedence( "RIEmpleadoparqueAtraccion" ,  "ReorganizeEmpleado" );
       }
 
       private void ExecuteReorganization( )
@@ -258,23 +270,31 @@ namespace GeneXus.Programs {
 
       public override void initialize( )
       {
-         P00012_AEmpleadoCount = new int[1] ;
+         P00012_ACategoriaCount = new int[1] ;
+         P00023_AShowCount = new int[1] ;
+         P00034_AparqueAtraccionCount = new int[1] ;
          sSchemaVar = "";
          nsSchemaVar = false;
-         P00023_AsSchemaVar = new string[] {""} ;
-         P00023_nsSchemaVar = new bool[] {false} ;
-         P00034_AsSchemaVar = new string[] {""} ;
-         P00034_nsSchemaVar = new bool[] {false} ;
+         P00045_AsSchemaVar = new string[] {""} ;
+         P00045_nsSchemaVar = new bool[] {false} ;
+         P00056_AsSchemaVar = new string[] {""} ;
+         P00056_nsSchemaVar = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
-               P00012_AEmpleadoCount
+               P00012_ACategoriaCount
                }
                , new Object[] {
-               P00023_AsSchemaVar
+               P00023_AShowCount
                }
                , new Object[] {
-               P00034_AsSchemaVar
+               P00034_AparqueAtraccionCount
+               }
+               , new Object[] {
+               P00045_AsSchemaVar
+               }
+               , new Object[] {
+               P00056_AsSchemaVar
                }
             }
          );
@@ -282,17 +302,21 @@ namespace GeneXus.Programs {
       }
 
       protected short ErrCode ;
-      protected int EmpleadoCount ;
+      protected int CategoriaCount ;
+      protected int ShowCount ;
+      protected int parqueAtraccionCount ;
       protected string sSchemaVar ;
       protected bool nsSchemaVar ;
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
-      protected int[] P00012_AEmpleadoCount ;
-      protected string[] P00023_AsSchemaVar ;
-      protected bool[] P00023_nsSchemaVar ;
-      protected string[] P00034_AsSchemaVar ;
-      protected bool[] P00034_nsSchemaVar ;
+      protected int[] P00012_ACategoriaCount ;
+      protected int[] P00023_AShowCount ;
+      protected int[] P00034_AparqueAtraccionCount ;
+      protected string[] P00045_AsSchemaVar ;
+      protected bool[] P00045_nsSchemaVar ;
+      protected string[] P00056_AsSchemaVar ;
+      protected bool[] P00056_nsSchemaVar ;
    }
 
    public class reorg__default : DataStoreHelperBase, IDataStoreHelper
@@ -304,6 +328,8 @@ namespace GeneXus.Programs {
           new ForEachCursor(def[0])
          ,new ForEachCursor(def[1])
          ,new ForEachCursor(def[2])
+         ,new ForEachCursor(def[3])
+         ,new ForEachCursor(def[4])
        };
     }
 
@@ -321,10 +347,18 @@ namespace GeneXus.Programs {
           Object[] prmP00034;
           prmP00034 = new Object[] {
           };
+          Object[] prmP00045;
+          prmP00045 = new Object[] {
+          };
+          Object[] prmP00056;
+          prmP00056 = new Object[] {
+          };
           def= new CursorDef[] {
-              new CursorDef("P00012", "SELECT COUNT(*) FROM [Empleado] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00023", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00034", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00012", "SELECT COUNT(*) FROM [Categoria] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00023", "SELECT COUNT(*) FROM [Show] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00034", "SELECT COUNT(*) FROM [parqueAtraccion] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00045", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00056", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00056,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -339,9 +373,15 @@ namespace GeneXus.Programs {
                 ((int[]) buf[0])[0] = rslt.getInt(1);
                 return;
              case 1 :
-                ((string[]) buf[0])[0] = rslt.getString(1, 255);
+                ((int[]) buf[0])[0] = rslt.getInt(1);
                 return;
              case 2 :
+                ((int[]) buf[0])[0] = rslt.getInt(1);
+                return;
+             case 3 :
+                ((string[]) buf[0])[0] = rslt.getString(1, 255);
+                return;
+             case 4 :
                 ((string[]) buf[0])[0] = rslt.getString(1, 255);
                 return;
        }

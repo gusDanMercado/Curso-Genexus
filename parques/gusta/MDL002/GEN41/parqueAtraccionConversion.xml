@@ -6,7 +6,7 @@
 <TableName>parqueAtraccion</TableName>
 <Description>parque Atraccion</Description></Table>
 <ReorgCls>c</ReorgCls>
-<ReorgCode>pk</ReorgCode>
+<ReorgCode>same</ReorgCode>
 <ReorgMsg>parqueAtraccion needs conversion</ReorgMsg>
 <ReorgAction>#</ReorgAction>
 <TableAttributes>
@@ -15,18 +15,7 @@
 <AttriId>13</AttriId>
 <AttriName>parqueAtraccionId</AttriName>
 <Description>parque Atraccion Id</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>13</AttriId>
-<AttriName>parqueAtraccionId</AttriName>
-<Description>parque Atraccion Id</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <OnPrimaryKey>Yes</OnPrimaryKey>
 <AttriType>
 <DataType>N</DataType>
@@ -46,18 +35,7 @@
 <AttriId>14</AttriId>
 <AttriName>parqueAtraccionNombre</AttriName>
 <Description>parque Atraccion Nombre</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>14</AttriId>
-<AttriName>parqueAtraccionNombre</AttriName>
-<Description>parque Atraccion Nombre</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>20</Presicion>
@@ -79,18 +57,7 @@
 <AttriId>15</AttriId>
 <AttriName>parqueAtraccionSitioWeb</AttriName>
 <Description>parque Atraccion Sitio Web</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>15</AttriId>
-<AttriName>parqueAtraccionSitioWeb</AttriName>
-<Description>parque Atraccion Sitio Web</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>60</Presicion>
@@ -112,18 +79,7 @@
 <AttriId>16</AttriId>
 <AttriName>parqueAtraccionDireccion</AttriName>
 <Description>parque Atraccion Direccion</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>16</AttriId>
-<AttriName>parqueAtraccionDireccion</AttriName>
-<Description>parque Atraccion Direccion</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>1024</Presicion>
@@ -145,18 +101,7 @@
 <AttriId>17</AttriId>
 <AttriName>parqueAtraccionFoto</AttriName>
 <Description>parque Atraccion Foto</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>17</AttriId>
-<AttriName>parqueAtraccionFoto</AttriName>
-<Description>parque Atraccion Foto</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>B</DataType>
 <Presicion>1024</Presicion>
@@ -172,21 +117,10 @@
 <Name>AllowNulls</Name>
 <Value>No</Value></Property></Properties></AttriType></Attribute>
 <Attribute>
-<AttriId>40000</AttriId>
+<AttriId>40001</AttriId>
 <AttriName>parqueAtraccionFoto_GXI</AttriName>
 <Description>parqueAtraccionFoto_GXI</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>40000</AttriId>
-<AttriName>parqueAtraccionFoto.Uri  </AttriName>
-<Description></Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>2048</Presicion>
@@ -205,18 +139,7 @@
 <AttriId>18</AttriId>
 <AttriName>PaisId</AttriName>
 <Description>Pais Id</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>18</AttriId>
-<AttriName>PaisId</AttriName>
-<Description>Pais Id</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>4</Presicion>
@@ -235,18 +158,7 @@
 <AttriId>20</AttriId>
 <AttriName>ShowId</AttriName>
 <Description>Show Id</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>20</AttriId>
-<AttriName>ShowId</AttriName>
-<Description>Show Id</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>4</Presicion>
@@ -265,18 +177,7 @@
 <AttriId>23</AttriId>
 <AttriName>parqueAtraccionShowFechaHora</AttriName>
 <Description>parque Atraccion Show Fecha Hora</Description>
-<TakesValueFrom>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Sp></Sp>
-<Attribute>
-<AttriId>23</AttriId>
-<AttriName>parqueAtraccionShowFechaHora</AttriName>
-<Description>parque Atraccion Show Fecha Hora</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>T</DataType>
 <Presicion>8</Presicion>
@@ -295,9 +196,7 @@
 <AttriId>28</AttriId>
 <AttriName>CiudadId</AttriName>
 <Description>Ciudad Id</Description>
-<TakesValueFrom>
-<FromValue>
-<Token>Null</Token></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>4</Presicion>
@@ -311,23 +210,9 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>Yes</Value></Property></Properties></AttriType>
-<AttriChangeType>nn</AttriChangeType></Attribute></AttrisInTable>
+<Value>Yes</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
 <AttrisNoLongerInTable></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
-<NavigationTree>
-<Table>
-<TableId>2</TableId>
-<TableName>parqueAtraccion</TableName>
-<Description>parque Atraccion</Description>
-<RecordsToRead>many</RecordsToRead>
-<KeyAttributes>
-<Attribute>
-<AttriId>13</AttriId>
-<AttriName>parqueAtraccionId</AttriName>
-<Description>parque Atraccion Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
-<TablesToUpdate></TablesToUpdate>
 <TableIndices>
 <Indices>
 <Index>
@@ -349,8 +234,7 @@
 <AttriName>ShowId</AttriName>
 <Description>Show Id</Description></Attribute></IndexAttris>
 <IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>No</Clustered></Index></Indices>
-<NewIndices>
+<Clustered>No</Clustered></Index>
 <Index>
 <IndexName>IPARQUEATRACCION1</IndexName>
 <IndexType>d</IndexType>
@@ -364,19 +248,34 @@
 <AttriName>CiudadId</AttriName>
 <Description>Ciudad Id</Description></Attribute></IndexAttris>
 <IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>No</Clustered></Index></NewIndices>
-<IndicesToDelete>
+<Clustered>No</Clustered></Index></Indices>
+<NewIndices>
 <Index>
-<IndexName>IPARQUEATRACCION1</IndexName>
+<IndexName>UPARQUEATRACCION</IndexName>
 <IndexType>d</IndexType>
 <IndexAttris>
 <Attribute>
+<AttriId>14</AttriId>
+<AttriName>parqueAtraccionNombre</AttriName>
+<Description>parque Atraccion Nombre</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index></NewIndices></TableIndices>
+<FKConstraints>
+<FKConstraint>
+<ChangeType>none</ChangeType>
+<Table>
+<TableId>7</TableId>
+<TableName>PaisCiudad</TableName>
+<Description>Ciudad</Description></Table>
+<Attributes>
+<Attribute>
 <AttriId>18</AttriId>
 <AttriName>PaisId</AttriName>
-<Description>Pais Id</Description></Attribute></IndexAttris>
-<IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>No</Clustered></Index></IndicesToDelete></TableIndices>
-<FKConstraints>
+<Description>Pais Id</Description></Attribute>
+<Attribute>
+<AttriId>28</AttriId>
+<AttriName>CiudadId</AttriName>
+<Description>Ciudad Id</Description></Attribute></Attributes></FKConstraint>
 <FKConstraint>
 <ChangeType>none</ChangeType>
 <Table>
@@ -398,39 +297,9 @@
 <Attribute>
 <AttriId>18</AttriId>
 <AttriName>PaisId</AttriName>
-<Description>Pais Id</Description></Attribute></Attributes></FKConstraint>
-<FKConstraint>
-<ChangeType>new</ChangeType>
-<Table>
-<TableId>7</TableId>
-<TableName>PaisCiudad</TableName>
-<Description>Ciudad</Description></Table>
-<Attributes>
-<Attribute>
-<AttriId>18</AttriId>
-<AttriName>PaisId</AttriName>
-<Description>Pais Id</Description></Attribute>
-<Attribute>
-<AttriId>28</AttriId>
-<AttriName>CiudadId</AttriName>
-<Description>Ciudad Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
+<Description>Pais Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
 <Statements>
-<Statement>ALTER TABLE [parqueAtraccion] ADD [CiudadId] smallint NULL </Statement>
-<Statement>DROP INDEX [IPARQUEATRACCION1] ON [parqueAtraccion]</Statement>
-<Statement>CREATE NONCLUSTERED INDEX [IPARQUEATRACCION1] ON [parqueAtraccion] ([PaisId] ,[CiudadId] )</Statement>
-<Statement>ALTER TABLE [parqueAtraccion] ADD CONSTRAINT [IPARQUEATRACCION1] FOREIGN KEY ([PaisId], [CiudadId]) REFERENCES [PaisCiudad] ([PaisId], [CiudadId])</Statement></Statements>
+<Statement>CREATE NONCLUSTERED INDEX [UPARQUEATRACCION] ON [parqueAtraccion] ([parqueAtraccionNombre] )</Statement></Statements>
 <NeedReorganizationProgram>False</NeedReorganizationProgram>
 <Warnings></Warnings>
-<Errors></Errors>
-<Information>
-<InfoMsg>
-<MsgCode>nfo0003</MsgCode>
-<Message>
-<Token>The reorganization for this table makes the schema not backward compatible.</Token></Message>
-<AdditionalInfo>
-<Title>The following operations are not backward compatible:</Title>
-<Info>
-<Token>Add </Token>
-<Token>foreign key</Token>
-<Token>constraint</Token>
-<Token>IPARQUEATRACCION1</Token></Info></AdditionalInfo></InfoMsg></Information></ReorgSpec>
+<Errors></Errors></ReorgSpec>

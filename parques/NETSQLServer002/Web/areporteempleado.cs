@@ -224,7 +224,7 @@ namespace GeneXus.Programs {
                getPrinter().GxDrawText("Email", 592, Gx_line+0, 624, Gx_line+14, 0+256, 0, 0, 0) ;
                getPrinter().GxDrawLine(0, Gx_line+17, 800, Gx_line+17, 1, 0, 0, 0, 0) ;
                Gx_OldLine = Gx_line;
-               Gx_line = (int)(Gx_line+23);
+               Gx_line = (int)(Gx_line+20);
                if (true) break;
             }
             else

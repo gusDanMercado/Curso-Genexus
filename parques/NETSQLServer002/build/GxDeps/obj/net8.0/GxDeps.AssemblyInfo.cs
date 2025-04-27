@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GxDeps")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e354e2dd2dda740e9a0751d232248a9e514ceaf2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+236c0ad3fb88b4b614c16d0f85bda95571c27d57")]
 [assembly: System.Reflection.AssemblyProductAttribute("GxDeps")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GxDeps")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
