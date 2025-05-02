@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\viewproveedor\bin\Release\net8.0\viewproveedor.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewproveedor\obj\Release\net8.0\viewproveedor.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\viewproveedor\obj\Release\net8.0\viewproveedor.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\viewproveedor\obj\Release\net8.0\viewproveedor.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\viewproveedor\obj\Release\net8.0\viewproveedor.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewproveedor\obj\Release\net8.0\refint\viewproveedor.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewproveedor\obj\Release\net8.0\ref\viewproveedor.dll

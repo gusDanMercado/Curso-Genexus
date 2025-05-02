@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\clientegeneral\bin\Release\net8.0\clientegeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientegeneral\obj\Release\net8.0\clientegeneral.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\clientegeneral\obj\Release\net8.0\clientegeneral.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\clientegeneral\obj\Release\net8.0\clientegeneral.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\clientegeneral\obj\Release\net8.0\clientegeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientegeneral\obj\Release\net8.0\refint\clientegeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientegeneral\obj\Release\net8.0\ref\clientegeneral.dll

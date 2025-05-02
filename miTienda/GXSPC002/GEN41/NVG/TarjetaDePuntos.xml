@@ -1,0 +1,143 @@
+
+<ObjectSpec>
+<SpecVersion>18_0_10-184260</SpecVersion>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>5</ObjId>
+<ObjName>TarjetaDePuntos</ObjName>
+<ObjDesc>Tarjeta De Puntos</ObjDesc>
+<ObjPgmName>TarjetaDePuntos</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>41</GenId>
+<GenName>Default (.NET)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Tarjetadepuntosid</VarId>
+<VarName>&amp;TarjetaDePuntosID</VarName></Variable></Parameter></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>5</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>5</TableId>
+<TableName>TarjetaDePuntos</TableName>
+<Description>Tarjeta De Puntos</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>5</TableId>
+<TableName>TarjetaDePuntos</TableName>
+<Description>Tarjeta De Puntos</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>TarjetaDePuntosID</AttriName>
+<Description>Tarjeta De Puntos ID</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>4</TableId>
+<TableName>Cliente</TableName>
+<Description>Cliente</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>ClienteID</AttriName>
+<Description>Cliente ID</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>5</TableId>
+<TableName>TarjetaDePuntos</TableName>
+<Description>Tarjeta De Puntos</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>15</AttriId>
+<AttriName>TarjetaDePuntosStatus</AttriName>
+<Description>Tarjeta De Puntos Status</Description></Attribute>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>TarjetaDePuntosPuntos</AttriName>
+<Description>Tarjeta De Puntos Puntos</Description></Attribute>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>ClienteID</AttriName>
+<Description>Cliente ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>5</TableId>
+<TableName>TarjetaDePuntos</TableName>
+<Description>Tarjeta De Puntos</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>15</AttriId>
+<AttriName>TarjetaDePuntosStatus</AttriName>
+<Description>Tarjeta De Puntos Status</Description></Attribute>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>TarjetaDePuntosPuntos</AttriName>
+<Description>Tarjeta De Puntos Puntos</Description></Attribute>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>ClienteID</AttriName>
+<Description>Cliente ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>5</TableId>
+<TableName>TarjetaDePuntos</TableName>
+<Description>Tarjeta De Puntos</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Prompts>
+<Prompt>
+<Table>
+<TableId>4</TableId>
+<TableName>Cliente</TableName>
+<Description>Cliente</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>18</ObjId>
+<ObjName>Gx0040</ObjName>
+<ObjPgmName>Gx0040</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>ClienteID</AttriName>
+<Description>Cliente ID</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt></Prompts>
+<Suggests></Suggests></ObjectSpec>

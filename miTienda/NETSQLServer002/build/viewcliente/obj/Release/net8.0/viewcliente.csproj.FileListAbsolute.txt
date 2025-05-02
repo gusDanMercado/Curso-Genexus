@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\viewcliente\bin\Release\net8.0\viewcliente.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewcliente\obj\Release\net8.0\viewcliente.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\viewcliente\obj\Release\net8.0\viewcliente.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\viewcliente\obj\Release\net8.0\viewcliente.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\viewcliente\obj\Release\net8.0\viewcliente.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewcliente\obj\Release\net8.0\refint\viewcliente.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewcliente\obj\Release\net8.0\ref\viewcliente.dll

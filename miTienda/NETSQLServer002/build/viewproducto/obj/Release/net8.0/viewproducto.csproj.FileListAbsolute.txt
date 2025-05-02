@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\viewproducto\bin\Release\net8.0\viewproducto.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewproducto\obj\Release\net8.0\viewproducto.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\viewproducto\obj\Release\net8.0\viewproducto.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\viewproducto\obj\Release\net8.0\viewproducto.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\viewproducto\obj\Release\net8.0\viewproducto.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewproducto\obj\Release\net8.0\refint\viewproducto.dll
+C:\KBs\miTienda\NETSQLServer002\build\viewproducto\obj\Release\net8.0\ref\viewproducto.dll

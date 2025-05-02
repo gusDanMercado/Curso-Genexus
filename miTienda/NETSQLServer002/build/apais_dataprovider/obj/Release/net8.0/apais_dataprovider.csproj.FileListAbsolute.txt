@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\apais_dataprovider\bin\Release\net8.0\apais_dataprovider.dll
+C:\KBs\miTienda\NETSQLServer002\build\apais_dataprovider\obj\Release\net8.0\apais_dataprovider.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\apais_dataprovider\obj\Release\net8.0\apais_dataprovider.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\apais_dataprovider\obj\Release\net8.0\apais_dataprovider.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\apais_dataprovider\obj\Release\net8.0\apais_dataprovider.dll
+C:\KBs\miTienda\NETSQLServer002\build\apais_dataprovider\obj\Release\net8.0\refint\apais_dataprovider.dll
+C:\KBs\miTienda\NETSQLServer002\build\apais_dataprovider\obj\Release\net8.0\ref\apais_dataprovider.dll

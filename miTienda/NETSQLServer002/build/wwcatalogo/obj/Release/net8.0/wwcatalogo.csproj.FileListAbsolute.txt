@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\wwcatalogo\bin\Release\net8.0\wwcatalogo.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwcatalogo\obj\Release\net8.0\wwcatalogo.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\wwcatalogo\obj\Release\net8.0\wwcatalogo.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\wwcatalogo\obj\Release\net8.0\wwcatalogo.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\wwcatalogo\obj\Release\net8.0\wwcatalogo.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwcatalogo\obj\Release\net8.0\refint\wwcatalogo.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwcatalogo\obj\Release\net8.0\ref\wwcatalogo.dll

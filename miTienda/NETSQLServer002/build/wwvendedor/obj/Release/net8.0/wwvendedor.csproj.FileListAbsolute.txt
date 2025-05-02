@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\wwvendedor\bin\Release\net8.0\wwvendedor.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwvendedor\obj\Release\net8.0\wwvendedor.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\wwvendedor\obj\Release\net8.0\wwvendedor.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\wwvendedor\obj\Release\net8.0\wwvendedor.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\wwvendedor\obj\Release\net8.0\wwvendedor.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwvendedor\obj\Release\net8.0\refint\wwvendedor.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwvendedor\obj\Release\net8.0\ref\wwvendedor.dll

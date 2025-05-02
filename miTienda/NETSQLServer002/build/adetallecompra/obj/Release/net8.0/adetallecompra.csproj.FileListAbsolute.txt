@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\adetallecompra\bin\Release\net8.0\adetallecompra.dll
+C:\KBs\miTienda\NETSQLServer002\build\adetallecompra\obj\Release\net8.0\adetallecompra.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\adetallecompra\obj\Release\net8.0\adetallecompra.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\adetallecompra\obj\Release\net8.0\adetallecompra.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\adetallecompra\obj\Release\net8.0\adetallecompra.dll
+C:\KBs\miTienda\NETSQLServer002\build\adetallecompra\obj\Release\net8.0\refint\adetallecompra.dll
+C:\KBs\miTienda\NETSQLServer002\build\adetallecompra\obj\Release\net8.0\ref\adetallecompra.dll

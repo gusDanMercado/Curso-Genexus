@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\wwproducto\bin\Release\net8.0\wwproducto.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwproducto\obj\Release\net8.0\wwproducto.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\wwproducto\obj\Release\net8.0\wwproducto.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\wwproducto\obj\Release\net8.0\wwproducto.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\wwproducto\obj\Release\net8.0\wwproducto.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwproducto\obj\Release\net8.0\refint\wwproducto.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwproducto\obj\Release\net8.0\ref\wwproducto.dll

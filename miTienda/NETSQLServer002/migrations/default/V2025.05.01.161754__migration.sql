@@ -1,0 +1,2 @@
+CREATE UNIQUE NONCLUSTERED INDEX [UPAIS] ON [Pais] ([PaisNombre] );
+

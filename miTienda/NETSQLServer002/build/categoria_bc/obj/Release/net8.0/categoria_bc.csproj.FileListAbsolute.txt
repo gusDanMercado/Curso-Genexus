@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\categoria_bc\bin\Release\net8.0\categoria_bc.dll
+C:\KBs\miTienda\NETSQLServer002\build\categoria_bc\obj\Release\net8.0\categoria_bc.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\categoria_bc\obj\Release\net8.0\categoria_bc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\categoria_bc\obj\Release\net8.0\categoria_bc.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\categoria_bc\obj\Release\net8.0\categoria_bc.dll
+C:\KBs\miTienda\NETSQLServer002\build\categoria_bc\obj\Release\net8.0\refint\categoria_bc.dll
+C:\KBs\miTienda\NETSQLServer002\build\categoria_bc\obj\Release\net8.0\ref\categoria_bc.dll

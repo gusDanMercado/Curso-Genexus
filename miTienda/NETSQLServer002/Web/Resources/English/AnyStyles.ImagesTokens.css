@@ -1,0 +1,22 @@
+@layer AnyStylesImagesTokens {
+:root
+{
+	--GX-Image_selectRow : url(../selectRow.png);
+	--GX-Image_bandera_brasil : url(../bandera_brasil.png);
+	--GX-Image_bandera_uruguay : url(../bandera_uruguay.png);
+	--GX-Image_bandera_mexico : url(../bandera_mexico.png);
+	--GX-Image_bandera_china : url(../bandera_china.png);
+	--GX-Image_bandera_eeuu : url(../bandera_eeuu.png);
+	--GX-Image_bandera_argentina : url(../bandera_argentina.png);
+	--GX-Image_logoEncabezadoCarritoPDF : url(../logoEncabezadoCarritoPDF.png);
+}
+
+.GX_Image_selectRow_Class{content: var(--GX-Image_selectRow);}
+.GX_Image_bandera_brasil_Class{content: var(--GX-Image_bandera_brasil);}
+.GX_Image_bandera_uruguay_Class{content: var(--GX-Image_bandera_uruguay);}
+.GX_Image_bandera_mexico_Class{content: var(--GX-Image_bandera_mexico);}
+.GX_Image_bandera_china_Class{content: var(--GX-Image_bandera_china);}
+.GX_Image_bandera_eeuu_Class{content: var(--GX-Image_bandera_eeuu);}
+.GX_Image_bandera_argentina_Class{content: var(--GX-Image_bandera_argentina);}
+.GX_Image_logoEncabezadoCarritoPDF_Class{content: var(--GX-Image_logoEncabezadoCarritoPDF);}
+}

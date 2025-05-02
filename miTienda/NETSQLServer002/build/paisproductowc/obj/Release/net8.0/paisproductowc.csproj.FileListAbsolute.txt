@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\paisproductowc\bin\Release\net8.0\paisproductowc.dll
+C:\KBs\miTienda\NETSQLServer002\build\paisproductowc\obj\Release\net8.0\paisproductowc.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\paisproductowc\obj\Release\net8.0\paisproductowc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\paisproductowc\obj\Release\net8.0\paisproductowc.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\paisproductowc\obj\Release\net8.0\paisproductowc.dll
+C:\KBs\miTienda\NETSQLServer002\build\paisproductowc\obj\Release\net8.0\refint\paisproductowc.dll
+C:\KBs\miTienda\NETSQLServer002\build\paisproductowc\obj\Release\net8.0\ref\paisproductowc.dll

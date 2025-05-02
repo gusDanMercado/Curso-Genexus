@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\proveedorgeneral\bin\Release\net8.0\proveedorgeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\proveedorgeneral\obj\Release\net8.0\proveedorgeneral.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\proveedorgeneral\obj\Release\net8.0\proveedorgeneral.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\proveedorgeneral\obj\Release\net8.0\proveedorgeneral.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\proveedorgeneral\obj\Release\net8.0\proveedorgeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\proveedorgeneral\obj\Release\net8.0\refint\proveedorgeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\proveedorgeneral\obj\Release\net8.0\ref\proveedorgeneral.dll

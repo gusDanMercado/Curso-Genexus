@@ -1,0 +1,2 @@
+CREATE NONCLUSTERED INDEX [UCLIENTE] ON [Cliente] ([ClienteNombre] );
+

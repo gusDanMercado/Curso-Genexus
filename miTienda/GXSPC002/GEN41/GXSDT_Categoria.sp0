@@ -1,0 +1,48 @@
+ 
+spec_i([ sdt,[ 0,2,0 ],'Categoria','Categoria',0,eng,'18_0_10-184260' ]).
+ 
+struct_dt_i([ 0,2,0 ],name,'Categoria').
+struct_dt_i([ 0,2,0 ],namespace,miTienda).
+struct_dt_i([ 0,2,0 ],significantName,'Categoria').
+struct_dt_i([ 0,2,0 ],'ObjName','Categoria').
+struct_dt_i([ 0,2,0 ],'ObjDesc','Categoria').
+struct_dt_i([ 0,2,0 ],'ExternalName','Categoria').
+struct_dt_i([ 0,2,0 ],'ExternalNamespace',miTienda).
+struct_dt_i([ 0,2,0 ],key,[ 4 ]).
+struct_dt_i([ 0,2,0 ],lvl,2).
+struct_dt_i([ 0,2,0 ],fullname,'Categoria').
+ 
+struct_dt_elem_i([ 0,2,0 ],1,name,'Categoriaid').
+struct_dt_elem_i([ 0,2,0 ],1,camelname,'CategoriaID').
+struct_dt_elem_i([ 0,2,0 ],1,basedon,96).
+struct_dt_elem_i([ 0,2,0 ],1,length,6).
+struct_dt_elem_i([ 0,2,0 ],1,decimals,0).
+struct_dt_elem_i([ 0,2,0 ],1,sign,0).
+struct_dt_elem_i([ 0,2,0 ],1,type,[ 4,6,0 ]).
+struct_dt_elem_i([ 0,2,0 ],1,pic,'ZZZZZ9').
+struct_dt_elem_i([ 0,2,0 ],1,collection,'False').
+struct_dt_elem_i([ 0,2,0 ],1,attributeid,'4').
+struct_dt_elem_i([ 0,2,0 ],1,'ExternalName','CategoriaID').
+struct_dt_elem_i([ 0,2,0 ],1,'ExternalNamespace',miTienda).
+struct_dt_elem_i([ 0,2,0 ],1,'ATT_INITIAL_VALUE',[ t('1',3) ]).
+struct_dt_elem_i([ 0,2,0 ],2,name,'Categorianombre').
+struct_dt_elem_i([ 0,2,0 ],2,camelname,'CategoriaNombre').
+struct_dt_elem_i([ 0,2,0 ],2,basedon,97).
+struct_dt_elem_i([ 0,2,0 ],2,length,80).
+struct_dt_elem_i([ 0,2,0 ],2,decimals,0).
+struct_dt_elem_i([ 0,2,0 ],2,type,[ 13,80,0 ]).
+struct_dt_elem_i([ 0,2,0 ],2,pic,'').
+struct_dt_elem_i([ 0,2,0 ],2,collection,'False').
+struct_dt_elem_i([ 0,2,0 ],2,attributeid,'5').
+struct_dt_elem_i([ 0,2,0 ],2,'ExternalName','CategoriaNombre').
+struct_dt_elem_i([ 0,2,0 ],2,'ExternalNamespace',miTienda).
+ 
+ 
+ 
+ 
+ 
+ 
+module_info_i('GeneXus\Common','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus\Common','AssemblyName','GeneXus.dll').
+module_info_i('GeneXus','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus','AssemblyName','GeneXus.dll').

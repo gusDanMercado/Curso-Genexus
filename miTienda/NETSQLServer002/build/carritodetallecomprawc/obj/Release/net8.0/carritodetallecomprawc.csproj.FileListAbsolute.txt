@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\carritodetallecomprawc\bin\Release\net8.0\carritodetallecomprawc.dll
+C:\KBs\miTienda\NETSQLServer002\build\carritodetallecomprawc\obj\Release\net8.0\carritodetallecomprawc.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\carritodetallecomprawc\obj\Release\net8.0\carritodetallecomprawc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\carritodetallecomprawc\obj\Release\net8.0\carritodetallecomprawc.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\carritodetallecomprawc\obj\Release\net8.0\carritodetallecomprawc.dll
+C:\KBs\miTienda\NETSQLServer002\build\carritodetallecomprawc\obj\Release\net8.0\refint\carritodetallecomprawc.dll
+C:\KBs\miTienda\NETSQLServer002\build\carritodetallecomprawc\obj\Release\net8.0\ref\carritodetallecomprawc.dll

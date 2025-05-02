@@ -1,0 +1,67 @@
+ 
+spec_i([ sdt,[ 0,1,0 ],'Pais','Pais',0,eng,'18_0_10-184260' ]).
+ 
+struct_dt_i([ 0,1,0 ],name,'Pais').
+struct_dt_i([ 0,1,0 ],namespace,miTienda).
+struct_dt_i([ 0,1,0 ],significantName,'Pais').
+struct_dt_i([ 0,1,0 ],'ObjName','Pais').
+struct_dt_i([ 0,1,0 ],'ObjDesc','Pais').
+struct_dt_i([ 0,1,0 ],'ExternalName','Pais').
+struct_dt_i([ 0,1,0 ],'ExternalNamespace',miTienda).
+struct_dt_i([ 0,1,0 ],key,[ 1 ]).
+struct_dt_i([ 0,1,0 ],lvl,1).
+struct_dt_i([ 0,1,0 ],fullname,'Pais').
+ 
+struct_dt_elem_i([ 0,1,0 ],1,name,'Paisid').
+struct_dt_elem_i([ 0,1,0 ],1,camelname,'PaisID').
+struct_dt_elem_i([ 0,1,0 ],1,basedon,96).
+struct_dt_elem_i([ 0,1,0 ],1,length,6).
+struct_dt_elem_i([ 0,1,0 ],1,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],1,sign,0).
+struct_dt_elem_i([ 0,1,0 ],1,type,[ 4,6,0 ]).
+struct_dt_elem_i([ 0,1,0 ],1,pic,'ZZZZZ9').
+struct_dt_elem_i([ 0,1,0 ],1,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],1,attributeid,'1').
+struct_dt_elem_i([ 0,1,0 ],1,'ExternalName','PaisID').
+struct_dt_elem_i([ 0,1,0 ],1,'ExternalNamespace',miTienda).
+struct_dt_elem_i([ 0,1,0 ],1,'ATT_INITIAL_VALUE',[ t('1',3) ]).
+struct_dt_elem_i([ 0,1,0 ],2,name,'Paisnombre').
+struct_dt_elem_i([ 0,1,0 ],2,camelname,'PaisNombre').
+struct_dt_elem_i([ 0,1,0 ],2,basedon,97).
+struct_dt_elem_i([ 0,1,0 ],2,length,80).
+struct_dt_elem_i([ 0,1,0 ],2,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],2,type,[ 13,80,0 ]).
+struct_dt_elem_i([ 0,1,0 ],2,pic,'').
+struct_dt_elem_i([ 0,1,0 ],2,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],2,attributeid,'2').
+struct_dt_elem_i([ 0,1,0 ],2,'ExternalName','PaisNombre').
+struct_dt_elem_i([ 0,1,0 ],2,'ExternalNamespace',miTienda).
+struct_dt_elem_i([ 0,1,0 ],3,name,'Paisbandera').
+struct_dt_elem_i([ 0,1,0 ],3,camelname,'PaisBandera').
+struct_dt_elem_i([ 0,1,0 ],3,basedon,98).
+struct_dt_elem_i([ 0,1,0 ],3,length,4).
+struct_dt_elem_i([ 0,1,0 ],3,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],3,type,[ 7,4,0 ]).
+struct_dt_elem_i([ 0,1,0 ],3,pic,'').
+struct_dt_elem_i([ 0,1,0 ],3,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],3,attributeid,'3').
+struct_dt_elem_i([ 0,1,0 ],3,'ExternalName','PaisBandera').
+struct_dt_elem_i([ 0,1,0 ],3,'ExternalNamespace',miTienda).
+struct_dt_elem_i([ 0,1,0 ],4,name,'Paisbandera_gxi').
+struct_dt_elem_i([ 0,1,0 ],4,camelname,'PaisBandera_GXI').
+struct_dt_elem_i([ 0,1,0 ],4,collection,'False').
+struct_dt_elem_i([ 0,1,0 ],4,isadd,'True').
+struct_dt_elem_i([ 0,1,0 ],4,length,2048).
+struct_dt_elem_i([ 0,1,0 ],4,decimals,0).
+struct_dt_elem_i([ 0,1,0 ],4,type,[ 13,2048,0 ]).
+struct_dt_elem_i([ 0,1,0 ],4,attributeid,'40000').
+ 
+ 
+ 
+ 
+ 
+ 
+module_info_i('GeneXus\Common','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus\Common','AssemblyName','GeneXus.dll').
+module_info_i('GeneXus','CSHARP_NAME_SPACE','GeneXus.Core').
+module_info_i('GeneXus','AssemblyName','GeneXus.dll').

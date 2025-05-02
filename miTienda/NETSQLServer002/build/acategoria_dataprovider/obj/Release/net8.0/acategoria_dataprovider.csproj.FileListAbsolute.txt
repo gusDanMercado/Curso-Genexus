@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\acategoria_dataprovider\bin\Release\net8.0\acategoria_dataprovider.dll
+C:\KBs\miTienda\NETSQLServer002\build\acategoria_dataprovider\obj\Release\net8.0\acategoria_dataprovider.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\acategoria_dataprovider\obj\Release\net8.0\acategoria_dataprovider.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\acategoria_dataprovider\obj\Release\net8.0\acategoria_dataprovider.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\acategoria_dataprovider\obj\Release\net8.0\acategoria_dataprovider.dll
+C:\KBs\miTienda\NETSQLServer002\build\acategoria_dataprovider\obj\Release\net8.0\refint\acategoria_dataprovider.dll
+C:\KBs\miTienda\NETSQLServer002\build\acategoria_dataprovider\obj\Release\net8.0\ref\acategoria_dataprovider.dll

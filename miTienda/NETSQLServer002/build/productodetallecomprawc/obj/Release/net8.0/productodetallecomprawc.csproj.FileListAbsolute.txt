@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\productodetallecomprawc\bin\Release\net8.0\productodetallecomprawc.dll
+C:\KBs\miTienda\NETSQLServer002\build\productodetallecomprawc\obj\Release\net8.0\productodetallecomprawc.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\productodetallecomprawc\obj\Release\net8.0\productodetallecomprawc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\productodetallecomprawc\obj\Release\net8.0\productodetallecomprawc.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\productodetallecomprawc\obj\Release\net8.0\productodetallecomprawc.dll
+C:\KBs\miTienda\NETSQLServer002\build\productodetallecomprawc\obj\Release\net8.0\refint\productodetallecomprawc.dll
+C:\KBs\miTienda\NETSQLServer002\build\productodetallecomprawc\obj\Release\net8.0\ref\productodetallecomprawc.dll

@@ -1,0 +1,2 @@
+CREATE UNIQUE NONCLUSTERED INDEX [UCATEGORIA] ON [Categoria] ([CategoriaNombre] );
+

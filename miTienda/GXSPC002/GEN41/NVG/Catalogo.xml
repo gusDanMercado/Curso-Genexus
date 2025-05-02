@@ -1,0 +1,128 @@
+
+<ObjectSpec>
+<SpecVersion>18_0_10-184260</SpecVersion>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>8</ObjId>
+<ObjName>Catalogo</ObjName>
+<ObjDesc>Catalogo</ObjDesc>
+<ObjPgmName>Catalogo</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>41</GenId>
+<GenName>Default (.NET)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Catalogoid</VarId>
+<VarName>&amp;CatalogoID</VarName></Variable></Parameter></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>8</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>8</TableId>
+<TableName>Catalogo</TableName>
+<Description>Catalogo</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>8</TableId>
+<TableName>Catalogo</TableName>
+<Description>Catalogo</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>28</AttriId>
+<AttriName>CatalogoID</AttriName>
+<Description>Catalogo ID</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>Catalogo</TableName>
+<Description>Catalogo</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>29</AttriId>
+<AttriName>CatalogoDescripcion</AttriName>
+<Description>Catalogo Descripcion</Description></Attribute>
+<Attribute>
+<AttriId>30</AttriId>
+<AttriName>CatalogoImagen</AttriName>
+<Description>Catalogo Imagen</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>CatalogoImagen.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>31</AttriId>
+<AttriName>CatalogoFchInicio</AttriName>
+<Description>Catalogo Fch Inicio</Description></Attribute>
+<Attribute>
+<AttriId>32</AttriId>
+<AttriName>CatalogoFchFin</AttriName>
+<Description>Catalogo Fch Fin</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>Catalogo</TableName>
+<Description>Catalogo</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>29</AttriId>
+<AttriName>CatalogoDescripcion</AttriName>
+<Description>Catalogo Descripcion</Description></Attribute>
+<Attribute>
+<AttriId>30</AttriId>
+<AttriName>CatalogoImagen</AttriName>
+<Description>Catalogo Imagen</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>CatalogoImagen.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>31</AttriId>
+<AttriName>CatalogoFchInicio</AttriName>
+<Description>Catalogo Fch Inicio</Description></Attribute>
+<Attribute>
+<AttriId>32</AttriId>
+<AttriName>CatalogoFchFin</AttriName>
+<Description>Catalogo Fch Fin</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>Catalogo</TableName>
+<Description>Catalogo</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Suggests></Suggests></ObjectSpec>

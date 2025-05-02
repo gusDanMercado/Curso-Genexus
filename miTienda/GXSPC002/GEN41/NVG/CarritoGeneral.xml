@@ -1,0 +1,205 @@
+
+<ObjectSpec>
+<SpecVersion>18_0_10-184260</SpecVersion>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>45</ObjId>
+<ObjName>CarritoGeneral</ObjName>
+<ObjDesc>Carrito General</ObjDesc>
+<ObjPgmName>CarritoGeneral</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>41</GenId>
+<GenName>Default (.NET)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></Parameter></Parameters>
+<StandAloneRules></StandAloneRules>
+<Event>
+<EventName>Start</EventName>
+<CALL>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>General.Security.NotAuthorized</ObjName>
+<ObjPgmName>General.Security.NotAuthorized</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<Expression>
+<Variable>
+<VarId>Pgmname</VarId>
+<VarName>&amp;Pgmname</VarName></Variable></Expression>
+<IF></IF></CALL></Event>
+<Event>
+<EventName>Load</EventName>
+<LoadMethod>Auto</LoadMethod>
+<ImplicitForEach>
+<LevelType>For First</LevelType>
+<LevelBeginRow>0</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>9</TableId>
+<TableName>Carrito</TableName>
+<Description>Carrito</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></Order>
+<Condition></Condition>
+<IndexName>ICARRITO</IndexName>
+<LevelOptions></LevelOptions>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>@CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>@CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere></NonOptimizedWhere>
+<JoinLocation>1</JoinLocation>
+<NavigationTree>
+<Table>
+<TableId>9</TableId>
+<TableName>Carrito</TableName>
+<Description>Carrito</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>4</TableId>
+<TableName>Cliente</TableName>
+<Description>Cliente</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>ClienteID</AttriName>
+<Description>Cliente ID</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>9</TableId>
+<TableName>CarritoCostoTotalCompra navigation</TableName>
+<Description>Carrito</Description>
+<RecordsToRead>one</RecordsToRead>
+<JoinType>Outer</JoinType>
+<Tables>
+<Table>
+<TableId>10</TableId>
+<TableName>CarritoDetalleCompra</TableName>
+<Description>Detalle Compra</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>7</TableId>
+<TableName>Producto</TableName>
+<Description>Producto</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>ProductoID</AttriName>
+<Description>Producto ID</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></Tables></Table></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas></ImplicitForEach></Event>
+<Event>
+<EventName>'DoUpdate'</EventName>
+<CALL>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>9</ObjId>
+<ObjName>Carrito</ObjName>
+<ObjPgmName>Carrito</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Expression>
+<Token>TrnMode</Token>
+<Token>.Update</Token>
+<Token>,</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></Expression>
+<IF></IF></CALL></Event>
+<Event>
+<EventName>'DoDelete'</EventName>
+<CALL>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>9</ObjId>
+<ObjName>Carrito</ObjName>
+<ObjPgmName>Carrito</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Expression>
+<Token>TrnMode</Token>
+<Token>.Delete</Token>
+<Token>,</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></Expression>
+<IF></IF></CALL></Event>
+<Event>
+<EventName>'DoReportePDF'</EventName>
+<CALL>
+<Object>
+<ObjClsGuid>84a12160-f59b-4ad7-a683-ea4481ac23e9</ObjClsGuid>
+<ObjCls>1</ObjCls>
+<ObjId>15</ObjId>
+<ObjName>DetalleCompra</ObjName>
+<ObjPgmName>DetalleCompra</ObjPgmName>
+<ObjClsName>Procedure</ObjClsName></Object>
+<Expression>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>CarritoID</AttriName>
+<Description>Carrito ID</Description></Attribute></Expression>
+<IF></IF></CALL></Event>
+<Event>
+<EventName>'PREPARETRANSACTION'</EventName>
+<EventType>Subrutine</EventType></Event>
+<Suggests></Suggests></ObjectSpec>

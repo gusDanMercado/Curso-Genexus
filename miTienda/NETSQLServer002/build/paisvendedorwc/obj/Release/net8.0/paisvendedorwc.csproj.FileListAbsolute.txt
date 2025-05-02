@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\paisvendedorwc\bin\Release\net8.0\paisvendedorwc.dll
+C:\KBs\miTienda\NETSQLServer002\build\paisvendedorwc\obj\Release\net8.0\paisvendedorwc.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\paisvendedorwc\obj\Release\net8.0\paisvendedorwc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\paisvendedorwc\obj\Release\net8.0\paisvendedorwc.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\paisvendedorwc\obj\Release\net8.0\paisvendedorwc.dll
+C:\KBs\miTienda\NETSQLServer002\build\paisvendedorwc\obj\Release\net8.0\refint\paisvendedorwc.dll
+C:\KBs\miTienda\NETSQLServer002\build\paisvendedorwc\obj\Release\net8.0\ref\paisvendedorwc.dll

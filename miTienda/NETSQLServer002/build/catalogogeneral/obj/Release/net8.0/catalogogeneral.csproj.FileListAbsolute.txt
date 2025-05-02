@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\catalogogeneral\bin\Release\net8.0\catalogogeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\catalogogeneral\obj\Release\net8.0\catalogogeneral.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\catalogogeneral\obj\Release\net8.0\catalogogeneral.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\catalogogeneral\obj\Release\net8.0\catalogogeneral.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\catalogogeneral\obj\Release\net8.0\catalogogeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\catalogogeneral\obj\Release\net8.0\refint\catalogogeneral.dll
+C:\KBs\miTienda\NETSQLServer002\build\catalogogeneral\obj\Release\net8.0\ref\catalogogeneral.dll

@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\clientecarritowc\bin\Release\net8.0\clientecarritowc.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientecarritowc\obj\Release\net8.0\clientecarritowc.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\clientecarritowc\obj\Release\net8.0\clientecarritowc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\clientecarritowc\obj\Release\net8.0\clientecarritowc.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\clientecarritowc\obj\Release\net8.0\clientecarritowc.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientecarritowc\obj\Release\net8.0\refint\clientecarritowc.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientecarritowc\obj\Release\net8.0\ref\clientecarritowc.dll

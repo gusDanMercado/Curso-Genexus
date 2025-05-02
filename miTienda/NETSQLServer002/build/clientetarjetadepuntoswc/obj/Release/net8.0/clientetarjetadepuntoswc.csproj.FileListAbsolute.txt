@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\clientetarjetadepuntoswc\bin\Release\net8.0\clientetarjetadepuntoswc.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientetarjetadepuntoswc\obj\Release\net8.0\clientetarjetadepuntoswc.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\clientetarjetadepuntoswc\obj\Release\net8.0\clientetarjetadepuntoswc.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\clientetarjetadepuntoswc\obj\Release\net8.0\clientetarjetadepuntoswc.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\clientetarjetadepuntoswc\obj\Release\net8.0\clientetarjetadepuntoswc.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientetarjetadepuntoswc\obj\Release\net8.0\refint\clientetarjetadepuntoswc.dll
+C:\KBs\miTienda\NETSQLServer002\build\clientetarjetadepuntoswc\obj\Release\net8.0\ref\clientetarjetadepuntoswc.dll

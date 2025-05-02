@@ -1,0 +1,11 @@
+﻿<ConnectionInformation>
+	<DBName>GX_KB_miTienda</DBName>
+	<IntegratedSecurity>True</IntegratedSecurity>
+	<ServerInstance>(LocalDB)\MSSQLLocalDB</ServerInstance>
+	<CreateDbInKbFolder>True</CreateDbInKbFolder>
+	<Directory>C:\KBs\miTienda</Directory>
+	<DataFile>GX_KB_miTienda.mdf</DataFile>
+	<LogFile>GX_KB_miTienda_log.ldf</LogFile>
+	<HostName>GUSTAVOMERCADO</HostName>
+	<DetachOnClose>False</DetachOnClose>
+</ConnectionInformation>

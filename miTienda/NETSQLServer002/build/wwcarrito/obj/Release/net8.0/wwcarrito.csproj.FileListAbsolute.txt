@@ -1,0 +1,7 @@
+C:\KBs\miTienda\NETSQLServer002\build\wwcarrito\bin\Release\net8.0\wwcarrito.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwcarrito\obj\Release\net8.0\wwcarrito.csproj.AssemblyReference.cache
+C:\KBs\miTienda\NETSQLServer002\build\wwcarrito\obj\Release\net8.0\wwcarrito.GeneratedMSBuildEditorConfig.editorconfig
+C:\KBs\miTienda\NETSQLServer002\build\wwcarrito\obj\Release\net8.0\wwcarrito.csproj.CoreCompileInputs.cache
+C:\KBs\miTienda\NETSQLServer002\build\wwcarrito\obj\Release\net8.0\wwcarrito.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwcarrito\obj\Release\net8.0\refint\wwcarrito.dll
+C:\KBs\miTienda\NETSQLServer002\build\wwcarrito\obj\Release\net8.0\ref\wwcarrito.dll
