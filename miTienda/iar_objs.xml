@@ -11,5 +11,5 @@
 <TableId>5</TableId>
 <TableName>TarjetaDePuntos</TableName>
 <Description>Tarjeta De Puntos</Description></Table>
-<ReorgAction>!</ReorgAction>
+<ReorgAction>#</ReorgAction>
 <ObjNavig>gusta\MDL002\GEN41\TarjetaDePuntosConversion.xml</ObjNavig></Object>

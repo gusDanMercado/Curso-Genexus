@@ -665,7 +665,7 @@ html_comp_i(30,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]
 html_comp_i(30,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(30,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(30,'Gxformat',0,d,[ num ]).
-html_comp_i(30,'Colvisible',-1,v,[ bool ]).
+html_comp_i(30,'Colvisible',0,v,[ bool ]).
 html_comp_i(30,'Title','',d,[ str ]).
 html_comp_i(30,'Invitemsg','',d,[ str ]).
 html_comp_i(31,'Isabstractlayoutcontrol',0,d,[ bool ]).
@@ -691,7 +691,7 @@ html_comp_i(31,'Colwidth',measure(0,px),d,[ measure ]).
 html_comp_i(31,'Height',measure(17,px),d,[ measure ]).
 html_comp_i(31,'Collinesfont',font('Courier New',9,[]),d,[ font ]).
 html_comp_i(31,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(31,'Coltitle','Pais Nombre',d,[ str ]).
+html_comp_i(31,'Coltitle','Pais',d,[ str ]).
 html_comp_i(31,'Coltitlefont',font('Microsoft Sans Serif',8,[ bold ]),d,[ font ]).
 html_comp_i(31,'Coltitlecolor',rgb(0,0,0),d,[ color ]).
 html_comp_i(31,'Horizontalalignment',left,d,[ str ]).

@@ -162,12 +162,12 @@ b_line_i(1,1,1,cmd,0,[]).
 b_line_i(2,1,1,cmd,0,[ t('',107,2,0),t('Programnames',23,0,0),t(=,10,0,0),t([ 'General\UI\ProgramNames',[ t('(',0,2,20),t(')',4,2,21) ],n ],46,0,0) ]).
 b_line_i(3,1,1,cmd,0,[]).
 b_line_i(4,1,1,cmd,0,[ t('',107,4,0),t('Name',23,0,0),t(=,10,0,0),t('"WWCarrito"',3,0,0) ]).
-b_line_i(5,1,1,cmd,0,[ t('',107,5,0),t('Description',23,0,0),t(=,10,0,0),t('"Carrito"',3,0,0) ]).
+b_line_i(5,1,1,cmd,0,[ t('',107,5,0),t('Description',23,0,0),t(=,10,0,0),t('"Carritos"',3,0,0) ]).
 b_line_i(6,1,1,cmd,0,[ t('',107,6,0),t('Link',23,0,0),t(=,10,0,0),t('link(',1,0,0),t(o(13,'WWCarrito'),28,0,0),t(')',4,0,0) ]).
 b_line_i(7,1,1,cmd,0,[ t('',145,7,0),t('''ADDPROGRAM''',3,7,4) ]).
 b_line_i(8,1,1,cmd,0,[]).
 b_line_i(9,1,1,cmd,0,[ t('',107,9,0),t('Name',23,0,0),t(=,10,0,0),t('"WWCatalogo"',3,0,0) ]).
-b_line_i(10,1,1,cmd,0,[ t('',107,10,0),t('Description',23,0,0),t(=,10,0,0),t('"Catalogoes"',3,0,0) ]).
+b_line_i(10,1,1,cmd,0,[ t('',107,10,0),t('Description',23,0,0),t(=,10,0,0),t('"Catalogos"',3,0,0) ]).
 b_line_i(11,1,1,cmd,0,[ t('',107,11,0),t('Link',23,0,0),t(=,10,0,0),t('link(',1,0,0),t(o(13,'WWCatalogo'),28,0,0),t(')',4,0,0) ]).
 b_line_i(12,1,1,cmd,0,[ t('',145,12,0),t('''ADDPROGRAM''',3,12,4) ]).
 b_line_i(13,1,1,cmd,0,[]).
@@ -187,22 +187,22 @@ b_line_i(26,1,1,cmd,0,[ t('',107,26,0),t('Link',23,0,0),t(=,10,0,0),t('link(',1,
 b_line_i(27,1,1,cmd,0,[ t('',145,27,0),t('''ADDPROGRAM''',3,27,4) ]).
 b_line_i(28,1,1,cmd,0,[]).
 b_line_i(29,1,1,cmd,0,[ t('',107,29,0),t('Name',23,0,0),t(=,10,0,0),t('"WWProducto"',3,0,0) ]).
-b_line_i(30,1,1,cmd,0,[ t('',107,30,0),t('Description',23,0,0),t(=,10,0,0),t('"Productoes"',3,0,0) ]).
+b_line_i(30,1,1,cmd,0,[ t('',107,30,0),t('Description',23,0,0),t(=,10,0,0),t('"Productos"',3,0,0) ]).
 b_line_i(31,1,1,cmd,0,[ t('',107,31,0),t('Link',23,0,0),t(=,10,0,0),t('link(',1,0,0),t(o(13,'WWProducto'),28,0,0),t(')',4,0,0) ]).
 b_line_i(32,1,1,cmd,0,[ t('',145,32,0),t('''ADDPROGRAM''',3,32,4) ]).
 b_line_i(33,1,1,cmd,0,[]).
 b_line_i(34,1,1,cmd,0,[ t('',107,34,0),t('Name',23,0,0),t(=,10,0,0),t('"WWProveedor"',3,0,0) ]).
-b_line_i(35,1,1,cmd,0,[ t('',107,35,0),t('Description',23,0,0),t(=,10,0,0),t('"Proveedors"',3,0,0) ]).
+b_line_i(35,1,1,cmd,0,[ t('',107,35,0),t('Description',23,0,0),t(=,10,0,0),t('"Proveedores"',3,0,0) ]).
 b_line_i(36,1,1,cmd,0,[ t('',107,36,0),t('Link',23,0,0),t(=,10,0,0),t('link(',1,0,0),t(o(13,'WWProveedor'),28,0,0),t(')',4,0,0) ]).
 b_line_i(37,1,1,cmd,0,[ t('',145,37,0),t('''ADDPROGRAM''',3,37,4) ]).
 b_line_i(38,1,1,cmd,0,[]).
 b_line_i(39,1,1,cmd,0,[ t('',107,39,0),t('Name',23,0,0),t(=,10,0,0),t('"WWTarjetaDePuntos"',3,0,0) ]).
-b_line_i(40,1,1,cmd,0,[ t('',107,40,0),t('Description',23,0,0),t(=,10,0,0),t('"Tarjeta De Puntoss"',3,0,0) ]).
+b_line_i(40,1,1,cmd,0,[ t('',107,40,0),t('Description',23,0,0),t(=,10,0,0),t('"Tarjeta De Puntos"',3,0,0) ]).
 b_line_i(41,1,1,cmd,0,[ t('',107,41,0),t('Link',23,0,0),t(=,10,0,0),t('link(',1,0,0),t(o(13,'WWTarjetaDePuntos'),28,0,0),t(')',4,0,0) ]).
 b_line_i(42,1,1,cmd,0,[ t('',145,42,0),t('''ADDPROGRAM''',3,42,4) ]).
 b_line_i(43,1,1,cmd,0,[]).
 b_line_i(44,1,1,cmd,0,[ t('',107,44,0),t('Name',23,0,0),t(=,10,0,0),t('"WWVendedor"',3,0,0) ]).
-b_line_i(45,1,1,cmd,0,[ t('',107,45,0),t('Description',23,0,0),t(=,10,0,0),t('"Vendedors"',3,0,0) ]).
+b_line_i(45,1,1,cmd,0,[ t('',107,45,0),t('Description',23,0,0),t(=,10,0,0),t('"Vendedores"',3,0,0) ]).
 b_line_i(46,1,1,cmd,0,[ t('',107,46,0),t('Link',23,0,0),t(=,10,0,0),t('link(',1,0,0),t(o(13,'WWVendedor'),28,0,0),t(')',4,0,0) ]).
 b_line_i(47,1,1,cmd,0,[ t('',145,47,0),t('''ADDPROGRAM''',3,47,4) ]).
 b_line_i(48,1,1,cmd,0,[]).

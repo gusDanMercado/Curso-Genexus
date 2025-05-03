@@ -1,8 +1,8 @@
-spec_i([ web,48,'Tarjeta De Puntoss','WWTarjetaDePuntos',0,eng,'18_0_10-184260' ]).
+spec_i([ web,48,'Tarjeta De Puntos','WWTarjetaDePuntos',0,eng,'18_0_10-184260' ]).
  
 struct_i(2,1,[ 'Pgmname','Tarjetadepuntosstatus' ],[]).
  
-level_i(2,[ 5,[ [ 5,many ],[ 4,one ] ],[],[],[ [ [ 5,4 ],[ 10,9,16,15,14 ] ] ],[ [ [ 5,4 ],[] ] ],[ 15 ],'',[],[] ]).
+level_i(2,[ 5,[ [ 5,many ],[ 4,one ] ],[],[],[ [ [ 5,4 ],[ 10,9,16,15,14 ] ] ],[ [ [ 5,4 ],[] ] ],[ 15 ],'UTARJETADEPUNTOS',[],[] ]).
  
 tw_i(2,[ [ 4,[ [ 5,9,9 ] ] ] ]).
  
@@ -20,7 +20,7 @@ las_i(2,[ [ 'Tarjetadepuntosstatus',10,9,16,15,14 ] ]).
 lac_i(2,[ [ 'Tarjetadepuntosstatus' ] ]).
  
  
-lits_i('Tarjeta De Puntoss',5,10).
+lits_i('Tarjeta De Puntos',5,10).
  
 cls_i([ 0,0 ],[ 5,102 ]).
  
@@ -122,13 +122,13 @@ rule_i(0,prop('SHOWMASTERPAGE_POPUP','0')).
 rule_i(0,prop('MasterPage',o(13,'General.UI.MasterUnanimoSidebar'))).
 rule_i(0,prop('WEB_COMP','No')).
 rule_i(0,prop('Theme',o(102,miTienda))).
-rule_i(0,prop('ObjDesc','Tarjeta De Puntoss')).
+rule_i(0,prop('ObjDesc','Tarjeta De Puntos')).
 rule_i(0,prop('ObjName','WWTarjetaDePuntos')).
 rule_i(0,maingen(41)).
 rule_i(2,rule([ a(1,msg([ t('"Field Tarjeta De Puntos Status is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('Tarjetadepuntosstatus',23),t(=,10),t('''N''',3),t('.OR.',9),t('Tarjetadepuntosstatus',23),t(=,10),t('''V''',3),t('.OR.',9),t('null(',1),t('Tarjetadepuntosstatus',23),t(')',4),t(')',4) ],[ insert,update ],[ 'Tarjetadepuntosstatus' ])).
  
 a_i(1,1,f,'Pgmname',[],[ [],[ t('"WWTarjetaDePuntos"',3) ] ]).
-a_i(2,2,t,5,[],[ [],'',[] ]).
+a_i(2,2,t,5,[],[ [],'UTARJETADEPUNTOS',[] ]).
 a_i(3,2,r,4,[],[ [ [ 5,9,9 ] ],'ICLIENTE',[] ]).
 a_i(4,2,b,0,[],[ [],[ a(1,msg([ t('"Field Tarjeta De Puntos Status is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('Tarjetadepuntosstatus',23),t(=,10),t('''N''',3),t('.OR.',9),t('Tarjetadepuntosstatus',23),t(=,10),t('''V''',3),t('.OR.',9),t('null(',1),t('Tarjetadepuntosstatus',23),t(')',4),t(')',4) ] ]).
  
@@ -167,8 +167,8 @@ attri_i('Isauthorized',[ 'IsAuthorized',boolean,4,0,'',0,'Is Authorized','',5 ])
 table_i(5,[ 'TarjetaDePuntos',[ 14,15,16,9 ],'Tarjeta De Puntos','TarjetaDePuntos' ]).
 table_i(4,[ 'Cliente',[ 9,10 ],'Cliente','Cliente' ]).
  
-index_i(5,[ '',a,[ 15 ],'' ]).
 index_i(5,[ 'ITARJETADEPUNTOS',u,[ 14 ],'ITarjetaDePuntos' ]).
+index_i(5,[ 'UTARJETADEPUNTOS',d,[ 15 ],'UTarjetaDePuntos' ]).
 index_i(4,[ 'ICLIENTE',u,[ 9 ],'ICliente' ]).
  
  
@@ -225,7 +225,7 @@ b_line_i(4,2,2,cmd,1,[ t('',104,4,0),t(o(13,'General\Security\NotAuthorized'),28
 b_line_i(5,2,2,cmd,1,[ t('',111,5,0) ]).
 b_line_i(7,2,2,cmd,1,[ t('',107,7,0),t([ t('Grid',3,1,0),t('Rows',3,1,0) ],29,1,0),t(=,10,1,0),t('10',3,1,0) ]).
 b_line_i(8,2,2,cmd,1,[ t('',107,8,0),t('Tarjetadepuntosstatus',23,1,0),t(=,10,1,0),t([ 101,[ t('nullvalue(',1),t('Tarjetadepuntosstatus',23),t(')',4) ] ],44,1,0) ]).
-b_line_i(9,2,2,cmd,1,[ t('',107,9,0),t([ t('Form',3,1,0),t('Caption',3,1,0) ],29,1,0),t(=,10,1,0),t('''Tarjeta De Puntoss''',3,1,0) ]).
+b_line_i(9,2,2,cmd,1,[ t('',107,9,0),t([ t('Form',3,1,0),t('Caption',3,1,0) ],29,1,0),t(=,10,1,0),t('''Tarjeta De Puntos''',3,1,0) ]).
 b_line_i(11,2,2,cmd,1,[ t('',145,11,0),t('''PREPARETRANSACTION''',3,11,5) ]).
 b_line_i(12,2,2,cmd,1,[ t('',107,12,0),t([ t('Grid',3,12,2),t('loadsessionstate(',1,12,7) ],31,12,7),t(')',4,1,25) ]).
 b_line_i(13,2,2,cmd,1,[ t('',147,13,0) ]).
@@ -269,7 +269,7 @@ html_sub_i(6,7,html_i(0,div(7))).
 html_sub_i(7,8,html_i(0,div(8))).
 html_sub_i(8,9,html_i(0,div(9))).
 html_sub_i(9,10,html_i(0,div(10))).
-html_sub_i(10,11,html_i(0,t('Tarjeta De Puntoss',3))).
+html_sub_i(10,11,html_i(0,t('Tarjeta De Puntos',3))).
 html_sub_i(9,12,html_i(1,div(12))).
 html_sub_i(12,13,html_i(0,div(13))).
 html_sub_i(13,14,html_i(0,t('Tarjetadepuntosstatus',23))).
@@ -365,7 +365,7 @@ html_comp_i(10,'Semanticcontent',div,d,[ str ]).
 html_comp_i(10,'Align',left,d,[ str ]).
 html_comp_i(10,'Valign',top,d,[ str ]).
 html_comp_i(11,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(11,'Caption','Tarjeta De Puntoss',d,[ str ]).
+html_comp_i(11,'Caption','Tarjeta De Puntos',d,[ str ]).
 html_comp_i(11,'Id','Titletext',v,[ str ]).
 html_comp_i(11,'Class','heading-01',v,[ str ]).
 html_comp_i(11,'Event','',d,[ str ]).
@@ -662,11 +662,10 @@ html_comp_i(28,'Invitemsg','',d,[ str ]).
  
  
  
-warn_gen_i(msg([],spc0038,[ 'There is no index for order ',[ att(2,15) ],'; poor performance may be noticed',[ ' in grid ''','Grid','''' ],'.' ])).
  
  
  
-lit_i(11,1,t('Tarjeta De Puntoss',3),[ ctlname('Titletext') ]).
+lit_i(11,1,t('Tarjeta De Puntos',3),[ ctlname('Titletext') ]).
 lit_i(10,1,div(10),[ ctlname('') ]).
 lit_i(14,1,t('Tarjetadepuntosstatus',23),[ ctlname('&Tarjetadepuntosstatus'),ctrltype(combo,14),pos(14),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(13,1,div(13),[ ctlname('') ]).

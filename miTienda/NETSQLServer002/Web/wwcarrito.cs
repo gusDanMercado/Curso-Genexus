@@ -379,7 +379,7 @@ namespace GeneXus.Programs {
 
       public override string GetPgmdesc( )
       {
-         return "Carrito" ;
+         return "Carritos" ;
       }
 
       protected void WB180( )
@@ -414,7 +414,7 @@ namespace GeneXus.Programs {
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "ww__title-cell", "start", "top", "", "flex-grow:1;", "div");
             /* Text block */
-            GxWebStd.gx_label_ctrl( context, lblTitletext_Internalname, "Carrito", "", "", lblTitletext_Jsonclick, "'"+""+"'"+",false,"+"'"+""+"'", "", "heading-01", 0, "", 1, 1, 0, 0, "HLP_WWCarrito.htm");
+            GxWebStd.gx_label_ctrl( context, lblTitletext_Internalname, "Carritos", "", "", lblTitletext_Jsonclick, "'"+""+"'"+",false,"+"'"+""+"'", "", "heading-01", 0, "", 1, 1, 0, 0, "HLP_WWCarrito.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "ww__actions-cell", "start", "top", "", "", "div");
@@ -612,7 +612,7 @@ namespace GeneXus.Programs {
                Form.Meta.addItem("generator", "GeneXus .NET 18_0_10-184260", 0) ;
             }
          }
-         Form.Meta.addItem("description", "Carrito", 0) ;
+         Form.Meta.addItem("description", "Carritos", 0) ;
          context.wjLoc = "";
          context.nUserReturn = 0;
          context.wbHandled = 0;
@@ -1262,7 +1262,7 @@ namespace GeneXus.Programs {
          AssignAttri("", false, edtavUpdate_Internalname, AV12Update);
          AV15ReportePDF = "Reporte";
          AssignAttri("", false, edtavReportepdf_Internalname, AV15ReportePDF);
-         Form.Caption = "Carrito";
+         Form.Caption = "Carritos";
          AssignProp("", false, "FORM", "Caption", Form.Caption, true);
          AV14ADVANCED_LABEL_TEMPLATE = "%1 <strong>%2</strong>";
          AssignAttri("", false, "AV14ADVANCED_LABEL_TEMPLATE", AV14ADVANCED_LABEL_TEMPLATE);
@@ -1394,7 +1394,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202552012569", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025522048438", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1410,7 +1410,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("wwcarrito.js", "?202552012569", false, true);
+         context.AddJavascriptSource("wwcarrito.js", "?2025522048438", false, true);
          /* End function include_jscripts */
       }
 
@@ -1632,7 +1632,7 @@ namespace GeneXus.Programs {
             context.SendWebValue( "Cliente ID") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Cliente Nombre") ;
+            context.SendWebValue( "Nombre") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "Total Compra") ;
@@ -1780,7 +1780,7 @@ namespace GeneXus.Programs {
          Form.Background = "";
          Form.Textcolor = 0;
          Form.Backcolor = (int)(0xFFFFFF);
-         Form.Caption = "Carrito";
+         Form.Caption = "Carritos";
          subGrid_Rows = 10;
          context.GX_msglist.DisplayMode = 1;
          if ( context.isSpaRequest( ) )

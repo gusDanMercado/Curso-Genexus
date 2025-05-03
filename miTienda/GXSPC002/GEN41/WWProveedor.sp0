@@ -1,4 +1,4 @@
-spec_i([ web,25,'Proveedors','WWProveedor',0,eng,'18_0_10-184260' ]).
+spec_i([ web,25,'Proveedores','WWProveedor',0,eng,'18_0_10-184260' ]).
  
 struct_i(2,1,[ 'Pgmname','Update','Delete' ],[]).
  
@@ -20,7 +20,7 @@ las_i(2,[ [ 'Proveedornombre','Update','Delete',18,17 ] ]).
 lac_i(2,[ [ 'Proveedornombre','Update','Delete' ] ]).
  
  
-lits_i('Proveedors',5,10).
+lits_i('Proveedores',5,10).
  
 cls_i([ 0,0 ],[ 5,128 ]).
  
@@ -121,7 +121,7 @@ rule_i(0,prop('SHOWMASTERPAGE_POPUP','0')).
 rule_i(0,prop('MasterPage',o(13,'General.UI.MasterUnanimoSidebar'))).
 rule_i(0,prop('WEB_COMP','No')).
 rule_i(0,prop('Theme',o(102,miTienda))).
-rule_i(0,prop('ObjDesc','Proveedors')).
+rule_i(0,prop('ObjDesc','Proveedores')).
 rule_i(0,prop('ObjName','WWProveedor')).
 rule_i(0,maingen(41)).
 rule_i(0,rule([ a(22,[ '''DoInsert''','''DoInsert''','' ]) ],[],[],[])).
@@ -215,7 +215,7 @@ b_line_i(5,2,2,cmd,1,[ t('',111,5,0) ]).
 b_line_i(7,2,2,cmd,1,[ t('',107,7,0),t([ t('Grid',3,1,0),t('Rows',3,1,0) ],29,1,0),t(=,10,1,0),t('10',3,1,0) ]).
 b_line_i(8,2,2,cmd,1,[ t('',107,8,0),t('Update',23,1,0),t(=,10,1,0),t('"Update"',3,1,0) ]).
 b_line_i(9,2,2,cmd,1,[ t('',107,9,0),t('Delete',23,1,0),t(=,10,1,0),t('"Delete"',3,1,0) ]).
-b_line_i(10,2,2,cmd,1,[ t('',107,10,0),t([ t('Form',3,1,0),t('Caption',3,1,0) ],29,1,0),t(=,10,1,0),t('''Proveedors''',3,1,0) ]).
+b_line_i(10,2,2,cmd,1,[ t('',107,10,0),t([ t('Form',3,1,0),t('Caption',3,1,0) ],29,1,0),t(=,10,1,0),t('''Proveedores''',3,1,0) ]).
 b_line_i(12,2,2,cmd,1,[ t('',145,12,0),t('''PREPARETRANSACTION''',3,12,5) ]).
 b_line_i(13,2,2,cmd,1,[ t('',107,13,0),t([ t('Grid',3,13,2),t('loadsessionstate(',1,13,7) ],31,13,7),t(')',4,1,25) ]).
 b_line_i(14,2,2,cmd,1,[ t('',147,14,0) ]).
@@ -264,7 +264,7 @@ html_sub_i(6,7,html_i(0,div(7))).
 html_sub_i(7,8,html_i(0,div(8))).
 html_sub_i(8,9,html_i(0,div(9))).
 html_sub_i(9,10,html_i(0,div(10))).
-html_sub_i(10,11,html_i(0,t('Proveedors',3))).
+html_sub_i(10,11,html_i(0,t('Proveedores',3))).
 html_sub_i(9,12,html_i(1,div(12))).
 html_sub_i(12,13,html_i(0,div(13))).
 html_sub_i(13,14,html_i(0,div(14))).
@@ -366,7 +366,7 @@ html_comp_i(10,'Semanticcontent',div,d,[ str ]).
 html_comp_i(10,'Align',left,d,[ str ]).
 html_comp_i(10,'Valign',top,d,[ str ]).
 html_comp_i(11,'Isabstractlayoutcontrol',0,d,[ bool ]).
-html_comp_i(11,'Caption','Proveedors',d,[ str ]).
+html_comp_i(11,'Caption','Proveedores',d,[ str ]).
 html_comp_i(11,'Id','Titletext',v,[ str ]).
 html_comp_i(11,'Class','heading-01',v,[ str ]).
 html_comp_i(11,'Event','',d,[ str ]).
@@ -686,7 +686,7 @@ html_comp_i(31,'Invitemsg','',d,[ str ]).
  
  
  
-lit_i(11,1,t('Proveedors',3),[ ctlname('Titletext') ]).
+lit_i(11,1,t('Proveedores',3),[ ctlname('Titletext') ]).
 lit_i(10,1,div(10),[ ctlname('') ]).
 lit_i(15,1,button('''DoInsert'''),[ ctlname('Btninsert'),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(14,1,div(14),[ ctlname('') ]).

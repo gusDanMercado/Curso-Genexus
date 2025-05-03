@@ -6,24 +6,11 @@
 <ObjCls>13</ObjCls>
 <ObjId>48</ObjId>
 <ObjName>WWTarjetaDePuntos</ObjName>
-<ObjDesc>Tarjeta De Puntoss</ObjDesc>
+<ObjDesc>Tarjeta De Puntos</ObjDesc>
 <ObjPgmName>WWTarjetaDePuntos</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
 <Result>genreq</Result>
-<Warnings>
-<Warning>
-<MsgCode>spc0038</MsgCode>
-<Message>
-<Token>There is no index for order </Token>
-<Attribute>
-<AttriId>15</AttriId>
-<AttriName>TarjetaDePuntosStatus</AttriName>
-<Description>Tarjeta De Puntos Status</Description></Attribute>
-<Token>; poor performance may be noticed</Token>
-<Token> in grid '</Token>
-<Token>Grid</Token>
-<Token>'</Token>
-<Token>.</Token></Message></Warning></Warnings>
+<Warnings></Warnings>
 <Errors></Errors>
 <Generator>
 <GenId>41</GenId>
@@ -65,6 +52,7 @@
 <AttriName>TarjetaDePuntosStatus</AttriName>
 <Description>Tarjeta De Puntos Status</Description></Attribute></Order>
 <Condition></Condition>
+<IndexName>UTARJETADEPUNTOS</IndexName>
 <LevelOptions></LevelOptions>
 <Optimizations>
 <Optimization>

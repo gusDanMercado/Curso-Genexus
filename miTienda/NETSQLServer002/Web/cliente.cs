@@ -1070,7 +1070,10 @@ namespace GeneXus.Programs {
          }
          if ( String.IsNullOrEmpty(StringUtil.RTrim( A13ClienteTelefono)) )
          {
-            GX_msglist.addItem("Por favor, ingrese su telefono de contacto!!!", 0, "CLIENTETELEFONO");
+            GX_msglist.addItem("Por favor, ingrese su telefono de contacto!!!", 1, "CLIENTETELEFONO");
+            AnyError = 1;
+            GX_FocusControl = edtClienteTelefono_Internalname;
+            AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
          }
       }
 
@@ -1952,7 +1955,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202552012485", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20255220475945", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1968,7 +1971,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("cliente.js", "?202552012485", false, true);
+         context.AddJavascriptSource("cliente.js", "?20255220475945", false, true);
          /* End function include_jscripts */
       }
 

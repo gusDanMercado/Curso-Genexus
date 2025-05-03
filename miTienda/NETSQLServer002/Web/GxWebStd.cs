@@ -25,873 +25,11 @@ namespace GeneXus.Programs {
          context.httpAjaxContext.ajax_rsp_assign_hidden(sCtrlName, sValue);
       }
 
-      static public void gx_html_headers( IGxContext context ,
-                                          int nContentType ,
-                                          string sCacheCtrl ,
-                                          string sCacheExp ,
-                                          GXRadio radrMeta ,
-                                          GXRadio radrMetaequiv ,
-                                          bool bIsRwd )
-      {
-         short wbTemp;
-         short idxLst;
-         bool addContentType;
-         GxWebStd.set_html_headers( context, nContentType, sCacheCtrl, sCacheExp);
-         if ( nContentType == 0 )
-         {
-            context.WriteHtmlTextNl( GXUtil.HtmlDocType( )) ;
-            context.WriteHtmlTextNl( "<html lang=\"en\""+">") ;
-            context.WriteHtmlTextNl( "<head>") ;
-            if ( bIsRwd )
-            {
-               GXWebForm.AddResponsiveMetaHeaders(radrMeta);
-            }
-            idxLst = 1;
-            while ( idxLst <= radrMeta.ItemCount )
-            {
-               context.WriteHtmlText( "<meta name=\""+StringUtil.RTrim( radrMeta.getItemValue(idxLst))+"\" content=\"") ;
-               context.SendWebAttribute( StringUtil.RTrim( radrMeta.getItemText(idxLst))) ;
-               context.WriteHtmlTextNl( "\""+GXUtil.HtmlEndTag( HTMLElement.META)) ;
-               idxLst = (short)(idxLst+1);
-            }
-            context.WriteHtmlTextNl( "<!--[if IE]><meta http-equiv=\"page-enter\" content=\"blendTrans(Duration=0.1)\""+GXUtil.HtmlEndTag( HTMLElement.META)+"<![endif]-->") ;
-            context.WriteHtmlTextNl( "<meta name=\"fragment\" content=\"!\""+GXUtil.HtmlEndTag( HTMLElement.META)) ;
-            idxLst = 1;
-            addContentType = true;
-            while ( idxLst <= radrMetaequiv.ItemCount )
-            {
-               if ( StringUtil.StrCmp(StringUtil.Lower( radrMetaequiv.getItemValue(idxLst)), "content-type") == 0 )
-               {
-                  addContentType = false;
-                  wbTemp = context.ResponseContentType( radrMetaequiv.getItemText(idxLst));
-               }
-               idxLst = (short)(idxLst+1);
-            }
-            if ( addContentType )
-            {
-               context.WriteHtmlTextNl( "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\""+GXUtil.HtmlEndTag( HTMLElement.META)) ;
-            }
-            idxLst = 1;
-            while ( idxLst <= radrMetaequiv.ItemCount )
-            {
-               context.WriteHtmlText( "<meta http-equiv=\""+StringUtil.RTrim( radrMetaequiv.getItemValue(idxLst))+"\" content=\"") ;
-               context.SendWebAttribute( StringUtil.RTrim( radrMetaequiv.getItemText(idxLst))) ;
-               context.WriteHtmlTextNl( "\""+GXUtil.HtmlEndTag( HTMLElement.META)) ;
-               idxLst = (short)(idxLst+1);
-            }
-         }
-      }
-
       static public void gx_boolean_hidden_field( IGxContext context ,
                                                   string sCtrlName ,
                                                   bool bValue )
       {
          context.httpAjaxContext.ajax_rsp_assign_boolean_hidden(sCtrlName, bValue);
-      }
-
-      static public void ClassAttribute( IGxContext context ,
-                                         string sClass )
-      {
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sClass)) )
-         {
-            context.WriteHtmlText( " class=\"") ;
-            context.SendWebValue( StringUtil.LTrim( sClass)) ;
-            context.WriteHtmlText( "\" ") ;
-         }
-      }
-
-      static public void gx_msg_list( IGxContext context ,
-                                      string sCtrlName ,
-                                      int nDisplayMode ,
-                                      string sStyleString ,
-                                      string sClassString ,
-                                      string sCmpCtx ,
-                                      string sInMaster )
-      {
-         int i;
-         context.WriteHtmlText( "<div>") ;
-         sClassString += " gx_ev";
-         if ( nDisplayMode == 1 )
-         {
-            sClassString += " ErrorViewerBullet";
-         }
-         context.WriteHtmlText( "<span") ;
-         GxWebStd.ClassAttribute( context, sClassString);
-         GxWebStd.StyleAttribute( context, sStyleString);
-         context.WriteHtmlText( " data-gx-id=\""+sCmpCtx+"gxErrorViewer\"") ;
-         context.WriteHtmlText( ">") ;
-         if ( ! context.isSpaRequest( ) )
-         {
-            i = 1;
-            while ( i <= context.GX_msglist.ItemCount )
-            {
-               context.WriteHtmlText( "<span") ;
-               GxWebStd.ClassAttribute( context, ((context.GX_msglist.getItemType((short)(i))==1) ? "gx-error-message" : "gx-warning-message"));
-               context.WriteHtmlText( ">") ;
-               context.WriteHtmlText( GXUtil.ValueEncode( context.GX_msglist.getItemText((short)(i)))) ;
-               context.WriteHtmlText( "</span>") ;
-               i = (int)(i+1);
-            }
-         }
-         context.WriteHtmlText( "</span>") ;
-         context.WriteHtmlText( "</div>") ;
-      }
-
-      static public void gx_div_start( IGxContext context ,
-                                       string sInternalName ,
-                                       int nVisible ,
-                                       int nWidth ,
-                                       string sWidthUnit ,
-                                       int nHeight ,
-                                       string sHeightUnit ,
-                                       string sClassString ,
-                                       string sAlign ,
-                                       string sVAlign ,
-                                       string sTags ,
-                                       string sExtraStyle ,
-                                       string sHtmlTag )
-      {
-         string sOStyle;
-         bool bHAlignedVar;
-         bool bVAlignedVar;
-         sAlign = StringUtil.Lower( sAlign);
-         sVAlign = StringUtil.Lower( sVAlign);
-         bHAlignedVar = (bool)(!String.IsNullOrEmpty(StringUtil.RTrim( sAlign))&&(StringUtil.StrCmp(StringUtil.Lower( sAlign), "left")!=0)&&(StringUtil.StrCmp(StringUtil.Lower( sAlign), "start")!=0));
-         bVAlignedVar = (bool)(!String.IsNullOrEmpty(StringUtil.RTrim( sVAlign))&&(StringUtil.StrCmp(StringUtil.Lower( sVAlign), "top")!=0));
-         context.WriteHtmlText( "<"+sHtmlTag+" ") ;
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sInternalName)) )
-         {
-            context.WriteHtmlText( "id=\""+sInternalName+"\" ") ;
-         }
-         GxWebStd.ClassAttribute( context, sClassString);
-         sOStyle = "";
-         if ( nVisible == 0 )
-         {
-            sOStyle = "display:none;";
-         }
-         if ( ! (0==nWidth) )
-         {
-            sOStyle += " width:" + StringUtil.LTrimStr( (decimal)(nWidth), 10, 0) + sWidthUnit + ";";
-         }
-         if ( ! (0==nHeight) )
-         {
-            sOStyle += " height:" + StringUtil.LTrimStr( (decimal)(nHeight), 10, 0) + sHeightUnit + ";";
-         }
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sExtraStyle)) )
-         {
-            sOStyle += CSSHelper.Prettify( sExtraStyle+";");
-         }
-         if ( bHAlignedVar || bVAlignedVar )
-         {
-            context.WriteHtmlText( "data-align-flex ") ;
-         }
-         GxWebStd.StyleAttribute( context, sOStyle);
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sTags)) )
-         {
-            context.WriteHtmlText( sTags) ;
-         }
-         if ( bHAlignedVar )
-         {
-            context.WriteHtmlText( " data-align=\"") ;
-            context.WriteHtmlText( sAlign) ;
-            context.WriteHtmlText( "\"") ;
-         }
-         if ( bVAlignedVar )
-         {
-            context.WriteHtmlText( " data-valign=\"") ;
-            context.WriteHtmlText( sVAlign) ;
-            context.WriteHtmlText( "\"") ;
-         }
-         context.WriteHtmlText( ">") ;
-      }
-
-      static public void gx_label_ctrl( IGxContext context ,
-                                        string sInternalName ,
-                                        string sCaption ,
-                                        string sLinkURL ,
-                                        string sLinkTarget ,
-                                        string sUserOnClickCode ,
-                                        string sEventName ,
-                                        string sTags ,
-                                        string sClassString ,
-                                        int nJScriptCode ,
-                                        string sTooltipText ,
-                                        int nVisible ,
-                                        int nEnabled ,
-                                        int nRTEnabled ,
-                                        short nFormat ,
-                                        string sCallerPgm )
-      {
-         string sEventJsCode;
-         string sDataLink;
-         string sStyle;
-         if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
-         {
-            /* Initialize internal JScript code according to EventNo */
-            if ( nJScriptCode == 1 )
-            {
-               sEventJsCode = "gx.fn.closeWindow();";
-            }
-            else if ( nJScriptCode == 3 )
-            {
-               sEventJsCode = "gx.util.help(" + "'" + context.convertURL( "Help/"+"English/"+StringUtil.Lower( sCallerPgm)) + "');";
-            }
-            else if ( nJScriptCode == 7 )
-            {
-               sEventJsCode = "" + "gx.evt.execCliEvt(" + sEventName + ",this);";
-            }
-            else if ( nJScriptCode == 8 )
-            {
-               sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
-            }
-            else if ( nJScriptCode == 6 )
-            {
-               sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
-            }
-            else if ( nJScriptCode == 5 )
-            {
-               sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
-            }
-            else if ( nJScriptCode == 0 )
-            {
-               sEventJsCode = "";
-            }
-            else
-            {
-               sEventJsCode = "";
-            }
-         }
-         else
-         {
-            sEventJsCode = "";
-         }
-         if ( context.isSpaRequest( ) )
-         {
-            context.httpAjaxContext.ajax_rsp_assign_prefixed_prop(sInternalName, "Caption", sCaption);
-            context.httpAjaxContext.ajax_rsp_assign_prefixed_prop(sInternalName, "Tooltiptext", sTooltipText);
-         }
-         sTooltipText = ((StringUtil.StrCmp(sTooltipText, "")==0) ? "" : " title=\""+GXUtil.ValueEncode( sTooltipText)+"\"");
-         string gxDataAtt = " data-gxformat=\""+StringUtil.Str( (decimal)(nFormat), 1, 0)+"\" ";
-         if ( ( nFormat == 1 ) && ( ! String.IsNullOrEmpty(StringUtil.RTrim( sEventJsCode)) || ! String.IsNullOrEmpty(StringUtil.RTrim( sUserOnClickCode)) || ! String.IsNullOrEmpty(StringUtil.RTrim( sLinkURL)) ) )
-         {
-            sDataLink = " data-gxlink=1 ";
-         }
-         else
-         {
-            sDataLink = "";
-         }
-         if ( nEnabled == 0 )
-         {
-            sClassString += " gx-disabled";
-         }
-         if ( nFormat == 1 )
-         {
-            /* HTML Format */
-            sStyle = ((nVisible!=0) ? ";display:inline;" : ";display:none;") + sTags;
-            context.WriteHtmlText( "<div") ;
-            GxWebStd.ClassAttribute( context, sClassString);
-            GxWebStd.StyleAttribute( context, sStyle);
-            context.WriteHtmlText( " id=\""+sInternalName+"\" "+sTooltipText+gxDataAtt+sDataLink) ;
-            context.WriteHtmlText( ">") ;
-         }
-         else if ( nFormat != 2 )
-         {
-            if ( ( nFormat == 0 ) || ( nFormat == 2 ) )
-            {
-               gxDataAtt = "";
-            }
-            sStyle = ((nVisible!=0) ? "" : ";display:none;") + sTags;
-            context.WriteHtmlText( "<span") ;
-            GxWebStd.ClassAttribute( context, sClassString);
-            GxWebStd.StyleAttribute( context, sStyle);
-            context.WriteHtmlText( " id=\""+sInternalName+"\" "+sTooltipText+gxDataAtt+sDataLink) ;
-            context.WriteHtmlText( ">") ;
-         }
-         if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
-         {
-            GxWebStd.gx_start_js_anchor( context, nJScriptCode, sEventJsCode, sUserOnClickCode, sLinkURL, sLinkTarget, "");
-         }
-         if ( nFormat == 0 )
-         {
-            /* Text Format */
-            context.SendWebValueEnter( sCaption) ;
-         }
-         else
-         {
-            if ( nFormat == 3 )
-            {
-               /* Text with meaningful spaces */
-               context.SendWebValueSpace( sCaption) ;
-            }
-            else if ( ( nFormat != 2 ) || ( nVisible != 0 ) )
-            {
-               context.WriteHtmlText( sCaption) ;
-            }
-         }
-         if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
-         {
-            GxWebStd.gx_end_js_anchor( context, sEventJsCode, sUserOnClickCode, sLinkURL);
-         }
-         if ( nFormat == 1 )
-         {
-            context.WriteHtmlText( "</div>") ;
-         }
-         else if ( nFormat != 2 )
-         {
-            context.WriteHtmlText( "</span>") ;
-         }
-      }
-
-      static public void gx_start_js_anchor( IGxContext context ,
-                                             int nJScriptCode ,
-                                             string sGXOnClickCode ,
-                                             string sUserOnClickCode ,
-                                             string sLinkURL ,
-                                             string sLinkTarget ,
-                                             string sClassString )
-      {
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sUserOnClickCode)) )
-         {
-            if ( ! (0==nJScriptCode) )
-            {
-               context.WriteHtmlText( "<a href=\"javascript:void(0)\" data-gx-evt=\"") ;
-               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            else
-            {
-               context.WriteHtmlText( "<a href=\"javascript:void(0)\" data-gx-evt=\"") ;
-               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
-            {
-               context.WriteHtmlText( " data-gx-evt-code=\"") ;
-               context.WriteHtmlText( sGXOnClickCode) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sClassString)) )
-            {
-               context.WriteHtmlText( " class=\"") ;
-               context.WriteHtmlText( sClassString) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            context.WriteHtmlText( " data-gx-evt-condition=\"") ;
-            context.WriteHtmlText( sUserOnClickCode) ;
-            context.WriteHtmlText( "\"") ;
-            context.WriteHtmlText( ">") ;
-         }
-         else
-         {
-            if ( ! (0==nJScriptCode) )
-            {
-               context.WriteHtmlText( "<a href=\"javascript:void(0)\" data-gx-evt=\"") ;
-               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
-               context.WriteHtmlText( "\"") ;
-               if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
-               {
-                  context.WriteHtmlText( " data-gx-evt-code=\"") ;
-                  context.WriteHtmlText( sGXOnClickCode) ;
-                  context.WriteHtmlText( "\"") ;
-               }
-               if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sClassString)) )
-               {
-                  context.WriteHtmlText( " class=\"") ;
-                  context.WriteHtmlText( sClassString) ;
-                  context.WriteHtmlText( "\"") ;
-               }
-               context.WriteHtmlText( ">") ;
-            }
-            else
-            {
-               GxWebStd.gx_link_start( context, sLinkURL, sLinkTarget, sClassString);
-            }
-         }
-      }
-
-      static public void gx_link_start( IGxContext context ,
-                                        string sLinkURL ,
-                                        string sTargetWnd ,
-                                        string sClassString )
-      {
-         if ( StringUtil.StrCmp("", StringUtil.RTrim( sLinkURL)) != 0 )
-         {
-            context.WriteHtmlText( "<a href=\"") ;
-            context.WriteHtmlText( StringUtil.RTrim( sLinkURL)) ;
-            context.WriteHtmlText( "\"") ;
-            if ( StringUtil.StrCmp("", StringUtil.RTrim( sTargetWnd)) != 0 )
-            {
-               context.WriteHtmlText( " target=\"") ;
-               context.WriteHtmlText( StringUtil.RTrim( sTargetWnd)) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sClassString)) )
-            {
-               context.WriteHtmlText( " class=\"") ;
-               context.WriteHtmlText( sClassString) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            context.WriteHtmlText( ">") ;
-         }
-      }
-
-      static public void gx_end_js_anchor( IGxContext context ,
-                                           string sGXOnClickCode ,
-                                           string sUserOnClickCode ,
-                                           string sLinkURL )
-      {
-         if ( ! ( String.IsNullOrEmpty(StringUtil.RTrim( sGXOnClickCode)) && String.IsNullOrEmpty(StringUtil.RTrim( sUserOnClickCode)) ) )
-         {
-            context.WriteHtmlText( "</a>") ;
-         }
-         else
-         {
-            GxWebStd.gx_link_end( context, sLinkURL);
-         }
-      }
-
-      static public void gx_link_end( IGxContext context ,
-                                      string sLinkURL )
-      {
-         if ( StringUtil.StrCmp("", StringUtil.RTrim( sLinkURL)) != 0 )
-         {
-            context.WriteHtmlText( "</a>") ;
-         }
-      }
-
-      static public void gx_div_end( IGxContext context ,
-                                     string sAlign ,
-                                     string sVAlign ,
-                                     string sHtmlTag )
-      {
-         context.WriteHtmlText( "</"+sHtmlTag+">") ;
-      }
-
-      static public void gx_label_element( IGxContext context ,
-                                           string sReferencedControl ,
-                                           string sLabelCaption ,
-                                           string sLabelClass ,
-                                           int nLabelPosition ,
-                                           bool bDataAttSupported ,
-                                           string sExtraStyle )
-      {
-         if ( String.IsNullOrEmpty(StringUtil.RTrim( sReferencedControl)) )
-         {
-            context.WriteHtmlText( "<span ") ;
-         }
-         else
-         {
-            context.WriteHtmlText( "<label ") ;
-         }
-         context.WriteHtmlText( " class=\"gx-label ") ;
-         context.WriteHtmlText( sLabelClass) ;
-         context.WriteHtmlText( " control-label") ;
-         if ( ( nLabelPosition == 0 ) && ! bDataAttSupported )
-         {
-            context.WriteHtmlText( " gx-sr-only ") ;
-         }
-         context.WriteHtmlText( "\"") ;
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sReferencedControl)) )
-         {
-            context.WriteHtmlText( " for=\"") ;
-            context.WriteHtmlText( sReferencedControl) ;
-            context.WriteHtmlText( "\"") ;
-         }
-         if ( ( nLabelPosition == 0 ) && bDataAttSupported )
-         {
-            context.WriteHtmlTextNl( " data-gx-sr-only ") ;
-         }
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sExtraStyle)) )
-         {
-            GxWebStd.StyleAttribute( context, CSSHelper.Prettify( sExtraStyle));
-         }
-         context.WriteHtmlText( ">") ;
-         context.WriteHtmlText( sLabelCaption) ;
-         if ( String.IsNullOrEmpty(StringUtil.RTrim( sReferencedControl)) )
-         {
-            context.WriteHtmlText( "</span>") ;
-         }
-         else
-         {
-            context.WriteHtmlText( "</label>") ;
-         }
-      }
-
-      static public void gx_combobox_ctrl( IGxContext context ,
-                                           GXCombobox cmbCObjCtrl ,
-                                           string sCtrlName ,
-                                           string sValue ,
-                                           int nRows ,
-                                           string sUserOnClickCode ,
-                                           int nJScriptCode ,
-                                           string sEventName ,
-                                           string sType ,
-                                           string sTooltipText ,
-                                           int nVisible ,
-                                           int nEnabled ,
-                                           int nRTEnabled ,
-                                           short nFormat ,
-                                           int nWidth ,
-                                           string nWidthUnit ,
-                                           int nHeight ,
-                                           string nHeightUnit ,
-                                           string sStyleString ,
-                                           string sClassString ,
-                                           string sColumnClassString ,
-                                           string sColumnHeaderClassString ,
-                                           string sTags ,
-                                           string sFormatedValue ,
-                                           string sCallerPgm )
-      {
-         gx_combobox_ctrl1( context, cmbCObjCtrl, sCtrlName, sValue, nRows, sUserOnClickCode, nJScriptCode, sEventName, sType, sTooltipText, nVisible, nEnabled, nRTEnabled, nFormat, nWidth, nWidthUnit, nHeight, nHeightUnit, sStyleString, sClassString, sColumnClassString, sColumnHeaderClassString, sTags, sFormatedValue, true, 1, sCallerPgm) ;
-      }
-
-      static public void gx_combobox_ctrl1( IGxContext context ,
-                                            GXCombobox cmbCObjCtrl ,
-                                            string sCtrlName ,
-                                            string sValue ,
-                                            int nRows ,
-                                            string sUserOnClickCode ,
-                                            int nJScriptCode ,
-                                            string sEventName ,
-                                            string sType ,
-                                            string sTooltipText ,
-                                            int nVisible ,
-                                            int nEnabled ,
-                                            int nRTEnabled ,
-                                            short nFormat ,
-                                            int nWidth ,
-                                            string nWidthUnit ,
-                                            int nHeight ,
-                                            string nHeightUnit ,
-                                            string sStyleString ,
-                                            string sClassString ,
-                                            string sColumnClassString ,
-                                            string sColumnHeaderClassString ,
-                                            string sTags ,
-                                            string sFormatedValue ,
-                                            bool bSendHidden ,
-                                            short bHasTheme ,
-                                            string sCallerPgm )
-      {
-         string sOStyle;
-         string sEventJsCode;
-         int idxLst;
-         string ClassHTML;
-         idxLst = 1;
-         if ( nWidth > 0 )
-         {
-            sStyleString += ";width: " + StringUtil.LTrimStr( (decimal)(nWidth), 10, 0) + nWidthUnit;
-         }
-         if ( nHeight > 0 )
-         {
-            sStyleString += ";height: " + StringUtil.LTrimStr( (decimal)(nHeight), 10, 0) + nHeightUnit;
-         }
-         sOStyle = sStyleString + " ;overflow:hidden;";
-         sStyleString += ((nVisible==0)||(nEnabled==0) ? ";display:none;" : "");
-         /* Initialize internal JScript code according to EventNo */
-         if ( nJScriptCode == 1 )
-         {
-            sEventJsCode = "gx.fn.closeWindow();" + "return false;";
-         }
-         else if ( nJScriptCode == 3 )
-         {
-            sEventJsCode = "gx.util.help(" + "'" + context.convertURL( "Help/"+"English/"+StringUtil.Lower( sCallerPgm)) + "');" + "return false;";
-         }
-         else if ( nJScriptCode == 7 )
-         {
-            sEventJsCode = "" + "gx.evt.execCliEvt(" + sEventName + ",this);";
-         }
-         else if ( nJScriptCode == 8 )
-         {
-            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" + "return false;";
-         }
-         else if ( nJScriptCode == 6 )
-         {
-            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
-         }
-         else if ( nJScriptCode == 5 )
-         {
-            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
-         }
-         else if ( nJScriptCode == 0 )
-         {
-            sEventJsCode = "";
-         }
-         else
-         {
-            sEventJsCode = "";
-         }
-         context.WriteHtmlText( "<select") ;
-         if ( nRows > 1 )
-         {
-            context.WriteHtmlText( " size=") ;
-            context.WriteHtmlText( StringUtil.LTrim( StringUtil.FormatLong( nRows))) ;
-         }
-         context.WriteHtmlText( " id=\"") ;
-         context.SendWebValue( StringUtil.Trim( sCtrlName)) ;
-         context.WriteHtmlText( "\" name=\"") ;
-         context.SendWebValue( StringUtil.Trim( sCtrlName)) ;
-         context.WriteHtmlText( "\"") ;
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sTooltipText)) )
-         {
-            context.WriteHtmlText( " title=\"") ;
-            context.SendWebValue( StringUtil.Trim( sTooltipText)) ;
-            context.WriteHtmlText( "\"") ;
-         }
-         if ( nEnabled == 0 )
-         {
-            context.WriteHtmlText( " data-gx-disable=\""+sCtrlName+"\" ") ;
-         }
-         GxWebStd.ClassAttribute( context, sClassString);
-         GxWebStd.StyleAttribute( context, sStyleString);
-         GxWebStd.gx_ctrl_attribute( context, sCtrlName, "data-jsevent", sUserOnClickCode, false, false);
-         GxWebStd.gx_ctrl_attribute( context, sCtrlName, "data-gxoch0", sEventJsCode, true, false);
-         context.WriteHtmlText( sTags) ;
-         context.WriteHtmlTextNl( ">") ;
-         while ( idxLst <= cmbCObjCtrl.ItemCount )
-         {
-            if ( StringUtil.StrCmp(sType, "int") == 0 )
-            {
-               context.WriteHtmlText( "<option value=\"") ;
-               context.SendWebValue( StringUtil.Trim( cmbCObjCtrl.getItemValue((short)(idxLst)))) ;
-            }
-            else
-            {
-               context.WriteHtmlText( "<option value=\"") ;
-               context.SendWebValue( cmbCObjCtrl.getItemValue((short)(idxLst))) ;
-            }
-            if ( StringUtil.StrCmp(StringUtil.LTrim( cmbCObjCtrl.getItemValue((short)(idxLst))), StringUtil.LTrim( sValue)) == 0 )
-            {
-               context.WriteHtmlText( "\" selected=\"selected\" >") ;
-            }
-            else
-            {
-               context.WriteHtmlText( "\">") ;
-            }
-            if ( nFormat == 0 )
-            {
-               context.SendWebValue( cmbCObjCtrl.getItemText((short)(idxLst))) ;
-            }
-            else
-            {
-               if ( nFormat == 3 )
-               {
-                  context.SendWebValueSpace( cmbCObjCtrl.getItemText((short)(idxLst))) ;
-               }
-               else
-               {
-                  context.WriteHtmlText( cmbCObjCtrl.getItemText((short)(idxLst))) ;
-               }
-            }
-            context.WriteHtmlText( GXUtil.HtmlEndTag( HTMLElement.OPTION)) ;
-            idxLst = (int)(idxLst+1);
-         }
-         context.WriteHtmlTextNl( "</select>") ;
-         if ( nEnabled == 0 )
-         {
-            if ( bHasTheme == 0 )
-            {
-               ClassHTML = sClassString;
-            }
-            else
-            {
-               if ( ( StringUtil.Len( sClassString) != 0 ) && ( StringUtil.StringSearch( sClassString, "Readonly", 1) != 1 ) )
-               {
-                  ClassHTML = "Readonly" + sClassString;
-               }
-               else
-               {
-                  ClassHTML = sClassString;
-               }
-            }
-            sOStyle += ((nVisible==0) ? ";display:none;" : "");
-            idxLst = 1;
-            context.WriteHtmlText( "<span") ;
-            GxWebStd.ClassAttribute( context, ClassHTML);
-            GxWebStd.StyleAttribute( context, sOStyle);
-            context.WriteHtmlText( ((StringUtil.Len( sTooltipText)>0) ? " title=\""+sTooltipText+"\"" : "")+" id=\"span_"+sCtrlName+"\" "+"data-gx-readonly ") ;
-            context.WriteHtmlText( ">") ;
-            while ( idxLst <= cmbCObjCtrl.ItemCount )
-            {
-               if ( StringUtil.StrCmp(StringUtil.LTrim( cmbCObjCtrl.getItemValue((short)(idxLst))), StringUtil.LTrim( sValue)) == 0 )
-               {
-                  if ( nFormat == 0 )
-                  {
-                     context.SendWebValue( cmbCObjCtrl.getItemText((short)(idxLst))) ;
-                  }
-                  else
-                  {
-                     if ( nFormat == 3 )
-                     {
-                        context.SendWebValueSpace( cmbCObjCtrl.getItemText((short)(idxLst))) ;
-                     }
-                     else
-                     {
-                        context.WriteHtmlText( cmbCObjCtrl.getItemText((short)(idxLst))) ;
-                     }
-                  }
-                  if (true) break;
-               }
-               idxLst = (int)(idxLst+1);
-            }
-            context.WriteHtmlText( "</span>") ;
-         }
-      }
-
-      static public void gx_on_js_event( IGxContext context ,
-                                         int nJScriptCode ,
-                                         string sGXOnClickCode ,
-                                         string sUserOnClickCode )
-      {
-         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sUserOnClickCode)) )
-         {
-            if ( ! (0==nJScriptCode) )
-            {
-               context.WriteHtmlText( " data-gx-evt=\"") ;
-               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            else
-            {
-               context.WriteHtmlText( " data-gx-evt=\"") ;
-               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
-            {
-               context.WriteHtmlText( " data-gx-evt-code=\"") ;
-               context.WriteHtmlText( sGXOnClickCode) ;
-               context.WriteHtmlText( "\"") ;
-            }
-            context.WriteHtmlText( " data-gx-evt-condition=\"") ;
-            context.WriteHtmlText( sUserOnClickCode) ;
-            context.WriteHtmlText( "\"") ;
-         }
-         else
-         {
-            if ( ! (0==nJScriptCode) )
-            {
-               context.WriteHtmlText( " data-gx-evt=\"") ;
-               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
-               context.WriteHtmlText( "\"") ;
-               if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
-               {
-                  context.WriteHtmlText( " data-gx-evt-code=\"") ;
-                  context.WriteHtmlText( sGXOnClickCode) ;
-                  context.WriteHtmlText( "\"") ;
-               }
-            }
-         }
-      }
-
-      static public void gx_ctrl_attribute( IGxContext context ,
-                                            string sControlName ,
-                                            string sAttName ,
-                                            string sAttValue ,
-                                            bool bCustomEvent ,
-                                            bool bMaskedEvent )
-      {
-         if ( bCustomEvent )
-         {
-            context.WriteHtmlText( " ") ;
-            context.SendWebValue( sAttName) ;
-            context.WriteHtmlText( "=\"") ;
-            context.WriteHtmlText( "if(") ;
-            if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sAttValue)) )
-            {
-               context.WriteHtmlText( "gx.evt.jsEvent(this)") ;
-               context.WriteHtmlText( ") {") ;
-               context.WriteHtmlText( sAttValue) ;
-               context.WriteHtmlText( "} else return false;\"") ;
-            }
-            else
-            {
-               context.WriteHtmlText( "!(") ;
-               context.WriteHtmlText( "gx.evt.jsEvent(this)") ;
-               context.WriteHtmlText( ")) return false;\"") ;
-            }
-         }
-         else
-         {
-            if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sAttValue)) )
-            {
-               if ( bMaskedEvent )
-               {
-                  context.WriteHtmlText( " data-msk-att=\"") ;
-                  context.SendWebValue( sAttName) ;
-                  context.WriteHtmlText( "\" data-") ;
-               }
-               else
-               {
-                  context.WriteHtmlText( " ") ;
-               }
-               context.SendWebValue( sAttName) ;
-               context.WriteHtmlText( "=\"") ;
-               context.WriteHtmlText( sAttValue) ;
-               context.WriteHtmlText( "\" ") ;
-            }
-         }
-      }
-
-      static public bool gx_redirect( IGxContext context )
-      {
-         if ( context.WillRedirect( ) )
-         {
-            context.Redirect( context.wjLoc );
-            context.DispatchAjaxCommands();
-            return true ;
-         }
-         else if ( context.nUserReturn == 1 )
-         {
-            if ( context.isAjaxRequest( ) )
-            {
-               context.ajax_rsp_command_close();
-               context.DispatchAjaxCommands();
-            }
-            else
-            {
-               if ( String.IsNullOrEmpty(StringUtil.RTrim( context.GetReferer( ))) || context.IsLocalStorageSupported( ) )
-               {
-                  if ( context.isSpaRequest( true) )
-                  {
-                     context.SetHeader("X-SPA-RETURN", (string)(context.getWebReturnParmsJS( )));
-                     context.SetHeader("X-SPA-RETURN-MD", (string)(context.getWebReturnParmsMetadataJS( )));
-                  }
-                  else
-                  {
-                     context.WriteHtmlText( GXUtil.HtmlDocType( )) ;
-                     context.WriteHtmlText( "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><title>Close window</title>") ;
-                     context.AddJavascriptSource("jquery.js", "?"+context.GetBuildNumber( 239440), false, true);
-                     context.AddJavascriptSource("gxgral.js", "?"+context.GetBuildNumber( 239440), false, true);
-                     context.WriteHtmlText( "</head><body><script type=\"text/javascript\">") ;
-                     context.WriteHtmlText( "gx.fn.closeWindowServerScript(") ;
-                     context.WriteHtmlText( context.getWebReturnParmsJS( )) ;
-                     context.WriteHtmlText( ", ") ;
-                     context.WriteHtmlText( context.getWebReturnParmsMetadataJS( )) ;
-                     if ( context.IsLocalStorageSupported( ) )
-                     {
-                        context.WriteHtmlText( ", true") ;
-                     }
-                     else
-                     {
-                        context.WriteHtmlText( ", false") ;
-                     }
-                     context.WriteHtmlText( ");</script></body></html>") ;
-                  }
-               }
-               else
-               {
-                  context.Redirect( context.GetReferer( ) );
-                  context.WindowClosed();
-               }
-            }
-            return true ;
-         }
-         else
-         {
-            return false ;
-         }
       }
 
       static public void gx_single_line_edit1( IGxContext context ,
@@ -1204,6 +342,41 @@ namespace GeneXus.Programs {
                GxWebStd.gx_end_js_anchor( context, sEventJsCode, sUserOnClickCode, sLinkURL);
                context.WriteHtmlText( "</span>") ;
             }
+         }
+      }
+
+      static public void gx_link_start( IGxContext context ,
+                                        string sLinkURL ,
+                                        string sTargetWnd ,
+                                        string sClassString )
+      {
+         if ( StringUtil.StrCmp("", StringUtil.RTrim( sLinkURL)) != 0 )
+         {
+            context.WriteHtmlText( "<a href=\"") ;
+            context.WriteHtmlText( StringUtil.RTrim( sLinkURL)) ;
+            context.WriteHtmlText( "\"") ;
+            if ( StringUtil.StrCmp("", StringUtil.RTrim( sTargetWnd)) != 0 )
+            {
+               context.WriteHtmlText( " target=\"") ;
+               context.WriteHtmlText( StringUtil.RTrim( sTargetWnd)) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sClassString)) )
+            {
+               context.WriteHtmlText( " class=\"") ;
+               context.WriteHtmlText( sClassString) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            context.WriteHtmlText( ">") ;
+         }
+      }
+
+      static public void gx_link_end( IGxContext context ,
+                                      string sLinkURL )
+      {
+         if ( StringUtil.StrCmp("", StringUtil.RTrim( sLinkURL)) != 0 )
+         {
+            context.WriteHtmlText( "</a>") ;
          }
       }
 
@@ -1604,6 +777,360 @@ namespace GeneXus.Programs {
          if ( StringUtil.StrCmp(sBorderStyle, "rounded") == 0 )
          {
             context.WriteHtmlText( "</span></span></span></span>") ;
+         }
+      }
+
+      static public void gx_on_js_event( IGxContext context ,
+                                         int nJScriptCode ,
+                                         string sGXOnClickCode ,
+                                         string sUserOnClickCode )
+      {
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sUserOnClickCode)) )
+         {
+            if ( ! (0==nJScriptCode) )
+            {
+               context.WriteHtmlText( " data-gx-evt=\"") ;
+               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            else
+            {
+               context.WriteHtmlText( " data-gx-evt=\"") ;
+               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
+            {
+               context.WriteHtmlText( " data-gx-evt-code=\"") ;
+               context.WriteHtmlText( sGXOnClickCode) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            context.WriteHtmlText( " data-gx-evt-condition=\"") ;
+            context.WriteHtmlText( sUserOnClickCode) ;
+            context.WriteHtmlText( "\"") ;
+         }
+         else
+         {
+            if ( ! (0==nJScriptCode) )
+            {
+               context.WriteHtmlText( " data-gx-evt=\"") ;
+               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
+               context.WriteHtmlText( "\"") ;
+               if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
+               {
+                  context.WriteHtmlText( " data-gx-evt-code=\"") ;
+                  context.WriteHtmlText( sGXOnClickCode) ;
+                  context.WriteHtmlText( "\"") ;
+               }
+            }
+         }
+      }
+
+      static public void gx_ctrl_attribute( IGxContext context ,
+                                            string sControlName ,
+                                            string sAttName ,
+                                            string sAttValue ,
+                                            bool bCustomEvent ,
+                                            bool bMaskedEvent )
+      {
+         if ( bCustomEvent )
+         {
+            context.WriteHtmlText( " ") ;
+            context.SendWebValue( sAttName) ;
+            context.WriteHtmlText( "=\"") ;
+            context.WriteHtmlText( "if(") ;
+            if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sAttValue)) )
+            {
+               context.WriteHtmlText( "gx.evt.jsEvent(this)") ;
+               context.WriteHtmlText( ") {") ;
+               context.WriteHtmlText( sAttValue) ;
+               context.WriteHtmlText( "} else return false;\"") ;
+            }
+            else
+            {
+               context.WriteHtmlText( "!(") ;
+               context.WriteHtmlText( "gx.evt.jsEvent(this)") ;
+               context.WriteHtmlText( ")) return false;\"") ;
+            }
+         }
+         else
+         {
+            if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sAttValue)) )
+            {
+               if ( bMaskedEvent )
+               {
+                  context.WriteHtmlText( " data-msk-att=\"") ;
+                  context.SendWebValue( sAttName) ;
+                  context.WriteHtmlText( "\" data-") ;
+               }
+               else
+               {
+                  context.WriteHtmlText( " ") ;
+               }
+               context.SendWebValue( sAttName) ;
+               context.WriteHtmlText( "=\"") ;
+               context.WriteHtmlText( sAttValue) ;
+               context.WriteHtmlText( "\" ") ;
+            }
+         }
+      }
+
+      static public void gx_msg_list( IGxContext context ,
+                                      string sCtrlName ,
+                                      int nDisplayMode ,
+                                      string sStyleString ,
+                                      string sClassString ,
+                                      string sCmpCtx ,
+                                      string sInMaster )
+      {
+         int i;
+         context.WriteHtmlText( "<div>") ;
+         sClassString += " gx_ev";
+         if ( nDisplayMode == 1 )
+         {
+            sClassString += " ErrorViewerBullet";
+         }
+         context.WriteHtmlText( "<span") ;
+         GxWebStd.ClassAttribute( context, sClassString);
+         GxWebStd.StyleAttribute( context, sStyleString);
+         context.WriteHtmlText( " data-gx-id=\""+sCmpCtx+"gxErrorViewer\"") ;
+         context.WriteHtmlText( ">") ;
+         if ( ! context.isSpaRequest( ) )
+         {
+            i = 1;
+            while ( i <= context.GX_msglist.ItemCount )
+            {
+               context.WriteHtmlText( "<span") ;
+               GxWebStd.ClassAttribute( context, ((context.GX_msglist.getItemType((short)(i))==1) ? "gx-error-message" : "gx-warning-message"));
+               context.WriteHtmlText( ">") ;
+               context.WriteHtmlText( GXUtil.ValueEncode( context.GX_msglist.getItemText((short)(i)))) ;
+               context.WriteHtmlText( "</span>") ;
+               i = (int)(i+1);
+            }
+         }
+         context.WriteHtmlText( "</span>") ;
+         context.WriteHtmlText( "</div>") ;
+      }
+
+      static public void gx_combobox_ctrl( IGxContext context ,
+                                           GXCombobox cmbCObjCtrl ,
+                                           string sCtrlName ,
+                                           string sValue ,
+                                           int nRows ,
+                                           string sUserOnClickCode ,
+                                           int nJScriptCode ,
+                                           string sEventName ,
+                                           string sType ,
+                                           string sTooltipText ,
+                                           int nVisible ,
+                                           int nEnabled ,
+                                           int nRTEnabled ,
+                                           short nFormat ,
+                                           int nWidth ,
+                                           string nWidthUnit ,
+                                           int nHeight ,
+                                           string nHeightUnit ,
+                                           string sStyleString ,
+                                           string sClassString ,
+                                           string sColumnClassString ,
+                                           string sColumnHeaderClassString ,
+                                           string sTags ,
+                                           string sFormatedValue ,
+                                           string sCallerPgm )
+      {
+         gx_combobox_ctrl1( context, cmbCObjCtrl, sCtrlName, sValue, nRows, sUserOnClickCode, nJScriptCode, sEventName, sType, sTooltipText, nVisible, nEnabled, nRTEnabled, nFormat, nWidth, nWidthUnit, nHeight, nHeightUnit, sStyleString, sClassString, sColumnClassString, sColumnHeaderClassString, sTags, sFormatedValue, true, 1, sCallerPgm) ;
+      }
+
+      static public void gx_combobox_ctrl1( IGxContext context ,
+                                            GXCombobox cmbCObjCtrl ,
+                                            string sCtrlName ,
+                                            string sValue ,
+                                            int nRows ,
+                                            string sUserOnClickCode ,
+                                            int nJScriptCode ,
+                                            string sEventName ,
+                                            string sType ,
+                                            string sTooltipText ,
+                                            int nVisible ,
+                                            int nEnabled ,
+                                            int nRTEnabled ,
+                                            short nFormat ,
+                                            int nWidth ,
+                                            string nWidthUnit ,
+                                            int nHeight ,
+                                            string nHeightUnit ,
+                                            string sStyleString ,
+                                            string sClassString ,
+                                            string sColumnClassString ,
+                                            string sColumnHeaderClassString ,
+                                            string sTags ,
+                                            string sFormatedValue ,
+                                            bool bSendHidden ,
+                                            short bHasTheme ,
+                                            string sCallerPgm )
+      {
+         string sOStyle;
+         string sEventJsCode;
+         int idxLst;
+         string ClassHTML;
+         idxLst = 1;
+         if ( nWidth > 0 )
+         {
+            sStyleString += ";width: " + StringUtil.LTrimStr( (decimal)(nWidth), 10, 0) + nWidthUnit;
+         }
+         if ( nHeight > 0 )
+         {
+            sStyleString += ";height: " + StringUtil.LTrimStr( (decimal)(nHeight), 10, 0) + nHeightUnit;
+         }
+         sOStyle = sStyleString + " ;overflow:hidden;";
+         sStyleString += ((nVisible==0)||(nEnabled==0) ? ";display:none;" : "");
+         /* Initialize internal JScript code according to EventNo */
+         if ( nJScriptCode == 1 )
+         {
+            sEventJsCode = "gx.fn.closeWindow();" + "return false;";
+         }
+         else if ( nJScriptCode == 3 )
+         {
+            sEventJsCode = "gx.util.help(" + "'" + context.convertURL( "Help/"+"English/"+StringUtil.Lower( sCallerPgm)) + "');" + "return false;";
+         }
+         else if ( nJScriptCode == 7 )
+         {
+            sEventJsCode = "" + "gx.evt.execCliEvt(" + sEventName + ",this);";
+         }
+         else if ( nJScriptCode == 8 )
+         {
+            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" + "return false;";
+         }
+         else if ( nJScriptCode == 6 )
+         {
+            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
+         }
+         else if ( nJScriptCode == 5 )
+         {
+            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
+         }
+         else if ( nJScriptCode == 0 )
+         {
+            sEventJsCode = "";
+         }
+         else
+         {
+            sEventJsCode = "";
+         }
+         context.WriteHtmlText( "<select") ;
+         if ( nRows > 1 )
+         {
+            context.WriteHtmlText( " size=") ;
+            context.WriteHtmlText( StringUtil.LTrim( StringUtil.FormatLong( nRows))) ;
+         }
+         context.WriteHtmlText( " id=\"") ;
+         context.SendWebValue( StringUtil.Trim( sCtrlName)) ;
+         context.WriteHtmlText( "\" name=\"") ;
+         context.SendWebValue( StringUtil.Trim( sCtrlName)) ;
+         context.WriteHtmlText( "\"") ;
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sTooltipText)) )
+         {
+            context.WriteHtmlText( " title=\"") ;
+            context.SendWebValue( StringUtil.Trim( sTooltipText)) ;
+            context.WriteHtmlText( "\"") ;
+         }
+         if ( nEnabled == 0 )
+         {
+            context.WriteHtmlText( " data-gx-disable=\""+sCtrlName+"\" ") ;
+         }
+         GxWebStd.ClassAttribute( context, sClassString);
+         GxWebStd.StyleAttribute( context, sStyleString);
+         GxWebStd.gx_ctrl_attribute( context, sCtrlName, "data-jsevent", sUserOnClickCode, false, false);
+         GxWebStd.gx_ctrl_attribute( context, sCtrlName, "data-gxoch0", sEventJsCode, true, false);
+         context.WriteHtmlText( sTags) ;
+         context.WriteHtmlTextNl( ">") ;
+         while ( idxLst <= cmbCObjCtrl.ItemCount )
+         {
+            if ( StringUtil.StrCmp(sType, "int") == 0 )
+            {
+               context.WriteHtmlText( "<option value=\"") ;
+               context.SendWebValue( StringUtil.Trim( cmbCObjCtrl.getItemValue((short)(idxLst)))) ;
+            }
+            else
+            {
+               context.WriteHtmlText( "<option value=\"") ;
+               context.SendWebValue( cmbCObjCtrl.getItemValue((short)(idxLst))) ;
+            }
+            if ( StringUtil.StrCmp(StringUtil.LTrim( cmbCObjCtrl.getItemValue((short)(idxLst))), StringUtil.LTrim( sValue)) == 0 )
+            {
+               context.WriteHtmlText( "\" selected=\"selected\" >") ;
+            }
+            else
+            {
+               context.WriteHtmlText( "\">") ;
+            }
+            if ( nFormat == 0 )
+            {
+               context.SendWebValue( cmbCObjCtrl.getItemText((short)(idxLst))) ;
+            }
+            else
+            {
+               if ( nFormat == 3 )
+               {
+                  context.SendWebValueSpace( cmbCObjCtrl.getItemText((short)(idxLst))) ;
+               }
+               else
+               {
+                  context.WriteHtmlText( cmbCObjCtrl.getItemText((short)(idxLst))) ;
+               }
+            }
+            context.WriteHtmlText( GXUtil.HtmlEndTag( HTMLElement.OPTION)) ;
+            idxLst = (int)(idxLst+1);
+         }
+         context.WriteHtmlTextNl( "</select>") ;
+         if ( nEnabled == 0 )
+         {
+            if ( bHasTheme == 0 )
+            {
+               ClassHTML = sClassString;
+            }
+            else
+            {
+               if ( ( StringUtil.Len( sClassString) != 0 ) && ( StringUtil.StringSearch( sClassString, "Readonly", 1) != 1 ) )
+               {
+                  ClassHTML = "Readonly" + sClassString;
+               }
+               else
+               {
+                  ClassHTML = sClassString;
+               }
+            }
+            sOStyle += ((nVisible==0) ? ";display:none;" : "");
+            idxLst = 1;
+            context.WriteHtmlText( "<span") ;
+            GxWebStd.ClassAttribute( context, ClassHTML);
+            GxWebStd.StyleAttribute( context, sOStyle);
+            context.WriteHtmlText( ((StringUtil.Len( sTooltipText)>0) ? " title=\""+sTooltipText+"\"" : "")+" id=\"span_"+sCtrlName+"\" "+"data-gx-readonly ") ;
+            context.WriteHtmlText( ">") ;
+            while ( idxLst <= cmbCObjCtrl.ItemCount )
+            {
+               if ( StringUtil.StrCmp(StringUtil.LTrim( cmbCObjCtrl.getItemValue((short)(idxLst))), StringUtil.LTrim( sValue)) == 0 )
+               {
+                  if ( nFormat == 0 )
+                  {
+                     context.SendWebValue( cmbCObjCtrl.getItemText((short)(idxLst))) ;
+                  }
+                  else
+                  {
+                     if ( nFormat == 3 )
+                     {
+                        context.SendWebValueSpace( cmbCObjCtrl.getItemText((short)(idxLst))) ;
+                     }
+                     else
+                     {
+                        context.WriteHtmlText( cmbCObjCtrl.getItemText((short)(idxLst))) ;
+                     }
+                  }
+                  if (true) break;
+               }
+               idxLst = (int)(idxLst+1);
+            }
+            context.WriteHtmlText( "</span>") ;
          }
       }
 
@@ -2651,6 +2178,335 @@ namespace GeneXus.Programs {
          }
       }
 
+      static public void gx_label_ctrl( IGxContext context ,
+                                        string sInternalName ,
+                                        string sCaption ,
+                                        string sLinkURL ,
+                                        string sLinkTarget ,
+                                        string sUserOnClickCode ,
+                                        string sEventName ,
+                                        string sTags ,
+                                        string sClassString ,
+                                        int nJScriptCode ,
+                                        string sTooltipText ,
+                                        int nVisible ,
+                                        int nEnabled ,
+                                        int nRTEnabled ,
+                                        short nFormat ,
+                                        string sCallerPgm )
+      {
+         string sEventJsCode;
+         string sDataLink;
+         string sStyle;
+         if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
+         {
+            /* Initialize internal JScript code according to EventNo */
+            if ( nJScriptCode == 1 )
+            {
+               sEventJsCode = "gx.fn.closeWindow();";
+            }
+            else if ( nJScriptCode == 3 )
+            {
+               sEventJsCode = "gx.util.help(" + "'" + context.convertURL( "Help/"+"English/"+StringUtil.Lower( sCallerPgm)) + "');";
+            }
+            else if ( nJScriptCode == 7 )
+            {
+               sEventJsCode = "" + "gx.evt.execCliEvt(" + sEventName + ",this);";
+            }
+            else if ( nJScriptCode == 8 )
+            {
+               sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
+            }
+            else if ( nJScriptCode == 6 )
+            {
+               sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
+            }
+            else if ( nJScriptCode == 5 )
+            {
+               sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);";
+            }
+            else if ( nJScriptCode == 0 )
+            {
+               sEventJsCode = "";
+            }
+            else
+            {
+               sEventJsCode = "";
+            }
+         }
+         else
+         {
+            sEventJsCode = "";
+         }
+         if ( context.isSpaRequest( ) )
+         {
+            context.httpAjaxContext.ajax_rsp_assign_prefixed_prop(sInternalName, "Caption", sCaption);
+            context.httpAjaxContext.ajax_rsp_assign_prefixed_prop(sInternalName, "Tooltiptext", sTooltipText);
+         }
+         sTooltipText = ((StringUtil.StrCmp(sTooltipText, "")==0) ? "" : " title=\""+GXUtil.ValueEncode( sTooltipText)+"\"");
+         string gxDataAtt = " data-gxformat=\""+StringUtil.Str( (decimal)(nFormat), 1, 0)+"\" ";
+         if ( ( nFormat == 1 ) && ( ! String.IsNullOrEmpty(StringUtil.RTrim( sEventJsCode)) || ! String.IsNullOrEmpty(StringUtil.RTrim( sUserOnClickCode)) || ! String.IsNullOrEmpty(StringUtil.RTrim( sLinkURL)) ) )
+         {
+            sDataLink = " data-gxlink=1 ";
+         }
+         else
+         {
+            sDataLink = "";
+         }
+         if ( nEnabled == 0 )
+         {
+            sClassString += " gx-disabled";
+         }
+         if ( nFormat == 1 )
+         {
+            /* HTML Format */
+            sStyle = ((nVisible!=0) ? ";display:inline;" : ";display:none;") + sTags;
+            context.WriteHtmlText( "<div") ;
+            GxWebStd.ClassAttribute( context, sClassString);
+            GxWebStd.StyleAttribute( context, sStyle);
+            context.WriteHtmlText( " id=\""+sInternalName+"\" "+sTooltipText+gxDataAtt+sDataLink) ;
+            context.WriteHtmlText( ">") ;
+         }
+         else if ( nFormat != 2 )
+         {
+            if ( ( nFormat == 0 ) || ( nFormat == 2 ) )
+            {
+               gxDataAtt = "";
+            }
+            sStyle = ((nVisible!=0) ? "" : ";display:none;") + sTags;
+            context.WriteHtmlText( "<span") ;
+            GxWebStd.ClassAttribute( context, sClassString);
+            GxWebStd.StyleAttribute( context, sStyle);
+            context.WriteHtmlText( " id=\""+sInternalName+"\" "+sTooltipText+gxDataAtt+sDataLink) ;
+            context.WriteHtmlText( ">") ;
+         }
+         if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
+         {
+            GxWebStd.gx_start_js_anchor( context, nJScriptCode, sEventJsCode, sUserOnClickCode, sLinkURL, sLinkTarget, "");
+         }
+         if ( nFormat == 0 )
+         {
+            /* Text Format */
+            context.SendWebValueEnter( sCaption) ;
+         }
+         else
+         {
+            if ( nFormat == 3 )
+            {
+               /* Text with meaningful spaces */
+               context.SendWebValueSpace( sCaption) ;
+            }
+            else if ( ( nFormat != 2 ) || ( nVisible != 0 ) )
+            {
+               context.WriteHtmlText( sCaption) ;
+            }
+         }
+         if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
+         {
+            GxWebStd.gx_end_js_anchor( context, sEventJsCode, sUserOnClickCode, sLinkURL);
+         }
+         if ( nFormat == 1 )
+         {
+            context.WriteHtmlText( "</div>") ;
+         }
+         else if ( nFormat != 2 )
+         {
+            context.WriteHtmlText( "</span>") ;
+         }
+      }
+
+      static public void gx_start_js_anchor( IGxContext context ,
+                                             int nJScriptCode ,
+                                             string sGXOnClickCode ,
+                                             string sUserOnClickCode ,
+                                             string sLinkURL ,
+                                             string sLinkTarget ,
+                                             string sClassString )
+      {
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sUserOnClickCode)) )
+         {
+            if ( ! (0==nJScriptCode) )
+            {
+               context.WriteHtmlText( "<a href=\"javascript:void(0)\" data-gx-evt=\"") ;
+               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            else
+            {
+               context.WriteHtmlText( "<a href=\"javascript:void(0)\" data-gx-evt=\"") ;
+               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
+            {
+               context.WriteHtmlText( " data-gx-evt-code=\"") ;
+               context.WriteHtmlText( sGXOnClickCode) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sClassString)) )
+            {
+               context.WriteHtmlText( " class=\"") ;
+               context.WriteHtmlText( sClassString) ;
+               context.WriteHtmlText( "\"") ;
+            }
+            context.WriteHtmlText( " data-gx-evt-condition=\"") ;
+            context.WriteHtmlText( sUserOnClickCode) ;
+            context.WriteHtmlText( "\"") ;
+            context.WriteHtmlText( ">") ;
+         }
+         else
+         {
+            if ( ! (0==nJScriptCode) )
+            {
+               context.WriteHtmlText( "<a href=\"javascript:void(0)\" data-gx-evt=\"") ;
+               context.WriteHtmlText( StringUtil.Trim( StringUtil.Str( (decimal)(nJScriptCode), 10, 0))) ;
+               context.WriteHtmlText( "\"") ;
+               if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
+               {
+                  context.WriteHtmlText( " data-gx-evt-code=\"") ;
+                  context.WriteHtmlText( sGXOnClickCode) ;
+                  context.WriteHtmlText( "\"") ;
+               }
+               if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sClassString)) )
+               {
+                  context.WriteHtmlText( " class=\"") ;
+                  context.WriteHtmlText( sClassString) ;
+                  context.WriteHtmlText( "\"") ;
+               }
+               context.WriteHtmlText( ">") ;
+            }
+            else
+            {
+               GxWebStd.gx_link_start( context, sLinkURL, sLinkTarget, sClassString);
+            }
+         }
+      }
+
+      static public void gx_end_js_anchor( IGxContext context ,
+                                           string sGXOnClickCode ,
+                                           string sUserOnClickCode ,
+                                           string sLinkURL )
+      {
+         if ( ! ( String.IsNullOrEmpty(StringUtil.RTrim( sGXOnClickCode)) && String.IsNullOrEmpty(StringUtil.RTrim( sUserOnClickCode)) ) )
+         {
+            context.WriteHtmlText( "</a>") ;
+         }
+         else
+         {
+            GxWebStd.gx_link_end( context, sLinkURL);
+         }
+      }
+
+      static public void gx_label_element( IGxContext context ,
+                                           string sReferencedControl ,
+                                           string sLabelCaption ,
+                                           string sLabelClass ,
+                                           int nLabelPosition ,
+                                           bool bDataAttSupported ,
+                                           string sExtraStyle )
+      {
+         if ( String.IsNullOrEmpty(StringUtil.RTrim( sReferencedControl)) )
+         {
+            context.WriteHtmlText( "<span ") ;
+         }
+         else
+         {
+            context.WriteHtmlText( "<label ") ;
+         }
+         context.WriteHtmlText( " class=\"gx-label ") ;
+         context.WriteHtmlText( sLabelClass) ;
+         context.WriteHtmlText( " control-label") ;
+         if ( ( nLabelPosition == 0 ) && ! bDataAttSupported )
+         {
+            context.WriteHtmlText( " gx-sr-only ") ;
+         }
+         context.WriteHtmlText( "\"") ;
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sReferencedControl)) )
+         {
+            context.WriteHtmlText( " for=\"") ;
+            context.WriteHtmlText( sReferencedControl) ;
+            context.WriteHtmlText( "\"") ;
+         }
+         if ( ( nLabelPosition == 0 ) && bDataAttSupported )
+         {
+            context.WriteHtmlTextNl( " data-gx-sr-only ") ;
+         }
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sExtraStyle)) )
+         {
+            GxWebStd.StyleAttribute( context, CSSHelper.Prettify( sExtraStyle));
+         }
+         context.WriteHtmlText( ">") ;
+         context.WriteHtmlText( sLabelCaption) ;
+         if ( String.IsNullOrEmpty(StringUtil.RTrim( sReferencedControl)) )
+         {
+            context.WriteHtmlText( "</span>") ;
+         }
+         else
+         {
+            context.WriteHtmlText( "</label>") ;
+         }
+      }
+
+      static public bool gx_redirect( IGxContext context )
+      {
+         if ( context.WillRedirect( ) )
+         {
+            context.Redirect( context.wjLoc );
+            context.DispatchAjaxCommands();
+            return true ;
+         }
+         else if ( context.nUserReturn == 1 )
+         {
+            if ( context.isAjaxRequest( ) )
+            {
+               context.ajax_rsp_command_close();
+               context.DispatchAjaxCommands();
+            }
+            else
+            {
+               if ( String.IsNullOrEmpty(StringUtil.RTrim( context.GetReferer( ))) || context.IsLocalStorageSupported( ) )
+               {
+                  if ( context.isSpaRequest( true) )
+                  {
+                     context.SetHeader("X-SPA-RETURN", (string)(context.getWebReturnParmsJS( )));
+                     context.SetHeader("X-SPA-RETURN-MD", (string)(context.getWebReturnParmsMetadataJS( )));
+                  }
+                  else
+                  {
+                     context.WriteHtmlText( GXUtil.HtmlDocType( )) ;
+                     context.WriteHtmlText( "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><title>Close window</title>") ;
+                     context.AddJavascriptSource("jquery.js", "?"+context.GetBuildNumber( 239440), false, true);
+                     context.AddJavascriptSource("gxgral.js", "?"+context.GetBuildNumber( 239440), false, true);
+                     context.WriteHtmlText( "</head><body><script type=\"text/javascript\">") ;
+                     context.WriteHtmlText( "gx.fn.closeWindowServerScript(") ;
+                     context.WriteHtmlText( context.getWebReturnParmsJS( )) ;
+                     context.WriteHtmlText( ", ") ;
+                     context.WriteHtmlText( context.getWebReturnParmsMetadataJS( )) ;
+                     if ( context.IsLocalStorageSupported( ) )
+                     {
+                        context.WriteHtmlText( ", true") ;
+                     }
+                     else
+                     {
+                        context.WriteHtmlText( ", false") ;
+                     }
+                     context.WriteHtmlText( ");</script></body></html>") ;
+                  }
+               }
+               else
+               {
+                  context.Redirect( context.GetReferer( ) );
+                  context.WindowClosed();
+               }
+            }
+            return true ;
+         }
+         else
+         {
+            return false ;
+         }
+      }
+
       static public void gx_table_start( IGxContext context ,
                                          string sCtrlName ,
                                          string sHTMLid ,
@@ -2733,6 +2589,63 @@ namespace GeneXus.Programs {
          if ( StringUtil.StrCmp(sCaption, "") != 0 )
          {
             context.WriteHtmlText( "<caption>"+sCaption+"</caption>") ;
+         }
+      }
+
+      static public void gx_html_headers( IGxContext context ,
+                                          int nContentType ,
+                                          string sCacheCtrl ,
+                                          string sCacheExp ,
+                                          GXRadio radrMeta ,
+                                          GXRadio radrMetaequiv ,
+                                          bool bIsRwd )
+      {
+         short wbTemp;
+         short idxLst;
+         bool addContentType;
+         GxWebStd.set_html_headers( context, nContentType, sCacheCtrl, sCacheExp);
+         if ( nContentType == 0 )
+         {
+            context.WriteHtmlTextNl( GXUtil.HtmlDocType( )) ;
+            context.WriteHtmlTextNl( "<html lang=\"en\""+">") ;
+            context.WriteHtmlTextNl( "<head>") ;
+            if ( bIsRwd )
+            {
+               GXWebForm.AddResponsiveMetaHeaders(radrMeta);
+            }
+            idxLst = 1;
+            while ( idxLst <= radrMeta.ItemCount )
+            {
+               context.WriteHtmlText( "<meta name=\""+StringUtil.RTrim( radrMeta.getItemValue(idxLst))+"\" content=\"") ;
+               context.SendWebAttribute( StringUtil.RTrim( radrMeta.getItemText(idxLst))) ;
+               context.WriteHtmlTextNl( "\""+GXUtil.HtmlEndTag( HTMLElement.META)) ;
+               idxLst = (short)(idxLst+1);
+            }
+            context.WriteHtmlTextNl( "<!--[if IE]><meta http-equiv=\"page-enter\" content=\"blendTrans(Duration=0.1)\""+GXUtil.HtmlEndTag( HTMLElement.META)+"<![endif]-->") ;
+            context.WriteHtmlTextNl( "<meta name=\"fragment\" content=\"!\""+GXUtil.HtmlEndTag( HTMLElement.META)) ;
+            idxLst = 1;
+            addContentType = true;
+            while ( idxLst <= radrMetaequiv.ItemCount )
+            {
+               if ( StringUtil.StrCmp(StringUtil.Lower( radrMetaequiv.getItemValue(idxLst)), "content-type") == 0 )
+               {
+                  addContentType = false;
+                  wbTemp = context.ResponseContentType( radrMetaequiv.getItemText(idxLst));
+               }
+               idxLst = (short)(idxLst+1);
+            }
+            if ( addContentType )
+            {
+               context.WriteHtmlTextNl( "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\""+GXUtil.HtmlEndTag( HTMLElement.META)) ;
+            }
+            idxLst = 1;
+            while ( idxLst <= radrMetaequiv.ItemCount )
+            {
+               context.WriteHtmlText( "<meta http-equiv=\""+StringUtil.RTrim( radrMetaequiv.getItemValue(idxLst))+"\" content=\"") ;
+               context.SendWebAttribute( StringUtil.RTrim( radrMetaequiv.getItemText(idxLst))) ;
+               context.WriteHtmlTextNl( "\""+GXUtil.HtmlEndTag( HTMLElement.META)) ;
+               idxLst = (short)(idxLst+1);
+            }
          }
       }
 
@@ -3023,6 +2936,82 @@ namespace GeneXus.Programs {
          context.WriteHtmlText( "</legend>") ;
       }
 
+      static public void gx_div_start( IGxContext context ,
+                                       string sInternalName ,
+                                       int nVisible ,
+                                       int nWidth ,
+                                       string sWidthUnit ,
+                                       int nHeight ,
+                                       string sHeightUnit ,
+                                       string sClassString ,
+                                       string sAlign ,
+                                       string sVAlign ,
+                                       string sTags ,
+                                       string sExtraStyle ,
+                                       string sHtmlTag )
+      {
+         string sOStyle;
+         bool bHAlignedVar;
+         bool bVAlignedVar;
+         sAlign = StringUtil.Lower( sAlign);
+         sVAlign = StringUtil.Lower( sVAlign);
+         bHAlignedVar = (bool)(!String.IsNullOrEmpty(StringUtil.RTrim( sAlign))&&(StringUtil.StrCmp(StringUtil.Lower( sAlign), "left")!=0)&&(StringUtil.StrCmp(StringUtil.Lower( sAlign), "start")!=0));
+         bVAlignedVar = (bool)(!String.IsNullOrEmpty(StringUtil.RTrim( sVAlign))&&(StringUtil.StrCmp(StringUtil.Lower( sVAlign), "top")!=0));
+         context.WriteHtmlText( "<"+sHtmlTag+" ") ;
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sInternalName)) )
+         {
+            context.WriteHtmlText( "id=\""+sInternalName+"\" ") ;
+         }
+         GxWebStd.ClassAttribute( context, sClassString);
+         sOStyle = "";
+         if ( nVisible == 0 )
+         {
+            sOStyle = "display:none;";
+         }
+         if ( ! (0==nWidth) )
+         {
+            sOStyle += " width:" + StringUtil.LTrimStr( (decimal)(nWidth), 10, 0) + sWidthUnit + ";";
+         }
+         if ( ! (0==nHeight) )
+         {
+            sOStyle += " height:" + StringUtil.LTrimStr( (decimal)(nHeight), 10, 0) + sHeightUnit + ";";
+         }
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sExtraStyle)) )
+         {
+            sOStyle += CSSHelper.Prettify( sExtraStyle+";");
+         }
+         if ( bHAlignedVar || bVAlignedVar )
+         {
+            context.WriteHtmlText( "data-align-flex ") ;
+         }
+         GxWebStd.StyleAttribute( context, sOStyle);
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sTags)) )
+         {
+            context.WriteHtmlText( sTags) ;
+         }
+         if ( bHAlignedVar )
+         {
+            context.WriteHtmlText( " data-align=\"") ;
+            context.WriteHtmlText( sAlign) ;
+            context.WriteHtmlText( "\"") ;
+         }
+         if ( bVAlignedVar )
+         {
+            context.WriteHtmlText( " data-valign=\"") ;
+            context.WriteHtmlText( sVAlign) ;
+            context.WriteHtmlText( "\"") ;
+         }
+         context.WriteHtmlText( ">") ;
+      }
+
+      static public void gx_div_end( IGxContext context ,
+                                     string sAlign ,
+                                     string sVAlign ,
+                                     string sHtmlTag )
+      {
+         context.WriteHtmlText( "</"+sHtmlTag+">") ;
+      }
+
       static public void gx_embedded_page( IGxContext context ,
                                            string sInternalName ,
                                            string sSrc ,
@@ -3124,6 +3113,17 @@ namespace GeneXus.Programs {
          {
             context.WriteHtmlText( " style=\"") ;
             context.SendWebValue( StringUtil.LTrim( CSSHelper.Prettify( sStyle))) ;
+            context.WriteHtmlText( "\" ") ;
+         }
+      }
+
+      static public void ClassAttribute( IGxContext context ,
+                                         string sClass )
+      {
+         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( sClass)) )
+         {
+            context.WriteHtmlText( " class=\"") ;
+            context.SendWebValue( StringUtil.LTrim( sClass)) ;
             context.WriteHtmlText( "\" ") ;
          }
       }

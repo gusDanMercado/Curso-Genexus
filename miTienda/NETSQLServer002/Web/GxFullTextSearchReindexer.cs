@@ -21,10 +21,10 @@ namespace GeneXus.Programs {
          GxSilentTrnSdt obj;
          IGxSilentTrn trn;
          bool result;
-         obj = new SdtCategoria(context);
+         obj = new SdtPais(context);
          trn = obj.getTransaction();
          result = trn.Reindex();
-         obj = new SdtPais(context);
+         obj = new SdtCategoria(context);
          trn = obj.getTransaction();
          result = trn.Reindex();
          return 1 ;

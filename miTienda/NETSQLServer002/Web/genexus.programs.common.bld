@@ -5,7 +5,7 @@ SoapParm.cs
 GxFullTextSearchReindexer.cs
 GxModelInfoProvider.cs
 @genexus.programs.sdt.bld
-type_SdtCategoria.cs
 type_SdtPais.cs
+type_SdtCategoria.cs
 gxdomainstatuscliente.cs
 general\gxdomainpage.cs

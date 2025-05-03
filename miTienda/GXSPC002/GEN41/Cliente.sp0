@@ -159,7 +159,7 @@ rule_i(4,rule([ a(3,[ t(9,2) ]) ],[],[ insert,update,delete,display ],[ 9 ])).
 rule_i(4,rule([ a(21,[ [ 9 ] ]) ],[],[ insert,update,delete,display ],[ 9 ])).
 rule_i(4,rule([ a(3,[ t(1,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_paisid',23),t(')',4) ],[ insert,update,delete,display ],[ 1,'Mode','Insert_paisid' ])).
 rule_i(4,rule([ a(1,[ t('"Error, El nombre del Cliente es Obligatorio!!!"',3) ]) ],[ t('null(',1),t(10,2),t(')',4) ],[ insert,update,delete,display ],[ 10 ])).
-rule_i(4,rule([ a(4,[ t('"Por favor, ingrese su telefono de contacto!!!"',3) ]) ],[ t('null(',1),t(13,2),t(')',4) ],[ insert,update,delete,display ],[ 13 ])).
+rule_i(4,rule([ a(1,[ t('"Por favor, ingrese su telefono de contacto!!!"',3) ]) ],[ t('null(',1),t(13,2),t(')',4) ],[ insert,update,delete,display ],[ 13 ])).
 rule_i(4,rule([ a(19,[ [ 1 ],msg([ t('"No matching ''Pais''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 1 ])).
  
 a_i(3,4,b,0,[],[ [],[ a(1,msg([ t('"Field Cliente Email does not match the specified pattern"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t([ t(12,2),t('ismatch(',1) ],31),t('"^((\w+([-+.'']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|(\s*))$"',3),t(')',4),t(')',4) ] ]).
@@ -169,7 +169,7 @@ a_i(6,4,f,1,[],[ [ insert ],[ t('Insert_paisid',23),t('IF',17),t('Mode',23),t(=,
 a_i(7,4,f,[ t(1,2),t('Enabled',3) ],[],[ [],[ t(0,3),t('IF',17),t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_paisid',23),t(')',4),t(';',18),t(1,3),t('OTHERWISE',19),t(';',18) ] ]).
 a_i(8,4,b,6,[],[ [],[ a(3,[ t(1,2) ]) ],[ t('Mode',23),t(=,10),t([ 71,'Insert' ],44),t('.AND.',9),t('.NOT.',8),t('null(',1),t('Insert_paisid',23),t(')',4) ] ]).
 a_i(9,4,b,7,[],[ [],[ a(1,[ t('"Error, El nombre del Cliente es Obligatorio!!!"',3) ]) ],[ t('null(',1),t(10,2),t(')',4) ] ]).
-a_i(10,4,b,8,[],[ [],[ a(4,[ t('"Por favor, ingrese su telefono de contacto!!!"',3) ]) ],[ t('null(',1),t(13,2),t(')',4) ] ]).
+a_i(10,4,b,8,[],[ [],[ a(1,[ t('"Por favor, ingrese su telefono de contacto!!!"',3) ]) ],[ t('null(',1),t(13,2),t(')',4) ] ]).
 a_i(11,4,t,4,[],[ [ [ [],9,9 ] ],'ICLIENTE',[] ]).
 a_i(12,4,r,1,[],[ [ [ 4,1,1 ] ],'IPAIS',[] ]).
 a_i(13,4,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).

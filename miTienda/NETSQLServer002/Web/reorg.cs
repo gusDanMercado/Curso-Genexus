@@ -60,57 +60,9 @@ namespace GeneXus.Programs {
       {
          string cmdBuffer = "";
          /* Indices for table TarjetaDePuntos */
-         cmdBuffer=" ALTER TABLE [TarjetaDePuntos] ADD [ClienteID] int NOT NULL CONSTRAINT ClienteIDTarjetaDePuntos_DEFAULT DEFAULT 1 "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" ALTER TABLE [TarjetaDePuntos] DROP CONSTRAINT ClienteIDTarjetaDePuntos_DEFAULT "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Pais] ON "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" INSERT INTO [Pais] ([PaisID], [PaisNombre], [PaisBandera]) SELECT TOP 1 1, ' ', CONVERT(varbinary(1), '') FROM [TarjetaDePuntos] WHERE NOT EXISTS (SELECT 1 FROM [Pais] WHERE PaisID=1) "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Pais] OFF "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Cliente] ON "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" INSERT INTO [Cliente] ([ClienteID], [ClienteNombre], [PaisID], [ClienteDireccion], [ClienteEmail], [ClienteTelefono]) SELECT TOP 1 1, ' ', 1, ' ', ' ', ' ' FROM [TarjetaDePuntos] WHERE NOT EXISTS (SELECT 1 FROM [Cliente] WHERE ClienteID=1) "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" SET IDENTITY_INSERT [Cliente] OFF "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
          try
          {
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [ITARJETADEPUNTOS1] ON [TarjetaDePuntos] ([ClienteID] ) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [UTARJETADEPUNTOS] ON [TarjetaDePuntos] ([TarjetaDePuntosStatus] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -119,48 +71,13 @@ namespace GeneXus.Programs {
          }
          catch
          {
-            cmdBuffer=" DROP INDEX [ITARJETADEPUNTOS1] ON [TarjetaDePuntos] "
+            cmdBuffer=" DROP INDEX [UTARJETADEPUNTOS] ON [TarjetaDePuntos] "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
             RGZ.ExecuteStmt() ;
             RGZ.Drop();
-            cmdBuffer=" CREATE NONCLUSTERED INDEX [ITARJETADEPUNTOS1] ON [TarjetaDePuntos] ([ClienteID] ) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-      }
-
-      public void RITarjetaDePuntosCliente( )
-      {
-         string cmdBuffer;
-         try
-         {
-            cmdBuffer=" ALTER TABLE [TarjetaDePuntos] ADD CONSTRAINT [ITARJETADEPUNTOS1] FOREIGN KEY ([ClienteID]) REFERENCES [Cliente] ([ClienteID]) "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-         }
-         catch
-         {
-            try
-            {
-               cmdBuffer=" ALTER TABLE [TarjetaDePuntos] DROP CONSTRAINT [ITARJETADEPUNTOS1] "
-               ;
-               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-               RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-               RGZ.ExecuteStmt() ;
-               RGZ.Drop();
-            }
-            catch
-            {
-            }
-            cmdBuffer=" ALTER TABLE [TarjetaDePuntos] ADD CONSTRAINT [ITARJETADEPUNTOS1] FOREIGN KEY ([ClienteID]) REFERENCES [Cliente] ([ClienteID]) "
+            cmdBuffer=" CREATE NONCLUSTERED INDEX [UTARJETADEPUNTOS] ON [TarjetaDePuntos] ([TarjetaDePuntosStatus] ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -219,35 +136,7 @@ namespace GeneXus.Programs {
             }
             pr_default.close(2);
          }
-         if ( ColumnExist("TarjetaDePuntos",sSchemaVar,"ClienteID") )
-         {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"ClienteID", "TarjetaDePuntos"}) ) ;
-            return false ;
-         }
          return true ;
-      }
-
-      private bool ColumnExist( string sTableName ,
-                                string sMySchemaName ,
-                                string sMyColumnName )
-      {
-         bool result;
-         result = false;
-         /* Using cursor P00045 */
-         pr_default.execute(3, new Object[] {sTableName, sMySchemaName, sMyColumnName});
-         while ( (pr_default.getStatus(3) != 101) )
-         {
-            tablename = P00045_Atablename[0];
-            ntablename = P00045_ntablename[0];
-            schemaname = P00045_Aschemaname[0];
-            nschemaname = P00045_nschemaname[0];
-            columnname = P00045_Acolumnname[0];
-            ncolumnname = P00045_ncolumnname[0];
-            result = true;
-            pr_default.readNext(3);
-         }
-         pr_default.close(3);
-         return result ;
       }
 
       private void ExecuteOnlyTablesReorganization( )
@@ -257,7 +146,6 @@ namespace GeneXus.Programs {
 
       private void ExecuteOnlyRisReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 2 ,  "RITarjetaDePuntosCliente" , new Object[]{ });
       }
 
       private void ExecuteTablesReorganization( )
@@ -280,8 +168,6 @@ namespace GeneXus.Programs {
 
       private void SetPrecedenceris( )
       {
-         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_refintcrea", new   object[]  {"[ITARJETADEPUNTOS1]"}) );
-         ReorgExecute.RegisterPrecedence( "RITarjetaDePuntosCliente" ,  "ReorganizeTarjetaDePuntos" );
       }
 
       private void ExecuteReorganization( )
@@ -317,21 +203,6 @@ namespace GeneXus.Programs {
          P00023_nsSchemaVar = new bool[] {false} ;
          P00034_AsSchemaVar = new string[] {""} ;
          P00034_nsSchemaVar = new bool[] {false} ;
-         sTableName = "";
-         sMySchemaName = "";
-         sMyColumnName = "";
-         tablename = "";
-         ntablename = false;
-         schemaname = "";
-         nschemaname = false;
-         columnname = "";
-         ncolumnname = false;
-         P00045_Atablename = new string[] {""} ;
-         P00045_ntablename = new bool[] {false} ;
-         P00045_Aschemaname = new string[] {""} ;
-         P00045_nschemaname = new bool[] {false} ;
-         P00045_Acolumnname = new string[] {""} ;
-         P00045_ncolumnname = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
@@ -343,9 +214,6 @@ namespace GeneXus.Programs {
                , new Object[] {
                P00034_AsSchemaVar
                }
-               , new Object[] {
-               P00045_Atablename, P00045_Aschemaname, P00045_Acolumnname
-               }
             }
          );
          /* GeneXus formulas. */
@@ -354,16 +222,7 @@ namespace GeneXus.Programs {
       protected short ErrCode ;
       protected int TarjetaDePuntosCount ;
       protected string sSchemaVar ;
-      protected string sTableName ;
-      protected string sMySchemaName ;
-      protected string sMyColumnName ;
       protected bool nsSchemaVar ;
-      protected bool ntablename ;
-      protected bool nschemaname ;
-      protected bool ncolumnname ;
-      protected string tablename ;
-      protected string schemaname ;
-      protected string columnname ;
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
@@ -372,12 +231,6 @@ namespace GeneXus.Programs {
       protected bool[] P00023_nsSchemaVar ;
       protected string[] P00034_AsSchemaVar ;
       protected bool[] P00034_nsSchemaVar ;
-      protected string[] P00045_Atablename ;
-      protected bool[] P00045_ntablename ;
-      protected string[] P00045_Aschemaname ;
-      protected bool[] P00045_nschemaname ;
-      protected string[] P00045_Acolumnname ;
-      protected bool[] P00045_ncolumnname ;
    }
 
    public class reorg__default : DataStoreHelperBase, IDataStoreHelper
@@ -389,7 +242,6 @@ namespace GeneXus.Programs {
           new ForEachCursor(def[0])
          ,new ForEachCursor(def[1])
          ,new ForEachCursor(def[2])
-         ,new ForEachCursor(def[3])
        };
     }
 
@@ -407,17 +259,10 @@ namespace GeneXus.Programs {
           Object[] prmP00034;
           prmP00034 = new Object[] {
           };
-          Object[] prmP00045;
-          prmP00045 = new Object[] {
-          new ParDef("@sTableName",GXType.Char,255,0) ,
-          new ParDef("@sMySchemaName",GXType.Char,255,0) ,
-          new ParDef("@sMyColumnName",GXType.Char,255,0)
-          };
           def= new CursorDef[] {
               new CursorDef("P00012", "SELECT COUNT(*) FROM [TarjetaDePuntos] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00023", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00034", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00045", "SELECT TABLE_NAME, TABLE_SCHEMA, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE (TABLE_NAME = @sTableName) AND (TABLE_SCHEMA = @sMySchemaName) AND (COLUMN_NAME = @sMyColumnName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -436,11 +281,6 @@ namespace GeneXus.Programs {
                 return;
              case 2 :
                 ((string[]) buf[0])[0] = rslt.getString(1, 255);
-                return;
-             case 3 :
-                ((string[]) buf[0])[0] = rslt.getVarchar(1);
-                ((string[]) buf[1])[0] = rslt.getVarchar(2);
-                ((string[]) buf[2])[0] = rslt.getVarchar(3);
                 return;
        }
     }

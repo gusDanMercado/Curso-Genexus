@@ -373,7 +373,7 @@ namespace GeneXus.Programs {
 
       public override string GetPgmdesc( )
       {
-         return "Productoes" ;
+         return "Productos" ;
       }
 
       protected void WB0W0( )
@@ -408,7 +408,7 @@ namespace GeneXus.Programs {
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "ww__title-cell", "start", "top", "", "flex-grow:1;", "div");
             /* Text block */
-            GxWebStd.gx_label_ctrl( context, lblTitletext_Internalname, "Productoes", "", "", lblTitletext_Jsonclick, "'"+""+"'"+",false,"+"'"+""+"'", "", "heading-01", 0, "", 1, 1, 0, 0, "HLP_WWProducto.htm");
+            GxWebStd.gx_label_ctrl( context, lblTitletext_Internalname, "Productos", "", "", lblTitletext_Jsonclick, "'"+""+"'"+",false,"+"'"+""+"'", "", "heading-01", 0, "", 1, 1, 0, 0, "HLP_WWProducto.htm");
             GxWebStd.gx_div_end( context, "start", "top", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "ww__actions-cell", "start", "top", "", "", "div");
@@ -547,7 +547,7 @@ namespace GeneXus.Programs {
                Form.Meta.addItem("generator", "GeneXus .NET 18_0_10-184260", 0) ;
             }
          }
-         Form.Meta.addItem("description", "Productoes", 0) ;
+         Form.Meta.addItem("description", "Productos", 0) ;
          context.wjLoc = "";
          context.nUserReturn = 0;
          context.wbHandled = 0;
@@ -1166,7 +1166,7 @@ namespace GeneXus.Programs {
          AssignAttri("", false, edtavUpdate_Internalname, AV12Update);
          AV13Delete = "Delete";
          AssignAttri("", false, edtavDelete_Internalname, AV13Delete);
-         Form.Caption = "Productoes";
+         Form.Caption = "Productos";
          AssignProp("", false, "FORM", "Caption", Form.Caption, true);
          /* Execute user subroutine: 'PREPARETRANSACTION' */
          S112 ();
@@ -1272,7 +1272,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20255201279", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025522048410", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1290,7 +1290,7 @@ namespace GeneXus.Programs {
          if ( nGXWrapped != 1 )
          {
             context.AddJavascriptSource("messages.eng.js", "?"+GetCacheInvalidationToken( ), false, true);
-            context.AddJavascriptSource("wwproducto.js", "?20255201279", false, true);
+            context.AddJavascriptSource("wwproducto.js", "?2025522048411", false, true);
          }
          /* End function include_jscripts */
       }
@@ -1435,7 +1435,7 @@ namespace GeneXus.Programs {
             StyleString = "";
             A23ProductoImagen_IsBlob = (bool)((String.IsNullOrEmpty(StringUtil.RTrim( A23ProductoImagen))&&String.IsNullOrEmpty(StringUtil.RTrim( A40000ProductoImagen_GXI)))||!String.IsNullOrEmpty(StringUtil.RTrim( A23ProductoImagen)));
             sImgUrl = (String.IsNullOrEmpty(StringUtil.RTrim( A23ProductoImagen)) ? A40000ProductoImagen_GXI : context.PathToRelativeUrl( A23ProductoImagen));
-            GridRow.AddColumnProperties("bitmap", 1, isAjaxCallMode( ), new Object[] {(string)edtProductoImagen_Internalname,(string)sImgUrl,(string)"",(string)"",(string)"",context.GetTheme( ),(short)-1,(short)0,(string)"",(string)"",(short)0,(short)-1,(short)0,(string)"px",(short)0,(string)"px",(short)0,(short)0,(short)0,(string)"",(string)"",(string)StyleString,(string)ClassString,(string)"column column-optional",(string)"",(string)"",(string)"",(string)"",(string)"",(string)"",(short)1,(bool)A23ProductoImagen_IsBlob,(bool)true,context.GetImageSrcSet( sImgUrl)});
+            GridRow.AddColumnProperties("bitmap", 1, isAjaxCallMode( ), new Object[] {(string)edtProductoImagen_Internalname,(string)sImgUrl,(string)"",(string)"",(string)"",context.GetTheme( ),(short)-1,(short)0,(string)"",(string)"",(short)0,(short)-1,(short)0,(string)"px",(short)0,(string)"px",(short)0,(short)0,(short)0,(string)"",(string)"",(string)StyleString,(string)ClassString,(string)"column Grid",(string)"",(string)"",(string)"",(string)"",(string)"",(string)"",(short)1,(bool)A23ProductoImagen_IsBlob,(bool)true,context.GetImageSrcSet( sImgUrl)});
             /* Subfile cell */
             if ( GridContainer.GetWrapped() == 1 )
             {
@@ -1572,19 +1572,19 @@ namespace GeneXus.Programs {
             context.SendWebValue( "Vendedor ID") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Vendedor Nombre") ;
+            context.SendWebValue( "Vendedor") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+"display:none;"+""+"\" "+">") ;
             context.SendWebValue( "Categoria ID") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Categoria Nombre") ;
+            context.SendWebValue( "Categoria") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"end"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+"display:none;"+""+"\" "+">") ;
             context.SendWebValue( "Pais ID") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"Attribute"+"\" "+" style=\""+""+""+"\" "+">") ;
-            context.SendWebValue( "Pais Nombre") ;
+            context.SendWebValue( "Pais") ;
             context.WriteHtmlTextNl( "</th>") ;
             context.WriteHtmlText( "<th align=\""+"start"+"\" "+" nowrap=\"nowrap\" "+" class=\""+"TextActionAttribute TextLikeLink"+"\" "+" style=\""+""+""+"\" "+">") ;
             context.SendWebValue( "") ;
@@ -1746,7 +1746,7 @@ namespace GeneXus.Programs {
          Form.Background = "";
          Form.Textcolor = 0;
          Form.Backcolor = (int)(0xFFFFFF);
-         Form.Caption = "Productoes";
+         Form.Caption = "Productos";
          subGrid_Rows = 10;
          context.GX_msglist.DisplayMode = 1;
          if ( context.isSpaRequest( ) )

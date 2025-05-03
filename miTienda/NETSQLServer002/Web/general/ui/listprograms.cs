@@ -63,7 +63,7 @@ namespace GeneXus.Programs.general.ui {
          /* Output device settings */
          AV9ProgramNames = new GXBaseCollection<GeneXus.Programs.general.ui.SdtProgramNames_ProgramName>( context, "ProgramName", "miTienda");
          AV11name = "WWCarrito";
-         AV12description = "Carrito";
+         AV12description = "Carritos";
          AV13link = formatLink("wwcarrito.aspx") ;
          /* Execute user subroutine: 'ADDPROGRAM' */
          S111 ();
@@ -73,7 +73,7 @@ namespace GeneXus.Programs.general.ui {
             if (true) return;
          }
          AV11name = "WWCatalogo";
-         AV12description = "Catalogoes";
+         AV12description = "Catalogos";
          AV13link = formatLink("wwcatalogo.aspx") ;
          /* Execute user subroutine: 'ADDPROGRAM' */
          S111 ();
@@ -113,7 +113,7 @@ namespace GeneXus.Programs.general.ui {
             if (true) return;
          }
          AV11name = "WWProducto";
-         AV12description = "Productoes";
+         AV12description = "Productos";
          AV13link = formatLink("wwproducto.aspx") ;
          /* Execute user subroutine: 'ADDPROGRAM' */
          S111 ();
@@ -123,7 +123,7 @@ namespace GeneXus.Programs.general.ui {
             if (true) return;
          }
          AV11name = "WWProveedor";
-         AV12description = "Proveedors";
+         AV12description = "Proveedores";
          AV13link = formatLink("wwproveedor.aspx") ;
          /* Execute user subroutine: 'ADDPROGRAM' */
          S111 ();
@@ -133,7 +133,7 @@ namespace GeneXus.Programs.general.ui {
             if (true) return;
          }
          AV11name = "WWTarjetaDePuntos";
-         AV12description = "Tarjeta De Puntoss";
+         AV12description = "Tarjeta De Puntos";
          AV13link = formatLink("wwtarjetadepuntos.aspx") ;
          /* Execute user subroutine: 'ADDPROGRAM' */
          S111 ();
@@ -143,7 +143,7 @@ namespace GeneXus.Programs.general.ui {
             if (true) return;
          }
          AV11name = "WWVendedor";
-         AV12description = "Vendedors";
+         AV12description = "Vendedores";
          AV13link = formatLink("wwvendedor.aspx") ;
          /* Execute user subroutine: 'ADDPROGRAM' */
          S111 ();
